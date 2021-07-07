@@ -85,7 +85,7 @@
 //    Splice = Menyambung/Menambal/Menyisipkan element di tengah-tengah pada array
 //     - splice(indexAwal, mauDihapusBerapa, elemenBaru1, elemenBaru2, ......)
 
-var arr = ['Arrizky','Hasya','Pratama','Kalea', 'Billy' ,'Dilla'];
+// var arr = ['Arrizky','Hasya','Pratama','Kalea', 'Billy' ,'Dilla'];
 
 
 // Splice
@@ -94,7 +94,78 @@ var arr = ['Arrizky','Hasya','Pratama','Kalea', 'Billy' ,'Dilla'];
 // arr.splice(1, 2, 'Udin'); // Arrizky | Udin
 
 // Slice
-var arr2 = arr.slice(1,3); // Hasya | Pratama -- mengambil 1 dan 2 saja tapi 3 sebagai akhir
+// var arr2 = arr.slice(1,3); // Hasya | Pratama -- mengambil 1 dan 2 saja tapi 3 sebagai akhir
 
 // console.log(arr.join(' | '));
-console.log(arr2.join(' | '));
+// console.log(arr2.join(' | '));
+
+// ==================================================================================
+// 5. Foreach & Map
+// Digunakan untuk melakukan Looping pada array
+// var angka = [1,2,3,4,5,6,7,8];
+// var arr = ['Arrizky','Hasya','Pratama','Kalea', 'Billy' ,'Dilla'];
+
+// for biasa
+// for (var i = 0; i < angka.length; i++) {
+//     console.log(angka[i]);
+// }
+
+// Foreach
+// angka.forEach(function(e) {
+//     console.log(e);
+// })
+
+// Menambahkan index i
+// arr.forEach(function(e, i){
+//     console.log('Mahasiswa ke - '+ (i+1) +' adalah '+ e);
+// });
+
+// Map
+// Mengembalikan Array sedangkan forEach tidak
+// var angka = [3,4,7,3,9,5,8,5];
+
+// dikali 2
+// var angka2 = angka.map(function(e) {
+//     return e * 2;
+// });
+// console.log(angka2.join(' | '));
+
+// ==================================================================================
+// 6. Sort
+// Untuk mengurutkan isi array
+
+// Contoh 1 tanpa puluhan
+// var angka = [3,4,7,3,9,5,8,5];
+//  console.log(angka.join(' | '));
+// angka.sort();
+//  console.log(angka.join(' | '));
+
+// Contoh 2 dengan puluhan
+// var angka = [3,4,10,30,20,7,3,9,5,8,5];
+//  console.log(angka.join(' | '));
+// angka.sort(function (a,b){
+//     return a-b;
+// });
+//  console.log(angka.join(' | '));
+
+// ==================================================================================
+// 6. Filter & Find
+// Digunakan untuk mencari element pada array
+// Find = Mengembalikan 1 nilai
+// Filter = bisa Mengembalikan banyak nilai
+
+// Filter
+// var angka = [3,4,10,30,20,7,3,9,5,8,5];
+// var angka2 = angka.filter(function(e) {
+//     // return e == 5;
+//     return e > 5;
+// })
+// console.log(angka2);
+
+// Find
+// var angka = [3,4,10,30,20,7,3,9,5,8,5];
+// var angka2 = angka.find(function(e) {
+//     // return e == 5;
+//     return e > 5;
+// })
+// console.log(angka2);

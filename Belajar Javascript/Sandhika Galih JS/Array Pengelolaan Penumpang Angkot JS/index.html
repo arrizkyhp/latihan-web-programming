@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Pengelolaan Penumpang</title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h1>Pengelolaan Penumpang</h1>
+    <hr>
+
+    <h2>Selesai!!!</h2>
+    <p>Check console lalu input:</p>
+    <ul>
+        <li><b>Tambah Penumpang </b>= tambahPenumpang('Nama Penumpang', penumpang);</li>
+        <li><b>Hapus Penumpang</b> = hapusPenumpang('Nama Penumpang', penumpang);</li>
+    </ul>
+    <hr>
+    <h3>Penumpang naik</h3>
+    <ul>
+        <li>tambahPenumpang() <ul>
+                <li>Parameter: <ul>
+                        <li>namaPenumpang</li>
+                        <li>array Penumpang</li>
+                    </ul>
+                </li>
+                <li>Rule: <ul>
+                        <li>jika <b>angkot kosong</b>, penumpang <b>naik</b> duduk di <b>kursi pertama</b> </li>
+                        <li>penumpang berikutnya duduk di kursi selanjutnya secara berurutan</li>
+                        <li>jika ada kursi kosong (karena penumpang turun), penumpang yang naik berikutnya duduk di
+                            kursi kosong terlebih dahulu</li>
+                        <li>asumsi kursi tidak akan penuh dan akan bertambah terus jika ada penumpang naik</li>
+                        <li>nama penumpang tidak boleh sama, untuk menghindari kebingungan ketika nanti penumpang turun
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    </li>
+
+    <h3>Penumpang Turun</h3>
+    <ul>
+        <li>hapusPenumpang()<ul>
+                <li>Parameter: <ul>
+                        <li>namaPenumpang</li>
+                        <li>array Penumpang</li>
+                    </ul>
+                </li>
+                <li>Rule: <ul>
+                        <li>jika <b>angkot kosong</b>, tampilkang <b>pesan bahwa angkot kosong</b></li>
+                        <li>jika ada penumpang yang namanya sesuai, hapus nama penumpang pada array dengan memberi nilai
+                            undefined</li>
+                        <li>jika tidak ada penumpang yang namanya sesuai, tempilkan pesan kesalahanya</li>
+                    </ul>
+                </li>
+            </ul>
+
+</body>
+
+</html>

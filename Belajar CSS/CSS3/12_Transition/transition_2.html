@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition 2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 900px;
+            margin: 10px auto;
+            border: 2px solid black
+        }
+
+        /* Keadaan Awal */
+        .kotak {
+            width: 100px;
+            height: 100px;
+            background: salmon;
+            font-size: 20px;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            color: wheat;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .kotak1 {
+            /* Transisi */
+            transition: 3s ease .5s;
+        }
+
+        .kotak2 {
+            transition: 3s ease-in;
+        }
+
+        .kotak3 {
+            transition: 3s ease-out;
+        }
+
+        .kotak4 {
+            transition: 3s ease-in-out;
+        }
+
+        .kotak5 {
+            transition: 3s linear;
+        }
+
+        .kotak6 {
+            transition: 3s cubic-bezier(0.08, 0.82, 1, -0.12);
+        }
+
+        .kotak7 {
+            transition: margin-left 3s, transform 3s 2s, background-color 500ms 3s;
+        }
+
+
+
+        /* Keadaan Akhir */
+        .container:hover .kotak {
+            transform: rotate(720deg);
+            margin-left: 800px;
+            background-color: seagreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="kotak kotak1">Ease</div>
+        <div class="kotak kotak2">Ease-in</div>
+        <div class="kotak kotak3">Ease-out</div>
+        <div class="kotak kotak4">Ease-in-out</div>
+        <div class="kotak kotak5">Linear</div>
+        <div class="kotak kotak6">cubic-</div>
+        <div class="kotak kotak7">Doubledelay-</div>
+    </div>
+</body>
+
+</html>

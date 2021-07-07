@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition 1</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 900px;
+            margin: 10px auto;
+            border: 2px solid black
+        }
+
+        /* Keadaan Awal */
+        .kotak {
+            width: 100px;
+            height: 100px;
+            background: salmon;
+            /* Transisi */
+            transition: .5s;
+        }
+
+        /* Keadaan Akhir */
+        .container:hover .kotak {
+            transform: rotate(720deg);
+            margin-left: 800px;
+            background: seagreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="kotak"></div>
+    </div>
+</body>
+
+</html>

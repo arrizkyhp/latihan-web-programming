@@ -1,0 +1,54 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: cornflowerblue;
+}
+
+.container {
+    width: 60%;
+    margin: 50px auto;
+    display: grid;
+    border: 3px solid black;
+    /* 3 Baris 3 kolom */
+    grid-template-columns: repeat(auto-fill, 150px);
+    grid-template-rows: repeat(2, 100px);
+
+}
+
+.item {
+    background-color: #ddd;
+    border: 2px solid green;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* genap */
+
+.item:nth-child(even) {
+    background-color: #ccc;
+}
+
+/* container-dua */
+.container-dua {
+    width: 60%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr minmax(200px, 400px) 2fr 1fr;
+    grid-template-rows: repeat(3, 50px);
+
+
+}
+
+.item-dua {
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-dua:nth-child(even) {
+    background-color: blueviolet;
+}

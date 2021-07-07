@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opacity</title>
+
+    <style>
+        body {
+            background: url(pattern.png);
+        }
+
+        .kotak {
+            width: 300px;
+            height: 300px;
+
+            margin: 50px auto;
+            position: relative;
+
+            /* Opacity valuenya 0 sampai 1 */
+            /* opacity: .3; */
+
+            /* Opacity memakai rgba */
+            background: rgba(255, 102, 0, .5);
+        }
+
+        .kotak2 {
+            width: 100px;
+            height: 100px;
+            background: orange;
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            /* opacity: .7; */
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="kotak">
+        <div class="kotak2"></div>
+    </div>
+</body>
+
+</html>

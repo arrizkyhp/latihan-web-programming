@@ -1,0 +1,56 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: cornflowerblue;
+}
+
+.container {
+    width: 60%;
+    margin: 50px auto;
+    display: grid;
+    border: 3px solid black;
+    /* 3 Baris 3 kolom */
+    grid-template-columns: 25% auto 50px;
+    grid-template-rows: 50px 100px auto;
+
+}
+
+.item {
+    background-color: #ddd;
+    border: 2px solid green;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* genap */
+
+.item:nth-child(even) {
+    background-color: #ccc;
+}
+
+/* container-dua */
+.container-dua {
+    width: 60%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 3fr) repeat(2, 1fr);
+    grid-template-rows: repeat(3, 50px);
+    grid-auto-flow: column;
+    grid-auto-rows: 20px;
+    grid-auto-columns: 50px;
+
+}
+
+.item-dua {
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-dua:nth-child(even) {
+    background-color: blueviolet;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-Shadow</title>
+    <style>
+        .kotak {
+            width: 300px;
+            height: 300px;
+            background: royalblue;
+            margin: 50px auto;
+
+            /* box-shadow */
+            /* box-shadow: -5px 5px 8px rgba(0, 0, 0, .5); */
+
+            /* spread sebelum warna */
+            /* box-shadow: -5px 5px 1px 10px rgba(0, 0, 0, .5); */
+
+            /* inset di awal */
+            /* box-shadow: inset 5px 5px 1px rgba(0, 0, 0, .5); */
+
+            /* Multiple Shadow */
+            box-shadow: 5px 5px 1px rgba(255, 0, 0, .5),
+                -5px -5px 5px rgba(0, 0, 255, 0.5);
+        }
+
+        .kotak h4 {
+            margin: 0;
+            padding: 0;
+            font-size: 80px;
+            text-align: center;
+            line-height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kotak">
+        <h4>💩</h4>
+    </div>
+</body>
+
+</html>

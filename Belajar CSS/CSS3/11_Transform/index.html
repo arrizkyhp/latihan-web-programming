@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <style>
+        p {
+            font-size: 20px;
+            text-align-last: center;
+        }
+
+        .kotak {
+            width: 200px;
+            height: 200px;
+            background-color: darkorange;
+            margin: 50px auto;
+            transition: .2s;
+
+        }
+
+        .kotak:hover {
+            /* Scale 2 parameter x dan y */
+            /* transform: scale(1.5, 2); */
+
+            /* Rotate */
+            /* transform: rotate(90deg); */
+            /* Rotate X */
+            /* transform: rotatex(180deg); */
+            /* transform: rotatey(180deg); */
+
+            /* Skew */
+            /* transform: skew(30deg); */
+            /* transform: skewY(30deg); */
+
+            /* translate */
+            /* transform: translate(50px); */
+            /* translate ke kanan dan ke bawah */
+            /* transform: translate(50px, 100px); */
+            /* transform: translateX(50px) translateY(100px); */
+
+            /* Double */
+            transform: scale(1.5) rotate(180deg);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kotak"></div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reprehenderit pariatur totam officia cumque
+        dolores ipsa maxime! Possimus nisi fuga minus commodi asperiores. Aut dicta vel voluptate eaque ipsum porro
+        harum consequatur similique recusandae illo dolores adipisci, perspiciatis accusantium excepturi sapiente,
+        iure mollitia esse voluptas aliquid ad quo pariatur fuga.</p>
+
+</body>
+
+</html>

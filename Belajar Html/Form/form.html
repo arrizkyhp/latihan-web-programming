@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form</title>
+</head>
+
+<body>
+
+    <form>
+        <table cellspacing="0" cellpadding="5">
+            <tr>
+                <td> <label for="nama">Nama</label></td>
+                <td> <input type="text" id="nama"></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password</label></td>
+                <td> <input type="password" id="password"></td>
+            </tr>
+            <tr>
+                <td><label for="JenisKelamin">Jenis Kelamin</label></td>
+                <td><input type="radio" id="pria" name="jenisKelamin"><label for="pria">Pria</label>
+                    <input type="radio" id="wanita" name="jenisKelamin"><label for="wanita">Wanita</label></td>
+            </tr>
+            <tr>
+                <td><label for="hobi">Hobi</label></td>
+                <td><input type="checkbox" name="hobi" id="menyanyi"><label for="menyanyi">Menyanyi</label>
+                    <input type="checkbox" name="hobi" id="menari"><label for="menari">Menari</label>
+                    <input type="checkbox" name="hobi" id="melukis"><label for="melukis">Melukis</label></td>
+            </tr>
+            <tr>
+                <td><label for="kota">Kota</label></td>
+                <td><select name="kota" id="kota">
+                        <option value="bandung">Bandung</option>
+                        <option value="jakarta">Jakarta</option>
+                        <option value="medan">Medan</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td><label for="keterangan">Keterangan</label></td>
+                <td> <textarea name="keterangan" id="keterangan" cols="30" rows="10"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><button type="submit">Kirim</button></td>
+            </tr>
+
+
+
+        </table>
+    </form>
+
+
+</body>
+
+</html>

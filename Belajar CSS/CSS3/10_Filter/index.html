@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .konten {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 0 50px;
+        }
+
+        img {
+            width: 300px;
+            margin: 20px auto;
+
+        }
+
+        .blur {
+            /* Filter */
+            filter: blur(2px);
+        }
+
+        .brightness {
+            filter: brightness(.5);
+            transition: .5s;
+        }
+
+        .brightness:hover {
+            filter: brightness(1);
+        }
+
+        .contrast {
+            filter: contrast(1.4);
+        }
+
+        .saturate {
+            filter: saturate(3);
+        }
+
+        .grayscale {
+            filter: grayscale(1);
+        }
+
+        .sepia {
+            filter: sepia(1);
+        }
+
+        .hue-rotate {
+            filter: hue-rotate(180deg);
+        }
+
+        .invert {
+            filter: invert(1);
+            transition: 1s;
+        }
+
+        .invert:hover {
+            filter: invert(0);
+        }
+
+        .opacity {
+            filter: opacity(.5);
+        }
+
+        .drop-shadow {
+            filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, .5));
+        }
+    </style>
+</head>
+
+<body>
+    <div class="konten">
+        <div class="main">
+            <h2>Blur</h2>
+            <img src="gambar.jpg" alt="gambar" class="blur">
+        </div>
+
+        <div class="main">
+            <h2>Brightness</h2>
+            <img src="gambar.jpg" alt="gambar" class="brightness">
+        </div>
+
+        <div class="main">
+            <h2>Contrast</h2>
+            <img src="gambar.jpg" alt="gambar" class="contrast">
+        </div>
+
+        <div class="main">
+            <h2>Saturate</h2>
+            <img src="gambar.jpg" alt="gambar" class="saturate">
+        </div>
+
+        <div class="main">
+            <h2>Grayscale</h2>
+            <img src="gambar.jpg" alt="gambar" class="grayscale">
+        </div>
+
+        <div class="main">
+            <h2>Sepia</h2>
+            <img src="gambar.jpg" alt="gambar" class="sepia">
+        </div>
+
+        <div class="main">
+            <h2>Hue-Rotate</h2>
+            <img src="gambar.jpg" alt="gambar" class="hue-rotate">
+        </div>
+
+        <div class="main">
+            <h2>Invert</h2>
+            <img src="gambar.jpg" alt="gambar" class="invert">
+        </div>
+
+        <div class="main">
+            <h2>Opacity</h2>
+            <img src="gambar.jpg" alt="gambar" class="opacity">
+        </div>
+
+        <div class="main">
+            <h2>Drop Shadow</h2>
+            <img src="gambar.jpg" alt="gambar" class="drop-shadow">
+        </div>
+
+    </div>
+
+</body>
+
+</html>

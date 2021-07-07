@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyobain Column and Rows</title>
+    <style>
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background-color: cornflowerblue;
+            border: 2px solid blueviolet;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: 1fr 2fr 3fr;
+            grid-auto-rows: 1fr;
+        }
+
+        .item {
+            background-color: cornsilk;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+        }
+
+        .item:nth-child(even) {
+            background-color: darkcyan;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+    </div>
+
+</body>
+
+</html>

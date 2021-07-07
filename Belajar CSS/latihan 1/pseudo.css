@@ -1,0 +1,24 @@
+.hello {
+    color: orange;
+    text-decoration-line: none;
+}
+
+.hello:hover {
+    font-family: Arial, Helvetica, sans-serif;
+    color: orchid;
+    text-decoration-line: none;
+}
+
+.hello:active {
+    color: red;
+}
+
+li:first-child a {
+    color: sienna;
+
+}
+
+li:first-child a:hover {
+    color: black;
+
+}

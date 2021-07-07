@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightcoral;
+    background-image: url(brick.jpg);
+}
+
+/* H! */
+h1 {
+    color: maroon;
+    font-size: 50px;
+    font-variant: small-caps;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 20px;
+    text-decoration: line-through;
+    letter-spacing: 8px;
+    word-spacing: 50px;
+}
+
+p {
+    text-indent: 50px;
+    word-spacing: 3px;
+}
+
+a {
+    text-decoration-line: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: lawngreen;
+    text-transform: uppercase;
+
+}

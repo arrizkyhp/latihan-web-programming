@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-Shadow</title>
+    <style>
+        .kotak {
+            font-family: Arial, Helvetica, sans-serif;
+            width: 60%;
+            height: 500px;
+            padding: 0 50px;
+            margin: 50px auto;
+            background-color: blanchedalmond;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 60px;
+            text-align: center;
+            line-height: 100px;
+            text-shadow: 3px 2px 2px rgba(0, 0, 0, .5);
+            margin: 0;
+            padding-top: 100px;
+        }
+
+        img {
+            width: 20%;
+            display: block;
+            margin: auto;
+            border: 7px solid #000;
+            box-shadow: 8px 8px 5px 5px rgba(0, 0, 0, .5);
+        }
+
+        .teks {
+            width: 800px;
+            margin: 50px auto;
+            font-size: 5em;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .teks1 {
+            background-color: rosybrown;
+            text-shadow: 0 2px 2px white;
+        }
+
+        .teks2 {
+            background-color: #629552;
+            color: rgba(0, 0, 0, 0.6);
+            text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
+                0px -5px 35px rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kotak">
+        <h1>That's a great cat right there</h1>
+        <img src="../../../../great_cat.jpg" alt="">
+    </div>
+
+    <div class="teks">
+        <div class="teks1">
+            Great Cat
+        </div>
+        <div class="teks2">
+            Great Cat
+        </div>
+    </div>
+
+</body>
+
+</html>

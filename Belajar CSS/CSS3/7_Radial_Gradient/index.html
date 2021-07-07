@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radial Gradient</title>
+    <style>
+        .kotak {
+            width: 600px;
+            height: 300px;
+            margin: 50px auto;
+
+            /* radial gradients */
+            /* background-image: radial-gradient(aqua 10%, yellow 20%, red 30%, blue 90%); */
+
+            /* radial gradients circle defaultnya ellipse */
+            /* background-image: radial-gradient(circle, aqua, yellow, red, blue); */
+
+            /* jangkauan */
+
+            /* background-image: radial-gradient(circle closest-side, aqua, yellow, red, blue); */
+            /* background-image: radial-gradient(circle farthest-side, aqua, yellow, red, green); */
+
+            /* jangkauan posisi posisi-y posisi-x*/
+            /* background-image: radial-gradient(closest-side at 250px 200px, aqua, yellow, red, blue); */
+            background-image: radial-gradient(circle farthest-side at top left, aqua, yellow, red, green);
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kotak"></div>
+
+</body>
+
+</html>

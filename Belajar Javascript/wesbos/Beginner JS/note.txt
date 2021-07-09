@@ -22,13 +22,57 @@
 😊 Types
     🥊  Check 2_types.html & types.js
 
-SNOB'N'US
+    SNOB'N'US
     - String = "..." | '...' | `....`
     - Number = 10 | 100 | -100 | NaN | Infinity
   ╷-- Object
   │ - Boolean = true/false
-  │ - Null = nothing
-  │ - Undefined = nothing
+  │ - Null = nothing | something that has a value of nothing
+  │ - Undefined = nothing | something that has no value set to it
   │ - Symbol
   │
   ╵--> Object
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+😊 Function
+    🥊  Check 3_function.html & function.js
+
+- function are declared and called
+- function are group of statement
+- function Category:
+    🧿 Built in function
+        - alert();
+        - confirm();
+        - form();
+        - prompt();
+        - console.log();
+        - etc
+
+    🧿 User defined functions
+        user-generated functions:
+        - thisIsaFunction();
+        - totalCalculate();
+        - citizenName();
+        -etc
+
+- function anatomy
+    //keyword   //Name    //Parameters
+        ☝          ☝           ☝
+  📝function billCalculate(jumlahPesanan, harga) {
+        //function body
+        const total = jumlahPesanan * harga;
+        // return statement
+        return total;
+        }
+
+    //Function Call or Run
+      //Name    //Arguments
+        ☝          ☝
+  📝billCalculate(3, 10000);
+
+    or
+
+    //variable to capture returned value
+         ☝
+  📝const totalBayar = billCalculate(3, 10000);
+

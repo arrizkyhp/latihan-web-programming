@@ -1,6 +1,7 @@
 ===============================================
 - to disable esLint use  /*  eslint-disable */
 - cek tipe data = typeof()
+- ->(Skinny arrow) =>(fat arrow)
 ===============================================
 😊 Variables
     🥊  Check 1_variables.html
@@ -35,7 +36,7 @@
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 😊 Function
-    🥊  Check 3_function.html & function.js
+    🥊  Check 3_function.html, function.js & declare-function.js
 
 - function are declared and called
 - function are group of statement
@@ -75,4 +76,52 @@
     //variable to capture returned value
          ☝
   📝const totalBayar = billCalculate(3, 10000);
+
+
+  🎃 Declare Functions
+    🧧 see declare-function.js for detail
+
+        🧿 Function Declaration
+            - function with name
+            - this function are hoisting
+            - Hoisting is JavaScript's default behavior of moving declarations to the top.
+
+            📝function doctorize(firstName) {}
+
+        🧿 Anonymous Function
+            - function without name
+
+            📝function (firstName) {}
+        🧿 Function Expression
+            - store a function as value in variable
+            - not hoisting means need to place at the top
+
+            📝const doctorize = function (firstname) {}
+
+        🧿 Arrow Function
+            - shorter / one liner
+            - no return & no bracket
+            - anonymous function
+            - if theres only 1 parameter you can delete ()
+
+            📝const doctorize = (firstname) => `Dr. ${firstname}`;
+
+        🧿 IIFE
+            Immediatly ̶I̶n̶v̶o̶k̶e̶d Run Function Expression
+
+            📝(function (age) {  return `YOu are COol and ${age}`; })(10);
+
+        🧿 Methods
+            Simply a function that lived inside an object
+            - ex: console.log() = console is object, .log is function.
+
+            📝const ariz ={                       -╷
+                    name: 'Arrizky',                │
+                 ╷- sayHi: function(){              │
+    Function <---│       console.log('Hay Ariz');   │---> Objects
+                 │       return 'Hay Ariz';         │
+                 ╵-     },                          │
+                };                                 -╵
+
+
 

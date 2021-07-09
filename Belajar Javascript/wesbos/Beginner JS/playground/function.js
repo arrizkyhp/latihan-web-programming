@@ -27,6 +27,7 @@ function calculateBill(jumlahPesanan, harga = 20000) {
   return total;
 }
 
+// const bayar = calculateBill(4, 10000);
 
 function doctorize(name) {
   return `Dr. ${name}`;

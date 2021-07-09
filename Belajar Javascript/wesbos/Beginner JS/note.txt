@@ -124,4 +124,19 @@
                 };                                 -╵
 
 
-
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+😊 Debugging Tools
+        🧿 Console Methods
+            - console.error();
+            - console.warn();
+            - console.table(); <-- Cool
+            - console.count();
+            - console.group(); console.groupCollapsed(); console.groupEnd();
+        🧿 Grabbing Elements
+            - $0
+            - $('')
+            - $$
+        🧿 Breakpoints
+            - debugger;
+        🧿 Scope
+        🧿 Network Requests

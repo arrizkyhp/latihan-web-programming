@@ -1,0 +1,34 @@
+===============================================
+- to disable esLint use  /*  eslint-disable */
+- cek tipe data = typeof()
+===============================================
+😊 Variables
+    🥊  Check 1_variables.html
+
+    🧿 Variables Scoped
+        - Function Scoped
+            - var first = 'ariz'; // variable decralataion statement
+            - console.log(first); // function call statement
+        - Block scoped
+            - let age = 300;
+            - const cool = true;
+
+    🧿 Naming Variables
+        - dont capital at the start
+        - Camel Case = const iLovePizza = true;
+        - Snake Case = const this_is_snake_case =  'cool';
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+😊 Types
+    🥊  Check 2_types.html & types.js
+
+SNOB'N'US
+    - String = "..." | '...' | `....`
+    - Number = 10 | 100 | -100 | NaN | Infinity
+  ╷-- Object
+  │ - Boolean = true/false
+  │ - Null = nothing
+  │ - Undefined = nothing
+  │ - Symbol
+  │
+  ╵--> Object

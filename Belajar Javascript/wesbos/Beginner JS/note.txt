@@ -140,3 +140,48 @@
             - debugger;
         🧿 Scope
         🧿 Network Requests
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+😊 Scope
+    🥊  Check scope.html & scope.js
+
+        🧿 Global Scope
+            - Variables declared Globally (outside any function).
+            - Global variables can be accessed from anywhere in a JavaScript program.
+
+            📝 var x = 2; | const x = 2;
+
+        🧿 Function Scope
+            - Variables & functions defined inside a function are not accessible (visible) from outside the function.
+
+            📝 function functionName() {
+                const nama = 'ariz';  // Function Scope
+            }
+
+        🧿 Block Scope
+            - Variables declared inside a { } block cannot be accessed from outside the block:
+            - let and const provide Block Scope
+            - only var that not Block Scope
+
+            📝 { let x = 2; } // x can Not be used here
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+😊 Hoisting
+    🥊  Check hoisting.html & hoisting.js
+
+    - Allow you to access function and variable before they have been created.
+    - Hoisting is JavaScript's default behavior of moving declarations to the top.
+    - Only declarations are hoisted.
+
+        🧿 Function Declaration
+        🧿 Variable Declaration
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+😊 Closures
+    🥊  Check hoisting.html & hoisting.js
+
+    - The ability to access a parent level scope from
+      a child scope even after parent function has been terminated
+    - a closure gives you access to an outer function’s scope from an inner function.
+
+        🧧 check https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures?retiredLocale=id

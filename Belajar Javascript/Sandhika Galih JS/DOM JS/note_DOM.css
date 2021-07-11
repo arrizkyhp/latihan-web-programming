@@ -1,0 +1,218 @@
+:root {
+    --backgroundNav: rgb(225, 231, 235);
+    --colorLink: rgb(37, 37, 37);
+    --blueColor: #4895ef;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto',
+        sans-serif;
+    line-height: 1.5;
+}
+
+header {
+    margin: 20px 10px 10px 0;
+}
+
+
+/* Navbar */
+
+#navbar {
+    background-color: var(--backgroundNav);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    min-width: 290px;
+    width: 300px;
+    height: 100%;
+    /* border-right: 4px solid;
+    border-color: rgb(143, 143, 143); */
+}
+
+
+
+.judul {
+    text-align: center;
+    padding: 1.8rem 1.8rem .5rem 1.8rem;
+       background-color: #4895ef;
+       color: #fff;;
+
+}
+.judul h1{
+    font-size: 2.5rem;
+    line-height: 0;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+.judul small {
+    line-height: 0;
+    font-size: 1rem;
+
+}
+
+
+
+
+#navbar ul {
+    height: 88%;
+    padding: 0;
+    /* Scrool */
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+
+#navbar li {
+    border-top: 2px solid #b2b9be;
+    position: relative;
+    width: 100%;
+
+}
+
+#navbar a {
+    display: block;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--colorLink);
+    font-size: 1.4rem;
+}
+
+#navbar a:hover {
+    background-color: var(--blueColor);
+    color: #fff;
+}
+
+
+/* Main */
+#main-doc {
+    position: absolute;
+    margin-left: 310px;
+    padding: 20px;
+}
+
+#main-doc ul {
+    margin-left: 2rem;
+}
+
+.container {
+    display: flex;
+    background-color: rgb(201, 201, 201);
+    align-items: stretch;
+    /* margin: 0 20px; */
+    justify-content: space-around;
+    /* border: 2px solid #000; */
+    /* padding: 0 10px; */
+    border-radius: .5rem;
+
+}
+
+header {
+    font-size: 2.5rem;
+    position: relative;
+    margin-bottom: 1.8rem;
+}
+
+header::before {
+    content: '🎈 ';
+    font-size: 1.4rem;
+    vertical-align: 20%;
+}
+
+header::after {
+    content: '';
+    background-color: var(--blueColor);
+    width: 150px;
+    height: 4px;
+    left: 2rem;
+    bottom: -.4rem;
+    position: absolute;
+}
+
+.card {
+    width: 100%;
+    text-align: center;
+    margin: 10px 10px;
+    align-items: stretch;
+}
+
+.card .support-title p {
+    font-weight: bold;
+}
+
+.card .support-version {
+    background-color: royalblue;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.card .support-version.explorer {
+    background-color: rgb(154, 173, 228);
+
+}
+
+pre {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    overflow-y: hidden;
+    font-size: 12px;
+    line-height: 20px;
+    background: #efefef;
+    border: 2px solid #000;
+    background-color: rgb(221, 221, 221);
+    border-radius: .5rem;
+
+}
+
+pre code {
+    padding: 10px;
+    color: #333;
+}
+
+main .main-section .quote {
+    text-align: right;
+    margin-right: 1rem;
+}
+
+.main-section blockquote {
+    margin: 1.8rem 1.5rem 1rem 1.5rem;
+    background-color: #eeeeee;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 815px) {
+    #navbar ul {
+        border: 1px solid;
+        height: 207px;
+    }
+
+    #navbar {
+        position: absolute;
+        top: 0;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        max-height: 303px;
+        border: none;
+        z-index: 2;
+    }
+
+    #main-doc {
+        position: relative;
+        margin-left: 0px;
+        margin-top: 280px;
+    }
+}

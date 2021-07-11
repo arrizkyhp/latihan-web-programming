@@ -21,13 +21,13 @@
 
 
         <ul>
-            <li><a class="nav-link" href="#">Pengertian</a></li>
-            <li><a class="nav-link" href="#">DOM Tree</a></li>
+            <li><a class="nav-link" href="#pengertian">Pengertian</a></li>
+            <li><a class="nav-link" href="#dom-tree">DOM Tree</a></li>
         </ul>
     </nav>
 
     <main id="main-doc">
-        <section class="main-section" id="Pengertian">
+        <section class="main-section" id="pengertian">
             <header>Pengertian</header>
             <blockquote>
                 <p>"DOM adalah antarmuka pemrograman untuk HTML yang merepresentasikan halaman web, sehingga program
@@ -60,12 +60,70 @@
 
         </section>
 
-        <section class="main-section" id="Dom-Tree">
+        <section class="main-section" id="dom-tree">
             <header>Dom Tree</header>
             <div class="image-horizontal">
-                <img src="img/domtree.png" alt="dom tree" width="400px">
+                <img src="img/domtree.png" alt="dom tree" width="450px">
             </div>
 
+            <h2>Tipe-tipe Node</h2>
+            <ul class="ul-float">
+                <li>Elemen</li>
+                <li>Attribute</li>
+                <li>Text</li>
+                <li>CData Section</li>
+                <li>Entity Reference</li>
+                <li>Processing Instruction</li>
+                <li>Comment</li>
+                <li>Document</li>
+                <li>Document Type</li>
+                <li>Document Fragment</li>
+                <li>Notation</li>
+            </ul>
+            <br><br><br><br>
+
+            <h2>NodeList vs. HTMLCollection</h2>
+            <h3>NodeList</h3>
+            <p>Ketika kita memilih <b>lebih dari satu node</b></p>
+            <h3>HTMLCollection</h3>
+            <p>Kumpulan Node Khusus yang tipenya element <b>html</b> saja</p>
+            <br>
+            <p>Perbedaan ini akan menentukan cara mengelolanya.</p>
+            <ul>
+                <li>Keduanya merupakan <b>kumpulan node</b> </li>
+                <li>Struktur datanya mirip <b>array</b></li>
+                <li><b>nodeList</b> dapat berisi node apapun</li>
+                <li><b>HTMLCollection harus berisi elemen HTML</b> dapat berisi node apapun</li>
+                <li><b>HTMLCollection</b>bersifat <b>live</b> sedangkan <b>nodeList</b> tidak</li>
+
+            </ul>
+
+            <h2>Strukture Hierarki DOM Tree</h2>
+            <p><b>Konsep Hierarki</b> DOM tree mirip silsilah keluarga, adanya <b>parent</b> & <b>child</b></p>
+            <ul>
+                <li><strong>Root Node</strong>
+                    <ul>
+                        <li>node yang menjadi <b>sumber dari semua node lain</b> di DOM</li>
+                        <li>secara default node tersebut adalah <b>document</b></li>
+                    </ul>
+                </li>
+                <li><strong>Parent Node</strong>
+                    <ul>
+                        <li>node yang berada<b> 1 tingkat di atas</b> node yang lain</li>
+                        <li>body adalah parent dari h1, p,div dan a</li>
+                    </ul>
+                </li>
+                <li>Child Node
+                    <ul>
+                        <li>node yang berada<b> 1 tingkat di bawah</b> node yang lain</li>
+                        <li>h1 adalah child dari body</li>
+                        <li><b>Children</b> adalah child node yang bertipe html</li>
+                        <li><b>Siblings</b> adalah child node yang memiliki parent yang sama</li>
+                </li>
+            </ul>
+            </li>
+
+            </ul>
         </section>
 
     </main>

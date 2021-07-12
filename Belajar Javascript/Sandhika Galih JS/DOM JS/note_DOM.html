@@ -109,22 +109,22 @@
             <ul>
                 <li><strong>Root Node</strong>
                     <ul>
-                        <li>node yang menjadi <b>sumber dari semua node lain</b> di DOM</li>
-                        <li>secara default node tersebut adalah <b>document</b></li>
+                        <li class="sub-li">node yang menjadi <b>sumber dari semua node lain</b> di DOM</li>
+                        <li class="sub-li">secara default node tersebut adalah <b>document</b></li>
                     </ul>
                 </li>
                 <li><strong>Parent Node</strong>
                     <ul>
-                        <li>node yang berada<b> 1 tingkat di atas</b> node yang lain</li>
-                        <li>body adalah parent dari h1, p,div dan a</li>
+                        <li class="sub-li">node yang berada<b> 1 tingkat di atas</b> node yang lain</li>
+                        <li class="sub-li">body adalah parent dari h1, p,div dan a</li>
                     </ul>
                 </li>
                 <li>Child Node
                     <ul>
-                        <li>node yang berada<b> 1 tingkat di bawah</b> node yang lain</li>
-                        <li>h1 adalah child dari body</li>
-                        <li><b>Children</b> adalah child node yang bertipe html</li>
-                        <li><b>Siblings</b> adalah child node yang memiliki parent yang sama</li>
+                        <li class="sub-li">node yang berada<b> 1 tingkat di bawah</b> node yang lain</li>
+                        <li class="sub-li">h1 adalah child dari body</li>
+                        <li class="sub-li"><b>Children</b> adalah child node yang bertipe html</li>
+                        <li class="sub-li"><b>Siblings</b> adalah child node yang memiliki parent yang sama</li>
                 </li>
             </ul>
             </li>
@@ -243,6 +243,82 @@
 
         <section class="main-section" id="dom-manipulation">
             <header>Dom Manipulation</header>
+            <p>🚀 File: <i class="fab fa-html5"> </i><a href="dom_manipulation.html" target="_blank">
+                    dom_manipulation.html</a> &
+                <i class="fab fa-js"></i> <a href="js/domManipulation.js" target="_blank">domManipulation.js</a></p><br>
+            <h2>DOM Manipulation Method</h2>
+            <ul>
+                <li><b>Manipulasi Element</b></li>
+                <p> Element yang sudah diseleksi sebelumnya dapat dimanipulasi, contoh mengambil paragraf lalu mengubah
+                    isinya </p>
+                <p>Beberapa methodnya yaitu:</p>
+                <ul>
+                    <li><b>element.innerHTML</b> => merubah isi dari sebuah tag</li>
+                    <li><b>element.style.&lt;properti&gt;</b> => untuk merubah style/css </li>
+                    <li><b>element.setAttribute()</b> => untuk memanipulasi atribut dalam pada element. <b>
+                            Menimpa attribute</b> yang sudah ada.</li>
+                    <li><b>element.classList</b> => memanipulasi class
+                        <ul>
+                            <li class="sub-li">element.classList.<b>add()</b> => tambah kelas baru</li>
+                            <li class="sub-li">element.classList.<b>remove()</b> => hapus kelas yang ada</li>
+                            <li class="sub-li">element.classList.<b>toggle()</b> => menambahkan dan menghilangkan kelas
+                            </li>
+                            <li class="sub-li">element.classList.<b>item()</b> => mengetahui kelas tertentu dalam sebuah
+                                elemen
+                            </li>
+                            <li class="sub-li">element.classList.<b>contains()</b> => mengecek dalam sebuah apakah
+                                memiliki
+                                kelas tertentu</li>
+                            <li class="sub-li">element.classList.<b>replace()</b> => mengganti kelas yang ada dengan
+                                yang baru
+                            </li>
+                        </ul>
+                    </li>
+                    <li>dsb...</li>
+                </ul>
+
+                <h3>element.innerHTML</h3>
+                <pre><code>
+    namaValue.innerHTML ='&lt;h1&gt; Hello Universe &lt;/h1&gt;'
+            </code></pre>
+
+                <h3>element.style.&lt;properti&gt;</h3>
+                <pre><code>
+    namaValue.style.BackgroundColor = 'gray';
+            </code></pre>
+
+                <h3>element.setAttribute()</h3>
+                <pre><code>
+    namaValue.setAttribute('class','nama-classnya');
+            </code></pre>
+
+                <h3>element.classList()</h3>
+                <pre><code>
+    // menambahkan class baru
+    namaValue.classList.add('namaClassBaru');
+
+    // menghapus class
+    namaValue.classList.remove('namaClassYangInginDiHapus');
+
+    // menambahkan & menghapus class / On Off
+    namaValue.classList.toggle('namaClass');
+
+    // mengetahui class dalam sebuah elemen
+    namaValue.classList.item(1);
+
+    // mencari class dalam element => output berupa boolean
+    namaValue.classList.contains('namaClassYangDicari');
+
+    // mengganti class dalam element
+    namaValue.CLassList.replace('namaClassLama', 'namaClassBaru');
+            </code></pre>
+
+
+                <li><b>Manipulasi Node</b></li>
+                <p>Ketika kita ingin menyisipkan element baru pada halaman, contoh kita punya 3 paragraf ingin
+                    menambahkan menjadi 4 atau menghilangkan sebuah element</p>
+            </ul>
+
         </section>
 
 

@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM | Document Object Model</title>
-    <link rel="stylesheet" href="note_DOM.css">
+    <link rel="stylesheet" href="css/note_DOM.css">
+    <link rel="stylesheet" href="../../tools/font-awesome/css/all.min.css">
 </head>
 <div class="container">
 
@@ -15,16 +16,20 @@
 
 
         <div class="judul">
-            <h1>DOM</h1>
+            <h1>DOM </h1>
             <small>Document Object Model</small>
         </div>
 
 
         <ul>
-            <li><a class="nav-link" href="#pengertian">Pengertian</a></li>
-            <li><a class="nav-link" href="#dom-tree">DOM Tree</a></li>
+            <li class="nav-li"><a class="nav-link" href="#pengertian">Pengertian</a></li>
+            <li class="nav-li"><a class="nav-link" href="#dom-tree">DOM Tree</a></li>
+            <li class="nav-li"><a class="nav-link" href="#dom-selection">DOM Selection</a></li>
         </ul>
     </nav>
+
+
+    <!-- Pengertian -->
 
     <main id="main-doc">
         <section class="main-section" id="pengertian">
@@ -56,14 +61,14 @@
                     </ul>
                 </li>
             </ul>
-
-
         </section>
 
+        <!-- DOM Tree -->
+
         <section class="main-section" id="dom-tree">
-            <header>Dom Tree</header>
+            <header>DOM Tree</header>
             <div class="image-horizontal">
-                <img src="img/domtree.png" alt="dom tree" width="450px">
+                <img src="img/domtree.png" alt="dom tree">
             </div>
 
             <h2>Tipe-tipe Node</h2>
@@ -80,7 +85,7 @@
                 <li>Document Fragment</li>
                 <li>Notation</li>
             </ul>
-            <br><br><br><br>
+            <br> <br> <br>
 
             <h2>NodeList vs. HTMLCollection</h2>
             <h3>NodeList</h3>
@@ -125,6 +130,88 @@
 
             </ul>
         </section>
+
+        <!-- DOM Selection -->
+
+        <section class="main-section" id="dom-selection">
+            <header>Dom Selection</header>
+            <p>🚀 File: <i class="fab fa-html5"> </i><strong> dom_selection.html</strong> &
+                <i class="fab fa-js"></i><strong> domSelection.js</strong></p><br>
+            <p>Memilih element-element pada DOM menggunakan Javascript.</p>
+            <p>DOM Selection merupakan <b>tahap awal </b>ketika ingin melakukan<b> manipulasi</b> atau
+                <b>penelusuran</b>
+                pada DOM. </p>
+            <h2>DOM Selection Method</h2>
+            <ul>
+                <li><strong>getElementById()</strong> = mencari element yang ada di DOM kita berdasarkan id / hanya satu
+                    element</li>
+                <li><strong>getElementsByTagName()</strong> = mencari element-element yang memiliki nama tag tertentu
+                </li>
+                <li><strong>getElementsByClassName()</strong> = mencari element-element yang memiliki nama class
+                    tertentu</li>
+                <li><strong>querySelector()</strong></li>
+                <li><strong>querySelectorAll()</strong> = mencari element berdasarkan selectornya</li>
+            </ul>
+
+            <table>
+                <thead>
+                    <th>Method</th>
+                    <th>Hasil</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>getElementById()</td>
+                        <td>element</td>
+                    </tr>
+                    <tr>
+                        <td>getElementsByTagName()</td>
+                        <td>HTMLCollection</td>
+                    </tr>
+                    <tr>
+                        <td>getElementsByClassName()</td>
+                        <td>HTMLCollection</td>
+                    </tr>
+                    <tr>
+                        <td>querySelector()</td>
+                        <td>element</td>
+                    </tr>
+                    <tr>
+                        <td>querySelectorAll()</td>
+                        <td>nodeList</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <h3>getElementById()</i></h3>
+            <pre><code>
+    const namaVariable = document.getElementById('namaId');
+
+    // Inisialisasi jika ingin mengganti warna background
+    namaVariable.style.backgroundColor = 'Blue';
+            </code></pre>
+
+            <h3>getElementsByTagName()</h3>
+            <pre><code>
+    const namaVariable = document.getElementsByTagName('namaId');
+
+    // Inisialisasi
+    // Cara 1
+    p[3].style.backgroundColor = 'Salmon';
+    // Cara 2 di variable
+    const p = document.getElementsByTagName('p')[3];
+            </code></pre>
+
+            <h3>getElementsByClassName()</h3>
+            <pre><code>
+    const namaVariable = document.getElementsByClassName('namaClass')[0];
+
+    // Inisialisasi sama dengan getElementsByTagName()
+            </code></pre>
+        </section>
+
+
+
 
     </main>
 

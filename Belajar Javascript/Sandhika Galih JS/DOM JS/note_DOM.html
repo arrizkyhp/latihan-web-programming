@@ -25,6 +25,7 @@
             <li class="nav-li"><a class="nav-link" href="#pengertian">Pengertian</a></li>
             <li class="nav-li"><a class="nav-link" href="#dom-tree">DOM Tree</a></li>
             <li class="nav-li"><a class="nav-link" href="#dom-selection">DOM Selection</a></li>
+            <li class="nav-li"><a class="nav-link" href="#dom-manipulation">DOM Manipulation</a></li>
         </ul>
     </nav>
 
@@ -85,7 +86,7 @@
                 <li>Document Fragment</li>
                 <li>Notation</li>
             </ul>
-            <br> <br> <br>
+            <br>
 
             <h2>NodeList vs. HTMLCollection</h2>
             <h3>NodeList</h3>
@@ -135,12 +136,17 @@
 
         <section class="main-section" id="dom-selection">
             <header>Dom Selection</header>
-            <p>🚀 File: <i class="fab fa-html5"> </i><strong> dom_selection.html</strong> &
-                <i class="fab fa-js"></i><strong> domSelection.js</strong></p><br>
+            <p>🚀 File: <i class="fab fa-html5"> </i><a href="dom_selection.html" target="_blank">
+                    dom_selection.html</a> &
+                <i class="fab fa-js"></i> <a href="js/domSelection.js" target="_blank">domSelection.js</a></p><br>
             <p>Memilih element-element pada DOM menggunakan Javascript.</p>
             <p>DOM Selection merupakan <b>tahap awal </b>ketika ingin melakukan<b> manipulasi</b> atau
                 <b>penelusuran</b>
                 pada DOM. </p>
+            <p><b>getElementById</b> & <b>getElementsByTagName</b> merupakan DOM selection yang tercepat, jadi pastikan
+                dulu bisa
+                gunakan dua selection tersebut.</p>
+
             <h2>DOM Selection Method</h2>
             <ul>
                 <li><strong>getElementById()</strong> = mencari element yang ada di DOM kita berdasarkan id / hanya satu
@@ -191,6 +197,7 @@
     namaVariable.style.backgroundColor = 'Blue';
             </code></pre>
 
+
             <h3>getElementsByTagName()</h3>
             <pre><code>
     const namaVariable = document.getElementsByTagName('namaId');
@@ -208,6 +215,34 @@
 
     // Inisialisasi sama dengan getElementsByTagName()
             </code></pre>
+
+
+            <h3>querySelector()</h3>
+            <p>Selector => selector css</p>
+            <pre><code>
+    const namaVariable = document.querySelector('#namaIdSelectorCss h1');
+            </code></pre>
+
+
+            <h3>querySelectorAll()</h3>
+            <pre><code>
+    const namaVariable = document.querySelector('#namaIdSelectorCss h1');
+            </code></pre>
+
+
+            <h2>Mengubah node root</h2>
+            <p>Salah satu cara agat kita lebih efektif dalam memilih method yang cocok untuk seleksi DOM kita.</p>
+            <pre><code>
+    const sectionB = document.getElementById('b');
+    const p4 = sectionB.getElementsByTagName('p')[0];
+            </code></pre>
+        </section>
+
+
+        <!-- DOM MAnipulation -->
+
+        <section class="main-section" id="dom-manipulation">
+            <header>Dom Manipulation</header>
         </section>
 
 

@@ -2,6 +2,8 @@
     --backgroundNav: rgb(225, 231, 235);
     --colorLink: rgb(37, 37, 37);
     --blueColor: #4895ef;
+    --DarkerBlueColor: #0077b6;
+    --mainColorLink: #fca311;
 }
 * {
     margin: 0;
@@ -15,6 +17,7 @@ body {
     font-family: 'Roboto',
         sans-serif;
     line-height: 1.5;
+    overflow-x: hidden;
 }
 
 header {
@@ -33,16 +36,32 @@ h2::before {
 }
 p,li:not(.nav-li){
     margin-left: 2rem;
+    line-height: 1.8;
+}
+
+a {
+    text-decoration: none;
+    color: var(--mainColorLink);
+    font-weight: bold;
+    transition: all .2s;
+}
+
+a:hover {
+    color: var(--blueColor);
+}
+
+.fab {
+    color: var(--blueColor);
 }
 
 /* Table */
 table,td,th {
-    border: 1px solid #0077b6;
+    border: 1px solid var(--DarkerBlueColor);
 }
 
 table {
     border-collapse: collapse;
-    width: 80%;
+    width: 95%;
     margin: 1.5rem 1rem 1.5rem 2rem;
 
 }
@@ -133,6 +152,7 @@ th {
 #main-doc {
     position: absolute;
     margin-left: 310px;
+
     padding: 20px;
 }
 

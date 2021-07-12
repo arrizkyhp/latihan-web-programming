@@ -4,6 +4,7 @@
     --blueColor: #4895ef;
     --DarkerBlueColor: #0077b6;
     --mainColorLink: #fca311;
+    --white: #fff;
 }
 * {
     margin: 0;
@@ -41,17 +42,17 @@ p,li:not(.nav-li):not(.sub-li){
 
 a {
     text-decoration: none;
-    color: var(--mainColorLink);
+    color: var(--blueColor);
     font-weight: bold;
     transition: all .2s;
 }
 
 a:hover {
-    color: var(--blueColor);
+    color: var(--mainColorLink);
 }
 
 .fab {
-    color: var(--blueColor);
+    color: var(--colorLink);
 }
 
 /* Table */
@@ -280,6 +281,13 @@ main .main-section .quote {
     float: left;
     margin-bottom: 2rem;
     width: 400px;
+}
+
+.file-section {
+    background-color: #ddd;
+    width: fit-content;
+    padding: .6rem;
+    border: 2px solid var(--blueColor);
 }
 
 /* Responsive */

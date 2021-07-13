@@ -136,10 +136,10 @@
         <!-- DOM Selection -->
 
         <section class="main-section" id="dom-selection">
-            <header>Dom Selection</header>
+            <header>DOM Selection</header>
             <p class="file-section">🚀 File: <i class="fab fa-html5"> </i><a href="dom_selection.html" target="_blank">
                     dom_selection.html</a> &
-                <i class="fab fa-js"></i> <a href="js/domSelection.js" target="_blank">domSelection.js</a></p><br>
+                <i class="fab fa-js"></i> <a href="js/domSelection.js" target="_blank">domSelection.js</a></p>
             <p>Memilih element-element pada DOM menggunakan Javascript.</p>
             <p>DOM Selection merupakan <b>tahap awal </b>ketika ingin melakukan<b> manipulasi</b> atau
                 <b>penelusuran</b>
@@ -192,7 +192,7 @@
 
             <h3>getElementById()</i></h3>
             <pre><code>
-    const namaVariable = document.getElementById('namaId');
+    <b>const namaVariable = document.getElementById('namaId');</b>
 
     // Inisialisasi jika ingin mengganti warna background
     namaVariable.style.backgroundColor = 'Blue';
@@ -201,13 +201,13 @@
 
             <h3>getElementsByTagName()</h3>
             <pre><code>
-    const namaVariable = document.getElementsByTagName('namaId');
+    <b>const namaVariable = document.getElementsByTagName('namaId');</b>
 
     // Inisialisasi
     // Cara 1
     p[3].style.backgroundColor = 'Salmon';
     // Cara 2 di variable
-    const p = document.getElementsByTagName('p')[3];
+    <b>const p = document.getElementsByTagName('p')[3];</b>
             </code></pre>
 
             <h3>getElementsByClassName()</h3>
@@ -244,7 +244,7 @@
         <!-- DOM MAnipulation -->
 
         <section class="main-section" id="dom-manipulation">
-            <header>Dom Manipulation</header>
+            <header>DOM Manipulation</header>
             <p class="file-section">🚀 File: <i class="fab fa-html5"> </i><a href="dom_manipulation.html"
                     target="_blank">
                     dom_manipulation.html</a> &
@@ -262,7 +262,7 @@
                 <li><b>element.setAttribute()</b> => untuk memanipulasi atribut dalam pada element. <b>
                         Menimpa attribute</b> yang sudah ada.</li>
                 <li><b>element.classList</b> => memanipulasi class
-                    <ul>
+                    <ul class="sub-ul">
                         <li class="sub-li">element.classList.<b>add()</b> => tambah kelas baru</li>
                         <li class="sub-li">element.classList.<b>remove()</b> => hapus kelas yang ada</li>
                         <li class="sub-li">element.classList.<b>toggle()</b> => menambahkan dan menghilangkan kelas
@@ -358,7 +358,7 @@
     const liAfter = parentElement.querySelector('li:nth-child(2)');
 
     // inisialisasi
-    parentElement.insertBefore(variabelElementBaru, liAfter); <==================
+    <b>parentElement.insertBefore(variabelElementBaru, liAfter);</b>
             </code></pre>
 
             <h3>parentNode.removeChild()</h3>
@@ -369,7 +369,7 @@
     const link = document.getElementsByTagName('a')[0];
 
     // hapus
-    parentSectionA.removeChild(link); <==================
+    <b>parentSectionA.removeChild(link);</b>
             </code></pre>
 
             <h3>parentNode.replaceChild()</h3>
@@ -388,16 +388,96 @@
     h2Baru.appendChild(h2Text);
 
     // replace
-    parentSectionB.replaceChild(h2Baru, p4); <==================
+    <b>parentSectionB.replaceChild(h2Baru, p4); </b>
             </code></pre>
         </section>
 
         <section class="main-section" id="dom-events">
             <header>DOM Events</header>
+            <p class="file-section">🚀 File: <i class="fab fa-html5"> </i><a href="dom_eventHandler.html"
+                    target="_blank">
+                    dom_eventHandler.html</a> &
+                <i class="fab fa-js"></i> <a href="js/domEventHandler.js" target="_blank">domEventHandler.js</a></p>
+            <p>Event pada javascript merepresentasikan sebuah kejadian yang terjadi di dalam DOM, kejadian tersebut bisa
+                dilakukan oleh user (mouse event, keyboard event, dll), ataupun dilakukan secara otomatis oleh API
+                (animasi selesai dijalankan,, halaman selesai di load, dll). </p>
+
+            <h3>Daftar Event lengkap</h3>
+            <p>
+                <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/Events">https://developer.mozilla.org/en-US/docs/Web/Events</a>
+            </p>
+
+            <h2>Cara 'mendengarkan' event</h2>
+            <ul>
+                <li><b>Event Handler</b> => Cara lama
+                    <ul class="sub-ul">
+                        <li>Inline HTML attribute => Langsung ditanam di HTML</li>
+                        <li>Element method</li>
+                    </ul>
+                </li>
+                <li><b>addEventListener()</b></li>
+            </ul>
+            <p><b>Perbedaan</b> dari kedua event diatas adalah <b>
+                    ketika kita memberikan lebih dari satu perubahan pada
+                    sebuah event.</b> Jika kita menggunakan <b>Event Handler</b> perubahan yang terakhir kita lakukan
+                akan menimpa perubahan sebelumnya, sedangkan <b>addEventListener</b> akan menambah perubahannya.
+                </b></p>
+            <h3>Event Handler</h3>
+            <p><b>on</b>&lt;event&gt; => onclick, onchange, onload, dll</p>
+
+            <h3>Inline HTML attribute</h3>
+            <p class="attention">Inline HTML Attribute <b>tidak disarankan</b> karena <b>mencampurkan html dan js</b>
+            </p>
+            <pre><code>
+    // panggil element
+    const p3 = document.querySelector('.p3');
+
+    // buat function
+    <b>function ubahWarna() {</b>
+    p3.style.backgroundColor = 'salmon';
+    <b>}</b>
+
+    // buat onclick="ubahWarna()" di element .p3
+    &lt;p class="p3"<b> onclick="ubahWarna()</b>"&gt;paragraf 3&lt;/p&gt;
+            </code></pre>
+
+            <h3>Element method</h3>
+            <p>hampir sama dengan Inline HTML attribute dibuat function, tetapi perbedaanya element method dibuat hanya
+                di Javascript saja</p>
+            <pre><code>
+    // panggil element
+    const p2 = document.querySelector('.p2');
+
+    // buat function
+    function ubahWarna2() {
+    p2.style.backgroundColor = 'salmon';
+    }
+
+    // inisialisasi
+    <b>p2.onclick = ubahWarna2;</b>
+            </code></pre>
+
+            <h3>addEventListener()</h3>
+            <pre><code>
+    // panggil element
+    const p4 = document.querySelector('section#b p')
+
+    // event
+    <b>p4.addEventListener('click', function() {</b>
+    // panggil parent
+    const catchUl = document.querySelector('section#b ul');
+    // buat elemen dan text
+    const makeList = document.createElement('li');
+    const textList = document.createTextNode('item baru');
+    makeList.appendChild(textList);
+
+    // inisialisasi
+    catchUl.appendChild(makeList);
+    <b>});</b>
+            </code></pre>
+
         </section>
-
-
-
 
 
     </main>

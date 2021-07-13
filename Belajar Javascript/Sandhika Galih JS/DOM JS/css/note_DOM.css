@@ -5,6 +5,7 @@
     --DarkerBlueColor: #0077b6;
     --mainColorLink: #fca311;
     --white: #fff;
+    --RedAttention: #f6b1ac;
 }
 * {
     margin: 0;
@@ -35,9 +36,19 @@ h2::before {
     font-size: 1rem;
     vertical-align: 20%;
 }
+
+h3::before {
+ content: '🎯   ';
+ font-size: 1rem;
+
+}
 p,li:not(.nav-li):not(.sub-li){
-    margin-left: 2rem;
+    margin: 0 2rem;
     line-height: 1.8;
+}
+
+p {
+    text-align: justify;
 }
 
 a {
@@ -91,8 +102,6 @@ th {
     /* border-right: 4px solid;
     border-color: rgb(143, 143, 143); */
 }
-
-
 
 .judul {
     text-align: center;
@@ -161,8 +170,9 @@ th {
     margin-left: 2rem;
 }
 
-
-
+#main-doc ul:not(.sub-ul) {
+     margin-bottom: 1rem;
+}
 
 .container {
     display: flex;
@@ -288,6 +298,22 @@ main .main-section .quote {
     width: fit-content;
     padding: .6rem;
     border: 2px solid var(--blueColor);
+    margin-bottom: 1rem;
+}
+
+.attention {
+    background-color: var(--RedAttention);
+    padding: 0 .5rem;
+    margin: .5rem 0 .5rem 4rem;
+    width: fit-content;
+    position: relative;
+    border: 1px solid rgb(85, 85, 85);
+}
+
+.attention::before {
+    content: '📢  ';
+    position: absolute;
+    left: -2rem;
 }
 
 /* Responsive */

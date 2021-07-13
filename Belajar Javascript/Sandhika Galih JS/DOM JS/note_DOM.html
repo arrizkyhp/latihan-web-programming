@@ -26,6 +26,7 @@
             <li class="nav-li"><a class="nav-link" href="#dom-tree">DOM Tree</a></li>
             <li class="nav-li"><a class="nav-link" href="#dom-selection">DOM Selection</a></li>
             <li class="nav-li"><a class="nav-link" href="#dom-manipulation">DOM Manipulation</a></li>
+            <li class="nav-li"><a class="nav-link" href="#dom-events">DOM Events</a></li>
         </ul>
     </nav>
 
@@ -232,6 +233,7 @@
 
             <h2>Mengubah node root</h2>
             <p>Salah satu cara agat kita lebih efektif dalam memilih method yang cocok untuk seleksi DOM kita.</p>
+
             <pre><code>
     const sectionB = document.getElementById('b');
     const p4 = sectionB.getElementsByTagName('p')[0];
@@ -247,54 +249,55 @@
                     target="_blank">
                     dom_manipulation.html</a> &
                 <i class="fab fa-js"></i> <a href="js/domManipulation.js" target="_blank">domManipulation.js</a></p>
-            <h2>DOM Manipulation Method</h2>
-            <ul>
-                <li><b>Manipulasi Element</b></li>
-                <p> Element yang sudah diseleksi sebelumnya dapat dimanipulasi, contoh mengambil paragraf lalu mengubah
-                    isinya </p>
-                <p>Beberapa methodnya yaitu:</p>
-                <ul>
-                    <li><b>element.innerHTML</b> => merubah isi dari sebuah tag</li>
-                    <li><b>element.style.&lt;properti&gt;</b> => untuk merubah style/css </li>
-                    <li><b>element.setAttribute()</b> => untuk memanipulasi atribut dalam pada element. <b>
-                            Menimpa attribute</b> yang sudah ada.</li>
-                    <li><b>element.classList</b> => memanipulasi class
-                        <ul>
-                            <li class="sub-li">element.classList.<b>add()</b> => tambah kelas baru</li>
-                            <li class="sub-li">element.classList.<b>remove()</b> => hapus kelas yang ada</li>
-                            <li class="sub-li">element.classList.<b>toggle()</b> => menambahkan dan menghilangkan kelas
-                            </li>
-                            <li class="sub-li">element.classList.<b>item()</b> => mengetahui kelas tertentu dalam sebuah
-                                elemen
-                            </li>
-                            <li class="sub-li">element.classList.<b>contains()</b> => mengecek dalam sebuah apakah
-                                memiliki
-                                kelas tertentu</li>
-                            <li class="sub-li">element.classList.<b>replace()</b> => mengganti kelas yang ada dengan
-                                yang baru
-                            </li>
-                        </ul>
-                    </li>
-                    <li>dsb...</li>
-                </ul>
+            <h3>DOM Manipulation Method</h3>
 
-                <h3>element.innerHTML</h3>
-                <pre><code>
+            <h2>Manipulasi Element</h2>
+
+            <p> Element yang sudah diseleksi sebelumnya dapat dimanipulasi, contoh mengambil paragraf lalu mengubah
+                isinya </p>
+            <p>Beberapa methodnya yaitu:</p>
+            <ul>
+                <li><b>element.innerHTML</b> => merubah isi dari sebuah tag</li>
+                <li><b>element.style.&lt;properti&gt;</b> => untuk merubah style/css </li>
+                <li><b>element.setAttribute()</b> => untuk memanipulasi atribut dalam pada element. <b>
+                        Menimpa attribute</b> yang sudah ada.</li>
+                <li><b>element.classList</b> => memanipulasi class
+                    <ul>
+                        <li class="sub-li">element.classList.<b>add()</b> => tambah kelas baru</li>
+                        <li class="sub-li">element.classList.<b>remove()</b> => hapus kelas yang ada</li>
+                        <li class="sub-li">element.classList.<b>toggle()</b> => menambahkan dan menghilangkan kelas
+                        </li>
+                        <li class="sub-li">element.classList.<b>item()</b> => mengetahui kelas tertentu dalam sebuah
+                            elemen
+                        </li>
+                        <li class="sub-li">element.classList.<b>contains()</b> => mengecek dalam sebuah apakah
+                            memiliki
+                            kelas tertentu</li>
+                        <li class="sub-li">element.classList.<b>replace()</b> => mengganti kelas yang ada dengan
+                            yang baru
+                        </li>
+                    </ul>
+                </li>
+                <li>dsb...</li>
+            </ul>
+
+            <h3>element.innerHTML</h3>
+            <pre><code>
     namaValue.innerHTML ='&lt;h1&gt; Hello Universe &lt;/h1&gt;'
             </code></pre>
 
-                <h3>element.style.&lt;properti&gt;</h3>
-                <pre><code>
+            <h3>element.style.&lt;properti&gt;</h3>
+            <pre><code>
     namaValue.style.BackgroundColor = 'gray';
             </code></pre>
 
-                <h3>element.setAttribute()</h3>
-                <pre><code>
+            <h3>element.setAttribute()</h3>
+            <pre><code>
     namaValue.setAttribute('class','nama-classnya');
             </code></pre>
 
-                <h3>element.classList()</h3>
-                <pre><code>
+            <h3>element.classList()</h3>
+            <pre><code>
     // menambahkan class baru
     namaValue.classList.add('namaClassBaru');
 
@@ -315,12 +318,84 @@
             </code></pre>
 
 
-                <li><b>Manipulasi Node</b></li>
-                <p>Ketika kita ingin menyisipkan element baru pada halaman, contoh kita punya 3 paragraf ingin
-                    menambahkan menjadi 4 atau menghilangkan sebuah element</p>
+            <h2>Manipulasi Node</h2>
+            <p>Ketika kita ingin menyisipkan element baru pada halaman, contoh kita punya 3 paragraf ingin
+                menambahkan menjadi 4 atau menghilangkan sebuah element</p>
+            <p>Memungkinkan kita untuk menambahkan, menghapus & mengganti node pada DOM</p>
+            <p>Beberapa Methodnya yaitu:</p>
+            <ul>
+                <li><b>document.createElement()</b> => membuat Element</li>
+                <li><b>document.createTextNode()</b> => menuliskan apa di dalam element</li>
+                <li><b>node.appendChild()</b> => menyimpan element dan isinya di bagian <b>akhir</b></li>
+                <li><b>node.insertBefore()</b> => menyimpan element dan isinya di bagian <b>awal</b></li>
+                <li><b>parentNode.removeChild()</b></li>
+                <li><b>parentNode.replaceChild()</b></li>
+                <li>dsb...</li>
             </ul>
 
+            <h3>document.createElement()</h3>
+            <pre><code>
+    const variabelElement = document.createElement('h1');
+            </code></pre>
+
+            <h3>document.createTextNode()</h3>
+            <pre><code>
+    const variabelText = document.createTextNode('Hello World');
+            </code></pre>
+
+            <h3>node.appendChild()</h3>
+            <pre><code>
+    variabelElement.appendChild(variabelText);
+            </code></pre>
+
+            <h3>node.insertBefore()</h3>
+            <pre><code>
+    // buat elemen barunya dengan cara diatas
+
+    // tangkap parent
+    const parentElement = document.querySelector('ul');
+    // tangkap elemen setelahnya
+    const liAfter = parentElement.querySelector('li:nth-child(2)');
+
+    // inisialisasi
+    parentElement.insertBefore(variabelElementBaru, liAfter); <==================
+            </code></pre>
+
+            <h3>parentNode.removeChild()</h3>
+            <pre><code>
+    // tangkap parent
+    const parentSectionA = document.getElementById('a');
+    // tangkap elemen yang akan di remove
+    const link = document.getElementsByTagName('a')[0];
+
+    // hapus
+    parentSectionA.removeChild(link); <==================
+            </code></pre>
+
+            <h3>parentNode.replaceChild()</h3>
+            <pre><code>
+    // Node Lama
+    // tangkap parent
+    const parentSectionB = document.getElementById('b');
+    // tangkap elemen yang akan di replace
+    const p4 = parentSectionB.querySelector('p');
+
+    // buat elemen baru
+    const h2Baru = document.createElement('h2');
+    // isi text
+    const h2Text = document.createTextNode('Judul Section B');
+    // masukan text ke elemen
+    h2Baru.appendChild(h2Text);
+
+    // replace
+    parentSectionB.replaceChild(h2Baru, p4); <==================
+            </code></pre>
         </section>
+
+        <section class="main-section" id="dom-events">
+            <header>DOM Events</header>
+        </section>
+
 
 
 

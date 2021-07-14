@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Bermain Warna dengan JS</title>
+    <style>
+        body {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .biru-muda {
+            background-color: lightblue;
+        }
+
+        .salmon {
+            background-color: salmon;
+            ;
+        }
+
+        .card {
+            border: 2px solid #ccc;
+            padding: .6rem;
+            background-color: #fff;
+        }
+
+        .slider-warna {
+            display: flex;
+            width: fit-content;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .kotak {
+            width: 25px;
+            height: 25px;
+            margin: 10px auto;
+        }
+
+        .merah {
+            background-color: red;
+        }
+
+        .hijau {
+            background-color: green;
+        }
+
+        .biru {
+            background-color: blue;
+        }
+
+        input[type='number'] {
+            width: 25px;
+            -moz-appearance: textfield;
+            /* Firefox */
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            /* display: none; <- Crashes Chrome on hover */
+            -webkit-appearance: none;
+            margin: 0;
+            /* <-- Apparently some
+            margin are still there even though it's hidden */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Bermain dengan Warna</h1>
+    <h3>#fffff</h3>
+    <button type="button" id="tUbahWarna"> Click me!!!</button>
+
+    <br><br>
+
+
+    <div class="card">
+        <div class="slider-warna">
+            <div class="kotak merah"></div>
+            <input type="range" name="sMerah" value="255" min="0" max="255">
+            <input type="number" value="255" name="ipMerah" id="hexMerah" max="255" min="0">
+        </div>
+
+        <div class="slider-warna">
+            <div class="kotak hijau"></div>
+            <input type="range" name="sHijau" value="255" min="0" max="255">
+            <input type="number" value="255" name="ipHijau" id="hexHijau">
+        </div>
+
+        <div class="slider-warna">
+            <div class="kotak biru"></div>
+            <input type="range" name="sBiru" value="255" min="0" max="255">
+            <input type="number" value="255" name="ipBiru" id="hexBiru">
+        </div>
+
+    </div>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -477,6 +477,16 @@
     catchUl.appendChild(makeList);
     <b>});</b>
             </code></pre>
+
+            <h3>preventDefault()</h3>
+            <p><b>Mencegah aksi default pada elemen</b>, contohnya &lt;a&gt; defaultnya membuka link, hal itu dapat
+                diubah
+                dengan preventDefault()</p>
+            <pre><code>
+    event.addEventListener('click', (e) => {
+    <b>e.preventDefault();</b>
+    });
+            </code></pre>
         </section>
 
         <section class="main-section" id="dom-traversal">
@@ -568,6 +578,8 @@
             <p><b>previousSibling</b> dan <b>previouElementSibling</b> sama penulisan kodenya dengan <b>nextSibling</b>
                 dan
                 <b>nextElementSibling</b>.</p>
+
+
         </section>
 
 

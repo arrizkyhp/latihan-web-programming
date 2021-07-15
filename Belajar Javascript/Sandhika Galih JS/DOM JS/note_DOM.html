@@ -487,6 +487,18 @@
     <b>e.preventDefault();</b>
     });
             </code></pre>
+
+            <h3>stopPropagation()</h3>
+            <p>ketika <b>children memiliki event dan parent yang juga memeiliki event,</b> saat kita<b>
+                    menjalankan event
+                    children, event parent juga akan dijalankan.
+                </b> agar tidak dijalankan secara otomatis digunakan event.
+                <b>stopPropagation();</b></p>
+            <pre><code>
+    event.addEventListener('click', (e) => {
+    <b>e.stopPropagation();</b>
+    });
+            </code></pre>
         </section>
 
         <section class="main-section" id="dom-traversal">

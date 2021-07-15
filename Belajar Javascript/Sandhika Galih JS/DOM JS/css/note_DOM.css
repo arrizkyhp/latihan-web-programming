@@ -53,13 +53,9 @@ p {
 
 a {
     text-decoration: none;
-    color: var(--blueColor);
+    color: var(--colorLink);
     font-weight: bold;
     transition: all .2s;
-}
-
-a:hover {
-    color: var(--mainColorLink);
 }
 
 .fab {
@@ -87,6 +83,10 @@ th {
     color: #ddd;
     font-size: 1.1rem;
     text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: var(--backgroundNav);
 }
 
 /* Navbar */
@@ -148,11 +148,11 @@ th {
     padding: 10px 20px;
     cursor: pointer;
     text-decoration: none;
-    color: var(--colorLink);
+    /* color: var(--colorLink); */
     font-size: 1.4rem;
 }
 
-#navbar a:hover {
+#navbar a:hover, .active {
     background-color: var(--blueColor);
     color: #fff;
 }
@@ -171,7 +171,15 @@ th {
 }
 
 #main-doc ul:not(.sub-ul) {
-     margin-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+#main-doc a {
+    color: var(--blueColor);
+}
+
+#main-doc a:hover {
+    color: var(--mainColorLink);
 }
 
 .container {

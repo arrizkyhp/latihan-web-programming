@@ -22,11 +22,12 @@
 
 
         <ul>
-            <li class="nav-li"><a class="nav-link" href="#pengertian">Pengertian</a></li>
-            <li class="nav-li"><a class="nav-link" href="#dom-tree">DOM Tree</a></li>
-            <li class="nav-li"><a class="nav-link" href="#dom-selection">DOM Selection</a></li>
-            <li class="nav-li"><a class="nav-link" href="#dom-manipulation">DOM Manipulation</a></li>
-            <li class="nav-li"><a class="nav-link" href="#dom-events">DOM Events</a></li>
+            <li class="nav-li "><a class="nav-link pengertian active " href="#pengertian">Pengertian</a></li>
+            <li class="nav-li"><a class="nav-link dom-tree " href="#dom-tree">DOM Tree</a></li>
+            <li class="nav-li"><a class="nav-link dom-selection" href="#dom-selection">DOM Selection</a></li>
+            <li class="nav-li"><a class="nav-link dom-manipulation" href="#dom-manipulation">DOM Manipulation</a></li>
+            <li class="nav-li"><a class="nav-link dom-events" href="#dom-events">DOM Events</a></li>
+            <li class="nav-li"><a class="nav-link dom-traversal" href="#dom-traversal">DOM Traversal</a></li>
         </ul>
     </nav>
 
@@ -476,13 +477,104 @@
     catchUl.appendChild(makeList);
     <b>});</b>
             </code></pre>
+        </section>
 
+        <section class="main-section" id="dom-traversal">
+            <header>DOM Traversal</header>
+            <!-- Rocket FIle -->
+            <p class="file-section">🚀 File: <i class="fab fa-html5"> </i><a href="dom_traversal.html" target="_blank">
+                    dom_traversal.html</a> &
+                <i class="fab fa-js"></i> <a href="js/domTraversal.js" target="_blank">domTraversal.js</a></p>
+            <p><b>Penelusuran</b> DOM</p>
+
+
+            <h2>DOM Traversal Method</h2>
+            <ul>
+                <li><b>parentNode</b> => ambil Parent Node</li>
+                <li><b>parentElement</b> => ambil Parent Element</li>
+                <li><b>nextSibling</b> => ambil "saudara kandung" dari elemen yang kita pilih setelahnya</li>
+                <li><b>nextElementSibling</b> => sama dengan nextSibling tetapi ini elemen saudaranya</li>
+                <li><b>previousSibling</b> => ambil "saudara kandung" dari elemen yang kita pilih sebelumnya</li>
+                <li><b>previousElementSibling</b> => sama dengan previousSibling tetapi ini elemen saudaranya</li>
+            </ul>
+
+            <table>
+                <thead>
+                    <th>Method</th>
+                    <th>Hasil</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>parentNode</td>
+                        <td>node</td>
+                    </tr>
+                    <tr>
+                        <td>parentElement</td>
+                        <td>element</td>
+                    </tr>
+                    <tr>
+                        <td>nextSibling</td>
+                        <td>node</td>
+                    </tr>
+                    <tr>
+                        <td>nextElementSibling</td>
+                        <td>element</td>
+                    </tr>
+                    <tr>
+                        <td>previousSibling</td>
+                        <td>node</td>
+                    </tr>
+                    <tr>
+                        <td>previousElementSibling</td>
+                        <td>element</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>parentNode</h3>
+            <pre><code>
+    const nama = document.querySelector('.nama');
+
+    <b>console.log(nama.parentNode);</b>
+    // output &lt;div class="card" ....
+            </code></pre>
+
+            <h3>parentElement</h3>
+            <pre><code>
+    const nama = document.querySelector('.nama');
+
+    <b>console.log(nama.parentElement);</b>
+    // output &lt;div class="card" ....
+            </code></pre>
+
+            <h3>nextSibling</h3>
+            <p class="attention"><b>tidak direkomendasikan</b> menggunakan ini, sebaiknya gunakan
+                <b>nextElementSibling</b>
+            </p>
+            <pre><code>
+    const nama = document.querySelector('.nama');
+
+    <b>console.log(nama.nextSibling);</b>
+    // #text | karena di html ada Enter antara nama dan telp
+            </code></pre>
+
+            <h3>nextElementSibling</h3>
+            <pre><code>
+    const nama = document.querySelector('.nama');
+
+    <b>console.log(nama.nextElementSibling);</b>
+    // &lt;span class="telp" | mengabaikan enter
+            </code></pre>
+            <p><b>previousSibling</b> dan <b>previouElementSibling</b> sama penulisan kodenya dengan <b>nextSibling</b>
+                dan
+                <b>nextElementSibling</b>.</p>
         </section>
 
 
     </main>
 
 </div>
+<script src="js/noteDom.js"></script>
 
 <body>
 

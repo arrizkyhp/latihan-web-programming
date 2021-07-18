@@ -185,3 +185,8 @@
     - a closure gives you access to an outer function’s scope from an inner function.
 
         🧧 check https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures?retiredLocale=id
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+😊 Events
+
+    "this" on addEventListener only work on function not arrow =>

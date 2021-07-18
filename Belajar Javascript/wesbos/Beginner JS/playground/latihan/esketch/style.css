@@ -1,0 +1,54 @@
+body {
+    min-height: 100vh;
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background: white;
+    background: url(img/bg.jpg);
+    background-size: cover;
+}
+
+button {
+    background: yellow;
+    border: none;
+    padding: .5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    outline: none;
+
+}
+
+canvas {
+    border: 20px solid red;
+    border-radius: 6px;
+    /* half size of actuall canvas */
+    width: 800px;
+    height: 500px;
+    background: white;
+}
+
+canvas.shake {
+    animation: shake 0.5s linear 1;
+}
+
+@keyframes shake {
+    10%,90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}

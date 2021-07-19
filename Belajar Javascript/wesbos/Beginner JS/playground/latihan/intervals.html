@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intervals and Timers</title>
+    <style>
+        body {
+            background: #52b69a;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        function alarm() {
+            console.log('SAHUURRRRRRAAHHH');
+        }
+
+        function heyHo() {
+            console.log('HeyHOWWWWWWW');
+        }
+
+        setTimeout(alarm, 1000);
+
+        // function set interval
+        function setImmediateInterval(funcToRun, ms) {
+            // call the function
+            funcToRun();
+            // regular interval
+            return setInterval(funcToRun, ms);
+        }
+
+        setImmediateInterval(alarm, 1000);
+        // call another
+        setImmediateInterval(heyHo, 500);
+        // Try
+
+        function gotcha() {
+            document.body.innerHTML = `<h2>GOTCHA BEACHH!!!</h2>`;
+        }
+        const gotch = setTimeout(gotcha, 1000);
+
+        // clear gotcha jika mengklik browser
+        window.addEventListener('click', function () {
+            document.body.innerHTML = `<h2>YEAY YOU SAVED</h2>`;
+            clearTimeout(gotch); // Stop gotcha
+            // ini juga bis adigunaka di interval setInterval
+        });
+    </script>
+</body>
+
+</html>

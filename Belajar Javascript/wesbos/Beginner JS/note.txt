@@ -190,3 +190,47 @@
 😊 Events
 
     "this" on addEventListener only work on function not arrow =>
+
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+😊 Data Types
+        🧿 Objects
+            Objects The Object class represents one of JavaScript's data types.
+            It is used to store various keyed collections and more complex entities.
+            Objects can be created using the Object() constructor or the object initializer / literal syntax.
+
+            📝const = variableName : {
+                name: 'Ariz',
+                age: 20,
+            }
+                🐳  Nested Object
+                    📝 const variableName: {
+                        name: 'ariz,
+                        umur: 24,
+                        keahlian: {
+                            photoshop: true,
+                            vsCode: true,
+                            Blender: false,
+                        }
+                        }
+
+            🐳  Add & Remove Objects properties
+                📝 arrizky.sehat = true;
+                📝 delete arrizky.umur;
+
+            🐳  Call Objects properties
+                📝 console.log(arrizky.name);
+                    console.log(arrizky['name']);
+
+        🧿 Methods
+            Different between Function and methods =>
+            Methods are function that lived inside an object
+
+            📝const Luisa = {
+                name: 'uwiw',
+                umur: 8,
+
+                // This is method
+                sayHello(greeting = 'Maw') {
+                    return `${greeting} ${this.name}`;
+                },
+            };

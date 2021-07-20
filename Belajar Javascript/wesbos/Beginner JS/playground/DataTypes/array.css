@@ -1,0 +1,155 @@
+/* Color */
+:root {
+    --white: #fff;
+    --blueSaltedEgg: #52b69a;
+    --orange: #fca311;
+    --blueForLink: #023e8a;
+}
+
+/* Global */
+body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+}
+
+.container {
+    margin: 1rem 1rem;
+    padding: 1rem 1.5rem 2rem 2.5rem;
+    max-width: 800px;
+    /* max-height: 620px; */
+    background: var(--white);
+    /* overflow-y: scroll; */
+}
+h1 {
+    font-size: 2.8rem;
+    position: relative;
+    margin-bottom: 1.5rem;
+    margin-left: 0;
+}
+
+h2, h3 {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+h2::before {
+    content: "💡  ";
+    font-size: 1.2rem;
+}
+h3 {
+    font-weight: 500;
+}
+
+h3::before {
+    content: "🧿  ";
+    font-size: 1rem;
+}
+
+
+p {
+    line-height: 1.75;
+}
+
+p.reminder {
+    background: #0a9396;
+    color: #fff;
+    padding: .5rem;
+    width: fit-content;
+    margin: .5rem 0;
+}
+
+ul {
+    margin: .5rem 0 .5rem 2rem;
+}
+
+li {
+    margin-bottom: .3rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--blueForLink);
+    font-weight: 700;
+}
+a:hover {
+    color: var(--orange);
+}
+
+
+
+h1::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 6px;
+    top: 3.6rem;
+    left: 0rem;
+    background: #fca311;
+}
+
+.boundary {
+    margin: 1.5rem 0;
+    background: var(--orange);
+    width: 100%;
+    height: 5px;
+}
+
+/* Code Box */
+
+#codebox {
+    padding: 15px;
+    font-family: Courier, sans-serif;
+    font-size: 1em;
+    line-height: 1.3;
+    color: #333;
+    background-color: #F5F5F5;
+    -webkit-border-radius: 0px 0px 6px 6px;
+    -moz-border-radius: 0px 0px 6px 6px;
+    border-radius: 0px 0px 6px 6px;
+    margin-bottom: 10px;
+    border: 2px solid var(--orange);
+    border-top: 0;
+
+}
+
+
+
+code {
+    font-family: Courier, sans-serif;
+    font-size: 1em;
+    line-height: 1.3;
+}
+
+
+
+.codeheader {
+    padding: 5px 5px 5px 10px;
+    margin-top: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: .8em;
+    text-align: right;
+    font-weight:800;
+    color: #fff;
+    -webkit-border-radius: 6px 6px 0px 0px;
+    -moz-border-radius: 6px 6px 0px 0px;
+    border-radius: 6px 6px 0px 0px;
+    user-select: none;
+    -ms-user-select: none;
+    /* IE10+, Edge */
+    -moz-user-select: none;
+    /* Mozilla */
+    -webkit-user-select: none;
+    /* Safari */
+}
+
+#codeheader_js {
+    background-color: var(--orange);
+}
+
+/* Footer */
+footer{
+    text-align: center;
+    margin-bottom: .5rem;
+}

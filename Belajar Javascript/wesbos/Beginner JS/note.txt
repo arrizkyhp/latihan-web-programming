@@ -255,3 +255,11 @@
 
                 when you are comparing object it is done by reference
                 to the object itself not the values inside of it.
+         🧿 Maps
+            Similar to object but couple of key differences
+            map is for storing data.
+
+            when you do you use a map over an object an vice versa???
+                use map if you do need to mantain the order of your item
+
+                📝 const myMap = new Map();

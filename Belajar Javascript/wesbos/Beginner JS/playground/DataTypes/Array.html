@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array | Data types</title>
+    <!-- icon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
+    <!-- Css -->
+    <link rel="stylesheet" href="../base.css">
+    <link rel="stylesheet" href="array.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Array</h1>
+        <h2>What is Array??</h2>
+        <p>An array is an<b> ordered list of values, or a collection of elements (values or variables) </b>identified by
+            an
+            index or key.</p>
+        <p><b>Array</b> is use for holding a <b>list of item</b> where the order matters</p>
+        <ul>
+            <li>Each things inside an array is called an <b>item.</b></li>
+            <li>Position in Array called <b>index</b> or <b>key.</b></li>
+            <li>The number item inside an array called a <b>length.</b></li>
+            <li>Each item inside array <b>can be any type</b>, can be string,number,boolean,etc.</li>
+            <li>While <b>{ }</b> for object, the <b>[ ]</b> is for Array.</li>
+            <li>There are <b>no key</b> in array.</li>
+            <li>Array are <b>Zero-based numbering</b>, its mean start counting at zero => 0,1,2,3.</li>
+        </ul>
+        <div class="boundary"></div>
+
+        <h2>How to use??</h2>
+
+        <!-- JS Box -->
+        <div class="codeheader" id="codeheader_js">JavaSCript</div>
+        <div id="codebox">
+            <pre><code>const names = <b>['arrizy', 'hasya', 'pratama'];</b></code></pre>
+        </div>
+
+        <p>If you want to<b> access thing / item inside an array</b> you use <b>index:</b></p>
+        <!-- JS Box -->
+        <div class="codeheader" id="codeheader_js">JavaSCript</div>
+        <div id="codebox">
+            <pre><code>console.log(<b>names[1]</b>); // O: hasya</code></pre>
+        </div>
+
+        <p>Check <b>how many item inside an array</b>:</p>
+        <!-- JS Box -->
+        <div class="codeheader" id="codeheader_js">JavaSCript</div>
+        <div id="codebox">
+            <pre><code>console.log(<b>names.length</b>); // O: 3</code></pre>
+        </div>
+
+        <p id="copyArray"><b>Clone</b> an Array using <b>[...] / Spread</b> </p><br>
+        <p>When you try to copy it using the <b>= it will only copy the reference to the original array and not the
+                value
+                of the array.</b> To create a real copy of an array, you need to copy over the value of the array under
+            a
+            new
+            value variable. That way this new array does not reference to the old array address in memory.</p>
+        <p>Source:</p><a href="https://www.samanthaming.com/tidbits/35-es6-way-to-clone-an-array/"
+            target="_blank">https://www.samanthaming.com/tidbits/35-es6-way-to-clone-an-array/</a>
+        <!-- JS Box -->
+        <div class="codeheader" id="codeheader_js">JavaSCript</div>
+        <div id="codebox">
+            <pre><code>const sheeps = ['🐑', '🐑', '🐑'];
+
+const cloneSheeps = <b>[...sheeps]</b>;</code></pre>
+
+
+        </div>
+
+        <h3>Mutable and Immutable Arrays </h3>
+        <p><b>📢 MUTABLE DO CHANGE THE ORIGINAL DATA</b></p>
+        <p><b>Mutable</b> methods perform <b>mutation</b>, it means when something changes the original version of it.
+            Mutable is a type of <b>variable that can be changed.</b> In JavaScript, <b>only objects and arrays are
+                mutable</b>, not primitive values.</p>
+        <p>A <b>mutable object</b> is an object whose state can be modified after it is created.</p>
+
+        <p class="reminder">✍🏽 NOTE: anytime you want to use a mutation method you must take a <a
+                href="#copyArray">copy</a> of it</p>
+
+        <p><b>📢 IMMUTABLE DO NOT CHANGE THE ORIGINAL DATA</b></p>
+        <p><b>Immutable</b> do not change the original thing, but they simply return a new array. Immutables are the
+            objects whose state <b> cannot be changed
+                once the object is created.
+            </b></p>
+
+
+    </div>
+
+    <footer>
+        made with 🖤 by <b>ArrizkyHP</b>
+    </footer>
+
+    <script src="array.js"></script>
+</body>
+
+</html>

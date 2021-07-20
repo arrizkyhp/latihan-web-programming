@@ -40,7 +40,7 @@
         <div id="codebox">
             <pre><code>const names = <b>['arrizy', 'hasya', 'pratama'];</b></code></pre>
         </div>
-
+        <h3>Access Item</h3>
         <p>If you want to<b> access thing / item inside an array</b> you use <b>index:</b></p>
         <!-- JS Box -->
         <div class="codeheader" id="codeheader_js">JavaSCript</div>
@@ -48,6 +48,7 @@
             <pre><code>console.log(<b>names[1]</b>); // O: hasya</code></pre>
         </div>
 
+        <h3>Check Length</h3>
         <p>Check <b>how many item inside an array</b>:</p>
         <!-- JS Box -->
         <div class="codeheader" id="codeheader_js">JavaSCript</div>
@@ -55,7 +56,8 @@
             <pre><code>console.log(<b>names.length</b>); // O: 3</code></pre>
         </div>
 
-        <p id="copyArray"><b>Clone</b> an Array using <b>[...] / Spread</b> </p><br>
+        <h3 id="copyArray">Copy Array</h3>
+        <p><b>Clone</b> an Array using <b>[...] / Spread</b> </p>
         <p>When you try to copy it using the <b>= it will only copy the reference to the original array and not the
                 value
                 of the array.</b> To create a real copy of an array, you need to copy over the value of the array under
@@ -89,6 +91,76 @@ const cloneSheeps = <b>[...sheeps]</b>;</code></pre>
             objects whose state <b> cannot be changed
                 once the object is created.
             </b></p>
+
+        <h3>Add Items</h3>
+        <p>Using <b>.push()</b> => method <b>adds</b> one or more elements <u><b>to the end of an array</b></u> and
+            returns the
+            new
+            length of the array.</p>
+        <p>This does <b>mutate</b> the original array</p>
+        <!-- JS Box -->
+        <div class="codeheader" id="codeheader_js">JavaSCript</div>
+        <div id="codebox">
+            <pre><code><b>names.push('Luoisa', 'Liliam');</b>
+
+// if dont want to mutate, take copy of the original
+<b>const names2 = [...names, 'Louisa', 'Liliam']</b>;</code></pre>
+        </div>
+
+        <p>Using <b>.unshift()</b> => method adds one or more elements <b><u>to the beginning of an array</u></b> and
+            returns
+            the new
+            length of the array.</p>
+        <!-- JS Box -->
+        <div class="codeheader" id="codeheader_js">JavaSCript</div>
+        <div id="codebox">
+            <pre><code><b>names.unshift('Luna','Bima');</b>
+
+// if dont want to mutate, take copy of the original
+<b>const names2 = ['Luna', 'Bima', ...names, ]</b>;</code></pre>
+        </div>
+
+        <h3>Take Items</h3>
+        <p>Using <b>splice()</b> and <b>slice()</b></p>
+        <ul>
+            <li> <b>slice()</b> method doesn't
+                change the original
+                array<b>(Immutable)</b></p>
+            </li>
+            <li>
+                <p><b>splice()</b> method changes the original array <b>(Mutable).</b>
+            </li>
+        </ul>
+
+        <p><b>Slice()</b> method <b>returns a shallow <u>copy</u> of a portion of an array into a new array object</b>
+            selected
+            from
+            start to end (end not included) where start and end represent the index of items in that array. The original
+            array will not be modified.</p>
+        <!-- JS Box -->
+        <div class="codeheader" id="codeheader_js">JavaSCript</div>
+        <div id="codebox">
+            <pre><code>const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+console.log(<b>numbers.slice(1, 4)</b>); // [2,3,4]
+console.log(numbers); // the original still the same
+</code></pre>
+        </div>
+
+
+        <p><b>Splice()</b> method <b>returns the removed item(s) in an array. </b></p>
+        <p><b>Take the item</b> out of the original
+            array </p>
+        <!-- JS Box -->
+        <div class="codeheader" id="codeheader_js">JavaSCript</div>
+        <div id="codebox">
+            <pre><code>console.log(<b>numbers.slice(1, 4)</b>); // [2,3,4]
+<b>numbers.splice(3, 2)</b>;
+console.log(numbers.splice(3, 2)); // [4, 5]
+console.log(numbers); // [1, 2, 3, 6, 7, 8, 9, 10] some number missing
+</code></pre>
+        </div>
+
 
 
     </div>

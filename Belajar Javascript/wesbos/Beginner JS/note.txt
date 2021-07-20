@@ -234,3 +234,24 @@
                     return `${greeting} ${this.name}`;
                 },
             };
+
+         🧿 Reference vs Values
+            👻 The content of the strings
+                const name1 = 'ariz'
+                const name2 = 'ariz'
+                if (name1 === name 2) {} // true
+
+            👻 The content of Object
+                const person1 = {
+                    first: 'ariz',
+                    last: 'hasya',
+                }
+
+                const person2 = {
+                    first: 'ariz',
+                    last: 'hasya',
+                }
+                if (person1 === person2) {} // false
+
+                when you are comparing object it is done by reference
+                to the object itself not the values inside of it.

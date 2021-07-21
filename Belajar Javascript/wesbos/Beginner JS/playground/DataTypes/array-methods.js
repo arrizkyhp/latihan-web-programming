@@ -123,3 +123,98 @@ console.log(toppingsReversed);
 
 //= ===========================================================================================
 /* Callback Method */
+const comments = [
+  { komen: 'Recomended seller', id: 123, rating: 5 },
+  { komen: 'Barang bagus seller ramah', id: 233, rating: 4 },
+  { komen: '1 hari langsung sampe', id: 143, rating: 5 },
+  { komen: 'Barang rusak', id: 623, rating: 1 },
+  { komen: 'Barang KW seller lambat', id: 253, rating: 2 },
+];
+
+// find comment include rusak
+
+/* First way | Classic Function */
+// function findRusak(singleComment) {
+// ===== 1st ======
+// if (singleComment.komen.includes('rusak')) {
+//   return true;
+// }
+// return false;
+
+// ====== 2nd ======
+// if its only one use one liner
+//   return singleComment.komen.includes('rusak');
+// }
+
+/* Second way | function VAriable */
+// const findRusak = function (singleComment) {
+//   return singleComment.komen.includes('rusak');
+// };
+
+/* Third way | arrow function */
+// const findRusak = (singleComment) => singleComment.komen.includes('rusak');
+
+/* Fourth way | Grouping into an object */
+// const util = {
+//   findRusak(singleComment) {
+//     return singleComment.komen.includes('rusak');
+//   },
+// };
+
+// const commentRusak = comments.find(findRusak);
+// const commentRusak = comments.find(util.findRusak);
+
+// console.log(commentRusak);
+
+// =========================
+// function inside function
+function findByWord(word) {
+  return function (singleFeedBack) {
+    return singleFeedBack.komen.includes(word);
+  };
+}
+const wordFinder = findByWord('lambat');
+const commentRusak = comments.find(wordFinder);
+
+console.log(commentRusak);
+
+// ============================= filter =======================
+
+// const reviewBagus = comments.filter(function (singlefeedback) {
+//   if (singlefeedback.rating >= 4) {
+//     return true;
+//   }
+//   return false;
+// });
+
+// oneliner
+const reviewBagus = comments.filter(
+  (singlefeedback) => singlefeedback.rating >= 4
+);
+
+console.table(reviewBagus);
+// ==============
+function filterByRating(value) {
+  return function (singleFeedBack) {
+    return singleFeedBack.rating <= value;
+  };
+}
+
+const filterRating = filterByRating(2);
+const fRating = comments.filter(filterRating);
+console.table(fRating);
+
+// find all rating that containt seller
+function filterByWord(word) {
+  return function (singleFeedback) {
+    return singleFeedback.komen.includes(word);
+  };
+}
+
+const byWord = filterByWord('seller');
+const filtered = comments.filter(byWord);
+console.table(filtered);
+
+// remove 1 rating
+const oneRatings = comments.filter((one) => one.rating === 1);
+console.table(oneRatings);

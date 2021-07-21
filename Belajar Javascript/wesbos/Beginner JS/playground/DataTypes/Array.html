@@ -92,6 +92,8 @@ const cloneSheeps = <b>[...sheeps]</b>;</code></pre>
                 once the object is created.
             </b></p>
 
+        <!-- ADD ITEMS  -->
+
         <h3>Add Items</h3>
         <p>Using <b>.push()</b> => method <b>adds</b> one or more elements <u><b>to the end of an array</b></u> and
             returns the
@@ -120,7 +122,31 @@ const cloneSheeps = <b>[...sheeps]</b>;</code></pre>
 <b>const names2 = ['Luna', 'Bima', ...names, ]</b>;</code></pre>
         </div>
 
-        <h3>Take Items</h3>
+        <p>Add items <b>in the middle of an array</b> using <a href="#take-items">slice()</a></p>
+        <!-- JS Box -->
+        <div class="codeheader" id="codeheader_js">JavaSCript</div>
+        <div id="codebox">
+            <pre><code>const motor = ['suzuki', 'yamaha', 'kawasaki', 'honda'];
+
+<b>// add new item in between
+const newBikes = [
+// take before trange
+...motor.slice(0, 2),
+// add new
+'vespa',
+// add the rest
+...motor.slice(2),
+];</b>
+
+console.log(newBikes);</code></pre>
+
+        </div>
+
+
+
+        <!-- TAKE ITEMS -->
+
+        <h3 id="take-items">Take Items</h3>
         <p>Using <b>splice()</b> and <b>slice()</b></p>
         <ul>
             <li> <b>slice()</b> method doesn't
@@ -161,7 +187,47 @@ console.log(numbers); // [1, 2, 3, 6, 7, 8, 9, 10] some number missing
 </code></pre>
         </div>
 
+        <!-- REMOVE ITEMS -->
 
+        <h3>Remove Items</h3>
+        <p>Remove Items <b>from Middle of Array</b> using <a href="#take-items">slice()</a></p>
+        <!-- JS Box -->
+        <div class="codeheader" id="codeheader_js">JavaSCript</div>
+        <div id="codebox">
+            <pre><code>const newBikes2 = ["suzuki", "yamaha", "vespa", "kawasaki", "honda"]
+
+// WANT TO REMOVE KAWASAKI
+<b>
+const newBikes2 = [
+// takes before kawasaki range
+...newBikes.slice(0, 3),
+// takes after kawasaki range
+...newBikes.slice(4),
+];</b>
+
+console.log(newBikes2); // ["suzuki", "yamaha", "vespa", "honda"]</code></pre>
+        </div>
+
+        <p>Using <b>pop()</b> method => removes the last element of the array, returns that element, and updates the
+            length property. </a></p>
+        <!-- JS Box -->
+        <div class="codeheader" id="codeheader_js">JavaSCript</div>
+        <div id="codebox">
+            <pre><code>const arr = [1, 2, 3, 4, 5, 6];
+<b>arr.pop();</b> // return 6
+console.log(arr); //[1, 2, 3, 4, 5,];</code></pre>
+        </div>
+
+        <p>Using <b>shit()</b> => removes the first element of the array.</p>
+        <p>Source:</p><a href="http://www.dyn-web.com/javascript/arrays/remove.php"
+            target="_blank">http://www.dyn-web.com/javascript/arrays/remove.php</a>
+        <!-- JS Box -->
+        <div class="codeheader" id="codeheader_js">JavaSCript</div>
+        <div id="codebox">
+            <pre><code>const arr = [1, 2, 3, 4, 5, 6];
+<b>arr.shift();</b> // return 1
+console.log(arr); //[2, 3, 4, 5, 6,];</code></pre>
+        </div>
 
     </div>
 

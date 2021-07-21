@@ -229,13 +229,46 @@ console.log(arr); //[1, 2, 3, 4, 5,];</code></pre>
 console.log(arr); //[2, 3, 4, 5, 6,];</code></pre>
         </div>
 
+        <!-- Object to Array -->
+        <h3 id="take-items">Return object to array</h3>
+        <p>Using <b>Object.entries()</b> => method returns an array of a given object's own enumerable string-keyed
+            property <b>[key, value]</b> pairs. </p>
+        <!-- JS Box -->
+        <div class="codeheader" id="codeheader_js">JavaSCript</div>
+        <div id="codebox">
+            <pre><code>const movies = {
+  hobbits: 7,
+  batman: 9,
+  shawsank: 8,
+};
+
+<b>Object.entries(movies).forEach(function (entry) {
+    const key = entry[0];
+    const value = entry[1];
+    // 🔝 oneliner of to variable
+    const [key, value];
+</b>
+console.log(key, value);}); // hobbits 7 | batman 9 | shawsank 8</code></pre>
+        </div>
+
+        <p>Shorthand:</p>
+        <!-- JS Box -->
+        <div class="codeheader" id="codeheader_js">JavaSCript</div>
+        <div id="codebox">
+            <pre><code><b>Object.entries(movies).forEach(([key, value]) => {
+console.log(key, value);
+});
+</b></code></pre>
+        </div>
+
     </div>
 
     <footer>
         made with 🖤 by <b>ArrizkyHP</b>
     </footer>
 
-    <script src="array.js"></script>
+    <!-- <script src="array.js"></script> -->
+    <script src="array-methods.js"></script>
 </body>
 
 </html>

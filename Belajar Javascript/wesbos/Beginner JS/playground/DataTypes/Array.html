@@ -261,14 +261,42 @@ console.log(key, value);
 </b></code></pre>
         </div>
 
-    </div>
+        <!-- Instance method -->
+        <h3 id="take-items">Instance Methods</h3>
+        <p><b>The join()</b> => method <b> creates and returns a new string by concatenating all of the elements in an
+                array (or an
+                array-like object), separated by commas or a specified separator string. </b> If the array has only one
+            item,
+            then that item will be returned without using the separator.</p>
+        <!-- JS Box -->
+        <div class="codeheader" id="codeheader_js">JavaSCript</div>
+        <div id="codebox">
+            <pre><code>const recipe = ['egg', 'flour', 'chocolate'];
+console.log(<b>recipe.join()</b>); // egg,flour,chocolate
+console.log(<b>recipe.join('-')</b>); // egg-flour-chocolate
 
-    <footer>
-        made with 🖤 by <b>ArrizkyHP</b>
-    </footer>
+</code></pre>
+        </div>
+        <p><b>Split()</b> => method <b>divides a String into an ordered list of substrings,</b> puts these substrings
+            <b>
+                into an
+                array, and returns the array.
+            </b> </p>
+        <div class="codeheader" id="codeheader_js">JavaSCript</div>
+        <div id="codebox">
+            <pre><code>const food = 'seblak,cilok,bala-bala,gehu';
+// separated by coma
+console.log(<b>food.split(',')</b>); // ["seblak", "cilok", "bala-bala", "gehu"]</code></pre>
 
-    <!-- <script src="array.js"></script> -->
-    <script src="array-methods.js"></script>
+
+        </div>
+
+        <footer>
+            made with 🖤 by <b>ArrizkyHP</b>
+        </footer>
+
+        <!-- <script src="array.js"></script> -->
+        <script src="array-methods.js"></script>
 </body>
 
 </html>

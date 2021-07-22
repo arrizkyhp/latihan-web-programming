@@ -206,3 +206,33 @@ const cleanPeople = people.map(function (person) {
 });
 
 console.table(cleanPeople);
+console.clear();
+
+/* Filter */
+//  people older than 40 years old
+console.log(cleanPeople);
+const over40 = cleanPeople.filter((peeps) => peeps.age > 40);
+
+console.table(over40);
+
+// search student by id
+
+function findById(id) {
+  return function isStudent(studentData) {
+    return studentData.id === id;
+  };
+}
+
+//   more flexible, we can find by name also
+function findByProp(prop, valueWeLookungFor) {
+  return function isStudent(studentData) {
+    return studentData[prop] === valueWeLookungFor;
+  };
+}
+
+// const idStudent = prompt('masukan id: ');
+// const student = students.find(findById(idStudent));
+const student = students.find(findByProp('id', 'f396'));
+const student2 = students.find(findByProp('first_name', 'Dall'));
+console.table(student);
+console.table(student2);

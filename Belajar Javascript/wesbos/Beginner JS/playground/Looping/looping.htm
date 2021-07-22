@@ -61,6 +61,34 @@ const goth = <b>nama.map(kapital).map((event) => `${event} Goth`);</b>
 console.log(goth); //  ["Bella Goth", "Casandra Goth", "Mortimer Goth"]</code></pre>
         </div>
 
+        <h3>filter()</h3>
+        <p> <b>filter()</b> method creates a new array with all elements that pass the test implemented by the provided
+            function.</p>
+        <p>the different between <b>filter()</b> and <b>find()</b>
+            <ul>
+                <li><b>filter()</b> output are <b>Array</b> & search through <b>all the elements</b></li>
+                <li><b>find()</b> output are <b>Object</b> & search through <b>
+                        all the child
+                        elements
+                    </b> only.</li>
+            </ul>
+
+
+
+        </p>
+        <!-- JS Box -->
+        <div class="codeheader" id="codeheader_js">JavaSCript</div>
+        <div id="codebox">
+            <pre><code>const keluarga = [
+{ nama: 'Arrizky', umur: 24 },
+{ nama: 'Luisa', umur: 20 },
+{ nama: 'Lili', umur: 15 }, ];
+
+const lebih18 = <b>keluarga.filter((orang) => orang.umur > 18);</b>
+// {nama: "Arrizky", umur: 24}
+// {nama: "Luisa", umur: 20}</code></pre>
+        </div>
+
 
 
     </div>

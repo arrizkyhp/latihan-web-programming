@@ -123,31 +123,86 @@ const inventory = [
 
 //* ================================================== Loop Time ================================================== */
 
-function logTopping(topping, index, toppingArray) {
-  const nextTopping = toppingArray[index + 1];
-  const prevTopping = toppingArray[index - 1];
-  // log the prev topping if there is one
+// function logTopping(topping, index, toppingArray) {
+//   const nextTopping = toppingArray[index + 1];
+//   const prevTopping = toppingArray[index - 1];
+//   // log the prev topping if there is one
 
-  prevTopping ? console.log(prevTopping) : null;
-  // loop the topping
-  console.log(topping.toUpperCase());
-  // log the next topping if there is one
-  /*  if (nextTopping) {
-    console.log(nextTopping);
-  } */
-  // oneliner
-  nextTopping ? console.log(nextTopping) : null;
+//   prevTopping ? console.log(prevTopping) : null;
+//   // loop the topping
+//   console.log(topping.toUpperCase());
+//   // log the next topping if there is one
+//   /*  if (nextTopping) {
+//     console.log(nextTopping);
+//   } */
+//   // oneliner
+//   nextTopping ? console.log(nextTopping) : null;
 
-  // if its the last item in the array, say good bye
-  index === toppingArray.length - 1
-    ? console.log('good bye')
-    : console.log('Getting next topping');
-  console.log('---------🤴🏽---------');
+//   // if its the last item in the array, say good bye
+//   index === toppingArray.length - 1
+//     ? console.log('good bye')
+//     : console.log('Getting next topping');
+//   console.log('---------🤴🏽---------');
+// }
+
+// toppings.forEach(logTopping);
+
+// /* inventory.forEach((invent) => {
+//   console.log(invent.price);
+// });
+//  */
+
+// console.clear();
+
+/* ================= Map, Filter, Reduce =================  */
+
+/* Map */
+// Map is like a machine in a factory, it takes in data, performs an operation and spit it out on the other side
+function addArms(face) {
+  return `👋🏻 ${face} 👋🏻`;
 }
 
-toppings.forEach(logTopping);
+// Add face
+const toys = faces.map(addArms);
+console.log(toys);
 
-/* inventory.forEach((invent) => {
-  console.log(invent.price);
+const nama = ['bella', 'casandra', 'mortimer'];
+function kapital(word) {
+  //   return word[0].toUpperCase() + word.slice(1);
+  return `${word[0].toUpperCase()}${word.slice(1)}`;
+}
+
+const goth = nama.map(kapital).map((event) => `${event} Goth`);
+console.log(goth); //  ["Bella Goth", "Casandra Goth", "Mortimer Goth"]
+
+// map for number
+const harga = [1000, 2000, 10000, 50000];
+
+const hitungPajak = harga.map((total) => (total * 5) / 100 + total);
+console.log(hitungPajak);
+
+console.clear();
+
+// map for Object
+const cleanPeople = people.map(function (person) {
+  //   console.log(person);
+  const birthday = new Date(person.birthday);
+
+  const year = birthday.getFullYear();
+  const thisYear = new Date().getFullYear();
+  const age = thisYear - year;
+
+  //   get their birthday
+  console.log(`Birthday = ${person.birthday}`);
+  // figure out how old they are
+
+  console.log(`age = ${age}`);
+
+  // return their full name and age in an object
+  return {
+    name: `${person.names.first} ${person.names.last}`,
+    age,
+  };
 });
- */
+
+console.table(cleanPeople);

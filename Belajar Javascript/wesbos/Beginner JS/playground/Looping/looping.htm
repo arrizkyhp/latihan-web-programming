@@ -21,10 +21,13 @@
         <p><b>Loops</b> offer a quick and easy way to do something <b>repeatedly</b>. </p>
         <p>The most common way is looping over an <b>array</b></p>
 
+
         <div class="boundary"></div>
 
         <h2>How to use??</h2>
         <h3>forEach()</h3>
+        <p><b>forEach()</b> is handy for when you want to loop over some data and do something with each piece of data.
+        </p>
         <!-- JS Box -->
         <div class="codeheader" id="codeheader_js">JavaSCript</div>
         <div id="codebox">
@@ -32,12 +35,30 @@
 
 <b>seblak.forEach(function);</b></b></code></pre>
         </div>
-        <h3>Access Item</h3>
-        <p>If you want to<b> access thing / item inside an array</b> you use <b>index:</b></p>
+
+
+        <h3>map()</h3>
+        <p><b>map()</b> is like a machine in a factory, it <b>takes in data, performs an operation and spit it out</b>
+            on the other side.</p>
+        <p>map() can also be use in for <b>any type of data</b></p>
         <!-- JS Box -->
         <div class="codeheader" id="codeheader_js">JavaSCript</div>
         <div id="codebox">
-            <pre><code>console.log(<b>names[1]</b>); // O: hasya</code></pre>
+            <pre><code>const nama = ['bella', 'casandra', 'mortimer'];
+
+const goth = <b>nama.map((event) => `${event} goth`)</b>;
+console.log(goth); //  ["bella goth", "casandra goth", "mortimer goth"]
+            </code></pre>
+        </div>
+        <p>you can also do a <b>chain map</b>.</p>
+        <!-- JS Box -->
+        <div class="codeheader" id="codeheader_js">JavaSCript</div>
+        <div id="codebox">
+            <pre><code>function kapital(word) {
+  return word[0].toUpperCase() + word.slice(1); }
+
+const goth = <b>nama.map(kapital).map((event) => `${event} Goth`);</b>
+console.log(goth); //  ["Bella Goth", "Casandra Goth", "Mortimer Goth"]</code></pre>
         </div>
 
 

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@900&family=Roboto:wght@400;500;700&display=swap');
+
+*,*::before,*::after { margin: 0; padding: 0;   box-sizing: border-box;}
+
+:root {
+    --blueSaltedEgg: #52b69a;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    background-color: var(--blueSaltedEgg);
+}
+/* Navivation */
+
+nav {
+    background: #2A2B2F;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    min-width: 250px;
+    height: 100%;
+    color: #fff;
+    padding: .5rem;
+    border-right: 8px solid #52b69a;
+}
+
+header {
+    margin: 1rem;
+    text-align: center;
+}
+
+header span {
+    font-size: 2rem;
+    background: var(--blueSaltedEgg);
+    padding: 0 .2rem 0 .5rem;
+    margin-right: .2rem;
+}
+
+ul {
+    text-align: left;
+    margin: 0 1rem;
+}
+
+ul a {
+    padding: .8rem 1rem;
+    display: block;
+    text-decoration: none;
+    color: #8D99A7;
+}
+ul a:hover {
+    background: #454f59;
+}
+
+li {
+    list-style: none;
+
+}
+
+
+
+main {
+    background: #fff;
+    padding: 1rem 1.5rem 2rem 2.5rem;
+    margin-left: 250px;
+    padding: 3rem;
+    min-height: 100vh;
+    position: absolute;
+}

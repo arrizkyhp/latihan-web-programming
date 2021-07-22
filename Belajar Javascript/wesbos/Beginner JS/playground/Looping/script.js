@@ -173,7 +173,7 @@ function kapital(word) {
 }
 
 const goth = nama.map(kapital).map((event) => `${event} Goth`);
-console.log(goth); // ["Bella Goth", "Casandra Goth", "Mortimer Goth"]
+console.log(goth); //  ["Bella Goth", "Casandra Goth", "Mortimer Goth"]
 
 // map for number
 const harga = [1000, 2000, 10000, 50000];

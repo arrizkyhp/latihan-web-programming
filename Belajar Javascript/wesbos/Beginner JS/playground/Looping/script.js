@@ -173,7 +173,7 @@ function kapital(word) {
 }
 
 const goth = nama.map(kapital).map((event) => `${event} Goth`);
-console.log(goth); //  ["Bella Goth", "Casandra Goth", "Mortimer Goth"]
+console.log(goth); // ["Bella Goth", "Casandra Goth", "Mortimer Goth"]
 
 // map for number
 const harga = [1000, 2000, 10000, 50000];
@@ -236,3 +236,33 @@ const student = students.find(findByProp('id', 'f396'));
 const student2 = students.find(findByProp('first_name', 'Dall'));
 console.table(student);
 console.table(student2);
+
+console.clear();
+
+/* Reduce */
+function tallyNumbers(tally, currentTotal) {
+  console.log(`The Current tally is ${tally}`);
+  console.log(`The Current total is ${currentTotal}`);
+  console.log(`------➕------`);
+  //   return the current tally PLUS the ammount of this order;
+  return tally + currentTotal;
+}
+
+const allOrders = orderTotals.reduce(tallyNumbers, 0);
+
+function inventoryReducer(totals, item) {
+  console.log(`Looping over ${item.type}`);
+  //   increment the type by 1
+  totals[item.type] = totals[item.type] + 1 || 1;
+  return totals;
+}
+
+const inventoryCounts = inventory.reduce(inventoryReducer, {});
+
+const totalInvertoryPrice = inventory.reduce(
+  (acc, item) => acc + item.price,
+  0
+);
+
+console.log(inventoryCounts);
+console.log(totalInvertoryPrice);

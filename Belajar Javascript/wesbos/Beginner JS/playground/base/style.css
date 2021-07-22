@@ -88,6 +88,14 @@ h1::after {
     left: 0rem;
     background: #fca311;
 }
+figure img{
+    width: 100%;
+}
+figcaption {
+    text-align: center;
+    font-size: .85rem;
+    color: #666;
+}
 
 .boundary {
     margin: 1.5rem 0;

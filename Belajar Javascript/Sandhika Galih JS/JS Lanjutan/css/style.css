@@ -91,6 +91,7 @@ main {
     position: absolute;
 }
 
+
 p::selection {
     background-color: var(--blueSaltedEgg);
 }
@@ -169,13 +170,13 @@ main .file-section {
     border: 3px solid var(--blueSaltedEgg);
 }
 
-main .file-section a{
+main a, .file-section a{
     color: var(--blueSaltedEgg);
     font-weight: 700;
     text-decoration: none;
 }
 
-main .file-section a:hover{
+main a:hover, .file-section a:hover{
     color: #FFC83D;
     text-decoration: var(--blueSaltedEgg) underline wavy 2px;
 }

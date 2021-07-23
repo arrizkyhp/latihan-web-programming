@@ -23,7 +23,7 @@
 
             <li> <a class="nav-link" href="#object-revisited">Object (revisited)</a></li>
 
-            <li><a class="nav-link" href="#Introduction">Prototype</a></li>
+            <li><a class="nav-link" href="#closures">Closures</a></li>
             <li><a class="nav-link" href="#Introduction">Object</a></li>
 
 
@@ -209,52 +209,39 @@ ariz.<span class="punctuation">makan(</span><span class="number">10</span><span 
             </div>
         </div>
 
+        <h1 class="content-header" id="closures"><span>Closures</span></h1>
         <div class="wrapper">
-
-            <h2>Lorem</h2>
+            <h2>Execution Context, Hoisting, Scope</h2>
+            <h3>2 Fase pada Execution Context / pada saat program dijalankan</h3>
             <ul>
-                <li>arrizky</li>
-                <li>lauren</li>
-                <li>mayberry</li>
-                <li>yikes</li>
+                <li><b>Creation</b></li>
+                <p>Pada fase ini javascript akan <b>mengecek</b> apakah <b>ada variable atau function</b> di dalam
+                    kodinganya, JS
+                    tidak
+                    akan memperdulikan console.log terlebih dahulu.</p>
+                <p>jika ada nama <b>var</b> => <b>undefined</b></p>
+                <p>jika ada <b>function</b> => <b>fn()</b> akan diisi function itu sendiri</p>
+                <p>konsep diatas disebut konsep <b>hoisting</b>.</p>
+                <li><b>Execution</b></li>
             </ul>
+            <p>Untuk mengecek bagaimana javascript berjalan secara bertahap buka:<a
+                    href="http://pythontutor.com/javascript.html" target="_blank">
+                    http://pythontutor.com/javascript.html</a></p>
+            <h3>Hoisting</h3>
+            <p>Hoisting merupakan perilaku default JavaScript untuk memindahkan deklarasi ke atas</p>
+            <p>pada Javascript sebuah variable dapat di deklarasikan <b>setelah digunakan</b></p>
+            <p>dengan kata lain sebuah variable <b>dapat digunakan sebelum di deklarasikan</b></p>
             <!-- JS Box -->
             <div class="codeheader" id="codeheader_js">JavaSCript</div>
             <div id="codebox">
-                <pre><code><span class="punctuation">const </span> seblak = <span class="punctuation">[</span>'baso', 'kerupuk', 'usus', 'tulang', 'mie'<span class="punctuation">]</span>;
-            <span class="function">function</span>
-            <span class="return">return</span>
-            <b>seblak.<span class="punctuation">forEach(function)</span>;</b></b></code></pre>
+
+                <pre><code>ariz <span class="return">=</span> <span class="string">"Arrizky"</span>; <span class="muted">// isi valuenya</span>
+console.<span class="punctuation">log(</span>ariz<span class="punctuation">)</span>; <span class="muted">// tampilkan</span>
+
+<span class="punctuation">var</span> ariz; <span class="muted">// deklarasi ariz</span>
+<span class="muted">// output "Arrizky"</span></code></pre>
+
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, itaque quas temporibus culpa ab
-                optio
-                officia nam veniam quasi id architecto maxime dicta eius! Eligendi vero veritatis eaque! Maiores, ipsam!
-            </p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, mollitia? Illum maiores ducimus,
-                tempora
-                quis repellendus optio fugit, labore asperiores veritatis in quod saepe laborum odit, itaque numquam?
-                Iste
-                atque, dignissimos quia odio cumque accusantium quod culpa perspiciatis, ullam impedit dolores quam
-                officiis
-                reiciendis molestiae adipisci incidunt vel. Error neque dolorum quas pariatur libero beatae? Ea magni
-                itaque
-                repellendus, excepturi fuga commodi quas, amet quod aspernatur delectus illo inventore nam tenetur,
-                nostrum
-                a tempore necessitatibus asperiores earum aliquid dolor. Quam excepturi ut omnis mollitia aliquam,
-                laboriosam quibusdam. Maxime voluptatem qui vel assumenda architecto quis possimus. Pariatur esse
-                adipisci
-                et rem quo est veritatis ratione dignissimos delectus accusantium tenetur nulla vel iste officia quis
-                ipsum
-                aperiam natus, deserunt perferendis error dolorem at facere soluta omnis! Velit ratione eaque
-                consequatur
-                facilis beatae deserunt odio, iusto autem dolorem dignissimos, incidunt mollitia eveniet voluptas magnam
-                aliquam magni. Facilis, consequatur aliquid iure laborum officia totam sapiente adipisci doloribus, quae
-                cupiditate perferendis excepturi facere consequuntur aperiam eveniet dolores veniam ea, ipsam architecto
-                sit
-                commodi odit inventore aliquam ab? Deleniti modi excepturi officiis numquam voluptatum a magni nulla
-                delectus maxime facilis aperiam porro corporis molestiae asperiores exercitationem, non impedit qui
-                officia
-                placeat recusandae. Iusto cumque doloremque sed!</p>
         </div>
     </main>
 </body>

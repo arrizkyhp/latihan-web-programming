@@ -114,7 +114,7 @@ ariz.makan(20);
 
 // buat jadi constructor
 function Mahasiswa(nama, energi) {
-    this.nama = nama;
+this.nama = nama;
     this.energi = energi;
 }
 
@@ -131,3 +131,7 @@ Mahasiswa.prototype.maen = function(jam) {
 
 let ariz = new Mahasiswa("Arrizky", 100);
 ariz.makan(10); // "Sudah makan energi bertambah 10"
+
+
+
+// Konsep Class

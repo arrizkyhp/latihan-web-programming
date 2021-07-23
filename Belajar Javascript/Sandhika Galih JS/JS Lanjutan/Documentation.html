@@ -143,8 +143,10 @@ ariz.<span class="punctuation">makan(</span><span class="number">20</span><span 
             <p>memindahkan method Mahasiswa ke Sebuah object baru bernama <b>methodMahasiswa</b>, dan menempelkanya
                 ke
                 <b>Object.create().</b></p>
-            <p>keuntunganya jika kita ingin menambahkan method Baru di function mahasiswa, tinggal ditambahkan di Object
-                methodMahasiswa</p>
+            <p><b>keuntunganya</b> jika kita ingin menambahkan method Baru di function mahasiswa, tinggal ditambahkan di
+                Object
+                methodMahasiswa, selain itu dengan method ini kita dapat menghemat memori.</p>
+            <p><b>kekuranganya</b> kita jadi mengelola dua object, padahal fokusnya adalah Mahasiswa</p>
             <!-- JS Box -->
             <div class="codeheader" id="codeheader_js">JavaSCript</div>
             <div id="codebox">
@@ -175,7 +177,36 @@ ariz.<span class="punctuation">makan(</span><span class="number">20</span><span 
 ariz.<span class="punctuation">makan(</span><span class="number">20</span><span class="punctuation">)</span>; <span class="muted">// "Nama: Arrizky, Energi 100"</span></code></pre>
 
             </div>
+
             <h3>Prototype</h3>
+            <p>Javascript sudah otomatis membuat property bernama prototype pada function Mahasiswa, selanjutnya kita
+                hanya cukup memanggil saja.</p>
+            <p>
+                Prototype juga dapat digunakan untuk mengecek ada method apa saja di dalamnya, cara chekcnya di console
+                ketik misal
+                Object.prototype / Array.prototype.
+            </p>
+            <!-- JS Box -->
+            <div class="codeheader" id="codeheader_js">JavaSCript</div>
+            <div id="codebox">
+
+                <pre><code><span class="function">function</span> <span class="punctuation">Mahasiswa(</span>nama, energi<span class="punctuation">) {</span>
+    <span class="function">this</span>.nama <span class="return">=</span> nama;
+    <span class="function">this</span>.energi <span class="return">=</span> energi;
+<span class="punctuation">}</span>
+
+<span class="muted">// buat prototypenya</span>
+<span class="punctuation">Mahasiswa</span>.<span class="properties">prototype</span>.<span class="punctuation">makan</span> = <span class="function">function</span><span class="punctuation">(</span>porsi<span class="punctuation">) {</span>
+    <span class="function">this</span>.energi <span class="return">+=</span> porsi;
+    <span class="return">return</span> <span class="string">`Sudah makan energi bertambah </span><span class="punctuation">${</span>porsi<span class="punctuation">}</span>`
+<span class="punctuation">}</span>
+
+<span class="punctuation">const</span> ariz = <span class="return">new</span> <span
+    class="punctuation">Mahasiswa(</span><span class="string">'Arrizky'</span>, <span class="number">100</span><span
+    class="punctuation">)</span>;
+ariz.<span class="punctuation">makan(</span><span class="number">10</span><span class="punctuation">)</span>; <span class="muted">// "Sudah makan energi bertambah 10"</span></code></pre>
+
+            </div>
         </div>
 
         <div class="wrapper">

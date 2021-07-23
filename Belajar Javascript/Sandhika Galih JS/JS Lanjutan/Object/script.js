@@ -72,7 +72,7 @@ ariz.makan(20);
 
 // 4. Object.create
 
-const methodMahasiswa = {
+/* const methodMahasiswa = {
     // jika ingin membuat method
     makan: function(porsi) {
         this.energi += porsi;
@@ -108,3 +108,26 @@ function Mahasiswa(nama, energi) {
 
 const ariz = Mahasiswa('Arrizky', 80);
 ariz.makan(20);
+ */
+
+// Protype
+
+// buat jadi constructor
+function Mahasiswa(nama, energi) {
+    this.nama = nama;
+    this.energi = energi;
+}
+
+// buat prototypenya
+Mahasiswa.prototype.makan = function(porsi) {
+    this.energi += porsi;
+    return `Sudah makan energi bertambah ${porsi}`
+}
+
+Mahasiswa.prototype.maen = function(jam) {
+    this.energi -= jam;
+    return `Sudah maen energi berkurang ${jam}`
+}
+
+let ariz = new Mahasiswa("Arrizky", 100);
+ariz.makan(10); // "Sudah makan energi bertambah 10"

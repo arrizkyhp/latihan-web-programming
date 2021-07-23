@@ -1,0 +1,1 @@
+// Cara untuk membuat Object pada Javascript

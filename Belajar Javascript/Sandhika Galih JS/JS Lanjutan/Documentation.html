@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>">
     <title>Documentation | JAVASCRIPT LANJUTAN</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -31,6 +33,9 @@
     <!-- MAIN -->
     <main>
         <h1 class="content-header" id="object-revisited"><span>Object</span><i>(revisited)</i></h1>
+        <p class="file-section">🚀File: <a href="Object/index.html" target="_blank">Object/index.html</a> & <a
+                href="Object/script.js" target="_blank">Object/script.js</a> </p>
+
         <div class="wrapper">
             <h2>Membuat Object pada Javascript</h2>
             <ul>
@@ -44,6 +49,7 @@
             <h3>Object Literal</h3>
             <p>kekurangan dari Object Literal jika ingin membuat instansiasi object berikutnya harus membuat copynya.
                 contohnya kita harus buat mahasiswa2</p>
+            <p>Jika object <b>hanya 1</b>, dan <b>tidak terlalu besar</b> objectnya gunakan <b>Object literal</b></p>
             <!-- JS Box -->
             <div class="codeheader" id="codeheader_js">JavaSCript</div>
             <div id="codebox">
@@ -133,7 +139,43 @@ ariz.<span class="punctuation">makan(</span><span class="number">20</span><span 
 
             </div>
 
+            <h3>Object.create()</h3>
+            <p>memindahkan method Mahasiswa ke Sebuah object baru bernama <b>methodMahasiswa</b>, dan menempelkanya
+                ke
+                <b>Object.create().</b></p>
+            <p>keuntunganya jika kita ingin menambahkan method Baru di function mahasiswa, tinggal ditambahkan di Object
+                methodMahasiswa</p>
+            <!-- JS Box -->
+            <div class="codeheader" id="codeheader_js">JavaSCript</div>
+            <div id="codebox">
 
+                <pre><code><span class="punctuation">const</span> methodMahasiswa <span class="return">=</span> <span class="punctuation">{</span>
+    <span class="punctuation">makan</span>: <span class="function">function(</span>porsi<span class="function">) {</span>
+        <span class="function">this</span>.energi <span class="return">+=</span> porsi;
+        <span class="return">return</span> <span class="string">`Nama:</span> <span class="punctuation">${</span><span class="function">this</span>.nama<span class="punctuation">}</span><span class="string">, Energi</span> <span class="punctuation">${</span><span class="function">this</span>.energi<span class="punctuation">}</span>`
+    },
+
+    <span class="punctuation">maen</span>: <span class="function">function (</span>jam<span class="function">) {</span>
+        <span class="punctuation">const</span> kurang <span class="return">=</span> <span class="function">this</span>.energi <span class="return">-=</span> jam;
+        <span class="return">return</span> <span class="string">`Energi anda berkurang</span> <span class="punctuation">${</span>jam<span class="punctuation">}</span> <span class="string">menjadi</span> <span class="punctuation">${</span>kurang<span class="punctuation">}</span>`
+    },
+}
+
+<span class="function">function</span> <span class="punctuation">Mahasiswa(</span>nama, energi<span class="punctuation">) {</span>
+    <span class="muted">// object.create</span>
+    <span class="punctuation">let</span> mahasiswa <span class="return">=</span> <b><span class="string">Object</span>.<span class="punctuation">create</span><span class="function">(</span>methodMahasiswa<span class="function">)</span></b>;
+    <span class="muted">// isi object kosong</span>
+    mahasiswa.nama <span class="return">=</span> nama;
+    mahasiswa.energi <span class="return">=</span> energi;
+
+    <span class="return">return</span> mahasiswa
+<span class="punctuation">}</span>
+
+<span class="punctuation">const</span> ariz = <span class="punctuation">Mahasiswa(</span><span class="string">'Arrizky'</span>, <span class="number">80</span><span class="punctuation">)</span>;
+ariz.<span class="punctuation">makan(</span><span class="number">20</span><span class="punctuation">)</span>; <span class="muted">// "Nama: Arrizky, Energi 100"</span></code></pre>
+
+            </div>
+            <h3>Prototype</h3>
         </div>
 
         <div class="wrapper">

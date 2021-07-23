@@ -18,31 +18,24 @@ mahasiswa.makan(5); */
 // 2. function Declaration
 // Dengan menggunakan function declaration keuntunganya tidak perlu membuat duplikat dari objectnya.
 // cukup buat templatenya saja lalu jika ingin membuat objectnya jadi banyak tinggal memanggil template / instansiasi berulang kali
-
-/* // buat function
+/*
 function Mahasiswa(nama, energi) {
     // object kosong
     let mahasiswa = {};
-    // isi satu-satu
+    // isi object kosong
     mahasiswa.nama = nama;
     mahasiswa.energi = energi;
 
     // jika ingin membuat method
     mahasiswa.makan = function(porsi) {
         this.energi += porsi;
-        return `Nama: ${this.nama}, Energi ${this.energi}`
-    }
-
-    // optional
-    mahasiswa.maen = function (jam) {
-        const kurang = this.energi -= jam;
-        return `Energi anda berkurang ${jam} menjadi ${kurang}`
+        return `Nama: ${this.nama}, Energi: ${this.energi}`
     }
     return mahasiswa
 }
 
 const ariz = Mahasiswa('Arrizky', 80);
-ariz.makan(20); */
+ariz.makan(20); // "Nama: Arrizky, Energi 100" */
 // to call ariz.makan(90);
 
 // 3. Construcor function
@@ -52,7 +45,7 @@ ariz.makan(20); */
 
 // jika menggunakan constructor function tidak perlu menuliskan deklarasi  variabel dan return itu sudah secara otomasti dilakukan oleh javascript
 // buat function
-function Mahasiswa(nama, energi) {
+/* function Mahasiswa(nama, energi) {
 
     // isi satu-satu
     this.nama = nama;
@@ -75,6 +68,43 @@ function Mahasiswa(nama, energi) {
 const ariz = new Mahasiswa('Arrizky', 80);
 ariz.makan(20);
 
-
+ */
 
 // 4. Object.create
+
+const methodMahasiswa = {
+    // jika ingin membuat method
+    makan: function(porsi) {
+        this.energi += porsi;
+        return `Nama: ${this.nama}, Energi ${this.energi}`
+    },
+
+    // optional
+    maen: function (jam) {
+        const kurang = this.energi -= jam;
+        return `Energi anda berkurang ${jam} menjadi ${kurang}`
+    },
+
+    tidur: function (jam) {
+        const doubleEnergi = jam * 2
+        this.energi += doubleEnergi
+        return `Energi bertambah ${doubleEnergi} menjadi ${this.energi}`
+    }
+}
+
+
+// buat function
+function Mahasiswa(nama, energi) {
+    // object kosong
+    let mahasiswa = Object.create(methodMahasiswa);
+    // isi satu-satu
+    mahasiswa.nama = nama;
+    mahasiswa.energi = energi;
+    // ambil dari object lain
+
+
+    return mahasiswa
+}
+
+const ariz = Mahasiswa('Arrizky', 80);
+ariz.makan(20);

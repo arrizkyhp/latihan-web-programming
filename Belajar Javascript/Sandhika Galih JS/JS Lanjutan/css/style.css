@@ -148,12 +148,9 @@ main h2::before {
 
 main h3 {
     font-size: 1.3rem;
-     margin: .7rem 0;
+    margin: .7rem 0;
 }
 
-main ul {
-    /* margin-left: 2rem; */
-}
 
 main li {
     margin-bottom: .3rem;
@@ -162,6 +159,25 @@ main li {
 main li::before {
     content: "🦝 ";
     margin-right: .5rem;
+}
+
+main .file-section {
+    background: #EDEDED;
+    width: fit-content;
+    padding: .5rem;
+    margin: .5rem 0;
+    border: 3px solid var(--blueSaltedEgg);
+}
+
+main .file-section a{
+    color: var(--blueSaltedEgg);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+main .file-section a:hover{
+    color: #FFC83D;
+    text-decoration: var(--blueSaltedEgg) underline wavy 2px;
 }
 
 /* CodeBox */

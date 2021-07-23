@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Documentation | JAVASCRIPT LANJUTAN</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+    <!-- NAVBAR -->
     <nav>
         <header>
             <h1 class="nav-header"><span>JS</span>Lanjutan</h1>
@@ -18,7 +19,7 @@
         </header>
         <ul>
 
-            <li> <a class="nav-link" href="#Introduction">Object</a></li>
+            <li> <a class="nav-link" href="#object-revisited">Object (revisited)</a></li>
 
             <li><a class="nav-link" href="#Introduction">Prototype</a></li>
             <li><a class="nav-link" href="#Introduction">Object</a></li>
@@ -26,9 +27,10 @@
 
         </ul>
     </nav>
-    <main>
 
-        <h1 class="content-header"><span>Object </span><i>(revisited)</i></h1>
+    <!-- MAIN -->
+    <main>
+        <h1 class="content-header" id="object-revisited"><span>Object</span><i>(revisited)</i></h1>
         <div class="wrapper">
             <h2>Membuat Object pada Javascript</h2>
             <ul>
@@ -37,43 +39,101 @@
                 <li><b>Constructor Function (keyword new)</b></li>
                 <li><b>Object.create()</b></li>
             </ul>
+
+
+            <h3>Object Literal</h3>
+            <p>kekurangan dari Object Literal jika ingin membuat instansiasi object berikutnya harus membuat copynya.
+                contohnya kita harus buat mahasiswa2</p>
             <!-- JS Box -->
             <div class="codeheader" id="codeheader_js">JavaSCript</div>
             <div id="codebox">
-                <pre><code><span class="punctuation">const </span> seblak = <span class="punctuation">[</span>'baso', 'kerupuk', 'usus', 'tulang', 'mie'<span class="punctuation">]</span>;
-<span class="function">function</span>
-<span class="return">return</span>
-<b>seblak.<span class="punctuation">forEach(function)</span>;</b></b></code></pre>
+
+                <pre><code><span class="punctuation">let</span> mahasiswa <span class="return">=</span> <span class="punctuation">{</span>;
+    <span class="properties">nama</span>: <span class="string">'Arrizky'</span>,
+    <span class="properties">energi</span>: <span class="number">100</span>,
+    <span class="muted">// method</span>
+    <span class="punctuation">makan</span>: <span class="function">function(</span>porsi<span class="function">) {
+        this.</span>energi <span class="return">=</span> <span class="function">this</span>.energi <span class="return">+</span> porsi;
+        console.<span class="punctuation">log</span>(<span class="string">`Nama: </span><span
+            class="punctuation">${</span><span class="function">this</span>.nama<span class="punctuation">}</span><span
+            class="string">, Energi:</span><span class="punctuation">${</span><span
+            class="function">this</span>.energi<span class="punctuation">}</span><span class="string">`</span>);
+        <span class="return">return</span>
+    <span class="function">}</span>
+<span class="punctuation">}</span>
+
+mahasiswa.<span class="punctuation">makan(</span><span class="number">5</span><span class="punctuation">)</span>; <span class="muted">// Nama: Arrizky, Energi: 105</span></code></pre>
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, itaque quas temporibus culpa ab
-                optio
-                officia nam veniam quasi id architecto maxime dicta eius! Eligendi vero veritatis eaque! Maiores, ipsam!
+
+            <h3>Function Declaration</h3>
+            <p> Dengan menggunakan <b>function declaration</b> keuntunganya jika kita ingin menambahkan mahasiswa
+                baru <b> tidak perlu membuat duplikat dari
+                    objectnya</b>.
+                cukup <b>buat function saja</b> kemudian <b>
+                    tinggal panggil function / instansiasi berulang kali.
+                </b>
             </p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, mollitia? Illum maiores ducimus,
-                tempora
-                quis repellendus optio fugit, labore asperiores veritatis in quod saepe laborum odit, itaque numquam?
-                Iste
-                atque, dignissimos quia odio cumque accusantium quod culpa perspiciatis, ullam impedit dolores quam
-                officiis
-                reiciendis molestiae adipisci incidunt vel. Error neque dolorum quas pariatur libero beatae? Ea magni
-                itaque
-                repellendus, excepturi fuga commodi quas, amet quod aspernatur delectus illo inventore nam tenetur,
-                nostrum
-                a tempore necessitatibus asperiores earum aliquid dolor. Quam excepturi ut omnis mollitia aliquam,
-                laboriosam quibusdam. Maxime voluptatem qui vel assumenda architecto quis possimus. Pariatur esse
-                adipisci
-                et rem quo est veritatis ratione dignissimos delectus accusantium tenetur nulla vel iste officia quis
-                ipsum
-                aperiam natus, deserunt perferendis error dolorem at facere soluta omnis! Velit ratione eaque
-                consequatur
-                facilis beatae deserunt odio, iusto autem dolorem dignissimos, incidunt mollitia eveniet voluptas magnam
-                aliquam magni. Facilis, consequatur aliquid iure laborum officia totam sapiente adipisci doloribus, quae
-                cupiditate perferendis excepturi facere consequuntur aperiam eveniet dolores veniam ea, ipsam architecto
-                sit
-                commodi odit inventore aliquam ab? Deleniti modi excepturi officiis numquam voluptatum a magni nulla
-                delectus maxime facilis aperiam porro corporis molestiae asperiores exercitationem, non impedit qui
-                officia
-                placeat recusandae. Iusto cumque doloremque sed!</p>
+
+            <!-- JS Box -->
+            <div class="codeheader" id="codeheader_js">JavaSCript</div>
+            <div id="codebox">
+
+                <pre><code><span class="function">function</span> <span class="punctuation">Mahasiswa(</span>nama, energi<span class="punctuation">) {</span>
+    <span class="muted">// object kosong</span>
+    <span class="punctuation">let</span> mahasiswa <span class="return">=</span> <span class="function">{}</span>;
+    <span class="muted">// isi object kosong</span>
+    mahasiswa.nama <span class="return">=</span> nama;
+    mahasiswa.energi <span class="return">=</span> energi;
+
+    <span class="muted">// jika ingin membuat method</span>
+    mahasiswa.<span class="punctuation">makan</span> <span class="return">=</span> <span
+        class="function">function(</span>porsi<span class="function">) {
+        this</span>.energi <span class="return">+=</span> porsi;
+        <span class="return">return</span> <span class="string">`Nama:</span> <span class="punctuation">${</span><span class="function">this</span>.nama<span class="punctuation">}</span><span class="string">, Energi:</span> <span class="punctuation">${</span><span class="function">this</span>.energi<span class="punctuation">}</span><span class="string">`</span>
+    <span class="function">}</span>
+    <span class="return">return</span> mahasiswa
+<span class="punctuation">}</span>
+
+<span class="punctuation">const</span> ariz = <span class="punctuation">Mahasiswa(</span><span class="string">'Arrizky'</span>, <span class="number">80</span><span class="punctuation">)</span>;
+ariz.<span class="punctuation">makan(</span><span class="number">20</span><span class="punctuation">)</span>; <span class="muted">// "Nama: Arrizky, Energi 100"</span></code></pre>
+
+            </div>
+
+            <h3>Constructor Function (keyword new)</h3>
+            <p><b>Constructor</b> <b>Function</b> mirip dengan <b>Function</b> <b>Declaration</b>, Perbedaanya <b>
+                    jika
+                    menggunakan constructor function
+                    tidak perlu menuliskan deklarasi <u>variabel</u> dan <u>return</u>
+                </b> itu sudah secara otomasti dilakukan oleh javascript.
+            </p>
+            <ul>
+                <li>deklarasi variable dihapus.</li>
+                <li><b>mahasiswa</b> di ganti dengan <b>this</b>.</li>
+                <li>menambahkan <b>new</b> saat akan di inisialisasi.</li>
+            </ul>
+            <!-- JS Box -->
+            <div class="codeheader" id="codeheader_js">JavaSCript</div>
+            <div id="codebox">
+
+                <pre><code><span class="function">function</span> <span class="punctuation">Mahasiswa(</span>nama, energi<span class="punctuation">) {</span>
+    <span class="function">this</span>.nama <span class="return">=</span> nama;
+    <span class="function">this</span>.energi <span class="return">=</span> energi;
+
+    <span class="muted">// jika ingin membuat method</span>
+    <span class="function">this</span>.<span class="punctuation">makan</span> <span class="return">=</span> <span
+        class="function">function(</span>porsi<span class="function">) {
+        this</span>.energi <span class="return">+=</span> porsi;
+        <span class="return">return</span> <span class="string">`Nama:</span> <span class="punctuation">${</span><span class="function">this</span>.nama<span class="punctuation">}</span><span class="string">, Energi:</span> <span class="punctuation">${</span><span class="function">this</span>.energi<span class="punctuation">}</span><span class="string">`</span>
+    <span class="function">}</span>
+    <span class="return">return</span> mahasiswa
+<span class="punctuation">}</span>
+
+<span class="punctuation">const</span> ariz = <span class="return">new</span> <span class="punctuation">Mahasiswa(</span><span class="string">'Arrizky'</span>, <span class="number">80</span><span class="punctuation">)</span>;
+ariz.<span class="punctuation">makan(</span><span class="number">20</span><span class="punctuation">)</span>; <span class="muted">// "Nama: Arrizky, Energi 100"</span></code></pre>
+
+            </div>
+
+
         </div>
 
         <div class="wrapper">

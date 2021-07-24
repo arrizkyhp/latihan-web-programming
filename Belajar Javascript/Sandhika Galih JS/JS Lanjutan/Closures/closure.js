@@ -36,13 +36,13 @@ selamatPagi('arrizky');
 //  private method
 
 let add = (function () { //bunkus dengan immediately invoke function
-    let counter = 0; // private method
+    let counter = 0; // private properties and method
     return function () {
         return ++counter;
     }
 })();
 
-counter = 100; // tidak akan berpengarug ke counter di add()
+counter = 100; // tidak akan berpengaruh ke counter di add()
 
 console.log(add()); // 1
 console.log(add()); // 2

@@ -24,7 +24,7 @@
             <li> <a class="nav-link" href="#object-revisited">Object (revisited)</a></li>
 
             <li><a class="nav-link" href="#closures">Closures</a></li>
-            <li><a class="nav-link" href="#Introduction">Object</a></li>
+            <li><a class="nav-link" href="#var-let-const">Var, Let & Const</a></li>
 
 
         </ul>
@@ -231,6 +231,10 @@ ariz.<span class="punctuation">makan(</span><span class="number">10</span><span 
         </div>
 
         <h1 class="content-header" id="closures"><span>Closures</span></h1>
+        <p class="file-section">🚀File: <a href="Closures/index.html" target="_blank">Closures/index.html</a>, <a
+                href="Closures/script.js" target="_blank">Closures/script.js</a> & <a href="Closures/closure.js"
+                target="_blank">Closures/closure.js</a> </p>
+
         <div class="wrapper">
             <h2>Execution Context, Hoisting, Scope</h2>
             <h3>2 Fase pada Execution Context / pada saat program dijalankan</h3>
@@ -249,6 +253,10 @@ ariz.<span class="punctuation">makan(</span><span class="number">10</span><span 
                     href="http://pythontutor.com/javascript.html" target="_blank">
                     http://pythontutor.com/javascript.html</a></p>
             <h3>Hoisting</h3>
+            <p>Javascript memungkinkan kita untuk <b>memanggil sebuah variabel sebelum mendefinisikan</b>, tetapi
+                perilakunya
+                agak "aneh", namun hal itu terjadi jika kita menggunakan <b>var</b> saja untuk membuat sebuah variabel
+            </p>
             <p>Hoisting merupakan perilaku default JavaScript untuk memindahkan deklarasi ke atas.</p>
             <p>pada Javascript sebuah variable dapat di deklarasikan <b>setelah digunakan,</b>
                 dengan kata lain sebuah variable <b>dapat digunakan sebelum di deklarasikan</b></p>
@@ -346,6 +354,34 @@ console.<span class="punctuation">log(add</span><span class="function">()</span>
 
             </div>
         </div>
+        <h1 class="content-header" id="var-let-const"><span>Var, Let & Const</span></h1>
+        <div class="wrapper">
+            <p>var, let & const merupakan sebuah keyword untuk membuat sebuah variabel</p>
+            <h3>IIFE (Immediately Invoked Function Expression)</h3>
+            <p>otomatis menjalankan function.</p>
+            <p>menyimpan function ke dalam kurung.</p>
+            <p>menjaga agar variabel dalam function tidak dapat diakses dari luar. </p>
+            <p><b>Namun</b> cukup dengan menggunakan <b>let/const</b> otomatis variabel tidak dapat diakses dari luar.
+                <b>(block scope)</b>
+            </p>
+            <!-- JS Box -->
+            <div class="codeheader" id="codeheader_js">JavaSCript</div>
+            <div id="codebox">
+
+                <pre><code><span class="punctuation">(</span><span class="function">function() {</span>
+    console.<span class="punctuation">log</span>(<span class="string">"hello"</span>);
+<span class="function">}()</span><span class="punctuation">)</span>; <span class="muted">// hello</span></code></pre>
+
+            </div>
+            <h3>Let atau Const ??</h3>
+            <p>Jika kita yakin nantinya <b>variabel kita tidak akan berubah valuenya</b> gunakan <b>const</b>/ Konstanta
+                => bernilai tetap
+            </p>
+            <p>Sebaliknya jika nantinya <b>variabel akan berubah</b> gunakan <b>let</b></p>
+            <br>
+            <p>kita menggunakan const untuk meminimalisir perubahan state</p>
+        </div>
+
     </main>
 </body>
 

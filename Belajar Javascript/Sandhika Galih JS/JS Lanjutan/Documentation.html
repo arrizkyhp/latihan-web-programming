@@ -207,6 +207,27 @@ ariz.<span class="punctuation">makan(</span><span class="number">20</span><span 
 ariz.<span class="punctuation">makan(</span><span class="number">10</span><span class="punctuation">)</span>; <span class="muted">// "Sudah makan energi bertambah 10"</span></code></pre>
 
             </div>
+
+            <h3>Class</h3>
+
+            <!-- JS Box -->
+            <div class="codeheader" id="codeheader_js">JavaSCript</div>
+            <div id="codebox">
+
+                <pre><code><span class="return">class</span> <span class="punctuation">Mahasiswa</span> {
+    <span class="punctuation">constructor</span><span class="function">(</span>nama, energi<span class="function">) {</span>
+        <span class="function">this</span>.nama <span class="return">=</span> nama;
+        <span class="function">this</span>.energi <span class="return">=</span> energi;
+    <span class="function">}</span>
+
+    <span class="punctuation">makan</span> <span class="function">(</span>porsi<span class="function">) {</span>
+        <span class="function">this</span>.energi <span class="return">+=</span> porsi;
+        <span class="return">return</span> <span class="string">`Sudah makan energi naik </span><span class="punctuation">${</span>porsi<span class="punctuation">}</span><span class="string">`</span>;
+    <span class="function">}</span>
+}
+<span class="punctuation">const</span> ariz <span class="return">= new</span> <span class="punctuation">Mahasiswa(</span><span class="string">'Arrizky'</span>, <span class="number">100</span><span class="punctuation">)</span>;</code></pre>
+
+            </div>
         </div>
 
         <h1 class="content-header" id="closures"><span>Closures</span></h1>
@@ -228,18 +249,100 @@ ariz.<span class="punctuation">makan(</span><span class="number">10</span><span 
                     href="http://pythontutor.com/javascript.html" target="_blank">
                     http://pythontutor.com/javascript.html</a></p>
             <h3>Hoisting</h3>
-            <p>Hoisting merupakan perilaku default JavaScript untuk memindahkan deklarasi ke atas</p>
-            <p>pada Javascript sebuah variable dapat di deklarasikan <b>setelah digunakan</b></p>
-            <p>dengan kata lain sebuah variable <b>dapat digunakan sebelum di deklarasikan</b></p>
+            <p>Hoisting merupakan perilaku default JavaScript untuk memindahkan deklarasi ke atas.</p>
+            <p>pada Javascript sebuah variable dapat di deklarasikan <b>setelah digunakan,</b>
+                dengan kata lain sebuah variable <b>dapat digunakan sebelum di deklarasikan</b></p>
             <!-- JS Box -->
             <div class="codeheader" id="codeheader_js">JavaSCript</div>
             <div id="codebox">
-
                 <pre><code>ariz <span class="return">=</span> <span class="string">"Arrizky"</span>; <span class="muted">// isi valuenya</span>
 console.<span class="punctuation">log(</span>ariz<span class="punctuation">)</span>; <span class="muted">// tampilkan</span>
 
 <span class="punctuation">var</span> ariz; <span class="muted">// deklarasi ariz</span>
 <span class="muted">// output "Arrizky"</span></code></pre>
+
+            </div>
+
+            <h3>Closure</h3>
+            <ul>
+                <li>Closure merupakan kombinasi antara function dan lingkungan <b>leksikal (lexical scope)</b> di dalam
+                    function
+                    tersebut. <b>-mdn</b></li>
+                <li>Closure adalah sebuah function ketika memiliki akses ke parent scope-nya, meskipun parent
+                    scope-nya sudah
+                    selesai dieksekusi. <b>-w3school</b></li>
+                <li>Closure adalah sebuah function dikembalikan oleh function yang lain, yang memiliki akses ke
+                    lingkungan
+                    saat ia diciptakan. <b>-code fellow</b></li>
+                <li>Closure adalah sebuah function yang sebelumnya sudah memiliki data, hasil dari function yang lain.
+                    <b>-
+                        Techsith</b></li>
+            </ul>
+
+            <p><b>Lexical Scope</b></p>
+
+            <p>Dimana suatu function scope dapat mengakses variable di parent scopenya.</p>
+            <!-- JS Box -->
+            <div class="codeheader" id="codeheader_js">JavaSCript</div>
+            <div id="codebox">
+
+                <pre><code><span class="function">function</span> <span class="punctuation">init() {</span>
+    <span class="punctuation">const</span> nama <span class="return">=</span> <span class="string">'Arrizky'</span>; <span class="muted">// local variable</span>
+    <span class="function">function</span> <span class="punctuation">tampilNama</span><span class="function">() {</span><span class="muted"> // inner function (closure*)</span>
+        console.<span class="punctuation">log</span><span class="properties">(</span>nama<span class="properties">)</span>; <span class="muted">// akses ke parent variable</span>
+    <span class="function">}</span>
+    <span class="punctuation">tampilNama</span><span class="function">()</span>;
+<span class="punctuation">}</span>
+<span class="punctuation">init()</span>;</code></pre>
+
+            </div>
+
+            <h3>Alasan menggunakan Closure</h3>
+            <ul>
+                <li>Untuk membuat <b>Function Factories</b> <b>-MDN</b></li>
+                <li>Untuk membuat seolah-olah kita membuat sebuah private method.</li>
+            </ul>
+            <p><b>Function Factories</b></p>
+            <p> membuat function sesuai dengan function lain</p>
+            <p>selengkapnya: <a
+                    href="https://www.javascripttutorial.net/javascript-factory-functions/">https://www.javascripttutorial.net/javascript-factory-functions/</a>
+            </p>
+            <!-- JS Box -->
+            <div class="codeheader" id="codeheader_js">JavaSCript</div>
+            <div id="codebox">
+
+                <pre><code><span class="function">function</span> <span class="punctuation">ucapkanSalam(</span>waktu<span class="punctuation">) {</span>
+    <span class="return">return</span> <span class="function">function(</span>nama<span class="function">) {</span>
+        console.<span class="punctuation">log</span>(<span class="string">`Halo</span> <span class="punctuation">${</span>nama}<span class="string">, selamat</span> <span class="punctuation">${</span>waktu<span class="punctuation">}</span><span class="string">`</span>);
+    <span class="function">}</span>
+<span class="punctuation">}</span>
+
+<span class="punctuation">const selamatPagi </span><span class="return">=</span> <span class="punctuation">ucapkanSalam(</span><span class="string">'Pagi'</span><span class="punctuation">)</span>;
+<span class="punctuation">const selamatSiang </span><span class="return">=</span> <span class="punctuation">ucapkanSalam(</span><span class="string">'Siang'</span><span class="punctuation">)</span>;
+<span class="punctuation">const selamatMalam </span><span class="return">=</span> <span class="punctuation">ucapkanSalam(</span><span class="string">'Malam'</span><span class="punctuation">)</span>;
+
+<span class="punctuation">selamatPagi(</span><span class="string">'arrizky'</span><span class="punctuation">)</span>;</code></pre>
+
+            </div>
+            <p><b>Private Method</b></p>
+            <p>variable yang ada di dalam sebuah function, dan tidak bisa terpengaruh jika ada variabel yang sama di
+                luar function tersebut.</p>
+
+            <!-- JS Box -->
+            <div class="codeheader" id="codeheader_js">JavaSCript</div>
+            <div id="codebox">
+
+                <pre><code><span class="punctuation">let add </span><span class="return">=</span> <span class="punctuation">(</span><span class="function">function () { </span><span class="muted">//bungkus dengan <i>immediately invoke function</i></span>
+    <span class="punctuation">let</span> counter <span class="return">=</span> <span class="number">0</span>; <span class="muted">// private properties and method</span>
+    <span class="return">return</span> <span class="function">function</span> <span class="properties">() {</span>
+        <span class="return">return</span> <span class="return">++</span>counter;
+    <span class="properties">}</span>
+<span class="function">}</span><span class="punctuation">)()</span>;
+
+counter = <span class="number">100</span>; <span class="muted">// tidak akan berpengaruh ke counter di add()</span>
+
+console.<span class="punctuation">log(add</span><span class="function">()</span><span class="punctuation">)</span>; <span class="muted">// 1</span>
+console.<span class="punctuation">log(add</span><span class="function">()</span><span class="punctuation">)</span>; <span class="muted">// 2</span></code></pre>
 
             </div>
         </div>

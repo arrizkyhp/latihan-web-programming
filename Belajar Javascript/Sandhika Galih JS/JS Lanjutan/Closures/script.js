@@ -33,8 +33,36 @@ function sayHello() {
 // juga terdapat hoisting
 
 //
+/*
+ariz = "Arrizky"; // isi valuenya
+console.log(ariz); // tampilkan
 
-ariz = "Arrizky";
-console.log(ariz);
+var ariz; // deklarasi ariz
+// output "Arrizky" */
 
-var ariz;
+
+// versi class
+/* class Mahasiswa {
+    constructor(nama, energi) {
+        this.nama = nama;
+        this.energi = energi;
+    }
+
+    makan (porsi) {
+        this.energi += porsi;
+        return `Sudah makan energi naik ${porsi}`;
+    }
+
+    maen(jam) {
+        this.energi -= jam;
+        return `Sudah Maen energi turun ${jam}`;
+    }
+
+    tidur(jam) {
+        const energiNaik = jam * 2;
+        this.energi += energiNaik;
+        return `Sudah tidur energi naik ${energiNaik}`
+    }
+}
+const ariz = new Mahasiswa('Arrizky', 100); */
+

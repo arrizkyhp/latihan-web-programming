@@ -155,6 +155,7 @@ main h3 {
 
 main li {
     margin-bottom: .3rem;
+    line-height: 1.75rem;
 }
 
 main li::before {

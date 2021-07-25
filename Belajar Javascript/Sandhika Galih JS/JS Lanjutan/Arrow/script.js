@@ -77,7 +77,7 @@ const arrizky = new Mahasiswa(); */
 // dalam ibject literal this tidak bisa digunakan
 // Kecuali didalamnya terdapat sebuah function yang bukan method.
 
-const Mahasiswa = function() {
+/* const Mahasiswa = function() {
     this.nama = 'Arrizky';
     this.umur = '24';
     // method bisa di arrow
@@ -91,16 +91,16 @@ const Mahasiswa = function() {
     // setInterval(() => {
     //     console.log(this.umur++);
     // }, 500);
-}
+} */
 // arrow function digunakan tergantun kebutuhan.
 
-const arrizky = new Mahasiswa();
-
+/* const arrizky = new Mahasiswa();
+arrizky.sayHello(); */
 
 // implementasi
 
 // mengambil elemen kotan
-/* const box = document.querySelector('.box');
+const box = document.querySelector('.box');
 
 
 box.addEventListener('click', function() {
@@ -118,4 +118,4 @@ box.addEventListener('click', function() {
     setTimeout(() => {
         this.classList.toggle(dua);
     },600)
-}) */
+})

@@ -26,6 +26,7 @@
             <li><a class="nav-link" href="#closures">Closures</a></li>
             <li><a class="nav-link" href="#var-let-const">Var, Let & Const</a></li>
             <li><a class="nav-link" href="#arrow-function">Arrow Function</a></li>
+            <li><a class="nav-link" href="#higher-order-function">Higher Order Function</a></li>
 
 
         </ul>
@@ -306,7 +307,7 @@ console.<span class="punctuation">log(</span>ariz<span class="punctuation">)</sp
 
             </div>
 
-            <h3>Alasan menggunakan Closure</h3>
+            <h3 id="contoh-hfo">Alasan menggunakan Closure</h3>
             <ul>
                 <li>Untuk membuat <b>Function Factories</b> <b>-MDN</b></li>
                 <li>Untuk membuat seolah-olah kita membuat sebuah private method.</li>
@@ -389,6 +390,9 @@ console.<span class="punctuation">log(add</span><span class="function">()</span>
         </div>
 
         <h1 class="content-header" id="arrow-function"><span>Arrow Function (=>)</span></h1>
+        <p class="file-section">🚀File: <a href="Arrow/index.html" target="_blank">Arrow/index.html</a> & <a
+                href="Arrow/script.js" target="_blank">Arrow/script.js</a> </p>
+
         <div class="wrapper">
             <p>Bentuk lain yang lebih ringkas dari <b>Function Expression / Function dengan variabel</b></p>
             <p>Beberapa macam penulisan function:</p>
@@ -466,21 +470,98 @@ console.<span class="punctuation">table(</span>jumlahHuruf<span class="punctuati
             <div class="codeheader" id="codeheader_js">JavaSCript</div>
             <div id="codebox">
 
-                <pre><code>const Mahasiswa = function() {
-    this.nama = 'Arrizky';
-    this.umur = '24';
+                <pre><code><span class="punctuation">const Mahasiswa</span> <span class="return">=</span> <span class="function">function</span><span class="punctuation">() {</span>
+    <span class="function">this</span>.nama <span class="return">=</span> <span class="string">'Arrizky'</span>;
+    <span class="function">this</span>.umur <span class="return">=</span> <span class="string">'24'</span>;
 
     <span class="muted">// this akan mengecek lexical scope/ ke atas / ke parentnya</span>
-    this.sayHello = () => {
-        return `Halo saya ${this.nama}, dan saya ${this.umur} tahun`;
-    }
-}
+    <span class="function">this</span>.<span class="punctuation">sayHello</span> = <span class="function">() </span><span class="punctuation">=></span> <span class="function">{</span>
+        <span class="return">return</span> <span class="string">`Halo saya</span> <span class="punctuation">${</span><span class="function">this</span>.nama<span class="punctuation">}</span><span class="string">, dan saya</span> <span class="punctuation">${</span>this.umur<span class="punctuation">}</span> <span class="string">tahun`</span>;
+    <span class="function">}</span>
+<span class="punctuation">}</span>
 
-const arrizky = new Mahasiswa();
-arrizky.sayHello() <span class="muted">// "Halo saya Arrizky, dan saya 24 tahun".</span></code></pre>
+<span class="punctuation">const</span> arrizky <span class="return">= new</span> <span class="punctuation">Mahasiswa()</span>;
+arrizky.<span class="punctuation">sayHello()</span>; <span class="muted">// "Halo saya Arrizky, dan saya 24 tahun".</span></code></pre>
             </div>
 
         </div>
+
+        <h1 class="content-header" id="higher-order-function"><span>Higher Order Function</span></h1>
+
+        <div class="wrapper">
+            <h2>Pengertian Hihger Order Function</h2>
+            <p>Function yang beroperasi pada function yang lain. Baik itu digunakan dalam argument, maupun sebagai
+                return value. <b>-eloquentjavascript.net</b></p>
+            <p>di dalam javascript sebuah function disebut dengan <b>First Class Function</b>, artinya inti dari
+                javascript
+                adalah function.</p><br>
+
+            <p>Javascript memperlakukan function sebagai object <b>-sitepoint.com</b></p>
+            <p>Object juga merupakan sebuah value, sama seperti integer atau string. Maka <b>
+                    function juga bisa kita simpan
+                    sebagai argument, maupun return value dari sebuah function yang lain.
+                </b></p>
+            <p>ketika menggunakan function kita <b>bisa menyimpan function lagi sebagai argument.</b></p><br>
+            <p>Function yang disimpan sebagai argument disebut <b>Callback</b></p>
+            <p>Funtion yang memiliki callback sebagai argumentnya disebut <b>Higher Order Function</b>
+            </p>
+
+            <ul>
+                <li><b>function kerjakanTugas</b> = Higher Order Function</li>
+                <li><b>selesai</b> = callback</li>
+            </ul>
+            <!-- JS Box -->
+            <div class="codeheader" id="codeheader_js">JavaSCript</div>
+            <div id="codebox">
+
+                <pre><code><span class="function"><b>function</b></span> <span class="punctuation"><b>kerjakanTugas</b>(</span>matakuliah, <b>selesai</b><span class="punctuation">) {</span>
+    console.<span class="punctuation">log</span><span class="function">(</span><span class="string">`Mulai mengerjakan tugas</span> <span class="punctuation">${</span>matakuliah<span class="punctuation">}</span> <span class="string">...`</span><span class="function">)</span>;
+
+        <span class="punctuation">selesai</span><span class="function">()</span>;
+<span class="punctuation">}</span>
+
+<span class="function">function</span> <span class="punctuation">selesai() {</span>
+    <span class="punctuation">alert</span><span class="function">(</span><span class="string">`Selesai mengerjakan tugas!!`</span><span class="function">)</span>;
+<span class="punctuation">}</span>
+
+<span class="punctuation">kerjakanTugas(</span><span class="string">'Algoritma'</span>, <span class="punctuation">selesai)</span>;</code></pre>
+            </div>
+            <p><b>Contoh</b> lainya adalah setTimeout dan setInterval dimana keduanya memiliki 2 parameter.</p>
+            <ul>
+                <li>parameter pertama function</li>
+                <li>parameter kedua adalah integer, untuk menyimpan berapa waktu tunggu</li>
+            </ul>
+            <p>maka bisa dilihat parameter pertama merupakan function (callback), sehingga setTimeout dan setInterval
+                bisa disebut dengan Higher Order Function.</p>
+            <br>
+            <p><a href="#contoh-hfo">Contoh</a> lainnya juga ketika kita punya sebuah <b>
+                    function yang return value nya merupakan sebuah
+                    function
+                    juga.
+                </b></p>
+
+            <h3>Kenapa menggunakan Higher Order Function??</h3>
+            <p>ada beberapa alasan:</p>
+            <ul>
+                <li><b>Absktraksi</b> => agar kode yang kita buat bisa lebih sederhana. Karena dengan menggunakan
+                    function itu
+                    artinya kita menyembunyikan kerumitan. <br> Semakin besar sebuah program, semakin tinggin
+                    kompleksitasnya, semakin membingungkan programmernya.</li>
+                <li>Dengan terbiasa kita menggunakan function, kita masuk ke sebuah pendekatan yang namanya
+                    <b>Functional Programming</b>, dan ketika kita menggunakan paradigma ini dengan benar itu akan
+                    membuat program kita lebih efektif, aman, dan efisien lagi.</li>
+            </ul>
+            <h3>Contoh Higher Order Function</h3>
+            <p>sering digunakan terutama untuk pengelolaan array:</p>
+            <ul>
+                <li>Arrau.prototype.map()</li>
+                <li>Arrau.prototype.filter()</li>
+                <li>Arrau.prototype.reduce()</li>
+            </ul>
+
+
+        </div>
+
     </main>
 </body>
 

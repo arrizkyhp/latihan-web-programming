@@ -449,6 +449,37 @@ console.<span class="punctuation">log(tampilHW</span><span class="function">()</
 console.<span class="punctuation">table(</span>jumlahHuruf<span class="punctuation">)</span>;</code></pre>
             </div>
 
+            <h2>Konsep <i>this</i> pada arrow function</h2>
+            <ul>
+                <li>Jika menggunakan arrow function, <b><i>this</i> tidak akan berfungi semestinya</b>, this akan
+                    mengecek ke
+                    atas /
+                    lexical scope.</li>
+                <li>maka dari itu <b><i>this</i></b> pada arrow function hanya <b>akan bekerja semestinya</b> jika
+
+                    sebuah<b>
+                        function didalamnya memiliki sebuah function yang bukan method.
+                    </b>
+                    </b></li>
+            </ul>
+            <!-- JS Box -->
+            <div class="codeheader" id="codeheader_js">JavaSCript</div>
+            <div id="codebox">
+
+                <pre><code>const Mahasiswa = function() {
+    this.nama = 'Arrizky';
+    this.umur = '24';
+
+    <span class="muted">// this akan mengecek lexical scope/ ke atas / ke parentnya</span>
+    this.sayHello = () => {
+        return `Halo saya ${this.nama}, dan saya ${this.umur} tahun`;
+    }
+}
+
+const arrizky = new Mahasiswa();
+arrizky.sayHello() <span class="muted">// "Halo saya Arrizky, dan saya 24 tahun".</span></code></pre>
+            </div>
+
         </div>
     </main>
 </body>

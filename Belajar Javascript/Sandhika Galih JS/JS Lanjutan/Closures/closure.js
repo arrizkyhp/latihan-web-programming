@@ -46,3 +46,11 @@ counter = 100; // tidak akan berpengaruh ke counter di add()
 
 console.log(add()); // 1
 console.log(add()); // 2
+
+
+
+// IIFE
+
+(function() {
+    console.log("hello")
+}()); // hello

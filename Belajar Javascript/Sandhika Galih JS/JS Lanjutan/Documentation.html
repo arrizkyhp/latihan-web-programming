@@ -25,6 +25,7 @@
 
             <li><a class="nav-link" href="#closures">Closures</a></li>
             <li><a class="nav-link" href="#var-let-const">Var, Let & Const</a></li>
+            <li><a class="nav-link" href="#arrow-function">Arrow Function</a></li>
 
 
         </ul>
@@ -354,6 +355,7 @@ console.<span class="punctuation">log(add</span><span class="function">()</span>
 
             </div>
         </div>
+
         <h1 class="content-header" id="var-let-const"><span>Var, Let & Const</span></h1>
         <div class="wrapper">
             <p>var, let & const merupakan sebuah keyword untuk membuat sebuah variabel</p>
@@ -386,6 +388,68 @@ console.<span class="punctuation">log(add</span><span class="function">()</span>
             <p>kita menggunakan const untuk meminimalisir perubahan state</p>
         </div>
 
+        <h1 class="content-header" id="arrow-function"><span>Arrow Function (=>)</span></h1>
+        <div class="wrapper">
+            <p>Bentuk lain yang lebih ringkas dari <b>Function Expression / Function dengan variabel</b></p>
+            <p>Beberapa macam penulisan function:</p>
+            <ul>
+                <li>Function Declaration</li>
+                <li>Function Expression</li>
+                <li><b>Arrow Function</b></li>
+            </ul>
+
+            <h2>Karaterisik Arrow Function</h2>
+            <h3>Parameter hanya 1</h3>
+            <ul>
+                <li>Jika hanya satu parameter tidak perlu menggunakan <b>()</b> & <b>{}</b>.</li>
+                <li>Jika isi dari <b>function hanya return saja</b>, return tidak perlu dicantumkan <b>(implicit
+                        return)</b>.</li>
+            </ul>
+
+            <!-- JS Box -->
+            <div class="codeheader" id="codeheader_js">JavaSCript</div>
+            <div id="codebox">
+
+                <pre><code><span class="punctuation">const tampilPesan</span> <span class="return">=</span> nama <span class="punctuation">=></span>  <span class="string">`Hallo</span> <span class="punctuation">${</span>nama<span class="punctuation">}</span><span class="string">`</span>;
+console.<span class="punctuation">log(tampilPesan</span><span class="function">(</span><span class="string">"arrizky"</span><span class="function">)</span><span class="punctuation">)</span>;
+</code></pre>
+            </div>
+
+            <h3>Parameter 2 atau lebih</h3>
+            <p>jika ada 2 atau lebih parameter, harus menggunakan <b>()</b>.</p>
+
+            <!-- JS Box -->
+            <div class="codeheader" id="codeheader_js">JavaSCript</div>
+            <div id="codebox">
+
+                <pre><code><span class="punctuation">const tampilNama</span> <span class="return">=</span> <span class="punctuation">(</span>nama, waktu<span class="punctuation">)</span> <span class="punctuation">=> {</span>
+    <span class="return">return</span> <span class="string">`Halo</span> <span class="punctuation">${</span>nama<span class="punctuation">}</span> <span class="string">selamat</span> <span class="punctuation">${</span>waktu<span class="punctuation">}</span><span class="string">`</span>;
+<span class="punctuation">}</span></code></pre>
+            </div>
+
+            <h3>Tanpa parameter</h3>
+            <p>wajib menggunakan <b>()</b>.</p>
+            <!-- JS Box -->
+            <div class="codeheader" id="codeheader_js">JavaSCript</div>
+            <div id="codebox">
+
+                <pre><code><span class="punctuation">const tampilHW</span> <span class="return">=</span> <span class="punctuation">() =></span> <span class="string">`Hello World`</span>;
+console.<span class="punctuation">log(tampilHW</span><span class="function">()</span><span class="punctuation">)</span>;</code></pre>
+            </div>
+
+            <h3>Function merubah Array ke Object</h3>
+            <p>jika ingin merubah Array ke object gunakan <b>()</b> ke properties.</p>
+            <!-- JS Box -->
+            <div class="codeheader" id="codeheader_js">JavaSCript</div>
+            <div id="codebox">
+
+                <pre><code><span class="punctuation">const</span> mahasiswa <span class="return">=</span> <span class="punctuation">[</span><span class="string">'Arrizky'</span>, <span class="string">'Hasya'</span>, <span class="string">'Pratama'</span><span class="punctuation">]</span>;
+
+<span class="punctuation">const</span> jumlahHuruf <span class="return">=</span> mahasiswa.<span class="punctuation">map</span>(nama <span class="punctuation">=></span> <span class="function">(</span><span class="properties">{nama</span>: nama, <span class="properties">jmlHuruf</span>: nama.<span class="properties">length}</span><span class="function">)</span><span class="punctuation">)</span>;
+console.<span class="punctuation">table(</span>jumlahHuruf<span class="punctuation">)</span>;</code></pre>
+            </div>
+
+        </div>
     </main>
 </body>
 

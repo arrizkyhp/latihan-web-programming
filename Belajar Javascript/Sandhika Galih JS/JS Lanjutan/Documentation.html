@@ -526,6 +526,7 @@ arrizky.<span class="punctuation">sayHello()</span>; <span class="muted">// "Hal
 
 <span class="punctuation">kerjakanTugas(</span><span class="string">'Algoritma'</span>, <span class="punctuation">selesai)</span>;</code></pre>
             </div>
+
             <p><b>Contoh</b> lainya adalah setTimeout dan setInterval dimana keduanya memiliki 2 parameter.</p>
             <ul>
                 <li>parameter pertama function</li>
@@ -551,14 +552,76 @@ arrizky.<span class="punctuation">sayHello()</span>; <span class="muted">// "Hal
                     <b>Functional Programming</b>, dan ketika kita menggunakan paradigma ini dengan benar itu akan
                     membuat program kita lebih efektif, aman, dan efisien lagi.</li>
             </ul>
-            <h3>Contoh Higher Order Function</h3>
-            <p>sering digunakan terutama untuk pengelolaan array:</p>
+            <h2>Contoh Higher Order Function</h2>
+            <p>paling sering digunakan terutama untuk pengelolaan array:</p>
             <ul>
-                <li>Arrau.prototype.map()</li>
-                <li>Arrau.prototype.filter()</li>
-                <li>Arrau.prototype.reduce()</li>
+                <li><b>Array.prototype.filter()</b></li>
+                <li><b>Array.prototype.map()</b></li>
+                <li><b>Array.prototype.reduce()</b></li>
             </ul>
+            <p>3 function diatas merupakan Prototype dari tipe data array.</p>
+            <img src="HigherOrderFunction/img/gambar1.jpg" alt="" float="left" width="330px">
+            <img width="500px" src="HigherOrderFunction/img/gmabar.jpg" alt="">
+            <p>perbedaan map dan foreach adalah foreach tidak menghasilkan array baru sedangkan map menghasilkan array
+                baru.</p>
+            <p>tidak merubah array origin.</p>
+            <h3>filter()</h3>
+            <!-- JS Box -->
+            <div class="codeheader" id="codeheader_js">JavaSCript</div>
+            <div id="codebox">
 
+                <pre><code><span class="punctuation">const</span> angka <span class="return">=</span> <span class="punctuation">[</span><span class="number">-1</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">-5</span>, <span class="number">-4</span>, <span class="number">3</span>, <span class="number">2</span>,<span class="number"> 9</span><span class="punctuation">]</span>;
+
+<span class="muted">// mencari angka yang >= 3</span>
+<span class="punctuation">const</span> <b>angkaBaru <span class="return">=</span> angka.<span class="punctuation">filter(</span>event <span class="punctuation">=></span> event <span class="return">>=</span> <span class="number">3</span><span class="punctuation">)</span>;</b> //arrow function
+console.<span class="punctuation">log(</span>angkaBaru<span class="punctuation">)</span>;<span class="muted"> // [8, 9, 4, 3, 9]</span></code></pre>
+            </div>
+
+            <h3>map()</h3>
+
+            <!-- JS Box -->
+            <div class="codeheader" id="codeheader_js">JavaSCript</div>
+            <div id="codebox">
+
+                <pre><code><span class="muted">// kali semua angka dengan 2</span>
+<span class="punctuation">const</span> angkaBaru <span class="return">=</span> <b>angka.<span class="punctuation">map(</span>event <span class="punctuation">=></span> event <span class="return">*</span> 2<span class="punctuation">)</span>;</b>
+console.<span class="punctuation">log(</span>angkaBaru<span class="punctuation">)</span>; <span class="muted">// [-2, 16, 18, 2, 8, -10, -8, 6, 4, 18]</span>
+                </code></pre>
+            </div>
+
+            <h3>reduce()</h3>
+            <p>untuk melakukan sesuatu pada seluruh element pada array.</p>
+            <p>reduce mempunyai 2 argument (<b>accumulator</b>, <b>currentValue</b>).</p>
+            <ul>
+                <li><b>accumulator</b> adalah hasil dari prosesnya.</li>
+                <li><b>currentValue</b> adalah element array yang sedang di looping.</li>
+            </ul>
+            <p>secara default ada nilai awal 0 (accumulator + currentValue , <b>0</b>) yang bisa di ubah.</p>
+            <!-- JS Box -->
+            <div class="codeheader" id="codeheader_js">JavaSCript</div>
+            <div id="codebox">
+
+                <pre><code><span class="muted">// menjumlah semua array</span>
+<span class="punctuation">const</span> angkaBaru <span class="return">=</span> angka.<span class="punctuation">reduce(</span><span class="function">(</span>accumulator, currentValue<span class="function">)</span> <span class="punctuation">=></span> accumulator <span class="punctuation"><span class="return">+</span></span> currentValue<span class="punctuation">)</span>;
+console.<span class="punctuation">log(</span>angkaBaru<span class="punctuation">)</span>; <span class="muted">// 26</span></code></pre>
+            </div>
+
+            <h3>Method Chaining</h3>
+            <p>kita bisa menggabungkan fungsi-fungsi pada higher order dalam satu kali eksekusi, tidak perlu disimpan di
+                variabel terlebih dahulu satu-satu.</p>
+            <!-- JS Box -->
+            <div class="codeheader" id="codeheader_js">JavaSCript</div>
+            <div id="codebox">
+
+                <pre><code><span class="muted">// cari angka > 5
+// kali 3
+// jumlahkan</span>
+<span class="punctuation">const</span> hasil = angka.<span class="punctuation">filter(</span>event <span class="punctuation">=></span> event <span class="return">>=</span> <span class="numbe"><span class="number">5</span></span><span class="punctuation">)</span> <span class="muted">// [8, 9, 9]</span>
+            .<span class="punctuation">map(</span>event <span class="punctuation">=></span> event <span class="return">*</span> <span class="numbe"><span class="number">3</span></span><span class="punctuation">)</span> <span class="muted">// [24, 27, 27]</span>
+            .<span class="punctuation">reduce(</span><span class="function">(</span>acc, curr<span class="function">)</span> <span class="punctuation">=></span> acc <span class="return">+</span> curr<span class="punctuation">)</span>; <span class="muted">// 78</span>
+
+console.<span class="punctuation">log(</span>hasil<span class="punctuation">)</span>;</code></pre>
+            </div>
 
         </div>
 

@@ -756,6 +756,87 @@ console.<span class="punctuation">log(</span><span class="string">`Halo saya </s
 console.<span class="punctuation">log(</span>ele<span class="punctuation">)</span>;</code></pre>
                 </div>
 
+                <p><b>Looping</b></p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> mhs <span class="return">=</span><span class="punctuation">[</span>
+    <span class="function">{</span>
+        <span class="properties">nama</span>: <span class="string">'Arrizky Hasya Pratama'</span>
+        <span class="properties">email</span>: <span class="string">'arizariz@email.com'</span>
+    <span class="function">}</span>,
+    <span class="function">{</span>
+        <span class="properties">nama</span>: <span class="string">'Louisa Kiara'</span>
+        <span class="properties">email</span>: <span class="string">'louwkey@email.com'</span>
+    <span class="function">}</span>,
+    <span class="function">{</span>
+        <span class="properties">nama</span>: <span class="string">'Lili Smile Kitty'</span>
+        <span class="properties">email</span>: <span class="string">'similikiti@email.com'</span>
+    <span class="function">}</span>
+<span class="punctuation">]</span>;
+
+<span class="punctuation">const</span> el <span class="return">=</span> <span class="string">`&lt;div class="mhs"&gt;</span>
+    <span class="punctuation">${</span>mhs.<span class="return">map</span><span class="punctuation">(</span>m <span class="punctuation">=></span> <span class="string">`&lt;ul&gt;</span>
+        <span class="string">&lt;li&gt;</span><span class="punctuation">${</span>m.<span class="properties">nama</span><span class="punctuation">}</span><span class="string">&lt;/li&gt;</span>
+        <span class="string">&lt;li&gt;</span><span class="punctuation">${</span>m.<span class="properties">email</span><span class="punctuation">}</span><span class="string">&lt;/li&gt;</span>
+    <span class="string">&lt;/ul&gt;`</span><span class="punctuation">)</span>.<span class="return">join</span><span class="punctuation">(</span>''<span class="punctuation">)}</span>
+<span class="string">&lt;/div&gt;`</span>
+
+document.<span class="properties">body</span>.<span class="properties">innerHTML</span> <span class="return">=</span> el;</code></pre>
+                </div>
+
+                <p><b>Conditionals</b></p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> lagu <span class="return">=</span> <span class="punctuation">{</span>
+    <span class="properties">judul</span>: <span class="string">'Intuisi'</span>,
+    <span class="properties">penyanyi</span>: <span class="string">'Yura Yunita'</span>,
+    <span class="muted">// feat: 'John Lennon'</span>
+<span class="punctuation">}</span>
+
+<span class="punctuation">const</span> el <span class="return">=</span> <span class="string">`&lt;div class="lagu"&gt;</span>
+    <span class="string">&lt;ul&gt;</span>
+        <span class="string">&lt;li&gt;</span><span class="punctuation">${</span>lagu.<span class="properties">penyanyi</span><span class="punctuation">}</span><span class="string">&lt;/li&gt;</span>
+        <span class="string">&lt;li&gt;</span><span class="punctuation">${</span>lagu.<span class="properties">judul</span><span class="punctuation">} ${</span>lagu.feat <span class="return">?</span> <span class="string">`(feat,</span> <span class="punctuation">${</span>lagu.feat<span class="punctuation">}</span><span class="string">)`</span> <span class="return">: </span><span class="string">``</span> <span class="punctuation">}</span><span class="string">&lt;/li&gt;</span>
+    <span class="string">&lt;/ul&gt;</span>
+<span class="string">&lt;/div&gt;`</span>
+
+document.<span class="properties">body</span>.<span class="properties">innerHTML</span> <span class="return">=</span> el;</code></pre>
+                </div>
+
+                <p><b>Nested</b></p>
+                <p>HTML Fragments bersarang.</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> mhs <span class="return">=</span> <span class="punctuation">{</span>
+    <span class="properties">nama</span>: <span class="string">'Arrizky Hasya Pratama'</span>,
+    <span class="properties">semester</span>: <span class="number">5</span>
+    <span class="properties">mataKuliah</span>: <span class="function">[</span><span class="string">'Rekayasa Web'</span>,
+        <span class="string">'Algoritma & Struktur Dasar'</span>,
+        <span class="string">'Pemrograman Web'</span>,
+        <span class="string">'Pancasila'</span>,
+    <span class="function">]</span>,
+<span class="punctuation">}</span>;
+
+<span class="function">function</span> <span class="punctuation">cetakMataKuliah(</span>mataKuliah<span class="punctuation">) {</span>
+<span class="return">return</span> <span class="string">`
+    &lt;ol&gt;</span>
+    <span class="punctuation">${</span>mataKuliah.<span class="punctuation">map</span><span class="function">(</span>mk <span class="punctuation">=></span><span class="string"> `&lt;li&gt;</span><span class="punctuation">${</span>mk<span class="punctuation">}</span><span class="string">&lt;/li&gt;`</span><span class="function">)</span>.<span class="return">join</span><span class="function">(</span><span class="string">''</span><span class="function">)</span><span class="punctuation">}</span>
+<span class="string">&lt;/ol&gt;`</span>;
+<span class="punctuation">}</span>
+
+<span class="punctuation">const</span> el <span class="return">=</span> <span class="string">`&lt;div class="mhs"&gt;</span>
+    <span class="string">&lt;h2&gt;</span><span class="punctuation">${</span>mhs.<span class="properties">nama</span><span class="punctuation">}</span><span class="string">&lt;/h2&gt;</span>
+    <span class="string">&lt;span class="semester"&gt; Semester:</span> <span class="punctuation">${</span>mhs.<span class="properties">semester</span><span class="punctuation">}</span><span class="string">&lt;/span&gt;</span>
+    <span class="string">&lt;h4&gt;Mata Kuliah:&lt;/h4&gt;</span>
+    <span class="punctuation">${cetakMataKuliah(</span>mhs.<span class="properties">mataKuliah</span><span class="punctuation">)}</span>
+<span class="string">&lt;/div&gt;`</span>;
+
+document.<span class="properties">body</span>.<span class="properties">innerHTML</span> <span class="return">=</span> el;</code></pre>
+                </div>
+
                 <h3>Expression Interpolation</h3>
                 <!-- JS Box -->
                 <div class="codeheader" id="codeheader_js">JavaSCript</div>
@@ -767,6 +848,7 @@ console.<span class="punctuation">log(</span><span class="string">`Jika a =</spa
 
 
             </div>
+
 
 
 

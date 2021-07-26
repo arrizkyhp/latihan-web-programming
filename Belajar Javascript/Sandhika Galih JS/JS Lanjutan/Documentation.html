@@ -28,6 +28,7 @@
             <li><a class="nav-link" href="#arrow-function">Arrow Function</a></li>
             <li><a class="nav-link" href="#higher-order-function">Higher Order Function</a></li>
             <li><a class="nav-link" href="#template-literals">Template Literals</a></li>
+            <li><a class="nav-link" href="#destructuring">Destructuring</a></li>
 
 
         </ul>
@@ -669,18 +670,17 @@ console.<span class="punctuation">log(</span>hasil<span class="punctuation">)</s
             </div>
 
             <h1 class="content-header" id="template-literals"><span>Template Literals</span></h1>
-            <p class="file-section">🚀File: <a href="HigherOrderFunction/index.html"
-                    target="_blank">HigherOrderFunction/index.html</a> & <a href="HigherOrderFunction/script.js"
-                    target="_blank">HigherOrderFunction/script.js</a> <br> 🏋🏽‍♂️Latihan: <a
-                    href="HigherOrderFunction/latihan/index.html"
-                    target="_blank">HigherOrderFunction/latihan/index.html</a>
-                & <a href="HigherOrderFunction/latihan/script.js"
-                    target="_blank">HigherOrderFunction/latihan/script.js</a><br>
+            <p class="file-section">🚀File: <a href="Template Literals/index.html" target="_blank">Template
+                    Literals/index.html</a> & <a href="Template Literals/string.js" target="_blank">Template
+                    Literals/string.js</a> <br> 🏋🏽‍♂️Latihan: <a href="Template Literals/Latihan/script.js"
+                    target="_blank">Template Literals/Latihan/script.js</a><br>
                 🎥Video: <a
                     href="https://www.youtube.com/watch?v=LywZF-xcfd8&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=12"
                     target="_blank">Part 1</a> | <a
                     href="https://www.youtube.com/watch?v=i4RIoT2tmpw&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=13"
-                    target="_blank">Part 2 (LATIHAN)</a>
+                    target="_blank">Part 2 (LATIHAN) </a> | <a
+                    href="https://www.youtube.com/watch?v=sbjkjjCcz8M&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=14"
+                    target="_blank">Part 3</a>
             </p>
 
             <div class="wrapper">
@@ -846,8 +846,60 @@ document.<span class="properties">body</span>.<span class="properties">innerHTML
 console.<span class="punctuation">log(</span><span class="string">`Jika a =</span> <span class="punctuation">${</span>a<span class="punctuation">}</span> <span class="string">dan b = </span><span class="punctuation">${</span>b<span class="punctuation">}</span> <span class="string">maka hasil penjumlahanya adalah</span> <span class="punctuation">${</span>a<span class="return">+</span>b<span class="punctuation">}</span><span class="string">.`</span><span class="punctuation">)</span>;</code></pre>
                 </div>
 
+                <h3>Tagged Templates</h3>
+                <p>Bentuk yang lebih kompleks dari Template Literals, memungkinkan kita untuk membaca template literals
+                    melalui sebuah function. <b>- MDN Web Docs</b></p>
+                <p>more check : <a href="https://wesbos.com/tagged-template-literals"
+                        target="_blank">https://wesbos.com/tagged-template-literals</a></p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> nama <span class="return">= </span><span class="string">'Arrizky Hasya'</span>;
+<span class="punctuation">const</span> umur <span class="return">=</span> <span class="number">24</span>;
+
+<span class="function">function</span> <span class="punctuation">coba(</span>strings, ...values<span class="punctuation">)</span> {
+    <span class="punctuation">let</span> result <span class="return">=</span> <span class="string">''</span>;
+    strings.<span class="punctuation">forEach</span><span class="function">(</span><span class="properties">(</span>strs, i<span class="properties">)</span> <span class="punctuation">=></span> {
+    result <span class="return">+=</span> `<span class="punctuation">${</span>strs<span class="punctuation">}${</span>values<span class="punctuation">[</span>i<span class="punctuation">]</span> <span class="return">||</span> <span class="string">''</span><span class="punctuation">}</span> `;
+    <span class="properties">}</span><span class="function">)</span>;
+    <span class="return">return</span> result;
+
+
+    <span class="muted">// reduce
+    // return strings.reduce((result, strs, i) => `${result}${strs}${values[i] || ''}`,'');</span>
+<span class="punctuation">}</span>
+
+<span class="punctuation">const</span> str <span class="return">=</span> <span class="punctuation">coba</span><span class="string">`Halo nama saya </span><span class="punctuation">${</span>nama<span class="punctuation">}</span><span class="string">, saya</span> <span class="punctuation">${</span>umur<span class="punctuation">}</span> <span class="string">tahun.`</span>;
+
+console.<span class="punctuation">log(</span>str<span class="punctuation">)</span>; <span class="muted">// Halo nama saya Arrizky Hasya , saya 24 tahun.</span></code></pre>
+                </div>
+                <br>
+                <b>Penggunaan lain ??</b>
+                <ul>
+                    <li>Escaping HTML Tags</li>
+                    <p>Sanitasi HTML tags => untuk menghindari ketika ada script/karakter yang tidak diinginkan.</p>
+                    <li>Translation & Internationalization</li>
+                    <p>Alih bahasa web</p>
+                    <li>Styled Components</li>
+                    <p>Untuk front-end Framework Vue/React</p>
+                </ul>
 
             </div>
+
+            <h1 class="content-header" id="destructuring"><span>Destructuring</span></h1>
+            <p class="file-section">🚀File: <a href="Template Literals/index.html" target="_blank">Template
+                    Literals/index.html</a> & <a href="Template Literals/string.js" target="_blank">Template
+                    Literals/string.js</a> <br> 🏋🏽‍♂️Latihan: <a href="Template Literals/Latihan/script.js"
+                    target="_blank">Template Literals/Latihan/script.js</a><br>
+                🎥Video: <a
+                    href="https://www.youtube.com/watch?v=7f11bDxZSP0&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=15"
+                    target="_blank">Part 1</a> | <a
+                    href="https://www.youtube.com/watch?v=IcBNuBux9ag&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=16"
+                    target="_blank">Part 2 </a>
+
+            </p>
+
+            <div class="wrapper"></div>
 
 
 

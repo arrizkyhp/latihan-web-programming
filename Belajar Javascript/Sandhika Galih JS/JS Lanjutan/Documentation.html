@@ -36,7 +36,14 @@
     <main>
         <h1 class="content-header" id="object-revisited"><span>Object</span><i>(revisited)</i></h1>
         <p class="file-section">🚀File: <a href="Object/index.html" target="_blank">Object/index.html</a> & <a
-                href="Object/script.js" target="_blank">Object/script.js</a> </p>
+                href="Object/script.js" target="_blank">Object/script.js</a> <br>
+            🎥Video: <a
+                href="https://www.youtube.com/watch?v=RwT41El778A&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=1"
+                target="_blank">Part 1</a> | <a
+                href="https://www.youtube.com/watch?v=3pQ7Qpzl_pY&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=2"
+                target="_blank">Part 2</a> | <a
+                href="https://www.youtube.com/watch?v=2CQhh_6xU3s&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=3"
+                target="_blank">Part 3</a></p>
 
         <div class="wrapper">
             <h2>Membuat Object pada Javascript</h2>
@@ -235,7 +242,13 @@ ariz.<span class="punctuation">makan(</span><span class="number">10</span><span 
         <h1 class="content-header" id="closures"><span>Closures</span></h1>
         <p class="file-section">🚀File: <a href="Closures/index.html" target="_blank">Closures/index.html</a>, <a
                 href="Closures/script.js" target="_blank">Closures/script.js</a> & <a href="Closures/closure.js"
-                target="_blank">Closures/closure.js</a> </p>
+                target="_blank">Closures/closure.js</a><br>
+            🎥Video: <a
+                href="https://www.youtube.com/watch?v=8mZsm9ZQFdY&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=4"
+                target="_blank">Part 1</a> | <a
+                href="https://www.youtube.com/watch?v=jsW0taT36qU&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=5"
+                target="_blank">Part 2</a></p>
+
 
         <div class="wrapper">
             <h2>Execution Context, Hoisting, Scope</h2>
@@ -358,119 +371,129 @@ console.<span class="punctuation">log(add</span><span class="function">()</span>
         </div>
 
         <h1 class="content-header" id="var-let-const"><span>Var, Let & Const</span></h1>
-        <div class="wrapper">
-            <p>var, let & const merupakan sebuah keyword untuk membuat sebuah variabel</p>
-            <ul>
-                <li><b>var => function scope</b></li>
-                <li><b>let & const => block scope</b></li>
-            </ul>
-            <h3>IIFE (Immediately Invoked Function Expression)</h3>
-            <p>otomatis menjalankan function.</p>
-            <p>menyimpan function ke dalam kurung.</p>
-            <p>menjaga agar variabel dalam function tidak dapat diakses dari luar. </p>
-            <p><b>Namun</b> cukup dengan menggunakan <b>let/const</b> otomatis variabel tidak dapat diakses dari luar.
-                <b>(block scope)</b>
-            </p>
-            <!-- JS Box -->
-            <div class="codeheader" id="codeheader_js">JavaSCript</div>
-            <div id="codebox">
+        <p class="file-section">🎥Video: <a
+                href="https://www.youtube.com/watch?v=7HDgJScwIrI&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=6"
+                target="_blank">Part 1</a>
+            <div class="wrapper">
+                <p>var, let & const merupakan sebuah keyword untuk membuat sebuah variabel</p>
+                <ul>
+                    <li><b>var => function scope</b></li>
+                    <li><b>let & const => block scope</b></li>
+                </ul>
+                <h3>IIFE (Immediately Invoked Function Expression)</h3>
+                <p>otomatis menjalankan function.</p>
+                <p>menyimpan function ke dalam kurung.</p>
+                <p>menjaga agar variabel dalam function tidak dapat diakses dari luar. </p>
+                <p><b>Namun</b> cukup dengan menggunakan <b>let/const</b> otomatis variabel tidak dapat diakses dari
+                    luar.
+                    <b>(block scope)</b>
+                </p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
 
-                <pre><code><span class="punctuation">(</span><span class="function">function() {</span>
+                    <pre><code><span class="punctuation">(</span><span class="function">function() {</span>
     console.<span class="punctuation">log</span>(<span class="string">"hello"</span>);
 <span class="function">}()</span><span class="punctuation">)</span>; <span class="muted">// hello</span></code></pre>
 
+                </div>
+                <h3>Let atau Const ??</h3>
+                <p>Jika kita yakin nantinya <b>variabel kita tidak akan berubah valuenya</b> gunakan <b>const</b>/
+                    Konstanta
+                    => bernilai tetap
+                </p>
+                <p>Sebaliknya jika nantinya <b>variabel akan berubah</b> gunakan <b>let</b></p>
+                <br>
+                <p>kita menggunakan const untuk meminimalisir perubahan state</p>
             </div>
-            <h3>Let atau Const ??</h3>
-            <p>Jika kita yakin nantinya <b>variabel kita tidak akan berubah valuenya</b> gunakan <b>const</b>/ Konstanta
-                => bernilai tetap
-            </p>
-            <p>Sebaliknya jika nantinya <b>variabel akan berubah</b> gunakan <b>let</b></p>
-            <br>
-            <p>kita menggunakan const untuk meminimalisir perubahan state</p>
-        </div>
 
-        <h1 class="content-header" id="arrow-function"><span>Arrow Function (=>)</span></h1>
-        <p class="file-section">🚀File: <a href="Arrow/index.html" target="_blank">Arrow/index.html</a> & <a
-                href="Arrow/script.js" target="_blank">Arrow/script.js</a> </p>
+            <h1 class="content-header" id="arrow-function"><span>Arrow Function (=>)</span></h1>
+            <p class="file-section">🚀File: <a href="Arrow/index.html" target="_blank">Arrow/index.html</a> & <a
+                    href="Arrow/script.js" target="_blank">Arrow/script.js</a><br>
+                🎥Video: <a
+                    href="https://www.youtube.com/watch?v=C8U_3_SBk6s&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=7"
+                    target="_blank">Part 1</a> | <a
+                    href="https://www.youtube.com/watch?v=xVmUTO7O7GQ&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=8"
+                    target="_blank">Part 2</a> </p>
 
-        <div class="wrapper">
-            <p>Bentuk lain yang lebih ringkas dari <b>Function Expression / Function dengan variabel</b></p>
-            <p>Beberapa macam penulisan function:</p>
-            <ul>
-                <li>Function Declaration</li>
-                <li>Function Expression</li>
-                <li><b>Arrow Function</b></li>
-            </ul>
+            <div class="wrapper">
+                <p>Bentuk lain yang lebih ringkas dari <b>Function Expression / Function dengan variabel</b></p>
+                <p>Beberapa macam penulisan function:</p>
+                <ul>
+                    <li>Function Declaration</li>
+                    <li>Function Expression</li>
+                    <li><b>Arrow Function</b></li>
+                </ul>
 
-            <h2>Karaterisik Arrow Function</h2>
-            <h3>Parameter hanya 1</h3>
-            <ul>
-                <li>Jika hanya satu parameter tidak perlu menggunakan <b>()</b> & <b>{}</b>.</li>
-                <li>Jika isi dari <b>function hanya return saja</b>, return tidak perlu dicantumkan <b>(implicit
-                        return)</b>.</li>
-            </ul>
+                <h2>Karaterisik Arrow Function</h2>
+                <h3>Parameter hanya 1</h3>
+                <ul>
+                    <li>Jika hanya satu parameter tidak perlu menggunakan <b>()</b> & <b>{}</b>.</li>
+                    <li>Jika isi dari <b>function hanya return saja</b>, return tidak perlu dicantumkan <b>(implicit
+                            return)</b>.</li>
+                </ul>
 
-            <!-- JS Box -->
-            <div class="codeheader" id="codeheader_js">JavaSCript</div>
-            <div id="codebox">
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
 
-                <pre><code><span class="punctuation">const tampilPesan</span> <span class="return">=</span> nama <span class="punctuation">=></span>  <span class="string">`Hallo</span> <span class="punctuation">${</span>nama<span class="punctuation">}</span><span class="string">`</span>;
+                    <pre><code><span class="punctuation">const tampilPesan</span> <span class="return">=</span> nama <span class="punctuation">=></span>  <span class="string">`Hallo</span> <span class="punctuation">${</span>nama<span class="punctuation">}</span><span class="string">`</span>;
 console.<span class="punctuation">log(tampilPesan</span><span class="function">(</span><span class="string">"arrizky"</span><span class="function">)</span><span class="punctuation">)</span>;
 </code></pre>
-            </div>
+                </div>
 
-            <h3>Parameter 2 atau lebih</h3>
-            <p>jika ada 2 atau lebih parameter, harus menggunakan <b>()</b>.</p>
+                <h3>Parameter 2 atau lebih</h3>
+                <p>jika ada 2 atau lebih parameter, harus menggunakan <b>()</b>.</p>
 
-            <!-- JS Box -->
-            <div class="codeheader" id="codeheader_js">JavaSCript</div>
-            <div id="codebox">
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
 
-                <pre><code><span class="punctuation">const tampilNama</span> <span class="return">=</span> <span class="punctuation">(</span>nama, waktu<span class="punctuation">)</span> <span class="punctuation">=> {</span>
+                    <pre><code><span class="punctuation">const tampilNama</span> <span class="return">=</span> <span class="punctuation">(</span>nama, waktu<span class="punctuation">)</span> <span class="punctuation">=> {</span>
     <span class="return">return</span> <span class="string">`Halo</span> <span class="punctuation">${</span>nama<span class="punctuation">}</span> <span class="string">selamat</span> <span class="punctuation">${</span>waktu<span class="punctuation">}</span><span class="string">`</span>;
 <span class="punctuation">}</span></code></pre>
-            </div>
+                </div>
 
-            <h3>Tanpa parameter</h3>
-            <p>wajib menggunakan <b>()</b>.</p>
-            <!-- JS Box -->
-            <div class="codeheader" id="codeheader_js">JavaSCript</div>
-            <div id="codebox">
+                <h3>Tanpa parameter</h3>
+                <p>wajib menggunakan <b>()</b>.</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
 
-                <pre><code><span class="punctuation">const tampilHW</span> <span class="return">=</span> <span class="punctuation">() =></span> <span class="string">`Hello World`</span>;
+                    <pre><code><span class="punctuation">const tampilHW</span> <span class="return">=</span> <span class="punctuation">() =></span> <span class="string">`Hello World`</span>;
 console.<span class="punctuation">log(tampilHW</span><span class="function">()</span><span class="punctuation">)</span>;</code></pre>
-            </div>
+                </div>
 
-            <h3>Function merubah Array ke Object</h3>
-            <p>jika ingin merubah Array ke object gunakan <b>()</b> ke properties.</p>
-            <!-- JS Box -->
-            <div class="codeheader" id="codeheader_js">JavaSCript</div>
-            <div id="codebox">
+                <h3>Function merubah Array ke Object</h3>
+                <p>jika ingin merubah Array ke object gunakan <b>()</b> ke properties.</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
 
-                <pre><code><span class="punctuation">const</span> mahasiswa <span class="return">=</span> <span class="punctuation">[</span><span class="string">'Arrizky'</span>, <span class="string">'Hasya'</span>, <span class="string">'Pratama'</span><span class="punctuation">]</span>;
+                    <pre><code><span class="punctuation">const</span> mahasiswa <span class="return">=</span> <span class="punctuation">[</span><span class="string">'Arrizky'</span>, <span class="string">'Hasya'</span>, <span class="string">'Pratama'</span><span class="punctuation">]</span>;
 
 <span class="punctuation">const</span> jumlahHuruf <span class="return">=</span> mahasiswa.<span class="punctuation">map</span>(nama <span class="punctuation">=></span> <span class="function">(</span><span class="properties">{nama</span>: nama, <span class="properties">jmlHuruf</span>: nama.<span class="properties">length}</span><span class="function">)</span><span class="punctuation">)</span>;
 console.<span class="punctuation">table(</span>jumlahHuruf<span class="punctuation">)</span>;</code></pre>
-            </div>
+                </div>
 
-            <h2>Konsep <i>this</i> pada arrow function</h2>
-            <ul>
-                <li>Jika menggunakan arrow function, <b><i>this</i> tidak akan berfungi semestinya</b>, this akan
-                    mengecek ke
-                    atas /
-                    lexical scope.</li>
-                <li>maka dari itu <b><i>this</i></b> pada arrow function hanya <b>akan bekerja semestinya</b> jika
+                <h2>Konsep <i>this</i> pada arrow function</h2>
+                <ul>
+                    <li>Jika menggunakan arrow function, <b><i>this</i> tidak akan berfungi semestinya</b>, this akan
+                        mengecek ke
+                        atas /
+                        lexical scope.</li>
+                    <li>maka dari itu <b><i>this</i></b> pada arrow function hanya <b>akan bekerja semestinya</b> jika
 
-                    sebuah<b>
-                        function didalamnya memiliki sebuah function yang bukan method.
-                    </b>
-                    </b></li>
-            </ul>
-            <!-- JS Box -->
-            <div class="codeheader" id="codeheader_js">JavaSCript</div>
-            <div id="codebox">
+                        sebuah<b>
+                            function didalamnya memiliki sebuah function yang bukan method.
+                        </b>
+                        </b></li>
+                </ul>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
 
-                <pre><code><span class="punctuation">const Mahasiswa</span> <span class="return">=</span> <span class="function">function</span><span class="punctuation">() {</span>
+                    <pre><code><span class="punctuation">const Mahasiswa</span> <span class="return">=</span> <span class="function">function</span><span class="punctuation">() {</span>
     <span class="function">this</span>.nama <span class="return">=</span> <span class="string">'Arrizky'</span>;
     <span class="function">this</span>.umur <span class="return">=</span> <span class="string">'24'</span>;
 
@@ -482,39 +505,54 @@ console.<span class="punctuation">table(</span>jumlahHuruf<span class="punctuati
 
 <span class="punctuation">const</span> arrizky <span class="return">= new</span> <span class="punctuation">Mahasiswa()</span>;
 arrizky.<span class="punctuation">sayHello()</span>; <span class="muted">// "Halo saya Arrizky, dan saya 24 tahun".</span></code></pre>
+                </div>
+
             </div>
 
-        </div>
-
-        <h1 class="content-header" id="higher-order-function"><span>Higher Order Function</span></h1>
-
-        <div class="wrapper">
-            <h2>Pengertian Hihger Order Function</h2>
-            <p>Function yang beroperasi pada function yang lain. Baik itu digunakan dalam argument, maupun sebagai
-                return value. <b>-eloquentjavascript.net</b></p>
-            <p>di dalam javascript sebuah function disebut dengan <b>First Class Function</b>, artinya inti dari
-                javascript
-                adalah function.</p><br>
-
-            <p>Javascript memperlakukan function sebagai object <b>-sitepoint.com</b></p>
-            <p>Object juga merupakan sebuah value, sama seperti integer atau string. Maka <b>
-                    function juga bisa kita simpan
-                    sebagai argument, maupun return value dari sebuah function yang lain.
-                </b></p>
-            <p>ketika menggunakan function kita <b>bisa menyimpan function lagi sebagai argument.</b></p><br>
-            <p>Function yang disimpan sebagai argument disebut <b>Callback</b></p>
-            <p>Funtion yang memiliki callback sebagai argumentnya disebut <b>Higher Order Function</b>
+            <h1 class="content-header" id="higher-order-function"><span>Higher Order Function</span></h1>
+            <p class="file-section">🚀File: <a href="HigherOrderFunction/index.html"
+                    target="_blank">HigherOrderFunction/index.html</a> & <a href="HigherOrderFunction/script.js"
+                    target="_blank">HigherOrderFunction/script.js</a> <br> 🏋🏽‍♂️Latihan: <a
+                    href="HigherOrderFunction/latihan/index.html"
+                    target="_blank">HigherOrderFunction/latihan/index.html</a>
+                & <a href="HigherOrderFunction/latihan/script.js"
+                    target="_blank">HigherOrderFunction/latihan/script.js</a><br>
+                🎥Video: <a
+                    href="https://www.youtube.com/watch?v=sM880A3lS5I&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=9"
+                    target="_blank">Part 1</a> | <a
+                    href="https://www.youtube.com/watch?v=a37wgCcBI4A&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=10"
+                    target="_blank">Part 2</a> | <a
+                    href="https://www.youtube.com/watch?v=V5-rQ1MCNSM&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=11"
+                    target="_blank">Part 3 (LATIHAN)</a>
             </p>
 
-            <ul>
-                <li><b>function kerjakanTugas</b> = Higher Order Function</li>
-                <li><b>selesai</b> = callback</li>
-            </ul>
-            <!-- JS Box -->
-            <div class="codeheader" id="codeheader_js">JavaSCript</div>
-            <div id="codebox">
+            <div class="wrapper">
+                <h2>Pengertian Hihger Order Function</h2>
+                <p>Function yang beroperasi pada function yang lain. Baik itu digunakan dalam argument, maupun sebagai
+                    return value. <b>-eloquentjavascript.net</b></p>
+                <p>di dalam javascript sebuah function disebut dengan <b>First Class Function</b>, artinya inti dari
+                    javascript
+                    adalah function.</p><br>
 
-                <pre><code><span class="function"><b>function</b></span> <span class="punctuation"><b>kerjakanTugas</b>(</span>matakuliah, <b>selesai</b><span class="punctuation">) {</span>
+                <p>Javascript memperlakukan function sebagai object <b>-sitepoint.com</b></p>
+                <p>Object juga merupakan sebuah value, sama seperti integer atau string. Maka <b>
+                        function juga bisa kita simpan
+                        sebagai argument, maupun return value dari sebuah function yang lain.
+                    </b></p>
+                <p>ketika menggunakan function kita <b>bisa menyimpan function lagi sebagai argument.</b></p><br>
+                <p>Function yang disimpan sebagai argument disebut <b>Callback</b></p>
+                <p>Funtion yang memiliki callback sebagai argumentnya disebut <b>Higher Order Function</b>
+                </p>
+
+                <ul>
+                    <li><b>function kerjakanTugas</b> = Higher Order Function</li>
+                    <li><b>selesai</b> = callback</li>
+                </ul>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+
+                    <pre><code><span class="function"><b>function</b></span> <span class="punctuation"><b>kerjakanTugas</b>(</span>matakuliah, <b>selesai</b><span class="punctuation">) {</span>
     console.<span class="punctuation">log</span><span class="function">(</span><span class="string">`Mulai mengerjakan tugas</span> <span class="punctuation">${</span>matakuliah<span class="punctuation">}</span> <span class="string">...`</span><span class="function">)</span>;
 
         <span class="punctuation">selesai</span><span class="function">()</span>;
@@ -525,95 +563,98 @@ arrizky.<span class="punctuation">sayHello()</span>; <span class="muted">// "Hal
 <span class="punctuation">}</span>
 
 <span class="punctuation">kerjakanTugas(</span><span class="string">'Algoritma'</span>, <span class="punctuation">selesai)</span>;</code></pre>
-            </div>
+                </div>
 
-            <p><b>Contoh</b> lainya adalah setTimeout dan setInterval dimana keduanya memiliki 2 parameter.</p>
-            <ul>
-                <li>parameter pertama function</li>
-                <li>parameter kedua adalah integer, untuk menyimpan berapa waktu tunggu</li>
-            </ul>
-            <p>maka bisa dilihat parameter pertama merupakan function (callback), sehingga setTimeout dan setInterval
-                bisa disebut dengan Higher Order Function.</p>
-            <br>
-            <p><a href="#contoh-hfo">Contoh</a> lainnya juga ketika kita punya sebuah <b>
-                    function yang return value nya merupakan sebuah
-                    function
-                    juga.
-                </b></p>
+                <p><b>Contoh</b> lainya adalah setTimeout dan setInterval dimana keduanya memiliki 2 parameter.</p>
+                <ul>
+                    <li>parameter pertama function</li>
+                    <li>parameter kedua adalah integer, untuk menyimpan berapa waktu tunggu</li>
+                </ul>
+                <p>maka bisa dilihat parameter pertama merupakan function (callback), sehingga setTimeout dan
+                    setInterval
+                    bisa disebut dengan Higher Order Function.</p>
+                <br>
+                <p><a href="#contoh-hfo">Contoh</a> lainnya juga ketika kita punya sebuah <b>
+                        function yang return value nya merupakan sebuah
+                        function
+                        juga.
+                    </b></p>
 
-            <h3>Kenapa menggunakan Higher Order Function??</h3>
-            <p>ada beberapa alasan:</p>
-            <ul>
-                <li><b>Absktraksi</b> => agar kode yang kita buat bisa lebih sederhana. Karena dengan menggunakan
-                    function itu
-                    artinya kita menyembunyikan kerumitan. <br> Semakin besar sebuah program, semakin tinggin
-                    kompleksitasnya, semakin membingungkan programmernya.</li>
-                <li>Dengan terbiasa kita menggunakan function, kita masuk ke sebuah pendekatan yang namanya
-                    <b>Functional Programming</b>, dan ketika kita menggunakan paradigma ini dengan benar itu akan
-                    membuat program kita lebih efektif, aman, dan efisien lagi.</li>
-            </ul>
-            <h2>Contoh Higher Order Function</h2>
-            <p>paling sering digunakan terutama untuk pengelolaan array:</p>
-            <ul>
-                <li><b>Array.prototype.filter()</b></li>
-                <li><b>Array.prototype.map()</b></li>
-                <li><b>Array.prototype.reduce()</b></li>
-            </ul>
-            <p>3 function diatas merupakan Prototype dari tipe data array.</p>
-            <img src="HigherOrderFunction/img/gambar1.jpg" alt="" float="left" width="330px">
-            <img width="500px" src="HigherOrderFunction/img/gmabar.jpg" alt="">
-            <p>perbedaan map dan foreach adalah foreach tidak menghasilkan array baru sedangkan map menghasilkan array
-                baru.</p>
-            <p>tidak merubah array origin.</p>
-            <h3>filter()</h3>
-            <!-- JS Box -->
-            <div class="codeheader" id="codeheader_js">JavaSCript</div>
-            <div id="codebox">
+                <h3>Kenapa menggunakan Higher Order Function??</h3>
+                <p>ada beberapa alasan:</p>
+                <ul>
+                    <li><b>Absktraksi</b> => agar kode yang kita buat bisa lebih sederhana. Karena dengan menggunakan
+                        function itu
+                        artinya kita menyembunyikan kerumitan. <br> Semakin besar sebuah program, semakin tinggin
+                        kompleksitasnya, semakin membingungkan programmernya.</li>
+                    <li>Dengan terbiasa kita menggunakan function, kita masuk ke sebuah pendekatan yang namanya
+                        <b>Functional Programming</b>, dan ketika kita menggunakan paradigma ini dengan benar itu akan
+                        membuat program kita lebih efektif, aman, dan efisien lagi.</li>
+                </ul>
+                <h2>Contoh Higher Order Function</h2>
+                <p>paling sering digunakan terutama untuk pengelolaan array:</p>
+                <ul>
+                    <li><b>Array.prototype.filter()</b></li>
+                    <li><b>Array.prototype.map()</b></li>
+                    <li><b>Array.prototype.reduce()</b></li>
+                </ul>
+                <p>3 function diatas merupakan Prototype dari tipe data array.</p>
+                <img src="HigherOrderFunction/img/gambar1.jpg" alt="" float="left" width="330px">
+                <img width="500px" src="HigherOrderFunction/img/gmabar.jpg" alt="">
+                <p>perbedaan map dan foreach adalah foreach tidak menghasilkan array baru sedangkan map menghasilkan
+                    array
+                    baru.</p>
+                <p>tidak merubah array origin.</p>
+                <h3>filter()</h3>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
 
-                <pre><code><span class="punctuation">const</span> angka <span class="return">=</span> <span class="punctuation">[</span><span class="number">-1</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">-5</span>, <span class="number">-4</span>, <span class="number">3</span>, <span class="number">2</span>,<span class="number"> 9</span><span class="punctuation">]</span>;
+                    <pre><code><span class="punctuation">const</span> angka <span class="return">=</span> <span class="punctuation">[</span><span class="number">-1</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">-5</span>, <span class="number">-4</span>, <span class="number">3</span>, <span class="number">2</span>,<span class="number"> 9</span><span class="punctuation">]</span>;
 
 <span class="muted">// mencari angka yang >= 3</span>
 <span class="punctuation">const</span> <b>angkaBaru <span class="return">=</span> angka.<span class="punctuation">filter(</span>event <span class="punctuation">=></span> event <span class="return">>=</span> <span class="number">3</span><span class="punctuation">)</span>;</b> //arrow function
 console.<span class="punctuation">log(</span>angkaBaru<span class="punctuation">)</span>;<span class="muted"> // [8, 9, 4, 3, 9]</span></code></pre>
-            </div>
+                </div>
 
-            <h3>map()</h3>
+                <h3>map()</h3>
 
-            <!-- JS Box -->
-            <div class="codeheader" id="codeheader_js">JavaSCript</div>
-            <div id="codebox">
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
 
-                <pre><code><span class="muted">// kali semua angka dengan 2</span>
+                    <pre><code><span class="muted">// kali semua angka dengan 2</span>
 <span class="punctuation">const</span> angkaBaru <span class="return">=</span> <b>angka.<span class="punctuation">map(</span>event <span class="punctuation">=></span> event <span class="return">*</span> 2<span class="punctuation">)</span>;</b>
 console.<span class="punctuation">log(</span>angkaBaru<span class="punctuation">)</span>; <span class="muted">// [-2, 16, 18, 2, 8, -10, -8, 6, 4, 18]</span>
                 </code></pre>
-            </div>
+                </div>
 
-            <h3>reduce()</h3>
-            <p>untuk melakukan sesuatu pada seluruh element pada array.</p>
-            <p>reduce mempunyai 2 argument (<b>accumulator</b>, <b>currentValue</b>).</p>
-            <ul>
-                <li><b>accumulator</b> adalah hasil dari prosesnya.</li>
-                <li><b>currentValue</b> adalah element array yang sedang di looping.</li>
-            </ul>
-            <p>secara default ada nilai awal 0 (accumulator + currentValue , <b>0</b>) yang bisa di ubah.</p>
-            <!-- JS Box -->
-            <div class="codeheader" id="codeheader_js">JavaSCript</div>
-            <div id="codebox">
+                <h3>reduce()</h3>
+                <p>untuk melakukan sesuatu pada seluruh element pada array.</p>
+                <p>reduce mempunyai 2 argument (<b>accumulator</b>, <b>currentValue</b>).</p>
+                <ul>
+                    <li><b>accumulator</b> adalah hasil dari prosesnya.</li>
+                    <li><b>currentValue</b> adalah element array yang sedang di looping.</li>
+                </ul>
+                <p>secara default ada nilai awal 0 (accumulator + currentValue , <b>0</b>) yang bisa di ubah.</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
 
-                <pre><code><span class="muted">// menjumlah semua array</span>
+                    <pre><code><span class="muted">// menjumlah semua array</span>
 <span class="punctuation">const</span> angkaBaru <span class="return">=</span> angka.<span class="punctuation">reduce(</span><span class="function">(</span>accumulator, currentValue<span class="function">)</span> <span class="punctuation">=></span> accumulator <span class="punctuation"><span class="return">+</span></span> currentValue<span class="punctuation">)</span>;
 console.<span class="punctuation">log(</span>angkaBaru<span class="punctuation">)</span>; <span class="muted">// 26</span></code></pre>
-            </div>
+                </div>
 
-            <h3>Method Chaining</h3>
-            <p>kita bisa menggabungkan fungsi-fungsi pada higher order dalam satu kali eksekusi, tidak perlu disimpan di
-                variabel terlebih dahulu satu-satu.</p>
-            <!-- JS Box -->
-            <div class="codeheader" id="codeheader_js">JavaSCript</div>
-            <div id="codebox">
+                <h3>Method Chaining</h3>
+                <p>kita bisa menggabungkan fungsi-fungsi pada higher order dalam satu kali eksekusi, tidak perlu
+                    disimpan di
+                    variabel terlebih dahulu satu-satu.</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
 
-                <pre><code><span class="muted">// cari angka > 5
+                    <pre><code><span class="muted">// cari angka > 5
 // kali 3
 // jumlahkan</span>
 <span class="punctuation">const</span> hasil = angka.<span class="punctuation">filter(</span>event <span class="punctuation">=></span> event <span class="return">>=</span> <span class="numbe"><span class="number">5</span></span><span class="punctuation">)</span> <span class="muted">// [8, 9, 9]</span>
@@ -621,9 +662,9 @@ console.<span class="punctuation">log(</span>angkaBaru<span class="punctuation">
             .<span class="punctuation">reduce(</span><span class="function">(</span>acc, curr<span class="function">)</span> <span class="punctuation">=></span> acc <span class="return">+</span> curr<span class="punctuation">)</span>; <span class="muted">// 78</span>
 
 console.<span class="punctuation">log(</span>hasil<span class="punctuation">)</span>;</code></pre>
-            </div>
+                </div>
 
-        </div>
+            </div>
 
     </main>
 </body>

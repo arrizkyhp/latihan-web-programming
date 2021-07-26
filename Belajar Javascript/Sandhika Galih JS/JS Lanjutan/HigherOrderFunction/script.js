@@ -29,6 +29,7 @@ for (let i = 0; i < angka.length; i++) {
 console.log(angkaBaru); */
 
 // filter
+// mencari angka yang >= 3
 /* const angkaBaru = angka.filter(event => event >= 3); //arrow function
 console.log(angkaBaru); // [8, 9, 4, 3, 9] */
 
@@ -45,8 +46,8 @@ console.log(angkaBaru); // [-2, 16, 18, 2, 8, -10, -8, 6, 4, 18] */
 
 //  accumulator adalah hasil dari prosesnya.
 //  current value adalah element array yang sedang di looping.
-const angkaBaru = angka.reduce((accumulator, currentValue) => accumulator + currentValue);
-console.log(angkaBaru); // 26
+/* const angkaBaru = angka.reduce((accumulator, currentValue) => accumulator + currentValue);
+console.log(angkaBaru); // 26 */
 
 
 // Method Chaining

@@ -62,3 +62,7 @@ const hasil = angka.filter(event => event >= 5) // [8, 9, 9]
             .reduce((acc, curr) => acc + curr); // 78
 
 console.log(hasil);
+
+const nama = 'Arrizky';
+let umur = 24;
+console.log(`Halo saya ${nama}, saya ${umur} tahun.`);

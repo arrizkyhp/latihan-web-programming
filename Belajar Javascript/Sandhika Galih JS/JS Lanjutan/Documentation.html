@@ -27,6 +27,7 @@
             <li><a class="nav-link" href="#var-let-const">Var, Let & Const</a></li>
             <li><a class="nav-link" href="#arrow-function">Arrow Function</a></li>
             <li><a class="nav-link" href="#higher-order-function">Higher Order Function</a></li>
+            <li><a class="nav-link" href="#template-literals">Template Literals</a></li>
 
 
         </ul>
@@ -664,7 +665,110 @@ console.<span class="punctuation">log(</span>angkaBaru<span class="punctuation">
 console.<span class="punctuation">log(</span>hasil<span class="punctuation">)</span>;</code></pre>
                 </div>
 
+
             </div>
+
+            <h1 class="content-header" id="template-literals"><span>Template Literals</span></h1>
+            <p class="file-section">🚀File: <a href="HigherOrderFunction/index.html"
+                    target="_blank">HigherOrderFunction/index.html</a> & <a href="HigherOrderFunction/script.js"
+                    target="_blank">HigherOrderFunction/script.js</a> <br> 🏋🏽‍♂️Latihan: <a
+                    href="HigherOrderFunction/latihan/index.html"
+                    target="_blank">HigherOrderFunction/latihan/index.html</a>
+                & <a href="HigherOrderFunction/latihan/script.js"
+                    target="_blank">HigherOrderFunction/latihan/script.js</a><br>
+                🎥Video: <a
+                    href="https://www.youtube.com/watch?v=LywZF-xcfd8&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=12"
+                    target="_blank">Part 1</a> | <a
+                    href="https://www.youtube.com/watch?v=i4RIoT2tmpw&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=13"
+                    target="_blank">Part 2 (LATIHAN)</a>
+            </p>
+
+            <div class="wrapper">
+                <p>Template Literals/Template String</p>
+                <p>Template literal adalah <b>string literal</b> yang memungkinkan adanya <b>expression</b> di dalamnya
+                    <b>-MDN Web Docs</b>
+                </p>
+                <p><b>String Literal</b> adalah string yang biasa kita buat, baik itu yang disimpan di variabel, atau
+                    kita
+                    cetak menggunakan console.log</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+
+                    <pre><code><span class="muted">// kutip satu</span>
+<span class="punctuation">let</span> nama <span class="return">=</span> <span class="string">'Arrizky'</span>;
+<span class="muted">// kutip dua</span>
+<span class="punctuation">let</span> nim <span class="return">=</span> <span class="string">"10515112"</span>;
+<span class="muted">// back tick</span>
+<span class="punctuation">let</span> email <span class="return">=</span> <span class="string">`arizarzi@email.com`</span>;</code></pre>
+                </div>
+                <p>Dengan menggunakan <b>Back tick (``)</b> memungkinkan kita untuk membuat Template Literal.</p>
+                <p>Dengan menggunakan Back tick ini kita bisa melakukan banyak hal yaitu:</p>
+                <ul>
+                    <li>Multi-line String</li>
+                    <li>Embedded Expression</li>
+                    <li>HTML Fragments</li>
+                    <li>Expression Interpolation</li>
+                    <li>Tagged Template</li>
+                </ul>
+
+                <h3>Multi-line String</h3>
+                <p>Jika kita ingin membuat string dalam console.log, lalu ingin menampilkan di baris terpisah cukup
+                    tambahkan enter.</p>
+                <p>tidak memerlukan <b>/n</b> lagi.</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+
+                    <pre><code>console.<span class="punctuation">log(</span><span class="string">
+`string 1
+string 2`
+</span><span class="punctuation">)</span>;
+<span class="muted">// string 1
+// string 2
+</span></code></pre>
+                </div>
+
+                <h3>Embedded Expression</h3>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> nama <span class="return">=</span> <span class="string">'Arrizky'</span>;
+<span class="punctuation">let</span> umur <span class="return">=</span> <span class="number">24</span>;
+console.<span class="punctuation">log(</span><span class="string">`Halo saya </span><span class="punctuation">${</span>nama<span class="punctuation">}</span><span class="string">, saya</span> <span class="punctuation">${</span>umur<span class="punctuation">}</span> <span class="string">tahun.`</span><span class="punctuation">)</span>;</code></pre>
+                </div>
+
+                <h3>Multi-line String (HTML Fragments)</h3>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+
+                    <pre><code><span class="punctuation">const</span> data <span class="return">=</span> <span class="punctuation">{</span>
+    <span class="properties">nama:</span> <span class="string">'arrizky'</span>,
+    <span class="properties">nim:</span> <span class="string">'10515112'</span>,
+<span class="punctuation">}</span>;
+
+<span class="punctuation">const</span> ele <span class="return">=</span> <span class="string">`&lt;div class="data-diri"&gt;
+&lt;h2&gt;</span><span class="punctuation">${</span>data.<span class="properties">nama</span><span class="punctuation">}</span><span class="string">&lt;h2&gt;
+&lt;span class="nim"></span><span class="punctuation">${</span>data.<span class="properties">nim</span><span class="punctuation">}</span><span class="string">&lt;/span&gt;
+&lt;/div&gt;`</span>;
+
+console.<span class="punctuation">log(</span>ele<span class="punctuation">)</span>;</code></pre>
+                </div>
+
+                <h3>Expression Interpolation</h3>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">let</span> a <span class="return">=</span> <span class="number">10</span>;
+<span class="punctuation">let</span> b <span class="return">=</span> <span class="number">90</span>;
+console.<span class="punctuation">log(</span><span class="string">`Jika a =</span> <span class="punctuation">${</span>a<span class="punctuation">}</span> <span class="string">dan b = </span><span class="punctuation">${</span>b<span class="punctuation">}</span> <span class="string">maka hasil penjumlahanya adalah</span> <span class="punctuation">${</span>a<span class="return">+</span>b<span class="punctuation">}</span><span class="string">.`</span><span class="punctuation">)</span>;</code></pre>
+                </div>
+
+
+            </div>
+
+
 
     </main>
 </body>

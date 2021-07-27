@@ -7,8 +7,8 @@
 
 
 // conventional
-const satu = coba[0];
-const dua = coba[1];
+// const satu = coba[0];
+// const dua = coba[1];
 
 // destructuring
 const [a,b,c] = coba;
@@ -29,7 +29,7 @@ console.log (a, b); // 2 1 */
 
 // =========================================================================
 
-// return value pada function
+// return array pada function
 // function bisa mengembalikan array, dan array bisa di tangkap oleh syntax destructuring
 
 /* function coba() {
@@ -52,28 +52,28 @@ console.log(values); // [2, 3, 4, 5, 6] */
 
 // Nested Array
 
-const lang = [
+/* const lang = [
     ['javascript', 'php'],
     'java',
     'ruby',
     'python',
-]
+];
 
 const [[js, ph], dua, tiga] = lang;
-console.log(js, ph, tiga); // javascript php ruby
+console.log(js, ph, tiga); // javascript php ruby */
 
 // =========================================================================
 
 // Multidimensional Array
 
-const mhs = [
+/* const mhs = [
     {nama: 'Arrizky', umur: 21},
     {nama: 'Hasya', umur: 25},
 ]
 
 const [{nama}, {nama: nama2}] = mhs;
 console.log(nama); // Arrizky
-console.log(nama2); // Hasya
+console.log(nama2); // Hasya */
 
 
 // =========================================================================
@@ -102,12 +102,13 @@ console.log(umur); // 24 */
 
 // Assignment tanpa deklarasi Object
 // tambah kurung buka dan tutup
+
 /* ({nama,nim,umur} = {
     nama: 'Arrizky Hasya Pratama',
     nim: '10515112',
     umur: 24,
 });
-;
+
 console.log(nama); // Arrizky Hasya Pratama
 console.log(nim); // 10515112
 console.log(umur); // 24 */
@@ -173,7 +174,7 @@ console.log(value); // {nim: "10515112", umur: 24} */
 // =========================================================================
 
 // Mengambil field pada object, setelah dikirim sebagai parameter untuk function
-/* const mhs = {
+const mhs = {
     id: 123,
     nama: 'Arrizky Hasya Pratama',
     nim: '10515112',
@@ -185,7 +186,7 @@ function getIdMhs({ id }) {
     return id;
 }
 
-console.log(getIdMhs(mhs)); */
+console.log(getIdMhs(mhs));
 
 
 // =========================================================================
@@ -250,8 +251,8 @@ console.log(kurang); // -1 */
         uts: 85,
         uas: 70,
     }
-} */
-
+}
+ */
 // tidak memakai destructoring
 
 /* function cetakMhs(nama, umur) {
@@ -266,12 +267,12 @@ console.log(cetakMhs(mhs1.nama, mhs1.umur)); */
     return `Halo saya ${nama}, saya ${umur} tahun, dan nilai uas saya ${uas}`;
 }
 
-console.log(cetakMhs(mhs1)); */
+console.log(cetakMhs(mhs1)); // Halo saya Arrizky, saya 24 tahun, dan nilai uas saya 70 */
 
 // =========================================================================
 
 // nested array Object
-/*
+
 const mhs = {
     nama: 'arrizky',
     umur: 24,
@@ -288,4 +289,4 @@ const mhs = {
 }
 
 const  { links: [ {}, {nama, url} ] } = mhs;
-console.log(nama, url); // Instagram ig .com/arrizz */
+console.log(nama, url); // Instagram ig .com/arrizz

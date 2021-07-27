@@ -904,11 +904,285 @@ console.<span class="punctuation">log(</span>str<span class="punctuation">)</spa
             <div class="wrapper">
                 <p>Expression pada javascript yang membuat kita dapat <b>membongkar</b> nilai dari <b>array</b> atau
                     properti dari <b>object</b> kedalam <b>variabel</b> yang terpisah. <b>-MDN Web Docs.</b></p>
+                <h2>Destructuring Array</h2>
+                <p>petakan tiap-tiap element array ke variabel terpisah yang namanya bebas.</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> coba <span class="return">=</span> <span class="punctuation">[</span><span class="string">'satu'</span>, <span class="string">'dua'</span>, <span class="string">'tiga'</span><span class="punctuation">]</span>;
+
+<span class="muted">// skipping items
+// const [a, ,c] = coba;</span>
+
+<span class="muted">// conventional
+// const satu = coba[0];
+// const dua = coba[1];</span>
+
+// destructuring
+<span class="punctuation">const</span> <span class="punctuation">[</span>a,b,c<span class="punctuation">]</span> <span class="return">=</span> coba;
+console.<span class="punctuation">log(</span>a<span class="punctuation">)</span>; <span class="muted">// satu</span>
+console.<span class="punctuation">log(</span>b<span class="punctuation">)</span>; <span class="muted">// dua</span>
+console.<span class="punctuation">log(</span>c<span class="punctuation">)</span>; <span class="muted">// tiga</span></code></pre>
+                </div>
+
+
+                <h3>Swap Items</h3>
+                <p>menukar isi variabel</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">let</span> a <span class="return">=</span> <span class="number">1</span>
+<span class="punctuation">let</span> b <span class="return">=</span> <span class="number">2</span>
+console.<span class="punctuation">log(</span>a, b<span class="punctuation">)</span>; <span class="muted">// 1 2</span>
+<span class="punctuation">[</span>a, b<span class="punctuation">]</span> <span class="return">= </span><span class="punctuation">[</span>b, a<span class="punctuation">]</span>;
+console.<span class="punctuation">log(</span>a, b<span class="punctuation">)</span>; <span class="muted">// 2 1</span></code></pre>
+                </div>
+
+                <h3>Return array pada function</h3>
+                <p>function bisa mengembalikan array, dan array bisa di tangkap oleh syntax destructuring.</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="function">function</span> <span class="punctuation">coba() {</span>
+    <span class="return">return</span><span class="function">[</span><span class="number">1</span>,<span class="number">2</span><span class="function">]</span>;
+<span class="punctuation">}</span>
+
+<span class="punctuation">const [</span>a, b<span class="punctuation">]</span> = <span class="punctuation">coba()</span>;
+console.<span class="punctuation">log(</span>a<span class="punctuation">)</span>; <span class="muted">// 1</span>
+console.<span class="punctuation">log(</span>b<span class="punctuation">)</span>; <span class="muted">// 2</span></code></pre>
+                </div>
+
+                <h3>Rest parameter (...values)</h3>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const [</span>a, <span class="return">...</span>values<span class="punctuation">]</span> <span class="return">=</span> <span class="punctuation">[</span> <span class="number">1</span> , <span class="number">2</span> , <span class="number">3</span> , <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span><span class="punctuation">]</span>;
+console.<span class="punctuation">log(</span>a<span class="punctuation">)</span>; <span class="muted">// 1</span>
+console.<span class="punctuation">log(</span>values<span class="punctuation">)</span>; <span class="muted">// [2, 3, 4, 5, 6]</span></code></pre>
+                    </pre>
+                </div>
+
+                <h3>Nested Array</h3>
+                <p>Variabel array di dalam array.</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> lang <span class="return">=</span> <span class="punctuation">[</span>
+    <span class="function">[</span><span class="string">'javascript'</span>, <span class="string">'php'</span><span class="function">]</span>,
+    <span class="string">'java'</span>,
+    <span class="string">'ruby'</span>,
+    <span class="string">'python'</span>,
+<span class="punctuation">]</span>;
+
+<span class="punctuation">const [</span><span class="function">[</span>js, ph<span class="function">]</span>, dua, tiga<span class="punctuation">]</span> <span class="return">=</span> lang;
+console.<span class="punctuation">log(</span>js, ph, tiga<span class="punctuation">)</span>; <span class="muted">// javascript php ruby</span></code></pre>
+
+                </div>
+
+                <h3>Multidimensional Array</h3>
+                <p>Array yang didalamnya ada object / sebaliknya.</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> mhs <span class="return">=</span> <span class="punctuation">[</span>
+    <span class="function">{</span><span class="properties">nama</span>: <span class="string">'Arrizky'</span> <span class="properties">umur:</span> <span class="number">21</span><span class="function">}</span>,
+    <span class="function">{</span><span class="properties">nama</span>: <span class="string">'Hasya'</span> <span class="properties">umur:</span> <span class="number">25</span><span class="function">}</span>,
+<span class="punctuation">]</span>;
+
+<span class="punctuation">const [</span><span class="function">{</span>nama<span class="function">}</span>, <span class="function">{</span><span class="properties">nama:</span> nama2<span class="function">}</span><span class="punctuation">]</span> <span class="return">=</span> mhs;
+console.<span class="punctuation">log(</span>nama<span class="punctuation">)</span>; <span class="muted">// Arrizky</span>
+console.<span class="punctuation">log(</span>nama2<span class="punctuation">)</span>; <span class="muted">// Hasya</span></code></pre>
+
+                </div>
+
+                <h3>Multidimensional Nested Array Object</h3>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> mhs <span class="return">=</span> <span class="punctuation">{</span>
+    <span class="properties">nama</span>: <span class="string">'arrizky'</span>
+    <span class="properties">umur</span>: <span class="number">24</span>
+    <span class="properties">links</span>: <span class="function">[</span>
+        <span class="properties">{</span>
+            <span class="properties">nama</span>: <span class="string">'Facebook'</span>
+            <span class="properties">url</span>: <span class="string">'fb.com/arrizz'</span>
+        <span class="properties">}</span>,
+        <span class="properties">{</span>
+            <span class="properties">nama</span>: <span class="string">'Instagram'</span>
+            <span class="properties">url</span>: <span class="string">'ig.com/arrizz'</span>
+        <span class="properties">}</span>,
+    <span class="function">]</span>,
+<span class="punctuation">}</span>
+
+<span class="punctuation">const  {</span> links: <span class="function">[</span><span class="properties"> {}</span>, <span class="properties">{</span>nama, url<span class="properties">}</span> <span class="function">]</span> <span class="punctuation">}</span> <span class="return">=</span> mhs;
+console.<span class="punctuation">log(</span>nama, url<span class="punctuation">)</span>; <span class="muted">// Instagram ig.com/arrizz</span></code></pre>
+
+                </div>
+
+
+
+
+                <h2>Destructuring Object</h2>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> mhs <span class="return">=</span> <span class="punctuation">{</span>
+    <span class="properties">nama</span> <span class="string">'Arrizky Hasya Pratama'</span>,
+    <span class="properties">nim</span> <span class="string">'10515112'</span>,
+    <span class="properties">umur</span> <span class="number">24</span>,
+<span class="punctuation">}</span>;
+
+<span class="muted">// conventional</span>
+<span class="muted">// const nama = mhs.nama; </span>
+
+<span class="muted">// Destructuring
+// nama tidak boleh sembarang, harus sama dengan property</span>
+<span class="punctuation">const {</span>nama,nim,umur<span class="punctuation">}</span> <span class="return">= </span>mhs;
+console.<span class="punctuation">log(</span>nama<span class="punctuation">)</span>; <span class="muted">// Arrizky Hasya Pratama</span>
+console.<span class="punctuation">log(</span>nim<span class="punctuation">)</span>; <span class="muted">// 10515112</span>
+console.<span class="punctuation">log(</span>umur<span class="punctuation">)</span>; <span class="muted">// 24</span></code></pre>
+
+                </div>
+
+                <h3>Tanpa Deklarasi Object</h3>
+                <p>tambah kurung ().</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">(</span><span class="function">{</span><span class="properties">nama</span>,<span class="properties">nim</span>,<span class="properties">umur</span><span class="function">}</span> = <span class="function">{</span>
+    <span class="properties">nama</span>: <span class="string">'Arrizky Hasya Pratama'</span>
+    <span class="properties">nim</span>: <span class="string">'10515112'</span>
+    <span class="properties">umur</span>: <span class="number">24</span>,
+<span class="function">}</span><span class="punctuation">)</span>;
+
+console.<span class="punctuation">log(</span>nama<span class="punctuation">)</span>; <span class="muted">// Arrizky Hasya Pratama</span>
+console.<span class="punctuation">log(</span>nim<span class="punctuation">)</span>;<span class="muted"> // 10515112</span>
+console.<span class="punctuation">log(</span>umur<span class="punctuation">)</span>; <span class="muted">// 24</span></code></pre>
+
+                </div>
+
+                <h3>Assign nama property tambahan</h3>
+                <p>jika tidak ingin sama dengan nama property tambahkan ":"</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> mhs <span class="return">=</span> <span class="punctuation">{</span>
+    <span class="properties">nama</span>: <span class="string">'Arrizky Hasya Pratama'</span>,
+    <span class="properties">nim</span>: <span class="string">'10515112'</span>,
+    <span class="properties">umur</span>: <span class="number">24</span>
+<span class="punctuation">}</span>;
+
+<span class="punctuation">const {</span><span class="properties">nama</span>: a, <span class="properties">nim</span>: b, <span class="properties">umur</span>: c<span class="punctuation">}</span> <span class="return">=</span> mhs;
+console.<span class="punctuation">log(</span>a<span class="punctuation">)</span>; <span class="muted">// Arrizky Hasya Pratama</span>
+console.<span class="punctuation">log(</span>b<span class="punctuation">)</span>; <span class="muted">// 10515112</span>
+console.<span class="punctuation">log(</span>c<span class="punctuation">)</span>; <span class="muted">// 24</span></code></pre>
+
+                </div>
+
+                <h3>Memberikan default value</h3>
+                <p>bisa menambahkan value jika tidak ada di property.</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> mhs <span class="return">=</span> <span class="punctuation">{</span>
+    <span class="properties">nama</span>: <span class="string">'Arrizky Hasya Pratama'</span>
+    <span class="properties">nim</span>: <span class="string">'10515112'</span>
+<span class="punctuation">}</span>;
+
+<span class="punctuation">const {</span>nama,nim,umur <span class="return">=</span> <span class="number">24</span><span class="punctuation">}</span> <span class="return">=</span> mhs;
+console.<span class="punctuation">log(</span>nama<span class="punctuation">)</span>; <span class="muted">// Arrizky Hasya Pratama</span>
+console.<span class="punctuation">log(</span>nim<span class="punctuation">)</span>; <span class="muted">// 10515112</span>
+console.<span class="punctuation">log(</span>umur<span class="punctuation">)</span>; <span class="muted">// 24</span></code></pre>
+
+                </div>
+
+                <h3>Property tambahan + default value</h3>
+                <p>menggabungkan property baru + default value</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const {</span><span class="properties">nama</span>: nm,<span class="properties">nim</span>: ni,<span class="properties">umur</span>: um <span class="return">=</span> <span class="number">24</span><span class="punctuation">}</span> <span class="return">=</span> mhs;
+console.<span class="punctuation">log(</span>um<span class="punctuation">)</span>; <span class="muted">// 24</span> </code></pre>
+
+                </div>
+
+                <h2>Destructuring Function</h2>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="function">function</span> <span class="punctuation">penjumlahanPerkalian (</span>a,b<span class="punctuation">) {</span>
+    <span class="return">return</span> <span class="function">[</span>a <span class="return">+</span> b, a <span class="return">*</span> b<span class="function">]</span>
+}
+
+<span class="punctuation">const [</span>jumlah, kali<span class="punctuation">]</span> <span class="return">=</span> <span class="punctuation">penjumlahanPerkalian(</span><span class="number">2</span>,<span class="number">3</span><span class="punctuation">)</span>;
+console.<span class="punctuation">log(</span>jumlah<span class="punctuation">)</span>; // 5
+console.<span class="punctuation">log(</span>kali<span class="punctuation">)</span>; // 6</code></pre>
+
+                </div>
+
+                <h3>Function return berupa Object</h3>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="function">function</span> <span class="punctuation">kalkulasi(</span>a,b<span class="punctuation">) {</span>
+    <span class="return">return</span> <span class="function">{</span>
+        <span class="properties">tambah</span>: a <span class="return">+</span> b,
+        <span class="properties">kurang</span>: a <span class="return">-</span> b,
+        <span class="properties">kali</span>: a <span class="return">*</span> b,
+        <span class="properties">bagi</span>: a <span class="return">/</span> b,
+    <span class="function">}</span>
+<span class="punctuation">}</span>
+
+<span class="muted">// urutan tidak berpengaruh karena terasosiainya dengan nama properti</span>
+<span class="punctuation">const {</span><b>tambah, kali, kurang, bagi</b><span class="punctuation">}</span> <span class="return">=</span> <span class="punctuation">kalkulasi(</span>2, 3<span class="punctuation">)</span>;
+console.<span class="punctuation">log(</span>kurang<span class="punctuation">)</span>; <span class="muted">// -1</span></code></pre>
+
+                </div>
+
+                <h3>Function Nested Object</h3>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> mhs1 <span class="return">=</span> <span class="punctuation">{</span>
+    <span class="properties">nama</span>: <span class="string">'Arrizky'</span>,
+    <span class="properties">umur</span>: <span class="number">24</span>,
+    <span class="properties">email</span>: <span class="string">'ariz@gmail.com'</span>,
+    <span class="properties">nilai</span>: <span class="function">{</span>
+        <span class="properties">tugas</span>: <span class="number">80</span>,
+        <span class="properties">uts</span>: <span class="number">85</span>,
+        <span class="properties">uas</span>: <span class="number">70</span>,
+    <span class="function">}</span>
+<span class="punctuation">}</span>
+
+<span class="muted">// destructoring argument menjadi object {}</span>
+<span class="function">function</span> <span class="punctuation">cetakMhs(</span><span class="function">{</span>nama , umur, nilai: <span class="properties">{</span>tugas, uts, uas<span class="properties">}</span><span class="function">}</span><span class="punctuation">) {</span>
+return <span class="string">`Halo saya </span><span class="punctuation">${</span>nama<span class="punctuation">}</span><span class="string">, saya</span> <span class="punctuation">${</span>umur<span class="punctuation">}</span> <span class="string">tahun, dan nilai uas saya </span><span class="punctuation">${</span>uas<span class="punctuation">}</span>`;
+}
+
+console.<span class="punctuation">log(cetakMhs</span><span class="function">(</span>mhs1<span class="function">)</span><span class="punctuation">)</span>; <span class="muted">// Halo saya Arrizky, saya 24 tahun, dan nilai uas saya 70</span></code></pre>
+
+                </div>
+
+                <h3>Function Mengambil 1 properties Object</h3>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> mhs<span class="return"> </span><span class="return">= </span><span class="punctuation">{</span>
+    <span class="properties">id</span>: <span class="number">123</span>,
+    <span class="properties">nama</span>: <span class="string">'Arrizky Hasya Pratama'</span>
+    <span class="properties">nim</span>: <span class="string">'10515112'</span>
+    <span class="properties">umur</span>: <span class="number">24</span>,
+<span class="punctuation">}</span>;
+
+<span class="muted">// ambil id saja tidak yang lain</span>
+<span class="function">function</span> <span class="punctuation">getIdMhs(</span><span class="function">{</span> id <span class="function">}</span><span class="punctuation">) {</span>
+    <span class="return">return</span> id;
+<span class="punctuation">}</span>
+
+console.<span class="punctuation">log(getIdMhs</span><span class="function">(</span>mhs<span class="function">)</span><span class="punctuation">)</span>;<span class="muted"> // 123</span></code></pre>
+
+                </div>
             </div>
-
-
-
-
     </main>
 </body>
 

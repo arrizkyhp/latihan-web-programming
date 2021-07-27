@@ -5,10 +5,17 @@
 // skipping items
 // const [a, ,c] = coba; // b is not defined
 
+
+// conventional
+const satu = coba[0];
+const dua = coba[1];
+
+// destructuring
 const [a,b,c] = coba;
 console.log(a); // satu
 console.log(b); // dua
 console.log(c); // tiga */
+
 
 // =========================================================================
 
@@ -41,6 +48,33 @@ console.log(b); // 2 */
 console.log(a); // 1
 console.log(values); // [2, 3, 4, 5, 6] */
 
+// =========================================================================
+
+// Nested Array
+
+const lang = [
+    ['javascript', 'php'],
+    'java',
+    'ruby',
+    'python',
+]
+
+const [[js, ph], dua, tiga] = lang;
+console.log(js, ph, tiga); // javascript php ruby
+
+// =========================================================================
+
+// Multidimensional Array
+
+const mhs = [
+    {nama: 'Arrizky', umur: 21},
+    {nama: 'Hasya', umur: 25},
+]
+
+const [{nama}, {nama: nama2}] = mhs;
+console.log(nama); // Arrizky
+console.log(nama2); // Hasya
+
 
 // =========================================================================
 // Object
@@ -54,6 +88,10 @@ console.log(values); // [2, 3, 4, 5, 6] */
     umur: 24,
 };
 
+// conventional
+const nama = mhs.nama;
+
+// Destructuring
 // nama tidak boleh sembarang, harus sama dengan property
 const {nama,nim,umur} = mhs;
 console.log(nama); // Arrizky Hasya Pratama
@@ -121,6 +159,7 @@ console.log(um); // 24 */
 // =========================================================================
 
 // Rest Parameter
+// properti tersisa
 
 /* const mhs = {
     nama: 'Arrizky Hasya Pratama',
@@ -201,8 +240,8 @@ console.log(kurang); // -1 */
 // =========================================================================
 
 // Destructor function arguments
-
-const mhs1 = {
+// Nested Object
+/* const mhs1 = {
     nama: 'Arrizky',
     umur: 24,
     email: 'ariz@gmail.com',
@@ -211,7 +250,7 @@ const mhs1 = {
         uts: 85,
         uas: 70,
     }
-}
+} */
 
 // tidak memakai destructoring
 
@@ -223,8 +262,30 @@ console.log(cetakMhs(mhs1.nama, mhs1.umur)); */
 
 // memekai destructoring
 // destructoring argument menjadi object {}
-function cetakMhs({nama , umur, nilai: {tugas, uts, uas}}) {
+/* function cetakMhs({nama , umur, nilai: {tugas, uts, uas}}) {
     return `Halo saya ${nama}, saya ${umur} tahun, dan nilai uas saya ${uas}`;
 }
 
-console.log(cetakMhs(mhs1));
+console.log(cetakMhs(mhs1)); */
+
+// =========================================================================
+
+// nested array Object
+/*
+const mhs = {
+    nama: 'arrizky',
+    umur: 24,
+    links: [
+        {
+            nama: 'Facebook',
+            url: 'fb.com/arrizz'
+        },
+        {
+            nama: 'Instagram',
+            url: 'ig .com/arrizz'
+        }
+    ]
+}
+
+const  { links: [ {}, {nama, url} ] } = mhs;
+console.log(nama, url); // Instagram ig .com/arrizz */

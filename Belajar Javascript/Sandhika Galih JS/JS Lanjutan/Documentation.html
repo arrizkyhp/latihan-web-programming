@@ -1332,10 +1332,108 @@ console.<span class="punctuation">log(jumlahkanAngka</span><span class="function
                 <p>Kedua Operator ini direprentasikan dengan tiga titik <b>(...)</b>, meskipun notasinya sama tetapi
                     keduanya berbeda.</p>
                 <h2>Spread Operator</h2>
-                <p>Operator yang memecah (expand/unpack) <a href="#iterables">iterables</a>(banyak isinya) menjadi
-                    single element.</p>
+                <p>Operator yang<b>
+                        memecah (expand/unpack) <a href="#iterables">iterables</a>(banyak isinya) menjadi
+                        single element.
+                    </b></p>
+                <p>Spread Operator digunakan ketika kita akan <b>menggabungkan 2 Array atau lebih.</b></p>
+                <p>Selain itu Spread Operator juga bisa digunakan untuk <b>men-copy Array.</b></p>
+
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> mahasiswa <span class="return">=</span> <span class="punctuation">[</span><span class="string">'Arrizky'</span>, <span class="string">'Hasya'</span>, <span class="string">'Pratama'</span><span class="punctuation">]</span>;
+
+console.<span class="punctuation">log(</span><span class="return">...</span>mahasiswa<span class="punctuation">)</span>; <span class="muted">// Arrizky Hasya Pratama</span></code></pre>
+
+                </div>
+
+                <h3>Menggabungkan 2 atau lebih array</h3>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> mahasiswa <span class="return">=</span> <span class="punctuation">[</span><span class="string">'Arrizky'</span>, <span class="string">'Hasya'</span>, <span class="string">'Pratama '</span><span class="punctuation">]</span>;
+<span class="punctuation">const</span> dosen <span class="return">=</span> <span class="punctuation">[</span><span class="string">'Adilla'</span>, <span class="string">'Billy'</span>, <span class="string">'Athalla'</span><span class="punctuation">]</span>;
+
+<span class="punctuation">const</span> orang <span class="return">=</span> <span class="punctuation">[</span><span class="return">...</span>mahasiswa,<span class="string">'Kalea'</span>, <span class="return">...</span>dosen<span class="punctuation">]</span>;
+console.<span class="punctuation">log(</span>orang<span class="punctuation">)</span>; <span class="muted">// gabungan array mahasiswa + dosen</span></code></pre>
+
+                </div>
+
+                <h3>Copy Array</h3>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> mahasiswa1 <span class="return">=</span> <span class="punctuation">[</span><span class="return">...</span>mahasiswa<span class="punctuation">]</span>;
+console.<span class="punctuation">log(</span>mahasiswa1<span class="punctuation">)</span>; // <span class="muted">["Arrizky", "Hasya","Pratama"]</span></code></pre>
+
+                </div>
+
+                <h2>Rest Operator</h2>
+                <p>Mereprentasikan <b>argument pada function</b> dengan jumlah yang tidak terbatas <b>menjadi sebuah
+                        array</b>.</p>
+                <p>Rest parameter hanya bisa digunakan di akhir argument.</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="function">function</span> <span class="punctuation">myFunc(</span><span class="return">...</span>myArgs<span class="punctuation">) {</span>
+    <span class="return">return</span> myArgs <span class="muted">// jadi array
+    // return arguments; // bisa tetapi bukan array
+    // return Array.from(arguments); // jadi array
+    // return [...arguments] // jadi array  [1, 2, 3, 4, 5]
+    </span>
+<span class="punctuation">}</span>
+
+console.<span class="punctuation">log(myFunc</span><span class="function">(</span><span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span><span class="function">)</span><span class="punctuation">)</span>;</code></pre>
+
+                </div>
+
+                <h3>Array Destructuring</h3>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> kelompok1 <span class="return">=</span> <span class="punctuation">[</span><span class="string">'Arrizky'</span>, <span class="string">'Asep'</span>, <span class="string">'Huda'</span>, <span class="string">'Fidya'</span>, <span class="string">'Wildan'</span><span class="punctuation">]</span>;
+<span class="muted">// nama pertama ketua, nama kedua waketu.</span>
+<span class="punctuation">const [</span>ketua, wakil, <span class="return">...</span>anggota<span class="punctuation">]</span> <span class="return">=</span> kelompok1;
+console.<span class="punctuation">log(</span>ketua<span class="punctuation">)</span>; <span class="muted">// Arrizky</span>
+console.<span class="punctuation">log(</span>wakil<span class="punctuation">)</span>; <span class="muted">// Asep</span>
+console.<span class="punctuation">log(</span>anggota<span class="punctuation">)</span>; <span class="muted">// ['Huda', 'Fidya', 'Wildan,']</span></code></pre>
+
+                </div>
+
+                <h3>Object Destructuring</h3>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> team <span class="return">=</span> <span class="punctuation">{</span>
+    <span class="properties">pm</span>: <span class="string">'Arrizky'</span>,
+    <span class="properties">frontEnd1</span>: <span class="string">'Hasya'</span>,
+    <span class="properties">frontEnd2</span>: <span class="string">'Pratama'</span>,
+    <span class="properties">backEnd</span>: <span class="string">'Asep'</span>,
+    <span class="properties">ux</span>: <span class="string">'Huda'</span>,
+<span class="punctuation">}</span>
+
+<span class="punctuation">const {</span>pm, <span class="return">...</span>myTeam<span class="punctuation">}</span> <span class="return">=</span> team;
+console.<span class="punctuation">log(</span>myTeam<span class="punctuation">)</span>;</code></pre>
+
+                </div>
+
+                <h3>Filtering</h3>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="function">function</span> <span class="punctuation">filterBy(</span>type, <span class="return">...</span>values<span class="punctuation">) {</span>
+    <span class="return">return</span> values.<span class="punctuation">filter</span><span class="function">(</span>v <span class="punctuation">=></span> <span class="return">typeof</span> v <span class="return">===</span> type<span class="function">)</span>
+<span class="punctuation">}</span>
+
+<span class="muted">// pertama type sisanya nilai</span>
+console.<span class="punctuation">log(filterBy</span><span class="function">(</span><span class="string">'boolean'</span>, <span class="number">1</span>,<span class="number">2</span>,<span class="string">'Arrizky'</span>,<span class="number">false</span>,<span class="number">10</span>,<span class="number">true</span>,<span class="string">'Pratama'</span><span class="function">)</span><span class="punctuation">)</span>;</code></pre>
+
+                </div>
 
             </div>
+
+
     </main>
 </body>
 

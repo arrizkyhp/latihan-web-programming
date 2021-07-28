@@ -29,6 +29,7 @@
             <li><a class="nav-link" href="#higher-order-function">Higher Order Function</a></li>
             <li><a class="nav-link" href="#template-literals">Template Literals</a></li>
             <li><a class="nav-link" href="#destructuring">Destructuring</a></li>
+            <li><a class="nav-link" href="#for-of-for-in">For..of vs for..in</a></li>
 
 
         </ul>
@@ -887,18 +888,15 @@ console.<span class="punctuation">log(</span>str<span class="punctuation">)</spa
             </div>
 
             <h1 class="content-header" id="destructuring"><span>Destructuring</span></h1>
-            <p class="file-section">🚀File: <a href="Template Literals/index.html" target="_blank">Template
-                    Literals/index.html</a> & <a href="Template Literals/string.js" target="_blank">Template
-                    Literals/string.js</a> <br> 🏋🏽‍♂️Latihan: <a href="Template Literals/Latihan/script.js"
-                    target="_blank">Template Literals/Latihan/script.js</a><br>
+            <p class="file-section">🚀File: <a href="Destructuring/index.html"
+                    target="_blank">Destructuring/index.html</a> & <a href="Destructuring/script.js"
+                    target="_blank">Destructuring/script.js</a> <br>
                 🎥Video: <a
                     href="https://www.youtube.com/watch?v=7f11bDxZSP0&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=15"
                     target="_blank">Part 1</a> | <a
                     href="https://www.youtube.com/watch?v=IcBNuBux9ag&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=16"
                     target="_blank">Part 2 </a> | <a href="https://www.youtube.com/watch?v=sw7jcB005Mc"
                     target="_blank">Tambahan </a>
-
-
             </p>
 
             <div class="wrapper">
@@ -1180,6 +1178,141 @@ console.<span class="punctuation">log(cetakMhs</span><span class="function">(</s
 <span class="punctuation">}</span>
 
 console.<span class="punctuation">log(getIdMhs</span><span class="function">(</span>mhs<span class="function">)</span><span class="punctuation">)</span>;<span class="muted"> // 123</span></code></pre>
+
+                </div>
+            </div>
+
+            <h1 class="content-header" id="for-of-for-in"><span>For..of vs for..in</span></h1>
+            <p class="file-section">🚀File: <a href="ForOf_ForIn/index.html" target="_blank">ForOf_ForIn/index.html</a>
+                & <a href="ForOf_ForIn/script.js" target="_blank">ForOf_ForIn/script.js</a> <br>
+                🎥Video: <a
+                    href="https://www.youtube.com/watch?v=LXOG9rHkYOo&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=17"
+                    target="_blank">Part 1</a>
+            </p>
+
+            <div class="wrapper">
+                <p>For...of & For...in merupakan 2 looping baru dalam syntax javascript.</p>
+
+                <h2>for..of</h2>
+                <p>Sebuah looping yang bisa mengulang atau menelusuri object-object yang <b>iterable</b></p>
+                <p><b>Iterable Object</b></p>
+                <ul>
+                    <li>String</li>
+                    <li>Array</li>
+                    <li>Arguments / NodeList</li>
+                    <li>TypedArray</li>
+                    <li>Map</li>
+                    <li>Set</li>
+                    <li>User-defined Iterables</li>
+                </ul>
+
+                <h3>Array</h3>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> mahasiswa <span class="return">=</span> <span class="punctuation">[</span><span class="string">'Arrizky'</span>,<span class="string">'Hasya'</span>, <span class="string">'Pratama'</span><span class="punctuation">]</span>;
+
+<span class="muted">// for biasa</span>
+<span class="return">for</span><span class="punctuation">( let</span> i <span class="return">=</span> <span class="number">0</span> i <span class="return">&lt;</span> mahasiswa.<span class="properties">length</span><span class="return">++</span><span class="punctuation">) {</span>
+    console.<span class="punctuation">log</span><span class="function">(</span>mahasiswa<span class="properties">[</span>i<span class="properties">]</span><span class="function">)</span>;
+<span class="punctuation">}</span>
+
+<span class="muted">// for each</span>
+mahasiswa.<span class="punctuation">forEach(</span> <span class="function">(</span>mhs<span class="function">)</span> <span class="punctuation">=></span> <span class="function">{</span>console.<span class="punctuation">log</span><span class="properties">(</span>mhs<span class="properties">)</span>; <span class="function">}</span><span class="punctuation">)</span>
+
+<span class="muted">// const nama variable of nama array
+// m dari array mahasiswa</span>
+<span class="return">for</span><span class="punctuation">(const</span> m <span class="return">of</span> mahasiswa<span class="punctuation">) {</span>
+console.<span class="punctuation">log</span><span class="function">(</span>m<span class="function">)</span>;
+<span class="punctuation">}</span></code></pre>
+
+                </div>
+
+                <h3>String</h3>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="muted">// forEach tidak bisa digunakan untuk string</span>
+<span class="punctuation">const</span> nama = <span class="string">'Ariz'</span>;
+<span class="return">for</span><span class="punctuation">( const</span> n <span class="return">of</span> nama <span class="punctuation">) {</span>
+    console.<span class="punctuation">log</span><span class="function">(</span>n<span class="function">)</span>;
+<span class="punctuation">}</span>
+<span class="muted">// a r i z</span></code></pre>
+
+                </div>
+
+                <h3>Index dalam forEach</h3>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> mahasiswa <span class="return">=</span> <span class="punctuation">[</span><span class="string">'Arrizky'</span>,<span class="string">'Hasya'</span>, <span class="string">'Pratama'</span><span class="punctuation">]</span>;
+
+<span class="muted">// index dalam foreach</span>
+mahasiswa.<span class="punctuation">forEach(</span><span class="function">(</span>m, i<span class="function">)</span> <span class="punctuation">=></span> <span class="function">{</span>
+    console.<span class="punctuation">log</span>(<span class="string">`</span><span class="punctuation">${</span>m<span class="punctuation">}</span> <span class="string">adalah mahasiswa ke </span><span class="punctuation">${</span>i<span class="return">+</span><span class="number">1</span><span class="punctuation">}</span><span class="string">`</span>);
+}<span class="punctuation">)</span>;
+
+<span class="muted">// for off secara default tidak mempunyai index
+// tapi tetap bisa dengan cara yang berbeda, dengan menggunakna destructuring</span>
+<span class="return">for</span> <span class="punctuation">(const</span> <span class="function">[</span>i, m<span class="function">]</span> <span class="return">of</span> mahasiswa.<span class="punctuation">entries</span><span class="function">()</span> <span class="punctuation">) {</span>
+    console.<span class="punctuation">log</span><span class="function">(</span><span class="string">`</span><span class="punctuation">${</span>m<span class="punctuation">}</span> <span class="string">adalah mahasiswa ke</span> <span class="punctuation">${</span>i<span class="return">+</span><span class="number">1</span><span class="punctuation">}</span><span class="string">`</span><span class="function">)</span>;
+<span class="punctuation">}</span></code></pre>
+
+                </div>
+
+                <h3>NodeList</h3>
+                <p>Nodelist ketika kita menggunakan query dalam DOM.</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> liNama <span class="return">=</span> document.<span class="punctuation">querySelectorAll(</span><span class="string">'.nama'</span><span class="punctuation">)</span>;
+
+<span class="muted">// forEach</span>
+liNama.<span class="punctuation">forEach(</span>n <span class="punctuation">=></span> console.<span class="punctuation">log</span><span class="function">(</span>n.<span class="properties">innerHTML</span><span class="function">)</span><span class="punctuation">)</span>;
+
+<span class="muted">// for...of</span>
+<span class="return">for</span> <span class="punctuation">(</span>n <span class="return">of</span> liNama<span class="punctuation">) {</span>
+    console.<span class="punctuation">log</span><span class="function">(</span>n.innerHTML<span class="function">)</span>;
+<span class="punctuation">}</span></code></pre>
+
+                </div>
+
+                <h3>Arguments</h3>
+                <p>Arguments ada pada function.</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="function">function</span> <span class="punctuation">jumlahkanAngka () {</span>
+
+    <span class="punctuation">let</span> jumlah <span class="return">=</span> <span class="number">0</span>;
+    <span class="return">for</span><span class="function">(</span> a <span class="return">of</span> <span class="function">arguments) {</span>
+        jumlah <span class="return">+=</span> a
+    <span class="function">}</span>
+    <span class="return">return</span> jumlah;
+<span class="punctuation">}</span>
+
+console.<span class="punctuation">log(jumlahkanAngka</span><span class="function">(</span><span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span><span class="function">)</span><span class="punctuation">)</span>;</code></pre>
+
+                </div>
+
+                <h2>for...in</h2>
+                <p>membuat looping yang hanya <b>enumerable.</b></p>
+                <p>Enumerable adalah properti pada <b>object</b>.</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> mahasiswa <span class="return">=</span> <span class="punctuation">{</span>
+    <span class="properties">nama</span>: <span class="string">'arrizky'</span>
+    <span class="properties">umur</span>: <span class="number">24</span>,
+    <span class="properties">email</span>: <span class="string">'ariz@gmail.com'</span>
+<span class="punctuation">}</span>
+
+<span class="return">for</span> <span class="punctuation">(</span>mhs <span class="return">in</span> mahasiswa<span class="punctuation">) {</span>
+    <span class="muted">// mengambil value property</span>
+    console.<span class="punctuation">log</span><span class="function">(</span>mahasiswa[mhs]<span class="function">)</span>;
+    <span class="muted">// mengambil index property</span>
+    console.<span class="punctuation">log</span><span class="function">(</span>mhs<span class="function">)</span>;
+<span class="punctuation">}</span></code></pre>
 
                 </div>
             </div>

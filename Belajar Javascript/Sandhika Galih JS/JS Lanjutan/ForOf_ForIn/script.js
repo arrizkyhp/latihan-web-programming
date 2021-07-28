@@ -29,7 +29,7 @@ for( const n of nama ) {
 
 // =================================================================================
 
-const mahasiswa = ['Arrizky','Hasya', 'Pratama'];
+/* const mahasiswa = ['Arrizky','Hasya', 'Pratama'];
 
 // index dalam foreach
 mahasiswa.forEach((m, i) => {
@@ -40,13 +40,13 @@ mahasiswa.forEach((m, i) => {
 // tapi tetap bisa dengan cara yang berbeda, dengan menggunakna destructuring
 for (const [i, m] of mahasiswa.entries() ) {
     console.log(`${m} adalah mahasiswa ke ${i+1}`);
-}
+} */
 
 // =================================================================================
 // NodeList
 // ================================================================================
 // Nodelist ketika kita menggunakan query dalam DOM.
-const liNama = document.querySelectorAll('.nama');
+/* const liNama = document.querySelectorAll('.nama');
 
 // forEach
 liNama.forEach(n => console.log(n.innerHTML));
@@ -54,7 +54,7 @@ liNama.forEach(n => console.log(n.innerHTML));
 // for...of
 for (n of liNama) {
     console.log(n.innerHTML);
-}
+} */
 
 
 // =================================================================================
@@ -84,7 +84,7 @@ console.log(jumlahkanAngka(1,2,3,4,5)); */
 // ================================================================================
 // =================================================================================
 
-/* const mahasiswa = {
+const mahasiswa = {
     nama: 'arrizky',
     umur: 24,
     email: 'ariz@gmail.com'
@@ -95,4 +95,4 @@ for (mhs in mahasiswa) {
     console.log(mahasiswa[mhs]);
     // mengambil index property
     console.log(mhs);
-} */
+}

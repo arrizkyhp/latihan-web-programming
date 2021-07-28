@@ -31,6 +31,7 @@
             <li><a class="nav-link" href="#destructuring">Destructuring</a></li>
             <li><a class="nav-link" href="#for-of-for-in">For..of vs for..in</a></li>
             <li><a class="nav-link" href="#spread-operator">Spread & Rest Operator</a></li>
+            <li><a class="nav-link" href="#asynchronous">Asynchronous</a></li>
 
 
         </ul>
@@ -1319,8 +1320,9 @@ console.<span class="punctuation">log(jumlahkanAngka</span><span class="function
             </div>
 
             <h1 class="content-header" id="spread-operator"><span>Spread & Rest Operator</span></h1>
-            <p class="file-section">🚀File: <a href="ForOf_ForIn/index.html" target="_blank">ForOf_ForIn/index.html</a>
-                & <a href="ForOf_ForIn/script.js" target="_blank">ForOf_ForIn/script.js</a> <br>
+            <p class="file-section">🚀File: <a href="Spread_&_Rest/index.html"
+                    target="_blank">Spread_&_Rest/index.html</a>
+                & <a href="Spread_&_Rest/script.js" target="_blank">Spread_&_Rest/script.js</a> <br>
                 🎥Video: <a
                     href="https://www.youtube.com/watch?v=AT5hfOL1Ddk&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=18"
                     target="_blank">Part 1</a> | <a
@@ -1431,6 +1433,75 @@ console.<span class="punctuation">log(filterBy</span><span class="function">(</s
 
                 </div>
 
+            </div>
+
+            <h1 class="content-header" id="asynchronous"><span>Asynchronous Programing</span></h1>
+            <p class="file-section">
+                🎥Video: <a
+                    href="https://www.youtube.com/watch?v=wVtdv5BHhno&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=20"
+                    target="_blank">Part 1</a>
+            </p>
+
+            <div class="wrapper">
+                <h2>Teknik-teknik <b>Asynchronous Javascript</b>:</h2>
+                <ul>
+                    <li>Callback</li>
+                    <li>Promise</li>
+                    <li>ajax</li>
+                    <li>Async & Await</li>
+                </ul>
+                <p>"<b>Javascript</b> is a <b>single-threader, non-blocking, asynchronous</b> and <b>concurrent</b>
+                    language."</p>
+
+                <h3>Single-threaded</h3>
+                <p><b>Thread</b> Urutan eksekusi kode yang dapat dilakukan secara bebas / independent satu sama
+                    lain. Intinya javascript hanya bisa melakukan satu hal pada satu waktu tertentu.</p>
+                <p>Javascript membaca baris perbaris dan menyelesaikannya.</p>
+                <h3>non-blocking</h3>
+                <p><b>Blocking</b> ketika sebuah script pada saat dieksekusi, ternyata membutuhkan waktu yang lama,
+                    maka tidak bisa lanjut ke script berikutnya, Harus menunggu sampai script pertama selesai</p>
+                <p><b>Non-Blocking</b> ketika mengerjakan satu hal walaupun pekerjaanya belum selesai, bisa lanjut
+                    ke
+                    pekerjaan berikutnya.</p>
+                <h3>Asynchronous</h3>
+                <p> Ref:
+                    <a href="https://medium.com/coderupa/panduan-komplit-asynchronous-programming-pada-javascript-part-1-fca22279c056"
+                        target="_blank">https://medium.com/coderupa/panduan-komplit-asynchronous-programming-pada-javascript-part-1-fca22279c056</a>
+                </p>
+                <br>
+                <p><b>Synchronous</b> merupakan mode default dalam proses eksekusi perintah kode. <b>Setiap perintah
+                        di
+                        eksekusi satu persatu sesuai urutan
+                    </b> kode yang di tuliskan. <b>Contoh</b> => antrian Bank. Jika
+                    dapat no
+                    4 maka akan dilayanai setelah 1-3 selesai</p><br>
+                <p><b>Asynchronous</b> Kode tidak akan langsung dieksekusi, tetapi di skip dan akan melakukan
+                    eksekusi baris perintah berikutnya. Hasil eksekusi atau output tidak selalu berdasarkan urutan
+                    kode, tetapi berdasarkan waktu proses.</p>
+                <p>Eksekusi dengan asynchronous <b>tidak akan membloking atau menunggu suatu perintah sampai
+                        selesai.</b>
+                    Daripada menunggu, asynchronous akan mengeksekusi perintah selanjutnya.</p>
+                <p>Asynchronous + Single-threded = <b>Concurrency</b></p>
+                <p>Asynchronous + Multi-threded = <b>Parallelism</b></p>
+                </ul>
+                <h3><b>Kesimpulan</b></h3>
+
+                <li><b>Single vs Multi Thread</b></li>
+                <p>Hubunganya dengan Linkungan eksekusi 'task', dikerjakan menggunakan 1 thread atau banyak thread.
+                </p>
+                <li><b>Blocking vs Non-blocking</b></li>
+                <p>Teknin 'ngoding' biasanya hubunganya dengan input dan ouput.</p>
+                <li><b>Synchronous vs Asynchronous</b></li>
+                <p>Tknik 'ngoding' yang hubunganya dengan HTTP Reques related. biasanya kalu kita ingin menggunakan
+                    ajax.</p>
+                <li><b>Synchronous vs Asynchronous</b></li>
+                <p>Hubunganya dengan lingkungan eksekusi 'task'.</p>
+                </ul>
+                <h3>Intinya</h3>
+                <p>Kenapa belajar Asynchronous? supaya bisa menciptakan sebuah program yang nyaman digunakan oleh user,
+                    jadi kita tau kapan kita menggunakan fungsi asynchronous pada javascript.</p>
+                <p><b>DON'T BLOCK THE LOOP!</b></p>
+                <p>Jangan sampai kita blok si event loopnya.</p>
             </div>
 
 

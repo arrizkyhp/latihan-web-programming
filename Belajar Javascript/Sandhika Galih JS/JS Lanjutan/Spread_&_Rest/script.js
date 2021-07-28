@@ -83,7 +83,7 @@ console.log(anggota); */
 
 
 // Object destructuring
-const team = {
+/* const team = {
     pm: 'Arrizky',
     frontEnd1: 'Hasya',
     frontEnd2: 'Pratama',
@@ -92,12 +92,12 @@ const team = {
 }
 
 const {pm, ...myTeam} = team;
-console.log(myTeam);
+console.log(myTeam); */
 
 // filtering
-/* function filterBy(type, ...values) {
+function filterBy(type, ...values) {
     return values.filter(v => typeof v === type)
 }
 
 // pertama type sisanya nilai
-console.log(filterBy('boolean', 1,2,'Arrizky',false,10,true,'Pratama')); */
+console.log(filterBy('boolean', 1,2,'Arrizky',false,10,true,'Pratama'));

@@ -28,10 +28,10 @@ const mhs = [...liNama].map(m => m.textContent);
 console.log(mhs); */
 
 // Hover per huruf
-const nama = document.querySelector('.nama');
+/* const nama = document.querySelector('.nama');
 
 const pecahHuruf = [...nama.textContent].map(h => `<span>${h}</span>`).join('');
 nama.innerHTML = pecahHuruf;
 
 
-console.log(pecahHuruf);
+console.log(pecahHuruf); */

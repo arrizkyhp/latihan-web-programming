@@ -6,6 +6,7 @@
 :root {
     --blueSaltedEgg: #52b69a;
     --dark: #2A2B2F;
+    --navHoverBG: #454f59;
 }
 
 body {
@@ -64,7 +65,7 @@ ul a {
     font-weight: 600;
 }
 ul a:hover {
-    background: #454f59;
+    background: var(--navHoverBG);
     text-decoration: var(--blueSaltedEgg) underline wavy 3px;
 }
 
@@ -264,4 +265,23 @@ code .muted {
     background-color: var(--blueSaltedEgg);
 }
 
+/* Link Tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
 
+.tooltip:hover::after {
+    background: var(--navHoverBG);
+    content: attr(data-title);
+    border-radius: 4px;
+    font-size: .8rem;
+    bottom: 100%;
+    text-align: center;
+    display: block;
+    left: 0%;
+    padding: 1em;
+    position: absolute;
+    width: 280px;
+    z-index: 1;
+}

@@ -1,0 +1,23 @@
+[
+    {
+        "nama": "Arrizky Hasya Pratama",
+        "nim": "10515112",
+        "email": "arrizkyhp@email.com",
+        "juruan": "Sistem Informasi",
+        "idDosenWali": 1
+    },
+    {
+        "nama": "Wildan Darissalam",
+        "nim": "10515232",
+        "email": "Wild@email.com",
+        "juruan": "Sistem Informasi",
+        "idDosenWali": 3
+    },
+    {
+        "nama": "Asep Suhendar",
+        "nim": "10515221",
+        "email": "asep@email.com",
+        "juruan": "Teknik Informatika",
+        "idDosenWali": 2
+    }
+]

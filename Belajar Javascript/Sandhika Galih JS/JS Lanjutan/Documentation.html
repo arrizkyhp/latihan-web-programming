@@ -32,6 +32,7 @@
             <li><a class="nav-link" href="#for-of-for-in">For..of vs for..in</a></li>
             <li><a class="nav-link" href="#spread-operator">Spread & Rest Operator</a></li>
             <li><a class="nav-link" href="#asynchronous">Asynchronous</a></li>
+            <li><a class="nav-link" href="#callback">Callback</a></li>
 
 
         </ul>
@@ -1509,6 +1510,16 @@ console.<span class="punctuation">log(filterBy</span><span class="function">(</s
                 <p>Asynchronous + Multi-threded = <b>Parallelism</b></p>
                 </ul>
                 <img src="img/asynchronous.png" alt="">
+
+                <p>Ada banyak method Async yang terdapat di JavaScript, namun ini 2 contohnya:</p>
+                <ul>
+                    <li><b>setTimeout(handler,time)</b>, digunakan untuk menjalankan proses Async sekali dalama waktu
+                        tertentu.
+                    </li>
+                    <li><b>setInterval(handler, time)</b>, digunakan untuk menjalankan proses Async secara periodik
+                        dalam waktu
+                        tertentu.</li>
+                </ul>
                 <h3><b>Kesimpulan</b></h3>
 
                 <li><b>Single vs Multi Thread</b></li>
@@ -1528,6 +1539,25 @@ console.<span class="punctuation">log(filterBy</span><span class="function">(</s
                     jadi kita tau kapan kita menggunakan fungsi asynchronous pada javascript.</p>
                 <p><b>DON'T BLOCK THE LOOP!</b></p>
                 <p>Jangan sampai kita blok si event loopnya.</p>
+            </div>
+
+            <h1 class="content-header" id="callback"><span>Callback</span></h1>
+            <p class="file-section">🚀File: <a href="Spread_&_Rest/index.html"
+                    target="_blank">Spread_&_Rest/index.html</a>
+                & <a href="Spread_&_Rest/script.js" target="_blank">Spread_&_Rest/script.js</a> <br>
+                🎥Video: <a
+                    href="https://www.youtube.com/watch?v=wQ3nXy4Ho5I&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=21"
+                    class="tooltip" target="_blank" data-title="JAVASCRIPT LANJUTAN | 10.1 Callback">Part 1</a>
+                |
+                <a href="https://www.youtube.com/watch?v=jRsSVw3Ibhw&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=23"
+                    class="tooltip" target="_blank" data-title="JAVASCRIPT LANJUTAN | 10.2 Callback (Latihan)">Part 2
+                    (Latihan)</a>
+            </p>
+
+            <div class="wrapper">
+                <h2>Apa itu Callback ??</h2>
+                <p>Function yang dikirimkan sebagai parameter pada function yang lain.</p>
+                <p>Function yang dieksekusi setelah fungsi lain selesai dijalankan.</p>
             </div>
 
 

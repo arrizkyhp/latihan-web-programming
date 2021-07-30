@@ -1556,8 +1556,75 @@ console.<span class="punctuation">log(filterBy</span><span class="function">(</s
 
             <div class="wrapper">
                 <h2>Apa itu Callback ??</h2>
-                <p>Function yang dikirimkan sebagai parameter pada function yang lain.</p>
-                <p>Function yang dieksekusi setelah fungsi lain selesai dijalankan.</p>
+                <ul>
+                    <li><b>Function</b> yang dikirimkan sebagai <b>parameter pada function yang lain.</b></li>
+                    <li>Function yang <b>dieksekusi setelah fungsi lain selesai dijalankan</b>.</li>
+                    <li>Callback merupakan mekanisme untuk <b>
+                            memanggil kembali kode yang ada di program dari proses
+                            Async.
+                        </b></li>
+                    <li>Callback biasanya dibuat <b>
+                            dalam bentuk function, dan function tersebut akan dieksekusi saat
+                            proses Async selesai.
+                        </b></li>
+                    <li>Dengan menggunakan Callback, program bisa menerima informasi yang dibutuhkan dari proses
+                        yang berjalan secara Async.</li>
+                </ul>
+                <p>Coding dibawah menggunakan <a href="Callback/data/mahasiswa.json"
+                        target="_blank">Callback/data/mahasiswa.json</a>
+                </p>
+
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="function">function</span> <span class="punctuation">getDataMahasiswa(</span>url, success, error<span class="punctuation">) {</span>
+    <span class="muted">// ajax</span>
+    <span class="punctuation">let</span> xhr <span class="return">= new</span> <span class="ajax">XMLHttpRequest</span><span class="function">()</span>;
+
+    xhr.<span class="punctuation">onreadystatechange</span> <span class="return">=</span> <span class="function">function() {</span>
+        <span class="return">if</span> <span class="properties">(</span> xhr.<span class="properties">readyState</span> <span class="return">===</span> <span class="number">4</span><span class="properties">) {</span>
+            <span class="return">if</span> <span class="punctuation">(</span>xhr.<span class="properties">status</span> <span class="return">===</span> <span class="number">200</span><span class="punctuation">) {</span>
+                <span class="punctuation">success</span><span class="function">(</span>xhr.<span class="properties">response</span><span class="function">)</span>;
+            <span class="punctuation">}</span> <span class="return">else if</span> <span class="punctuation">(</span>xhr.<span class="properties">status</span> <span class="return">===</span> <span class="number">404</span><span class="punctuation">) {</span>
+                <span class="punctuation">error</span><span class="function">()</span>;
+            <span class="punctuation">}</span>
+        <span class="properties">}</span>
+    <span class="function">}</span>
+
+    xhr.<span class="punctuation">open</span><span class="function">(</span>'<span class="string">get</span>', url<span class="function">)</span>;
+    xhr.<span class="punctuation">send</span><span class="function">()</span>;
+<span class="punctuation">}</span>
+
+console.<span class="punctuation">log(</span><span class="string">'mulai'</span><span class="punctuation">)</span>;
+<span class="punctuation">getDataMahasiswa(</span><span class="string">'data/mahasiswa.json'</span>, result <span class="punctuation">=></span> <span class="function">{</span>
+<span class="muted">// menampilkan hanya nama</span>
+<span class="punctuation">const</span> mhs = JSON.<span class="punctuation">parse</span><span class="properties">(</span>result<span class="properties">)</span>;
+mhs.<span class="punctuation">forEach</span><span class="properties">(</span>m <span class="punctuation">=></span> console.<span class="punctuation">log(</span>m.nama<span class="punctuation">)</span><span class="properties">)</span>;
+<span class="function">}</span>, <span class="function">()</span> <span class="punctuation">=></span> <span class="function">{</span>
+
+<span class="function">}</span><span class="punctuation">)</span>;
+console.<span class="punctuation">log(</span><span class="string">'selesai'</span><span class="punctuation">)</span>;
+
+<span class="muted">// output Asynchronous karena selesai terlebih dahulu keluar.</span>
+<span class="muted">// mulai</span>
+<span class="muted">// selesai</span>
+<span class="muted">// Arrizky Hasya Pratama</span>
+<span class="muted">// Wildan Darissalam</span>
+<span class="muted">// Asep Suhendar</span></code></pre>
+
+                </div>
+
+                <ul>
+                    <li><b>Semakin banyak callback</b>, kita bisa punya sesuatu yang di sebut <b>callback hell</b>.</li>
+                    <li>Untuk <b>menghindari callback hell</b> solusinya adalah <b>menggunakan promise.</b></li>
+                    <li>Melakukan Callback tidak salah tetapi <b>ada cara yang lebih efektif</b> yaitu menggunakan
+                        <b>Fetch</b>.</li>
+                </ul>
+                <p>ketika kita menggunakan <b>jquery</b> perlu diingat bahwa kita <b>memanggil library eksternal</b>,
+                    ketika kita
+                    memanggil library eksternal <b>ada resource yang digunakan</b>, jadi defaultnya <b>performance nya
+                        akan lebih
+                        lambat</b>, dibanding kita menggunakan bawaan dari javascript.</p>
             </div>
 
 

@@ -241,6 +241,10 @@ code .muted {
     color: #468faf;
 }
 
+code .ajax {
+    color: #06d6a0;
+}
+
 .codeheader {
     padding: 5px 5px 5px 10px;
     margin-top: 1rem;

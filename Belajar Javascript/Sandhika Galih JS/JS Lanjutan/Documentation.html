@@ -34,7 +34,7 @@
             <li><a class="nav-link" href="#asynchronous">Asynchronous</a></li>
             <li><a class="nav-link" href="#callback">Callback</a></li>
             <li><a class="nav-link" href="#promise">Promise</a></li>
-
+            <li><a class="nav-link" href="#fetch">Fetch</a></li>
         </ul>
     </nav>
 
@@ -1745,7 +1745,7 @@ console.<span class="punctuation">log(</span><span class="string">'selesai'</spa
         <span class="function">}</span>, <span class="number">5000</span><span class="punctuation">)</span>;
     } <span class="return">else</span> {
         <span class="punctuation">setTimeout(</span><span class="function">()</span> <span class="punctuation">=></span> <span class="function">{</span>
-            <span class="punctuation">reject</span>(<span class="string">'Api tidak di temukan'</span>);
+            <span class="punctuation">reject</span>(<span class="string">'API tidak di temukan'</span>);
         <span class="function">}</span>, <span class="number">5000</span><span class="punctuation">)</span>;
     }
 <span class="function">}</span><span class="punctuation">)</span>;
@@ -1761,7 +1761,7 @@ console.<span class="punctuation">log(</span><span class="string">'selesai'</spa
         <span class="function">}</span>, <span class="number">5000</span><span class="punctuation">)</span>;
     } <span class="return">else</span> {
         <span class="punctuation">setTimeout(</span><span class="function">()</span> <span class="punctuation">=></span> <span class="function">{</span>
-            <span class="punctuation">reject</span>(<span class="string">'Api tidak di temukan'</span>);
+            <span class="punctuation">reject</span>(<span class="string">'API tidak di temukan'</span>);
         <span class="function">}</span>, <span class="number">5000</span><span class="punctuation">)</span>;
     }
 <span class="function">}</span><span class="punctuation">)</span>;
@@ -1781,6 +1781,45 @@ console.<span class="punctuation">log(</span><span class="string">'selesai'</spa
 
                 </div>
 
+            </div>
+
+            <h1 class="content-header" id="fetch"><span>Fetch</span></h1>
+            <p class="file-section">🚀File: <a href="Promise/index.html" target="_blank">Promise/index.html</a>
+                & <a href="Promise/script.js" target="_blank">Promise/script.js</a> <br>
+                🏋🏽‍♂️Latihan: <a href="Fetch/Latihan/index.html" target="_blank">Fetch/Latihan/index.html</a>
+                & <a href="Fetch/Latihan/script.js" target="_blank">Fetch/Latihan/script.js</a><br>
+                🎥Video: <a
+                    href="https://www.youtube.com/watch?v=k1jVq9WGBdM&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=24"
+                    class="tooltip" target="_blank" data-title="JAVASCRIPT LANJUTAN | 12. Fetch">Part 1</a> |
+                <a href="https://www.youtube.com/watch?v=Nm-4AY2JGKk&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=25"
+                    class="tooltip" target="_blank" data-title="JAVASCRIPT LANJUTAN | 13. Fetch Refactor (Async
+                    Await)">Part 2</a>
+            </p>
+
+            <div class="wrapper">
+                <p>sebuah API pada JavaScript Modern yang tugasnya mengambil data secara Asynchronous atau AJAX</p>
+                <p>Fetch adalah sebuah function di JavaScript yang mengembalikan Promise.</p>
+                <p>Sebuah method pada API javascript untuk mengambil <b>resources</b> dari jaringan, dan mengembalikan
+                    <b>promise</b> yang selesai (<b>fullfilled</b>) ketika ada <b>response</b> yang tersedia.</p>
+                <p>Penulisan fetch: <b>fetch(</b><span style="color:darkorange ">resources</span>, <span
+                        style="color:darkcyan"> init</span><b>);</b></p>
+                <p><b>resources</b> bisa 2:</p>
+                <ul>
+                    <li><b>URL</b> alamat dari sumber yang kita ambil.</li>
+                    <li><b>Request Object</b> representasi permintaan sumber.</li>
+                </ul>
+                <p><b>init</b> (optional) konfigurasi tambahan pada sebuah request berbentuk object. Jika tidak ada init
+                    maka
+                    defaultnya <b>GET</b></p>
+                <p><b>response</b> hasil dari fetch, berupa promise, didalamnya ada 2:</p>
+                <ul>
+                    <li><b>property</b> => headers, ok, redirected, status, statusText, type, url, body.</li>
+                    <li><b>method</b> => clonse(), error(), redirected(), blob(), formData(), json(), text().</li>
+
+                </ul>
+                <p>selengkapnya: <a target="_blank"
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#parameters">https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#parameters</a>
+                </p>
             </div>
 
 

@@ -127,8 +127,8 @@ const cuaca = new Promise((resolve, reject) => {
 })
 
 // tanpa promise.all
-film.then(response => console.log(response));
-cuaca.then(response => console.log(response));
+// film.then(response => console.log(response));
+// cuaca.then(response => console.log(response));
 
 // dengan promise.all
 Promise.all([film, cuaca])

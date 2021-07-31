@@ -33,7 +33,7 @@
             <li><a class="nav-link" href="#spread-operator">Spread & Rest Operator</a></li>
             <li><a class="nav-link" href="#asynchronous">Asynchronous</a></li>
             <li><a class="nav-link" href="#callback">Callback</a></li>
-
+            <li><a class="nav-link" href="#promise">Promise</a></li>
 
         </ul>
     </nav>
@@ -1539,12 +1539,32 @@ console.<span class="punctuation">log(filterBy</span><span class="function">(</s
                     jadi kita tau kapan kita menggunakan fungsi asynchronous pada javascript.</p>
                 <p><b>DON'T BLOCK THE LOOP!</b></p>
                 <p>Jangan sampai kita blok si event loopnya.</p>
+
+                <h2>AJAX</h2>
+                <p>Ajax singkatan dari <b>Asynchronous JavaScript and XML</b></p>
+                <ul>
+                    <li>Ajax dapat digunakan untuk mengambil data dari server setelah halaman web tampil</li>
+                    <li> AJAX dapat digunakan utnuk mengubah tampilan web tanpa harus me-load ulang web.</li>
+                    <li>Dengan menggunakan AJAX kita akan memisahkan antara beban kerja backend & frontend, frontend
+                        cukup menampilkan website dulu nanti secara lazy akan memanggil backend data menggunakan AJAX,
+                        Jadi setelah web tampil maka akan call backend, dengan begitu web terlihat sangat cepat, karena
+                        tidak harus menunggu respond backend.
+                    </li>
+                    <li>AJAX biasanya digunakan untuk mengirim data ke server atau menerima data dari server.</li>
+                    <li>Kita tidak bisa langsung mengambil response AJAX, karena proses AJAX adlaah Async, sehingga kita
+                        perlu menunggu sampai proses Async nya selesai.</li>
+                    <li>Ajax dapat mengirim data ke server secara async di backgroud.</li>
+                    <li>untuk mendapatkan informasi AJAX, kita bisa menggunakan AJAX callback, yang akan dieksekusi
+                        setelah proses AJAX selesai.</li>
+                </ul>
             </div>
 
             <h1 class="content-header" id="callback"><span>Callback</span></h1>
-            <p class="file-section">🚀File: <a href="Spread_&_Rest/index.html"
-                    target="_blank">Spread_&_Rest/index.html</a>
-                & <a href="Spread_&_Rest/script.js" target="_blank">Spread_&_Rest/script.js</a> <br>
+            <p class="file-section">🚀File: <a href="Callback/index.html" target="_blank">Callback/index.html</a> |
+                <a href="Callback/script.js" target="_blank">Callback/script.js</a> |
+                <a href="Callback/data/mahasiswa.json" target="_blank">Callback/data/mahasiswa.json</a> <br>
+                🏋🏽‍♂️Latihan: <a href="Callback/Latihan/index.html" target="_blank">Callback/Latihan/index.html</a>
+                & <a href="Callback/Latihan/script.js" target="_blank">Callback/Latihan/script.js</a><br>
                 🎥Video: <a
                     href="https://www.youtube.com/watch?v=wQ3nXy4Ho5I&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=21"
                     class="tooltip" target="_blank" data-title="JAVASCRIPT LANJUTAN | 10.1 Callback">Part 1</a>
@@ -1625,6 +1645,142 @@ console.<span class="punctuation">log(</span><span class="string">'selesai'</spa
                     memanggil library eksternal <b>ada resource yang digunakan</b>, jadi defaultnya <b>performance nya
                         akan lebih
                         lambat</b>, dibanding kita menggunakan bawaan dari javascript.</p>
+
+            </div>
+
+            <h1 class="content-header" id="promise"><span>Promise</span></h1>
+            <p class="file-section">🚀File: <a href="Promise/index.html" target="_blank">Promise/index.html</a>
+                & <a href="Promise/script.js" target="_blank">Promise/script.js</a> <br>
+                🎥Video: <a
+                    href="https://www.youtube.com/watch?v=wIrZq4Z9hLU&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=23"
+                    class="tooltip" target="_blank" data-title="JAVASCRIPT LANJUTAN | 11 Promise">Promise</a>
+            </p>
+
+            <div class="wrapper">
+                <h2>Apa itu Promise??</h2>
+                <p>Promise adalah sebuah solusi untuk<b> menangani Callback Hell</b>.</p>
+                <p>Promise adalah sebuah Object yang merepresentasikan keberhasilan/kegagalan dari sebuah event yang
+                    Asynchronous, yang akan terjadi di masa yang akan datang. </p>
+                <ul>
+                    <li>janji (terpenuhi / ingkar)</li>
+                    <li>stater(<b>fulfilled</b> / <b>rejected</b> / <b>pending</b>)</li>
+                    <p>untuk menjalankan keadaan diatas ada 3 fungsi callback</p>
+                    <li>callback (<b>resolve</b> / <b>reject</b> / <b>finally</b>)</li>
+                    <p>ada juga aksi yang akan dilakukan ketika janjinya terpenuhi atau tidak.</p>
+                    <li> aksi (<b>then</b> / <b>catch</b>) terpenuhi => then | tidak terpenuhi => catch</li>
+                </ul>
+                <img src="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/promises.png"
+                    alt="">
+                <h3>Contoh 1 | tanpa delay</h3>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">let</span> ditepati <span class="return">=</span> <span class="number">true</span>
+<span class="punctuation">const</span> janji1 <span class="return">= new</span> <span class="ajax">Promise</span><span class="punctuation">(</span><span class="function">(</span><span class="punctuation">resolve</span>, <span class="punctuation">reject</span><span class="function">)</span> <span class="punctuation">=></span> <span class="function">{</span>
+    <span class="muted">// resolve ketika apa | reject ketika apa</span>
+    <span class="return">if</span> (ditepati) {
+        <span class="punctuation">resolve(</span><span class="string">'Janji telah ditepati'</span><span class="punctuation">)</span>;
+    } <span class="return">else</span> {
+        <span class="punctuation">reject(</span><span class="string">'Ingkar janji'</span><span class="punctuation">)</span>
+    }
+<span class="function">}</span>);
+
+janji1
+.<span class="punctuation">then(</span>response<span class="punctuation"> =></span> console.<span class="punctuation">log</span><span class="function">(</span><span class="string">'OK! :'</span> <span class="return">+</span> response <span class="function">)</span><span class="punctuation">)</span>
+.<span class="punctuation">catch(</span>response <span class="punctuation">=></span> console.<span class="punctuation">log</span><span class="function">(</span><span class="string">'NOT OK! : '</span> <span class="return">+</span> response<span class="function">)</span><span class="punctuation">)</span>;
+<span class="muted">// OK! :Janji telah ditepati</span></code></pre>
+
+                </div>
+
+                <h3>Contoh 2 | dengan delay</h3>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">let</span> ditepati <span class="return">=</span> <span class="number">true</span>;
+<span class="punctuation">const</span> janji2 <span class="return">= new</span> <span class="ajax">Promise</span><span class="punctuation">(</span><span class="function">(</span><span class="punctuation">resolve</span>, <span class="punctuation">reject</span><span class="function">)</span> <span class="punctuation">=></span> <span class="function">{</span>
+    <span class="return">if</span> (ditepati) {
+        <span class="muted">// kasih waktu</span>
+        <span class="punctuation">setTimeout(</span><span class="function">()</span> <span class="punctuation">=></span> <span class="function">{</span>
+            <span class="punctuation">resolve</span><span class="properties">(</span><span class="string">'Ditepati setelah beberapa waktu!'</span><span class="properties">)</span>;
+        <span class="function">}</span>, <span class="number">2000</span><span class="punctuation">)</span>;
+    } <span class="return">else</span> {
+        <span class="punctuation">setTimeout(</span><span class="function">()</span> <span class="punctuation">=></span> <span class="function">{</span>
+            <span class="punctuation">reject</span><span class="properties">(</span><span class="string">'Tidak Ditepati setelah beberapa waktu!'</span><span class="properties">)</span>;
+        <span class="function">}</span>, <span class="number">2000</span><span class="punctuation">)</span>;
+    }
+<span class="function">}</span><span class="punctuation">)</span>;
+
+console.<span class="punctuation">log</span>('mulai');
+<span class="muted">// pending lalu beberapa detik fulfilled
+// console.log(janji2.then(() => console.log(janji2)));</span>
+
+<span class="muted">// menunggu dua detik | pending tidak terlihat</span>
+janji2
+<span class="muted">// finally dijalankan ketika then/catch sudah siap dijalankan
+// ketika promise tidak pending, finally akan dijalankan terlebih dahulu</span>
+.<span class="punctuation">finally(</span><span class="function">()</span> <span class="punctuation">=></span> console.<span class="punctuation">log</span><span class="function">(</span><span class="string">'Selesai menunggu!'</span><span class="function">)</span><span class="punctuation">)</span>
+.<span class="punctuation">then(</span>response <span class="punctuation">=></span> console.<span class="punctuation">log</span><span class="function">(</span><span class="string">'OK ! : '</span> <span class="return">+</span> response<span class="function">)</span><span class="punctuation">)</span>
+.<span class="punctuation">catch(</span>response <span class="punctuation">=></span> console.<span class="punctuation">log</span><span class="function">(</span><span class="string">'NOT OK! : '</span> <span class="return">+</span> response<span class="function">)</span><span class="punctuation">)</span>;
+
+console.<span class="punctuation">log(</span><span class="string">'selesai'</span><span class="punctuation">)</span>;</code></pre>
+
+                </div>
+
+                <h3>Promise.all()</h3>
+                <p>Dijalankan ketika kita punya banyak promise, ingin dijalankan sekaligus.</p>
+                <p>Menjalankan beberapa promise sekaligus.</p>
+
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">let</span> ditepati <span class="return">=</span> <span class="number">true</span>;
+<span class="punctuation">const</span> film <span class="return">= new</span> <span class="ajax">Promise</span><span class="punctuation">(</span><span class="function">(</span><span class="punctuation">resolve</span>, <span class="punctuation">reject</span><span class="function">)</span> <span class="punctuation">=></span> <span class="function">{</span>
+    <span class="return">if</span> (ditepati) {
+        <span class="punctuation">setTimeout(</span><span class="function">()</span> <span class="punctuation">=></span> <span class="function">{</span>
+            <span class="punctuation">resolve</span><span class="properties">(</span><span class="punctuation">[</span><span class="function">{</span>
+                <span class="properties">judul</span>: <span class="string">'Batman Begins'</span>,
+                <span class="properties">sutradara</span>: <span class="string">'Arrizky HP'</span>,
+                <span class="properties">actor</span>: <span class="string">'Tom Hanks'</span>
+            <span class="function">}</span><span class="punctuation">]</span><span class="properties">)</span>
+        <span class="function">}</span>, <span class="number">5000</span><span class="punctuation">)</span>;
+    } <span class="return">else</span> {
+        <span class="punctuation">setTimeout(</span><span class="function">()</span> <span class="punctuation">=></span> <span class="function">{</span>
+            <span class="punctuation">reject</span>(<span class="string">'Api tidak di temukan'</span>);
+        <span class="function">}</span>, <span class="number">5000</span><span class="punctuation">)</span>;
+    }
+<span class="function">}</span><span class="punctuation">)</span>;
+
+<span class="punctuation">const</span> cuaca <span class="return">= new</span> <span class="ajax">Promise</span><span class="punctuation">(</span><span class="function">(</span><span class="punctuation">resolve</span>, <span class="punctuation">reject</span><span class="function">)</span> <span class="punctuation">=></span> <span class="function">{</span>
+    <span class="return">if</span> (ditepati) {
+        <span class="punctuation">setTimeout(</span><span class="function">()</span> <span class="punctuation">=></span> <span class="function">{</span>
+            <span class="punctuation">resolve</span><span class="properties">(</span><span class="punctuation">[</span><span class="function">{</span>
+                <span class="properties">kota</span>: <span class="string">'Bandung'</span>,
+                <span class="properties">suhu</span>: <span class="string">'20'</span>,
+                <span class="properties">kondisi</span>: <span class="string">'mendung'</span>
+            <span class="function">}</span><span class="punctuation">]</span><span class="properties">)</span>
+        <span class="function">}</span>, <span class="number">5000</span><span class="punctuation">)</span>;
+    } <span class="return">else</span> {
+        <span class="punctuation">setTimeout(</span><span class="function">()</span> <span class="punctuation">=></span> <span class="function">{</span>
+            <span class="punctuation">reject</span>(<span class="string">'Api tidak di temukan'</span>);
+        <span class="function">}</span>, <span class="number">5000</span><span class="punctuation">)</span>;
+    }
+<span class="function">}</span><span class="punctuation">)</span>;
+
+<span class="muted">// tanpa promise.all
+// film.then(response => console.log(response));
+// cuaca.then(response => console.log(response));</span>
+
+<span class="muted">// dengan promise.all</span>
+<span class="ajax">Promise</span><span class="punctuation">.all(</span><span class="function">[</span>film, cuaca<span class="function">]</span><span class="punctuation">)</span>
+<span class="muted">// .then(response => console.log(response));</span>
+.<span class="punctuation">then</span>(response <span class="punctuation">=></span> <span class="function">{</span>
+    <span class="punctuation">const</span> <span class="properties">[</span>film, cuaca<span class="properties">]</span> = response;
+    console.<span class="punctuation">log</span><span class="properties">(</span>film<span class="properties">)</span>;
+    console.<span class="punctuation">log</span><span class="properties">(</span>cuaca<span class="properties">)</span>;
+<span class="function">}</span><span class="punctuation">)</span>;</code></pre>
+
+                </div>
+
             </div>
 
 

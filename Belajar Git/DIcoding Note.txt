@@ -1,0 +1,292 @@
+Di dalam dunia pengembangan aplikasi, kita akan sering mendengar istilah source code management atau yang biasa dikenal dengan version control system.
+
+ bagaimana Linus Torvalds bersama tim membangun platform tersebut pada tahun 2005
+Git dibangun dengan tujuan agar dapat melakukan kolaborasi antar tim serta bagaimana proyek dapat dikontrol dengan baik. Untuk bisa berkolaborasi, bisa dengan membangun proyek menjadi open source atau pilihan lainnya menyetel kolaborasi dengan orang lain.
+
+Version Control System merupakan tools untuk mengatur suatu perubahan dan konfigurasi dari suatu aplikasi, termasuk juga source code. Setiap perubahan yang dilakukan akan dicatat, sehingga memperjelas siapa yang telah melakukan perubahan tersebut. Selain itu, version control juga berfungsi sebagai backup files. Dengan begitu, akan mempermudah pencarian bug atau masalah.
+
+Version Control System atau yang biasa disingkat dengan VCS, merupakan tools terbaik untuk berkolaborasi antar developer ketika membangun aplikasi.
+
+Git adalah perangkat lunak yang disediakan secara open source (kode sumber terbuka). Git bertujuan untuk mendukung kolaborasi antar anggota tim serta mengontrol setiap versi perubahan dalam sebuah pekerjaan pengembangan aplikasi ataupun pada bidang lainnya. Git pertama kali dibangun oleh pengembang kernel Linux, yaitu Linus Torvalds pada tahun 2005. 
+
+Dengan memanfaatkan Git, kita bisa berkolaborasi dalam tim. Jadi, kita tidak perlu lagi mengerjakan pengembangan sistem ataupun hal lainnya yang berbasis text dengan cara antrean alias menunggu anggota tim pertama selesai mengerjakan kemudian mengirimkan hasil pekerjaan kepada anggota berikutnya untuk melanjutkannya. Tentunya itu akan banyak memakan waktu dan juga tidak efektif. 
+
+🤣 Git Repository
+Git Repository (Repositori Git) merupakan wadah penyimpanan kumpulan file dari berbagai versi proyek yang berbeda. Kumpulan file ini diimpor melalui repository ke server lokal pengguna untuk pembaruan dan modifikasi lebih lanjut dalam konten file.
+VCS (Version Control System) atau Sistem Kontrol Versi digunakan untuk membuat versi dan menyimpannya di tempat tertentu yang disebut sebagai repository.
+
+Proses menyalin konten dari Repositori Git menggunakan bantuan berbagai alat Git disebut sebagai kloning (clone). 
+
+Setelah proses kloning selesai, pengguna mendapatkan repository lengkap di mesin lokalnya. Pada posisi ini, Git akan mengasumsikan bahwa berbagai hal yang akan dikerjakan oleh pengguna terjadi pada repository lokal. Pengguna juga dapat membuat repository baru atau menghapus repository yang ada.
+
+Sebuah Git repository memungkinkan Anda melakukan berbagai operasi di atasnya untuk membuat versi yang berbeda dari proyek. Operasi ini termasuk penambahan file, membuat repository baru, melakukan tindakan, atau menghapus repository. Modifikasi ini akan menghasilkan pembuatan versi proyek yang berbeda.
+
+🤣 Git Branch
+Git Branch merupakan fitur yang dapat digunakan untuk membuat sebuah percabangan untuk versi baru dari proyek Anda.
+Penggunaan Git Branch ini sangat berguna pada saat Anda melakukan eksperimen dengan proyek Anda. Dengan begitu, Anda tidak akan mengubah apa pun di dalam proyek utama.
+
+Pada Git branch terdapat cabang utama (master) sebagai induk dari pekerjaan. Selain itu, terdapat juga percabangan baru yang dapat Anda visualisasikan sebagai penambahan fitur, ada fitur kecil dan fitur besar.
+
+🤣 Git Fork
+Fork merupakan salinan dari sebuah repository orang lain yang tersimpan di dalam sebuah repository Git.
+Forking repository memungkinkan Anda untuk bereksperimen dengan bebas dan membuat perubahan tanpa memengaruhi repository utamanya.
+
+Alur kerja fork dimulai dengan menemukan repository publik asli yang tersimpan dalam server. Namun ketika pengembang ingin memulai mengerjakan proyek, mereka tidak langsung mengkloning repository resmi. Sebagai gantinya, mereka mengambil repository resmi untuk membuat salinannya di server. Salinan baru ini bersifat sebagai repository publik pribadi mereka. 
+
+ Tidak ada pengembang lain yang diizinkan untuk mengirim perubahan pada repository tersebut. Namun, mereka dapat mendapatkan perubahan dari repository tersebut.
+
+Selain bersifat publik, kita juga dapat menyimpan salinan repository menjadi private. Sehingga pengembang lain tidak akan bisa melihat perubahan yang telah kita lakukan.
+
+🤣 Git Clone
+Git Clone hampir sama dengan Git Fork, keduanya sama-sama melakukan salinan pada repository. 
+Yang berbeda adalah saat melakukan git fork, repository akan disimpan berada di dalam server. Sedangkan untuk git clone, hasil salinannya disimpan dalam penyimpanan lokal. 
+
+Perintah Git Clone adalah cara yang paling umum bagi pengguna untuk mendapatkan salinan tulisan. Melakukan Clone hanya dilakukan satu kali, yaitu saat akan mengerjakan satu proyek yang telah tersimpan di dalam Git repository. Kemudian pengembang menyalin proyek yang tersimpan di dalam repository untuk diletakkan di penyimpanan lokal. Setelah pengembang mendapatkan salinan pekerjaan, semua operasi dan kolaborasi kontrol versi dikelola melalui repository lokal.
+
+Penggunaan clone paling umum digunakan untuk mengambil satu repository yang ada dan membuat clone dari repository tersebut ke direktori baru di lokasi lain. 
+
+Untuk memudahkan, cloning secara otomatis membuat koneksi jarak jauh (remote) yang disebut dengan “origin” yang mengacu dari repositori lokal ke repository asli (di server). Ini membuatnya sangat mudah untuk berinteraksi dengan repository pusat.
+
+🤣 Git Commit
+Commit merupakan cuplikan perubahan (snapshot) dari repository Anda pada waktu tertentu. Dengan begitu, setiap pekerjaan yang telah selesai, dapat disimpan ke dalam repository Anda.
+
+Ketika Anda menggunakan antarmuka GitHub, Anda dapat secara langsung menggunakan perintah git commit untuk menyimpan setiap perubahan yang dilakukan.
+
+Namun, ketika Anda menggunakan penyimpanan lokal, Anda harus mengoperasikan Git add sebelum memanggil git commit. Git add berguna untuk menambahkan file yang diubah ke dalam daftar antrean perubahan.
+
+Kedua perintah ini, baik Git commit maupun Git add, merupakan dua perintah yang sering digunakan saat Anda menggunakan Git dengan penyimpanan lokal.
+
+🤣 Git Push
+Perintah Git push merupakan tindakan lanjutan dari perintah Git commit.
+Git push mengunggah semua commit cabang (branch commit) pada repository lokal ke repository server. 
+
+Secara default, Git push hanya memperbarui cabang yang sesuai pada remote. Sehingga jika Anda sedang berada di branch master atau melakukan check out ke master dengan perintah Git push, hanya branch master-lah yang akan diperbarui.
+
+Setelah membuat dan melakukan perubahan secara lokal, Anda dapat membagikannya dengan repository di server menggunakan Git push. Mendorong perubahan ke server akan membuat commit Anda dapat diakses oleh orang lain yang mungkin berkolaborasi dengan Anda. Ini juga akan memperbarui permintaan dengan cabang yang sedang Anda kerjakan.
+
+ketika Anda menggunakan penyimpanan lokal, penting untuk menjalankan perintah Git pull sebelum meng-upload (git push) perubahan baru ke server .
+ Dengan melakukan git pull, repository lokal akan diperbarui sesuai dengan repository remote saat ini. Sehingga ketika ada kontributor lain yang melakukan perubahan pada repository server, repository lokal ikut diperbarui.  
+
+Melakukan git pull (menarik) sebelum Anda melakukan git push (mendorong), dapat mengurangi jumlah konflik pada proses penggabungan yang dibuat, serta memungkinkan Anda untuk menyelesaikannya permasalahan secara lokal sebelum mendorong perubahan ke  server.
+
+Perintah	Fungsi
+Git Repository	Media penyimpanan file proyek di dalam Git server.
+Git Branch	Percabangan untuk versi baru dari proyek repository.
+Git Fork	Penyalinan dari repository orang/organisasi lain, lalu menyimpannya di dalam repository Git sendiri.
+Git Clone	Mengambil sebuah repository dan menyimpannya pada direktori lokal.
+Git Commit	Cuplikan perubahan (snapshot) dari repository Anda pada waktu tertentu.
+Git Push	Mengirim hasil dari perubahan file yang dilakukan ke dalam repository server.
+
+
+
+====================================================================================================================================================
+GitHub adalah perusahaan yang menawarkan layanan hosting repository Git berbasis cloud. Pada dasarnya, GitHub membuat para pengguna individu dan tim menjadi lebih mudah untuk menggunakan Git dalam mengendalikan setiap versi pekerjaan saat melakukan kolaborasi di dalam ataupun antar tim. 
+GitHub mempunyai sebuah maskot yang bernama Octocat, seekor kucing dengan lima tentakel dan wajah seperti manusia.	
+
+“Kenapa GitHub lebih mudah dalam penggunaannya?” Jawabannya adalah karena visual dari pengoperasian Git itu sendiri memang lebih mudah tanpa harus melakukan perintah-perintah tertentu menggunakan terminal. Selain itu, siapa pun dapat mendaftar dan meng-hosting repository kode publik secara gratis sehingga membuat GitHub sangat populer dengan proyek sumber terbuka.
+
+====================================================================================================================================================
+Ketika Anda membuat sebuah repository menggunakan akun personal, maka secara otomatis akan menjadi seseorang owner repository dan memiliki akses penuh terhadap repository tersebut. Di sisi lain, ketika Anda mengundang orang lain menjadi kolaborator dalam repository tersebut, maka mereka akan dapat melakukan pull (read) dan push (write) pada repository tersebut.
+
+Namun, jika Anda menggunakan akun organisasi, GitHub menyediakan 5 tingkatan level (role) yang berbeda untuk seorang kolaborator, yakni read, triage, write, maintain, dan admin.
+👑 Seorang kolaborator dengan tingkatan read, biasanya hanya memiliki akses untuk membuka repository. Level ini direkomendasikan untuk orang non-coding (tim lain) yang ingin melihat atau berdiskusi mengenai proyek repository.
+👑 Seorang kolaborator dengan tingkatan write, biasanya digunakan oleh seorang developer atau pengembang untuk membuka, melakukan clone, dan melakukan push pada repository tersebut. Ia juga dapat mengelola issues dan pull request yang masuk.
+👑 Seorang kolabolator dengan tingkatan triage, biasanya digunakan oleh maintainer yang hanya dapat mengeloa issues dan pull request yang ada masuk ke dalam repository.
+👑 Seorang kolaborator dengan tingkatan maintain, biasanya digunakan oleh seorang project manager yang dapat mengelola beberapa pengaturan dalam repository. Ia juga dapat melakukan berbagai hal seseorang dengan tingkatan read.
+👑 Seorang kolaborator dengan tingkatan admin, biasanya digunakan oleh seseorang yang butuh mengakses secara penuh kepada repository. Ia dapat melakukan berbagai hal, termasuk mengundang kolaborator lain untuk bergabung dalam repository.
+
+Kontributor adalah siapa saja yang dapat melakukan commit atau menyimpan cuplikan perubahan ke dalam repository (git push). Akan tetapi, tidak semua kontributor dapat melakukan commit secara langsung. Ini disebabkan karena mereka tidak memiliki akses untuk melakukan push ke dalam repository tersebut (atau tidak berperan sebagai kolaborator). Sehingga mereka perlu melakukan pull request untuk melakukan commit pada repository orang lain.
+
+
+
+====================================================================================================================================================
+====================================================================================================================================================
+====================================================================================================================================================
+Secara garis besar, cara kerja dari sistem Git sendiri yaitu merekam setiap perubahan pada file atau penambahan file dalam direktori kerja atau repository dengan cara menjalankan perintah Commit pada Git. 
+Commit itu seperti snapshot (cuplikan) dari repository Anda pada waktu tertentu dan merupakan salah satu perintah dasar Git untuk menyimpan perubahan setiap file dalam repository di mana perubahan yang telah di-commit akan tersimpan riwayat perubahannya. 
+
+====================================================================================================================================================
+
+🤣 Git Commit
+Git Commit merupakan perintah untuk menyimpan hasil perubahan setiap file yang ada di dalam direktori kerja, baik itu file yang baru saja ditambahkan maupun file yang terjadi perubahan. 
+Commit berisi catatan-catatan tentang apa saja yang berubah di dalam sebuah repository.
+
+Titik commit inilah yang nantinya akan menjadi acuan apabila kita ingin mengembalikan repository ke keadaan tertentu. Ingat, ketika melakukan commit, jangan lupa untuk menyisipkan message atau pesan perihal apa saja perubahan yang terjadi di repository agar kita lebih mudah mengenali setiap commit yang tercatat di riwayat.
+
+🤣 Git Checkout
+Git Checkout merupakan perintah layaknya mesin waktu di mana perintah ini memungkinkan para pengguna Git untuk melakukan pengembalian kondisi berkas seperti waktu yang dituju atau commit yang dituju. 
+Akan tetapi, ini bersifat sementara (temporer). Kita bisa sebut bahwa perintah ini sebagai perintah untuk mengecek kondisi setiap file di setiap commit.
+
+Selain itu, perintah ini juga bisa digunakan untuk berpindah dari satu cabang kerja ke cabang kerja yang lain atau dapat kita gunakan untuk membuat perubahan baru berdasarkan commit di masa lalu.
+
+Git Checkout sangat berguna ketika kita ingin melakukan pengembalian kondisi berkas pada commit tertentu, lalu mengubahnya, dan membuat branch baru agar tidak mengganggu riwayat perubahan sesudahnya. Cara ini bisa kita ibaratkan seperti menulis cerita baru dengan plot yang berbeda.
+
+🤣 Git Reset
+Git Reset, seperti namanya, perintah ini berfungsi untuk mengatur ulang. Maksudnya, perintah ini merupakan perintah untuk mengembalikan suatu kondisi berkas ke commit yang dituju dan menghapus riwayat sesudahnya.
+
+Perintah Git Reset sering disebut sebagai perintah yang berbahaya karena dapat menghancurkan catatan sejarah perubahan. 
+Hati-hati dalam penggunaan Git Reset karena sekali melakukannya, kita tidak akan bisa kembali ke masa depan sehingga perlu pertimbangan yang matang saat menggunakannya.
+
+🤣 Git Revert
+Git Revert merupakan perintah yang mirip dengan reset, tetapi fungsinya lebih daripada Git Reset. Perintah ini akan mengembalikan kondisi suatu berkas ke waktu/commit yang dituju tanpa menghapus catatan riwayat commit.
+
+perintah Git Revert bekerja dengan cara membuat commit terbaru dengan commit yang dituju sehingga riwayat commit di antaranya tidak terhapus. Git Revert akan mengambil kondisi berkas yang ada di masa lalu, kemudian menggabungkannya dengan commit terakhir. 
+
+Git Commit
+
+Menyimpan hasil perubahan setiap file yang ada di dalam direktori kerja, baik itu file yang baru saja ditambahkan maupun perubahan pada file. Kemudian kita dapat menyisipkan pesan commit agar memudahkan dalam memahami riwayat perubahan. [Baca lebih lengkap tentang perintah Git Commit]
+
+Git Checkout
+
+Melakukan perpindahan dari commit satu ke commit yang dituju. Namun hanya bersifat sementara. Git Checkout juga dapat digunakan untuk berpindah dari satu cabang kerja (branch) ke cabang kerja lainnya. 
+
+Git Reset
+
+Mengembalikan keadaan suatu commit ke dalam keadaan sebelum terjadi perubahan sesuai dengan commit yang dituju. Namun, git reset akan menghapus beberapa riwayat commit sesudahnya. 
+
+Git Revert
+
+Mengembalikan keadaan suatu berkas sebelum terjadi suatu perubahan sesuai dengan tujuan commit yang dituju. Git Revert tidak akan menghilangkan riwayat commit sesudahnya. 
+
+====================================================================================================================================================
+
+Mengenal Repository
+
+Repository atau dalam bahasa Indonesia repositori, jika diartikan yaitu gudang; tempat penyimpanan. Dari arti ini, kita sudah bisa mengerti arti dari repository itu sendiri sehingga dalam dunia Git, repository bisa diartikan sebagai tempat penyimpanan atau direktori dari sekumpulan file/berkas yang mana dalam repository ini Git bisa merekam setiap perubahan berkas dan menyimpannya  di dalam riwayat commit.
+
+Setidaknya ada dua jenis direktori yang harus dipahami, yaitu Online Repository dan Local Repository.
+🐺 Remote Repository
+Remote Repository merupakan tempat penyimpanan berkas-berkas pekerjaan atau kenangan yang kita miliki di dalam server. Anda bisa menggunakan berbagai layanan penyimpanan berbasis cloud yang sangat populer seperti GitHub, Gitlab, dan BitBucket. Selain itu, jika Anda memiliki server sendiri, Anda juga dapat menginstal layanan Git ke dalam server Anda. Dengan menggunakan Remote Repository, orang lain dapat mengakses repository yang kita simpan dengan mudah.
+
+🐺 Local Repository
+Local Repository merupakan tempat penyimpanan lokal yang berada di komputer kita. Local repository ini dapat kita ubah-ubah (hapus, modifikasi, tambah) sesuai dengan keinginan kita sebelum akhirnya nanti di-push ke remote repository.
+
+Pertanyaannya, mengapa repository ini harus ada? Jawabannya adalah agar lebih memudahkan kita dalam mengubah atau memodifikasi, apalagi dalam keadaan offline atau di saat tidak ada jaringan internet. Jadi, kita masih bisa melakukannya secara luring (offline) sampai ada jaringan internet dan nantinya akan di-push ke remote repository.
+
+Local Repository ini terhubung ke Online Repository melalui remote URL.
+Remote URL merupakan alamat yang merujuk pada lokasi di mana online repository kita berada.
+Remote URL inilah yang menghubungkan local repository kita dengan online repository online. Sehingga memungkinkan kita untuk mengirim perubahan yang sudah dilakukan di local repository ke online repository atau mengambil perubahan yang ada di remote repository untuk memperbarui local repository kita.
+
+repository, yaitu direktori kerja yang menyimpan semua berkas–berkas dari proyek, baik dokumen, gambar, audio, maupun source code program.
+
+====================================================================================================================================================
+
+
+Berkas README biasanya berekstensi markdown (.md) yang digunakan untuk menghasilkan sebuah html ringkasan. 
+
+====================================================================================================================================================
+Semantik versioning
+
+
+====================================================================================================================================================
+====================================================================================================================================================
+====================================================================================================================================================
+
+ Dalam pengembangan aplikasi, umumnya ada cabang production atau bisa sebut sebagai stable version (versi stabil) yang dinikmati oleh pengguna, kemudian ada cabang baru bernama development yang isi awalnya sama dengan production. 
+
+Di cabang development inilah perubahan atau fitur baru aplikasi bisa dites terlebih dahulu. Seperti yang Anda ketahui, update aplikasi pasti rawan dengan adanya bug. Namun, karena sudah dipisahkan dari production, meskipun terjadi bug di cabang development, itu tidak akan merugikan pengguna aplikasi.
+
+Setelah developer yakin bahwa fitur terbarunya itu dapat berjalan dengan baik, maka cabang development akan dilakukan penggabungan (merge) ke cabang production. Proses merge ini berarti semua update terbaru akan digabungkan ke cabang production dan dapat segera dinikmati oleh pengguna.
+
+Pemakaian Git branch tak hanya untuk pemisahan cabang production dan development saja, kita juga bisa menggunakannya untuk membagi pengerjaan sejumlah fitur oleh beberapa tim. Misalnya, ada 2 fitur yang sedang dikerjakan oleh tim yang berbeda, nah kita bisa membuat cabang fitur1 dan cabang fitur2. Dengan pemisahan ini, developer yang mengerjakan fitur 1 tidak perlu takut untuk bertabrakan dengan pengerjaan fitur 2.
+
+====================================================================================================================================================
+Branching adalah teknik untuk memisahkan cabang utama ke cabang lain dengan tujuan agar cabang utama tetap bisa dijaga kondisinya.
+
+ Menjaga kondisi cabang utama agar tetap stabil atau baik sangatlah penting dalam pengelolaan file karena kita tidak pernah tahu akan ada aktivitas apa kedepannya yang dapat merusak cabang utama. Secara konsep, sebelum melakukan perubahan, kita perlu memiliki pegangan yang bisa kita pakai sewaktu-waktu untuk kembali ke titik aman ketika terjadi masalah.
+
+Selain sebagai titik aman dalam pengelolaan file, dengan branching, kita juga dapat membagi alur pekerjaan secara terpisah sehingga pekerjaan dapat dilakukan secara paralel tanpa takut terjadinya konflik atau perubahan yang kita lakukan berpengaruh pada kode di cabang lain. Ini penting karena saat ini kolaborasi paralel dalam suatu tim menjadi strategi ideal dalam pengerjaan suatu proyek.
+
+Pada ilustrasi di atas terdapat 3 branch, yaitu:
+
+🧿 Master, yaitu branch (cabang) utama yang seharusnya tidak memiliki bug atau apa pun yang berhubungan dengan kesalahan dalam pengodean/coding. Umumnya, cabang inilah yang dipakai sebagai productionatau versi stabil.
+🧿 Fitur baru, yaitu branch untuk menambah fitur baru. Semua commit yang berhubungan dengan fitur baru akan di-push ke branch ini.
+🧿 Bug fixing, yaitu branch yang digunakan untuk memperbaiki bug yang terjadi. Cabang bug fixing dibuat terpisah untuk menghindari kesalahan penulisan pada kode perbaikan yang dapat menyebabkan cabang utama menjadi memiliki lebih banyak bug.
+
+
+Perlu kamu tahu bahwa SHA atau hash id merupakan pengenal unik untuk setiap commit yang dilakukan 
+git checkout. Selain menggunakannya untuk berpindah pada branch tertentu, kita juga dapat berpindah pada commit tertentu untuk mengevaluasi apa yang telah dilakukan. 
+
+====================================================================================================================================================
+Merge adalah cara Git untuk menggabungkan histori dari branch (cabang). 
+
+Kita tahu bahwa pemisahan cabang dapat dilakukan dengan Git branch, dan pastinya akan ada satu waktu di mana kita ingin perubahan pada suatu cabang baru dapat kita terapkan pada cabang utama (main).
+Teknisnya adalah cabang baru yang berisi semua commit terbaru akan kita gabungkan kembali ke dalam cabang utama (main) menjadi satu.
+
+Pada dasarnya, merge berfungsi sebagai penggabungan beberapa urutan commit menjadi satu riwayat terpadu. Ia biasa digunakan untuk menggabungkan dua branch yang berbeda menjadi satu branch. Ketika Anda menggabungkan dua branch menjadi satu, merge akan membuat sebuah commit baru yang menginformasikan penggabungan dari kedua branch tersebut. 
+
+Proses penggabungan setiap commit memiliki kode uniknya sendiri, seperti pada contoh Branch Fitur memiliki kode F dan Main memiliki kode unik M. Sehingga ketika kita menggabungkan dua branch menjadi satu, branch tersebut akan membuat commit karena commit tersebut dianggap unik oleh branch lainnya, dan pada saat ini prosesnya akan dilakukan oleh GitHub secara otomatis untuk menggabungkan riwayat commit yang terpisah menjadi satu pada repo tersebut untuk kita.
+
+Jika pada saat melakukan proses merge terdapat perbedaan perubahan di satu line code yang sama pada file yang sama pada kedua history atau riwayat commit yang telah dibuat di masing-masing branch, maka GitHub tidak dapat melakukan merge otomatis
+
+Kondisi ini mengakibatkan gagalnya merge, jika hal ini terjadi, artinya file yang sama dengan perbedaan line code tersebut di dalam kedua branch perlu proses perbaikan yang dilakukan oleh pengguna agar merge dapat dilanjutkan, proses yang terjadi ketika merge gagal ini disebut sebagai conflict.
+
+Conflict terjadi dikarenakan dalam satu repository terdapat dua orang yang mengerjakan satu baris yang sama pada satu file yang sama dan akan digabungkan cabangnya.
+
+Agar tidak terjadi kesalahan dalam melakukan merge, maka ada beberapa persiapan yang bisa kita lakukan, yaitu seperti berikut:
+
+🖤 Melakukan pemeriksaan terlebih dahulu pada branch penerima dan juga pada branch yang akan dipilih.
+🖤 Kemudian lakukan proses merge atau penggabungan dua branch.
+🖤 Jika terjadi conflict, itu artinya perlu dikaji ulang data mana yang dapat digunakan secara utuh tanpa bug atau kesalahan. Setelah itu akan dibuat commit baru agar jadi data baru yang tidak memiliki conflict.
+
+====================================================================================================================================================
+Sebuah Pull Request dalam GitHub adalah kegiatan yang memungkinkan Anda memberitahu antar anggota tim tentang perubahan yang telah didorong ke cabang repository GitHub.
+
+Setelah pull request dibuat, Anda dapat mendiskusikan dan meninjau potensi perubahan dengan kolaborator. Mereka juga dapat menambahkan commit baru sebelum perubahan tersebut digabungkan ke cabang tujuan (destination branch).
+
+Pull Request adalah mekanisme bagi pengembang untuk memberi tahu anggota tim lain bahwa mereka telah menyelesaikan sebuah fitur.
+
+Setelah cabang sumber (source branch) siap dan selesai, pengembang dapat mengajukan pull request melalui akun GitHub mereka. Dengan begitu, semua orang yang terlibat dalam proyek repositori akan mendapat notifikasi. Sehingga mereka perlu meninjau kode dan menggabungkannya ke dalam cabang tujuan (destination branch).
+
+Pull request adalah forum khusus untuk mendiskusikan fitur yang diusulkan. Jika ada masalah dengan perubahan yang dilakukan, anggota tim lain dapat memberikan feedback pada pull request tersebut. Semua aktivitas tersebut dapat dilacak secara langsung melalui pull request.
+
+====================================================================================================================================================
+
+Merge branch atau penggabungan cabang merupakan perintah untuk menggabungkan urutan riwayat commit menjadi satu padu. Penggunaan Git Merge biasa digunakan untuk menggabungkan dua cabang. 
+
+Apa itu conflict? Conflict adalah kondisi ketika Anda menggabungkan branch satu ke branch lainnya terdapat masalah dalam satu baris yang sama pada suatu file..
+Biasanya isi/codingan di dalam kedua branch berbeda. Ketika terjadi conflict, kita perlu menyesuaikan mana yang seharusnya dipertahankan dan mana yang perlu dihapus.
+
+====================================================================================================================================================
+Kolaborasi adalah proses dua orang atau lebih, entitas atau organisasi yang bekerja sama untuk menyelesaikan tugas atau mencapai suatu tujuan. Sebagian besar kolaborasi membutuhkan kepemimpinan, meskipun bentuk kepemimpinan dapat bersifat sosial dalam kelompok yang terdesentralisasi dan egaliter (sederajat).
+
+Bentuk kolaborasi yang dilakukan sangat tergantung dengan apakah repository-nya publik atau privat. Bisa dikatakan repository publik adalah repository open source, karena siapa pun bisa melihat isi dari source code-nya. Sedangkan repository privat adalah repository yang tidak untuk publik/umum dan hanya terbatas untuk tim dengan anggota tertentu saja.
+
+Pada repository publik, semua orang dapat melihat isi dari repository. Owner-nya pun tetap dapat menambahkan collaborator pada repository tersebut. Menariknya lagi, kita sebagai pihak luar pun tetap dapat berkontribusi ke repository tanpa harus menjadi collaborator terlebih dahulu. 
+
+Private repository memang untuk kolaborasi sebatas tim internal saja. Sedangkan public repository berarti repository itu dapat dilihat oleh siapa pun, dan pihak luar pun dapat berkontribusi dengan fork.
+
+====================================================================================================================================================
+
+Ketiga item tersebut sama-sama berfungsi untuk menggabungkan commit ke dalam branch utama. Namun, terdapat perbedaan hasil dari masing-masing opsi tersebut. Berikut untuk detailnya:
+
+1. Create a merge commit:  Commit yang dilakukan akan dicatat dan dimasukkan ke dalam history commit branch tujuan. Selain itu, ada satu commit baru yang menginformasikan bahwa telah terjadi proses penggabungan.
+2. Squash and merge: Commit yang dilakukan akan digabungkan dan dicatat menjadi satu commit dalam history commit branch tujuan.
+3. Rebase and merge: Commit yang dilakukan akan dipindahkan ke dalam history commit commti tujuan. Namun tidak akan membuat commit baru untuk menginformasikan proses pencatatan.
+
+====================================================================================================================================================
+Fork adalah proses menyalin proyek repository orang lain ke repository pribadi. 
+Fork bertindak sebagai jembatan antara repositori asli (original repository) dan repositori salinan (fork repository).
+ Anda dapat menawarkan untuk menggabungkan perubahan yang telah Anda lakukan pada repositori salinan ke repositori asal untuk membantu membuat proyek orang lain lebih baik dengan melakukan pull request.
+
+Anda dapat melakukan beberapa tahap berikut agar dapat berkontribusi pada repository tersebut:
+
+🐫 Melakukan fork atau menyalin suatu repository.
+🐫 Melakukan perbaikan atau menambahkan perubahan.
+🐫 Melakukan pull request agar perubahan dapat disetujui untuk digabungkan ke dalam repository asli.
+
+Forking vs Cloning
+Lalu, apa bedanya fork dengan cloning? Keduanya memang sama-sama menyalin repository. Namun, perbedaannya terletak pada lokasi tujuan dari hasil salinan.
+Ketika melakukan cloning dalam remote (contohnya GitHub), artinya Anda menyalin repository dari tersebut ke dalam local (Laptop/PC Anda). Sedangkan ketika melakukan fork pada sebuah repository di GitHub, repository tersebut akan disalin ke dalam akun GitHub Anda. 
+
+Jika menggunakan Fork, Anda perlu melakukan pull request antara fork repository dengan original repository. Sedangkan Clone, Anda perlu melakukan push agar perubahan dapat disimpan ke dalam remote repository (contohnya dalam GitHub). Namun, untuk clone, Anda tidak bisa melakukan push ke remote repository jika tidak memiliki akses. 
+Ketika tidak mempunyai hak akses pada public repository, Anda perlu melakukan forking terlebih dahulu pada repository tersebut. 
+
+Sebelum melakukan perubahan pada public repository, semua kontributor yang tidak memiliki akses perlu melakukan fork pada repository tersebut.
+
+Forking dapat membantu pengelola repository untuk mengembangkan produk terbaik dengan cara berkolaborasi dengan developer lain. Pengelola repository tidak perlu mengundang/invite developer untuk menjadi kolaborator, sebab mereka dapat melakukan usulan perubahan dengan menggunakan fork dan pull request. Oleh karena itu, fork repository merupakan hal yang paling sering digunakan dalam public repository atau open source.
+
+====================================================================================================================================================
+Squash adalah opsi Git untuk menggabungkan atau merekap semua commit tambahan dalam pull request menjadi satu commit. 
+Squash bertujuan untuk membuat riwayat commit  yang lebih ramping dalam repository. Pada dasarnya setiap commit akan membantu untuk melihat setiap perubahan yang telah dilakukan, tetapi tak semua commit selalu menjadi hal yang penting untuk disimpan dalam riwayat Git. Contohnya ketika melakukan beberapa perubahan pada formating (perubahan spasi, titik, koma). 
+

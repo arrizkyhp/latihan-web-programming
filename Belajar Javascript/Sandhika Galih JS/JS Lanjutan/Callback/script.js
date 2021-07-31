@@ -62,7 +62,7 @@ console.log('selesai'); */
 
 // Asynchronous with JSON
 // success & error adalah callback
-function getDataMahasiswa(url, success, error) {
+/* function getDataMahasiswa(url, success, error) {
     let xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function() {
@@ -89,7 +89,12 @@ getDataMahasiswa('data/mahasiswa.json', result => {
 }, () => {
 
 });
-console.log('selesai');
+console.log('selesai'); */
+// mulai
+// selesai
+// Arrizky Hasya Pratama
+// Wildan Darissalam
+// Asep Suhendar
 
 
 // Semakin banyak callback, kita bisa punya sesuatu yang di sebut callback hell.

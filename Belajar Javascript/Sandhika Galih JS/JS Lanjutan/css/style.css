@@ -38,6 +38,7 @@ nav {
     color: #fff;
     padding: .5rem;
     border-right: 8px solid #52b69a;
+    overflow-y: scroll;
 }
 
 header {

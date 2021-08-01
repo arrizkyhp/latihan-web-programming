@@ -1784,8 +1784,9 @@ console.<span class="punctuation">log(</span><span class="string">'selesai'</spa
             </div>
 
             <h1 class="content-header" id="fetch"><span>Fetch</span></h1>
-            <p class="file-section">🚀File: <a href="Promise/index.html" target="_blank">Promise/index.html</a>
-                & <a href="Promise/script.js" target="_blank">Promise/script.js</a> <br>
+            <p class="file-section">🚀File: <a href="Fetch/AsyncAwait/index.html"
+                    target="_blank">Fetch/AsyncAwait/index.html</a>
+                & <a href="Fetch/AsyncAwait/script.js" target="_blank">Fetch/AsyncAwait/script.js</a> <br>
                 🏋🏽‍♂️Latihan: <a href="Fetch/Latihan/index.html" target="_blank">Fetch/Latihan/index.html</a>
                 & <a href="Fetch/Latihan/script.js" target="_blank">Fetch/Latihan/script.js</a><br>
                 🎥Video: <a
@@ -1793,7 +1794,12 @@ console.<span class="punctuation">log(</span><span class="string">'selesai'</spa
                     class="tooltip" target="_blank" data-title="JAVASCRIPT LANJUTAN | 12. Fetch">Part 1</a> |
                 <a href="https://www.youtube.com/watch?v=Nm-4AY2JGKk&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=25"
                     class="tooltip" target="_blank" data-title="JAVASCRIPT LANJUTAN | 13. Fetch Refactor (Async
-                    Await)">Part 2</a>
+                    Await)"> Part 2 </a> |
+                <a href="https://www.youtube.com/watch?v=PN42pd5fEs8&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=26"
+                    class="tooltip" target="_blank" data-title="JAVASCRIPT LANJUTAN | 14. Async Await">Part 3 </a> |
+                <a href="https://www.youtube.com/watch?v=qLnU4MDW14o&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=27"
+                    class="tooltip" target="_blank" data-title="JAVASCRIPT LANJUTAN | 15. Error Handling">Part
+                    4</a>
             </p>
 
             <div class="wrapper">
@@ -1830,6 +1836,37 @@ console.<span class="punctuation">log(</span><span class="string">'selesai'</spa
 
                 </div>
 
+                <h2>Async Await</h2>
+                <p><b>Asyncronous Function</b> => Sebuah function yang bekerja secara asyncronous (melalui event loop),
+                    yang menghasilkan (implisit) promise sebagai return value-nya, tapi cara penulisan code-nya
+                    menggunakan penulisan yang synchronous (standard).</p>
+                <ul>
+                    <li><b>Fungsi</b> yang berjalan secara <b>asynchronous</b>.</li>
+                    <li>Menghasilkan <b>(implisit) promise.</b></li>
+                    <li><b>Cara penulisannya </b>sama seperti <b>synchronous function</b> (function biasa).</li>
+                </ul>
+                <p><b>(implisit) promise</b> => fungsinya akan mengembalikan promise meskipun di dalamnya tidak ada kode
+                    yang asynchronous.</p><br>
+
+                <p>Sebuah asynchronous function dapat memiliki keyword <b>await</b> di dalamnya
+                    untuk <b>memberhentikan sementara </b>
+                    eksekusi <b>fungsinya</b> sambil <b>menunggu promise-nya selesai</b>.</p>
+                <p>Jadi walaupun penulisannya secara synchronous bertemu keyword await dia menunggu dulu apakah
+                    promise-nya sudah resolve, jika belum hentikan eksekusinya sampai resolve lalu lanjut ke baris
+                    selanjutnya.</p>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="muted">// contoh await, lengkapnya di folder latihan script.js</span>
+document.<span class="punctuation">addEventListener(</span><span class="string">'click'</span>, <span class="punctuation"><b>async</b></span> <span class="function">function(</span>e<span class="function">) {</span>
+    <span class="return">if</span><span class="properties">(</span> e.<span class="properties">target</span>.classList.<span class="punctuation">contains(</span><span class="string">'modal-detail-button'</span><span class="punctuation">)</span><span class="properties">) {</span>
+        <span class="punctuation">const</span> imdbid <span class="return">=</span> e.<span class="properties">target</span>.dataset.imdbid;
+        <span class="punctuation">const</span> movieDetail <span class="return">= <b>await</b></span> <span class="punctuation">getMovieDetails(</span>imdbid<span class="punctuation">)</span>;
+        <span class="punctuation">updateUIdetail(</span>movieDetail<span class="punctuation">)</span>;
+    <span class="properties">}</span>
+<span class="function">}</span>);</code></pre>
+
+                </div>
 
             </div>
 

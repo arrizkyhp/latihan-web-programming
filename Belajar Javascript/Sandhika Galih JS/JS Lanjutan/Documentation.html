@@ -1788,7 +1788,8 @@ console.<span class="punctuation">log(</span><span class="string">'selesai'</spa
                     target="_blank">Fetch/AsyncAwait/index.html</a>
                 & <a href="Fetch/AsyncAwait/script.js" target="_blank">Fetch/AsyncAwait/script.js</a> <br>
                 🏋🏽‍♂️Latihan: <a href="Fetch/Latihan/index.html" target="_blank">Fetch/Latihan/index.html</a>
-                & <a href="Fetch/Latihan/script.js" target="_blank">Fetch/Latihan/script.js</a><br>
+                | <a href="Fetch/Latihan/script.js" target="_blank">Fetch/Latihan/script.js</a>
+                | <a href="Fetch/Latihan/error_handling.js" target="_blank">Fetch/Latihan/error_handling.js</a><br>
                 🎥Video: <a
                     href="https://www.youtube.com/watch?v=k1jVq9WGBdM&list=PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-&index=24"
                     class="tooltip" target="_blank" data-title="JAVASCRIPT LANJUTAN | 12. Fetch">Part 1</a> |
@@ -1868,6 +1869,68 @@ document.<span class="punctuation">addEventListener(</span><span class="string">
 
                 </div>
 
+                <h2>Error Handling</h2>
+                <p>Error Handling: <b>Promise</b></p>
+                <ul>
+                    <li>.then()</li>
+                    <li>.catch()</li>
+                </ul>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation">const</span> coba <span class="return">=</span> <span class="punctuation">cobaPromise()</span>;
+
+coba.<span class="punctuation"><b>then</b>(</span><span class="function">()</span> <span class="punctuation">=></span> console.<span class="punctuation">log</span><span class="function">(</span>coba<span class="function">)</span><span class="punctuation">)</span>
+    .<span class="punctuation"><b>catch</b>(</span><span class="function">()</span> <span class="punctuation">=></span> console.<span class="punctuation">log</span><span class="function">(</span>coba<span class="function">)</span><span class="punctuation">)</span>;</code></pre>
+
+                </div>
+
+                <p>Error Handling: <b>Async Await</b></p>
+                <ul>
+                    <li>try</li>
+                    <li>catch()</li>
+                </ul>
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="punctuation"><b>async</b></span> <span class="function">function</span> <span class="punctuation">cobaAsync() {</span>
+    <span class="return">try</span> <span class="function">{</span>
+    <span class="punctuation">const</span> coba <span class="return">= <b>await</b></span> <span class="punctuation">cobaPromise</span><span class="properties">()</span>;
+    console.<span class="punctuation">log</span><span class="properties">(</span>coba<span class="properties">)</span>;
+    <span class="function">}</span> <span class="return">catch</span><span class="function">(</span>error<span class="function">) {</span>
+    console.<span class="punctuation">error</span><span class="properties">(</span>error<span class="properties">)</span>;
+    <span class="function">}</span>
+<span class="punctuation">}</span>
+
+<span class="punctuation">cobaAsync()</span>;</code></pre>
+
+                </div>
+
+                <p>Error Handling: <b>Fetch</b></p>
+                <p>Fetch hanya akan gagal ketika networknya error.</p>
+
+                <!-- JS Box -->
+                <div class="codeheader" id="codeheader_js">JavaSCript</div>
+                <div id="codebox">
+                    <pre><code><span class="muted">// lengkapnya di folder latihan error_handling.js</span>
+<span class="function">function</span><span class="punctuation"> getMovies(</span>keyword<span class="punctuation">) {</span>
+    <span class="return">return</span> <span class="punctuation">fetch</span><span class="function">(</span><span class="string">'http://www.omdbapi.com/?&apikey=649932da&s='</span> <span class="return">+</span> keyword<span class="function">)</span>
+    .<span class="punctuation">then</span><span class="function">(</span>response <span class="punctuation">=></span> <span class="properties">{</span>
+        <span class="return">if</span> <span class="punctuation">(</span><span class="return">!</span>response.<span class="properties">ok</span><span class="punctuation">) {</span>
+            <span class="return">throw new</span> <span class="ajax">Error</span><span class="function">(</span>response.<span class="properties">statusText</span><span class="function">)</span>;
+        <span class="punctuation">}</span>
+
+        <span class="return">return</span> response.<span class="punctuation">json()</span>;
+    <span class="properties">}</span><span class="function">)</span>
+    .<span class="punctuation">then</span><span class="function">(</span>response <span class="punctuation">=></span> <span class="properties">{</span>
+        <span class="return">if</span> <span class="punctuation">(</span>response.Response <span class="return">===</span> <span class="string">"False"</span><span class="punctuation">) {</span>
+            <span class="return">throw new</span> <span class="ajax">Error</span><span class="function">(</span>response.Error<span class="function">)</span>;
+        <span class="punctuation">}</span>
+        <span class="return">return</span> response.Search
+    <span class="properties">}</span><span class="function">)</span>;
+<span class="punctuation">}</span></code></pre>
+
+                </div>
             </div>
 
 

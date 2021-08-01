@@ -35,11 +35,11 @@ function cobaPromise() {
 });
 }
 
-/* const coba = cobaPromise();
+const coba = cobaPromise();
 // console.log(coba); // Promise {<pending>}
 
 coba.then(() => console.log(coba))
-    .catch(() => console.log(coba)); */
+    .catch(() => console.log(coba));
 
 async function cobaAsync() {
     // then & catch dalam function menggunakan try & catch

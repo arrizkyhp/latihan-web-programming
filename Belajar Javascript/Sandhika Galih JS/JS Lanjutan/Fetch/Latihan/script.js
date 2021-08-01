@@ -1,43 +1,4 @@
-/* $('.search-button').on('click', function() {
-
-    $.ajax({
-        url: 'http://www.omdbapi.com/?i=tt3896198&apikey=649932da&s=' + $('.input-keyword').val(),
-        success: results => {
-            const movies = results.Search;
-            let cards = '';
-            console.log(movies);
-            movies.forEach(movie => {
-                cards += showCards(movie);
-            });
-            $('.movie-container').html(cards);
-
-            // ketika tombol detail di klik
-            $('.modal-detail-button').on('click', function() {
-                $.ajax({
-                    url: 'http://www.omdbapi.com/?apikey=649932da&i=' + $(this).data('imdbid'),
-                    success: m => {
-                        console.log('test');
-                        const movieDetail = showMovieDetail(m);
-                        $('.modal-body').html(movieDetail);
-                    },
-                    error: (e) => {
-                        console.log(e.responseText);
-                    }
-                })
-            });
-
-
-        },
-        error: (e) => {
-            console.log(e.responseText);
-        }
-    });
-
-}) */
-
-// =========================================== FETCH ===========================================
-
-// Search Button
+/* // Search Button
 const searchButton = document.querySelector('.search-button');
 searchButton.addEventListener('click', function() {
 
@@ -74,8 +35,72 @@ searchButton.addEventListener('click', function() {
 
     }); // berupa Object
 
-})
+}); */
 
+// ! =========================================== FETCH Refractor ===========================================
+
+// cara kita untuk membuat coding kita terlihat seperti Synchronous padahal Asynchronous.
+
+const searchButton = document.querySelector('.search-button');
+// async memberitahu JavaScript
+searchButton.addEventListener('click', async function () {
+    const inputKeyword = document.querySelector('.input-keyword');
+
+    // async await
+    const movies = await getMovies(inputKeyword.value);
+    updateUI(movies);
+
+});
+
+
+// modal
+// event binding
+// memberikan event ke element yang awalnya belom ada, tapi ketika dia ada eventnya tetap bisa berjalan.
+document.addEventListener('click', async function(e) {
+    if( e.target.classList.contains('modal-detail-button')) {
+        const imdbid = e.target.dataset.imdbid;
+        const movieDetail = await getMovieDetails(imdbid);
+        updateUIdetail(movieDetail);
+    }
+});
+
+
+
+
+function getMovies(keyword) {
+    return fetch('http://www.omdbapi.com/?&apikey=649932da&s=' + keyword) // berupa Promise
+    .then(response => response.json()) // masih berupa promise
+    .then(response => response.Search);
+
+}
+
+function updateUI (movies) {
+    const movieContainer = document.querySelector('.movie-container');
+
+    if (movies !== undefined) {
+        let cards = '';
+        // Looping
+        movies.forEach(m => cards += showCards(m));
+
+        movieContainer.innerHTML = cards;
+    } else {
+        movieContainer.innerHTML = movieNotFound();
+    }
+
+}
+
+function getMovieDetails(imdbid) {
+    return fetch('http://www.omdbapi.com/?apikey=649932da&i=' + imdbid)
+            .then(response => response.json())
+            .then(m => m);
+}
+
+function updateUIdetail(m) {
+    const movieDetail = showMovieDetail(m);
+
+    const modalBody = document.querySelector('.modal-body');
+    modalBody.innerHTML = movieDetail;
+}
 
 
 function showCards(movie) {
@@ -110,4 +135,9 @@ function showMovieDetail(m) {
                     </div>
                 </div>
             </div>`;
+}
+
+function movieNotFound() {
+    return `<h2>Movies not found</h2>
+                <h5>try another keyword..</h5>`
 }

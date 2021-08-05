@@ -20,7 +20,7 @@ console.log(duck.name); */
 // * Create a Method on an Object
 // Object can gave a special type of property, called a method.
 // ! Methods are properties that are functions.
-/* // This adds different behavior to an object.
+// This adds different behavior to an object.
 
 let dog = {
   name: "Spot",
@@ -30,7 +30,7 @@ let dog = {
   },
 };
 
-dog.sayLegs(); */
+dog.sayLegs();
 
 // =========================================================================================
 // * Make Code more Reusable with the this. Keyword
@@ -40,7 +40,7 @@ dog.sayLegs(); */
 // In the below example this refers to the objec that the method is associated with dog, if the object's name is changed to cat, it is not ncessary to find all the references to dog in the code
 // It makes the code reusable and easier to read.
 
-/* let dog = {
+let dog = {
   name: "Spot",
   numLegs: 4,
   sayLegs: function () {
@@ -48,7 +48,7 @@ dog.sayLegs(); */
   },
 };
 
-dog.sayLegs(); */
+dog.sayLegs();
 
 // =========================================================================================
 // * Define a Constructor Function
@@ -69,17 +69,17 @@ dog.sayLegs(); */
 } */
 
 // =========================================================================================
-// * Define a Constructor Function
+// * Use a Constructor to Create Objects
 // ! The new Operators is used when calling a constructor.
 // This tells JavaScript to create a new instance of Dog called hound.
 
-/* function Dog() {
+function Dog() {
   this.name = "Rupert";
   this.color = "brown";
   this.numLegs = 4;
 }
 
-const hound = new Dog(); */
+const hound = new Dog();
 
 // =========================================================================================
 // * Extend Constructors to Receive Arguments
@@ -87,24 +87,26 @@ const hound = new Dog(); */
 // The constructor is more flexible
 // ! Constructor group objects together based on shared characterisrics and behavior and define a blueprint that automates their creation.
 
-/* function Dog(name, color) {
+function Dog(name, color) {
   this.name = name;
   this.color = color;
   this.numLegs = 4;
 }
 
-const terrier = new Dog("Alfredo", "White"); */
+const terrier = new Dog("Alfredo", "White");
 
 // =========================================================================================
-// * Extend Constructors to Receive Arguments
+// * Verify an Object's Constructor with instanceof
 // Anytime a constructor function creates a new objectm that object is said to be an instance of its constructor
 // instanceof allows you to compare an object to a constructor, returning true or false based on whether or not that object was created with the costructor.
 
-/* function House(numBedrooms) {
+function House(numBedrooms) {
   this.numBedrooms = numBedrooms;
 }
 
-const myHouse = new House(3); */
+const myHouse = new House(3);
+
+myHouse instanceof House; //true
 
 // =========================================================================================
 // * Understand Own Properties

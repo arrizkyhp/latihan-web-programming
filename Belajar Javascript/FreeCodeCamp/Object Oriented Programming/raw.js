@@ -191,7 +191,7 @@ console.log(beagle.constructor === Dog); // true */
 // ! The constructor property is a reference to the constructor function that created the instance.
 // ! The advantage of the constructor property is that it's possible to check for this property to find out what kind of object it is.
 
-function Dog(name) {
+/* function Dog(name) {
   this.name = name;
 }
 
@@ -201,7 +201,7 @@ function joinDogFraternity(candidate) {
   } else {
     return false;
   }
-}
+} */
 
 // =========================================================================================
 // * Move the Prototype to a New Object
@@ -220,7 +220,7 @@ Dog.prototype.describe = function () {
 
 // ! A more efficient way is to set the prototype to a new object that already contains the properties. This way, the properties are added all at once.
 
-Dog.prototype = {
+/* Dog.prototype = {
   numLegs: 4,
   eat: function () {
     console.log("nyom nyom nyom");
@@ -228,7 +228,7 @@ Dog.prototype = {
   describe: function () {
     console.log(`My name is ${this.name}`);
   },
-};
+}; */
 
 // * Remember to Set the Constructor Property When Changing the Prototype
 // There is one crucial side effect of manually setting the prototype to a new project.
@@ -274,6 +274,7 @@ Dog.prototype.isPrototypeOf(beagle); // true */
 // Because a protorype is an object, a prototype can have its own prototype
 // in this casem the prototype of Dog,prototype is Object.prototype
 // ! Object.prototype <= Dog.protoype <= beagle.prototype.
+/* Object.prototype.isPrototypeOf(Bird.prototype); */
 // How is this useful? You may recall the haswOwnProperty method
 
 /* let beagle = new Dog("Snoopy");
@@ -357,7 +358,7 @@ Animal.prototype = {
 // using above syntax have some disadvantages, which are too complex for the scope
 // Instead, here's an alternative approach without those disadvantages:
 
-/* let binatang = Object.create(Animal.prototype);  */
+/* let binatang = Object.create(Animal.prototype); */
 
 // ! Objects.create(obj) creates a new object, and sets obj as the new object's prototype
 // prototype is like the "recipe" for creating an object.
@@ -372,10 +373,9 @@ Animal.prototype = {
   }
 };
 
-// Only change code below this line
 
-let duck = Object.create(Animal.prototype); // Change this line
-let beagle = Object.create(Animal.prototype); // Change this line
+let duck = Object.create(Animal.prototype);
+let beagle = Object.create(Animal.prototype);
 
 duck instanceof Animal; // true */
 
@@ -386,9 +386,9 @@ duck instanceof Animal; // true */
 
 /* Dog.prototype = Object.create(Animal.prototype); */
 
-// so now Dog and Animal connect beagle can now use Animal properties.
-// dog inherits all of Animal's  including eat method
-// beagle.eat();
+// so now Dog and Animal connect, beagle can now use Animal properties.
+// dog inherits all of Animal's including eat method
+/* beagle.eat(); */
 
 /* function Animal() {}
 
@@ -433,7 +433,8 @@ Bird.prototype.constructor = Bird;
 Dog.prototype.constructor = Dog;
 
 let duck = new Bird();
-let beagle = new Dog(); */
+let beagle = new Dog();
+console.log(duck.constructor); */
 
 // * Add Methods After Inheritance
 // ! A constructor function that inherits its prototype object from a supertype constructor function can still have its own methods in addition to inherited methods.

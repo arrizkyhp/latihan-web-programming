@@ -35,6 +35,10 @@
             <li><a href="#move-prototype">Move Prototype</a></li>
             <li><a href="#where-prototype-from">Where Prototype from</a></li>
             <li><a href="#prototype-chain">Prototype Chain</a></li>
+            <li><a href="#dont-repeat-yourself">DRY</a></li>
+            <li><a href="#inherit-supertype">Inherit Supertype</a></li>
+            <li><a href="#set-child-prototype">Set Child Prototype</a></li>
+            <li><a href="#reset-inherited-constructor">Reset Inherited Constructor</a></li>
         </ul>
 
     </nav>
@@ -479,8 +483,8 @@ dog <span class="return">instanceof</span> <span class="punctuation">Dog</span>;
                 <!-- JS Box -->
                 <div id="codebox">
 
-                    <pre><code>let beagle = new Dog("Snoopy");
-beagle.hasOwnProperty("name");</code></pre>
+                    <pre><code><span class="punctuation">let</span> beagle <span class="return">= new</span> <span class="punctuation">Dog(</span><span class="string">"Snoopy"</span><span class="punctuation">)</span>;
+<b>beagle.<span class="punctuation">hasOwnProperty(</span><span class="string">"name"</span><span class="punctuation">)</span>;</b></code></pre>
                 </div>
 
                 <p>The <span class="code"><b>hasOwnProperty</b></span> method is defined in <b>Object.prototype</b>,
@@ -505,6 +509,271 @@ beagle.hasOwnProperty("name");</code></pre>
                 <p>therefore any object can use the hasOwnPropert method.</p>
 
             </div>
+
+            <h2 id="dont-repeat-yourself">Use Inheritance So You Don't Repeat Yourself</h2>
+            <div class="section-card">
+                <p class="important">There's a principle in a programming called <b>Don't Repeat Yourself (DRY)</b>.</p>
+                <p>The reason <b>repeated code is a problem</b> is because any <b>changes requires fixing code in
+                        multiple places</b>.
+                </p>
+                <p>This usually means more work for programmers and more room for errors.</p> <br>
+
+                <p>Notice in the example below that the <b>describe</b> method is shared by <b>Bird</b> and <b>Dog</b>
+                </p>
+
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="punctuation">Bird</span>.<span class="properties">prototype</span> <span class="return">=</span> <span class="punctuation">{</span>
+  <span class="punctuation">constructor</span>: <span class="punctuation">Bird</span>,
+  <span class="punctuation">describe</span>: <span class="function">function () {</span>
+    console.<span class="punctuation">log</span>(<span class="string">"My name is "</span> <span class="return">+</span> <span class="function">this</span>.name);
+  <span class="function">}</span>,
+<span class="punctuation">}</span>;
+
+<span class="punctuation">Dog</span>.<span class="properties">prototype</span> <span class="return">=</span> <span class="punctuation">{</span>
+  <span class="punctuation">constructor</span>: <span class="punctuation">Dog</span>,
+  <span class="punctuation">describe</span>: <span class="function">function () {</span>
+    console.<span class="punctuation">log</span>(<span class="string">"My name is "</span> <span class="return">+</span> <span class="function">this</span>.name);
+  <span class="function">}</span>,
+<span class="punctuation">}</span>;</code></pre>
+                </div>
+
+                <p>The <b>describe</b> method is <b>repeated in two places</b>, the code can be edited to follow the
+                    <b>DRY</b> principle by
+                    <b>creating a <span class="code">supertype</span> called Animal</b></p>
+
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="function">function</span> <span class="punctuation">Animal() {}</span> <span class="muted">// make function</span>
+
+<span class="punctuation">Animal</span>.<span class="properties">prototype</span> <span class="return">=</span> <span class="punctuation">{</span>
+  <span class="punctuation">constructor</span>: <span class="punctuation">Animal</span>,
+  <span class="punctuation">describe</span>: <span class="function">function () {</span>
+    console.<span class="punctuation">log</span>(<span class="string">"My name is "</span> <span class="return">+</span> <span class="function">this</span>.name);
+  <span class="function">}</span>,
+<span class="punctuation">}</span>;</code></pre>
+                </div>
+
+                <p>since <span class="code"><b>Animal</b></span> includes the <b>describe</b> method, you can <b>
+                        remove it
+                        from
+                        Bird and Dog:
+                    </b></p><br>
+
+                <p>this is the full code example:</p>
+
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="function">function</span> <span class="punctuation">Cat(</span>name<span class="punctuation">) {</span>
+  <span class="function">this</span>.name <span class="return">=</span> name;
+<span class="punctuation">}</span>
+
+<span class="punctuation">Cat</span>.<span class="properties">prototype</span> <span class="return">=</span> <span class="punctuation">{</span>
+  <span class="punctuation">constructor</span>: <span class="punctuation">Cat</span>,
+<span class="punctuation">}</span>;
+
+<span class="function">function</span> <span class="punctuation">Bear(</span>name<span class="punctuation">) {</span>
+  <span class="function">this</span>.name <span class="return">=</span> name;
+<span class="punctuation">}</span>
+
+<span class="punctuation">Bear</span>.<span class="properties">prototype</span> <span class="return">=</span> <span class="punctuation">{</span>
+  <span class="punctuation">constructor</span>: <span class="punctuation">Bear</span>,
+<span class="punctuation">}</span>;
+
+<b><span class="function">function</span> <span class="punctuation">Animal() {}</span></b>
+
+<b><span class="punctuation">Animal</span>.<span class="properties">prototype</span> <span class="return">=</span> <span class="punctuation">{</span>
+  <span class="punctuation">constructor</span>: <span class="punctuation">Animal</span>,
+  <span class="punctuation">eat</span>: <span class="function">function () {</span>
+    console.<span class="punctuation">log</span>(<span class="string">"nom nom nom"</span>);
+  <span class="function">}</span>,
+<span class="punctuation">}</span>;</b></code></pre>
+                </div>
+            </div>
+
+            <h2 id="inherit-supertype">Inherit Behaviors from a Supertype</h2>
+            <div class="section-card">
+                <p>This will cover how to reuse the <b>methods of Animal</b> inside <b>Bird</b> and <b>Dog</b> without
+                    defining them again.
+                    it uses a technique called <b>inheritance</b>.</p>
+                <p>You already know one way to create an instance of <b>Animal</b> using the <span
+                        class="code"><b>new</b></span> operator:</p>
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="punctuation">let</span> binatang <span class="return">= new</span> <span class="punctuation">Animal()</span>;</code></pre>
+                </div>
+
+                <p>using above syntax have some <b>disadvantages</b>, which are <b>too complex for the scope</b>.</p>
+                <p>Instead, here's an alternative approach without those disadvantages:</p>
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="punctuation">let</span> binatang <span class="return">=</span> <span class="properties">Object</span>.<span class="punctuation">create(</span><span class="properties">Animal</span>.<span class="properties">prototype</span><span class="punctuation">)</span>; </code></pre>
+                </div>
+
+                <p class="important"><span class="code"><b>Objects.create(obj)</b></span> creates a new <b>object</b>,
+                    and sets
+                    <b>obj</b> as the new object's
+                    <span class="code"><b>prototype</b></span></p>
+                <p><span class="code"><b>prototype</b></span> is like the "<b>recipe</b>" for creating an object.</p>
+                <p>By setting the <span class="code"><b>prototype</b></span> of <b>binatang</b> to be the
+                    <span class="code"><b>prototype</b></span> <b>Animal</b>, you
+                    are effectively giving the
+                    <b>binatang</b> instance the same "recipe" as <b>any other instance of Animal</b></p><br>
+
+                <p>this is the full code example:</p>
+
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="function">function</span> <span class="punctuation">Animal() { }</span>
+
+<span class="punctuation">Animal</span>.<span class="properties">prototype</span> <span class="return">=</span> <span class="punctuation"> {
+  constructor</span>: <span class="punctuation">Animal</span>,
+  <span class="punctuation">eat</span>: <span class="function">function() {</span>
+    console.<span class="punctuation">log</span>(<span class="string">"nom nom nom"</span>);
+  <span class="function">}</span>
+<span class="punctuation">}</span>;
+
+
+<b><span class="punctuation">let</span> duck = <span class="properties">Object</span>.<span class="punctuation">create(Animal</span>.<span class="properties">prototype</span><span class="punctuation">)</span>;</b>
+<b><span class="punctuation">let</span> beagle = <span class="properties">Object</span>.<span class="punctuation">create(Animal</span>.<span class="properties">prototype</span><span class="punctuation">)</span>;</b>
+
+duck <span class="return">instanceof</span> <span class="punctuation">Animal</span>; <span class="muted">// true</span></code></pre>
+                </div>
+            </div>
+
+            <h2 id="set-child-prototype">Set the Child's Prototype to an Instance of the parent</h2>
+            <div class="section-card">
+                <p>Set the <span class="code"><b>prototype</b></span> of the <span class="code"><b>subtype</b></span>
+                    <b>(or Child)</b> in this case, <b>Dog</b> to be an <b>instance</b> of <b>Animal</b> (Connect
+                    Dog with Animal)</p>
+
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="properties">Dog</span>.<span class="properties">prototype</span> <span class="return">=</span> <span class="properties">Object</span>.<span class="punctuation">create(</span><span class="properties">Animal</span>.<span class="properties">prototype</span><span class="punctuation">)</span>;</code></pre>
+                </div>
+                <p>so now <b>Dog</b> and <b>Animal</b> connected, <b>beagle</b> (<b>Dog <span
+                            class="code">subtype</span></b>) can now also use
+                    <b>Animal properties</b>.</p>
+                <p><b>Dog</b> inherits <b>all of Animal's method</b> including <b>eat method</b></p>
+
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code>beagle.<span class="punctuation">eat()</span>;</code></pre>
+                </div>
+
+                <p>this is the full code example:</p>
+
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="function">function</span> <span class="punctuation">Animal() {}</span>
+
+<span class="punctuation">Animal</span>.<span class="properties">prototype</span> <span class="return">=</span> <span class="punctuation">{</span>
+  <span class="punctuation">constructor</span>: <span class="punctuation">Animal</span>,
+  <span class="punctuation">eat</span>: <span class="function">function () {</span>
+    console.<span class="punctuation">log</span>(<span class="string">"nom nom nom"</span>);
+  <span class="function">}</span>,
+<span class="punctuation">}</span>;
+
+<span class="function">function</span> <span class="punctuation">Dog() {}</span>
+
+<b><span class="punctuation">Dog</span>.<span class="properties">prototype</span> <span class="return">=</span> <span class="properties">Object</span>.<span class="punctuation">create(Animal</span>.<span class="properties">prototype</span><span class="punctuation">)</span>;</b>
+
+<b><span class="punctuation">let</span> beagle <span class="return">= new</span> <span class="punctuation">Dog()</span>;</b>
+
+console.<span class="punctuation">log(</span>beagle.<span class="punctuation">eat</span><span class="function">()</span><span class="punctuation">)</span>; <span class="muted">// nom nom nom</span></code></pre>
+                </div>
+
+
+                <h2 id="reset-inherited-constructor">Reset an Inherited Constructor Property</h2>
+
+                <p class="important">When an <b>Object inherits its <span class="code">prototype</span> from another
+                        object,</b> it also <b> inherits the <span class="code">supertype</span>'s constructor
+                        property.</b></p><br>
+
+                <p>in the below example <b>duck</b> and <b>all instance of Bird change it</b> constructor into
+                    <b>Animal</b> Constructor.</p>
+                <p>and to fix that we can<b> manually set the constructor property</b> of <b>Bird to the Bird object
+                        Back.</b></p>
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="function">function</span> <span class="punctuation">Bird() {}</span>
+
+<span class="punctuation">Bird</span>.<span class="properties">prototype</span> <span class="return">=</span> <span class="properties">Object</span>.<span class="punctuation">create(</span><span class="properties">Animal</span>.<span class="properties">prototype</span><span class="punctuation">)</span>;
+
+<span class="punctuation">let</span> duck <span class="return">= new</span> <span class="punctuation">Bird()</span>;
+console.<span class="punctuation">log(</span>duck.<span class="properties">constructor</span><span class="punctuation">)</span>; <span class="muted">// Animal</span>
+
+<b><span class="punctuation">Bird</span>.<span class="properties">prototype</span>.<span class="properties">constructor</span> = <span class="punctuation">Bird</span>;</b> <span class="muted">// Make it back to Bird</span>
+console.<span class="punctuation">log(</span>duck.<span class="properties">constructor</span><span class="punctuation">)</span>; <span class="muted">// Bird</span></code></pre>
+                </div>
+
+                <p>this is the full code example:</p>
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="function">function</span> <span class="punctuation">Animal() {}</span>
+<span class="function">function</span> <span class="punctuation">Bird() {}</span>
+<span class="function">function</span> <span class="punctuation">Dog() {}</span>
+
+<span class="punctuation">Bird</span>.<span class="properties">prototype</span> <span class="return">=</span> <span class="properties">Object</span>.<span class="punctuation">create(Animal</span>.<span class="ajax">prototype</span><span class="punctuation">)</span>;
+<span class="punctuation">Dog</span>.<span class="properties">prototype</span> <span class="return">=</span> <span class="properties">Object</span>.<span class="punctuation">create(Animal</span>.<span class="ajax">prototype</span><span class="punctuation">)</span>;
+
+<b><span class="punctuation">Bird</span>.<span class="properties">prototype</span>.<span class="properties">constructor</span> <span class="return">=</span> <span class="punctuation">Bird</span>;</b>
+<b><span class="punctuation">Dog</span>.<span class="properties">prototype</span>.<span class="properties">constructor</span> = <span class="punctuation">Dog</span>;</b>
+
+<span class="punctuation">let</span> duck <span class="return">= new</span> <span class="punctuation">Bird()</span>;
+<span class="punctuation">let</span> beagle <span class="return">= new</span> <span class="punctuation">Dog()</span>;</code></pre>
+                </div>
+
+                <h2>Add Methods After Inheritance</h2>
+                <p class="important">A<b> constructor function</b> that <b>inherits</b> its <b><span
+                            class="code">prototype</span> object from a
+                        <span class="code">supertype</span></b> constructor function, <b> can
+                        still have its own methods </b>in addition to inherited methods.</p>
+                <p>for example, <b>Dog</b> is a constructor that <b>inherits its prototype</b> from <b>Animal</b>:</p>
+
+                <div id="codebox">
+
+                    <pre><code>function Animal() {}
+Animal.prototype.eat = function () {
+    console.log("nom nom nom");
+};
+
+function Dog() {}
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;</code></pre>
+                </div>
+
+                <p>In addition to what inherited from Animal, you want to add behavior that is unique to Dog objects.
+                </p>
+
+                <div id="codebox">
+
+                    <pre><code></code></pre>
+                </div>
+
+                <p>this is the full code example:</p>
+
+                <div id="codebox">
+
+                    <pre><code></code></pre>
+                </div>
+
+
+            </div>
+
+
+
 
         </section>
 

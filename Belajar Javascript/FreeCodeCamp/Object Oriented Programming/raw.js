@@ -22,7 +22,7 @@ console.log(duck.name); */
 // ! Methods are properties that are functions.
 // This adds different behavior to an object.
 
-let dog = {
+/* let dog = {
   name: "Spot",
   numLegs: 4,
   sayLegs: function () {
@@ -30,7 +30,7 @@ let dog = {
   },
 };
 
-dog.sayLegs();
+dog.sayLegs(); */
 
 // =========================================================================================
 // * Make Code more Reusable with the this. Keyword
@@ -40,7 +40,7 @@ dog.sayLegs();
 // In the below example this refers to the objec that the method is associated with dog, if the object's name is changed to cat, it is not ncessary to find all the references to dog in the code
 // It makes the code reusable and easier to read.
 
-let dog = {
+/* let dog = {
   name: "Spot",
   numLegs: 4,
   sayLegs: function () {
@@ -48,7 +48,7 @@ let dog = {
   },
 };
 
-dog.sayLegs();
+dog.sayLegs(); */
 
 // =========================================================================================
 // * Define a Constructor Function
@@ -73,13 +73,13 @@ dog.sayLegs();
 // ! The new Operators is used when calling a constructor.
 // This tells JavaScript to create a new instance of Dog called hound.
 
-function Dog() {
+/* function Dog() {
   this.name = "Rupert";
   this.color = "brown";
   this.numLegs = 4;
 }
 
-const hound = new Dog();
+const hound = new Dog(); */
 
 // =========================================================================================
 // * Extend Constructors to Receive Arguments
@@ -87,26 +87,26 @@ const hound = new Dog();
 // The constructor is more flexible
 // ! Constructor group objects together based on shared characterisrics and behavior and define a blueprint that automates their creation.
 
-function Dog(name, color) {
+/* function Dog(name, color) {
   this.name = name;
   this.color = color;
   this.numLegs = 4;
 }
 
-const terrier = new Dog("Alfredo", "White");
+const terrier = new Dog("Alfredo", "White"); */
 
 // =========================================================================================
 // * Verify an Object's Constructor with instanceof
 // Anytime a constructor function creates a new objectm that object is said to be an instance of its constructor
 // instanceof allows you to compare an object to a constructor, returning true or false based on whether or not that object was created with the costructor.
 
-function House(numBedrooms) {
+/* function House(numBedrooms) {
   this.numBedrooms = numBedrooms;
 }
 
 const myHouse = new House(3);
 
-myHouse instanceof House; //true
+myHouse instanceof House; //true */
 
 // =========================================================================================
 // * Understand Own Properties
@@ -128,11 +128,11 @@ for (let property in canary) {
   }
 }
 
-console.log(ownProps); */
+console.log(ownProps); // [ 'name', 'numLegs' ] */
 
 // =========================================================================================
 // * Use Prototype properties to reduce duplicate code
-// sice numLegs will probably have the same value for all instance of Dog, you essentially have a duplicated variable numLegs inside each Dog instance.
+// since numLegs will probably have the same value for all instance of Dog, you essentially have a duplicated variable numLegs inside each Dog instance.
 // A better way is to use the prototype of Dog.
 // ! Properties in the prototype are shared among ALL instances of Dog.
 // ! Put prototype outside Constructor.
@@ -188,10 +188,10 @@ let beagle = new Dog();
 console.log(duck.constructor === Bird); // true
 console.log(beagle.constructor === Dog); // true */
 
-// ! The constructor property is a reference to the constructor function that create d the instance.
+// ! The constructor property is a reference to the constructor function that created the instance.
 // ! The advantage of the constructor property is that it's possible to check for this property to find out what kind of object it is.
 
-/* function Dog(name) {
+function Dog(name) {
   this.name = name;
 }
 
@@ -201,16 +201,16 @@ function joinDogFraternity(candidate) {
   } else {
     return false;
   }
-} */
+}
 
 // =========================================================================================
 // * Move the Prototype to a New Object
 
 // prototype individually:
-/* Dog.prototype.numLegs = 4; */
+/* Dog.prototype.numLegs = 4;
 
 // this will becomes tedious after more than a few properties.
-/* Dog.prototype.eat = function () {
+Dog.prototype.eat = function () {
   console.log("nom nom nom");
 };
 
@@ -220,7 +220,7 @@ Dog.prototype.describe = function () {
 
 // ! A more efficient way is to set the prototype to a new object that already contains the properties. This way, the properties are added all at once.
 
-/* Dog.prototype = {
+Dog.prototype = {
   numLegs: 4,
   eat: function () {
     console.log("nyom nyom nyom");
@@ -228,18 +228,18 @@ Dog.prototype.describe = function () {
   describe: function () {
     console.log(`My name is ${this.name}`);
   },
-}; */
+};
 
 // * Remember to Set the Constructor Property When Changing the Prototype
 // There is one crucial side effect of manually setting the prototype to a new project.
 // ! It erases the constructor property!
 // This property can be used to check which constructor function created the instance but since the property has been overwritten, it now gives false results
 
-dog.constructor === Dog; // false
+/* dog.constructor === Dog; // false
 dog.constructor === Object; // true
-dog instanceof Bird; // true
+dog instanceof Dog; // true */
 
-// ! to fix this, whenever a prototype is manually set to a new object
+// ! to fix this, whenever a prototype is manually set to a new object  remember to define the constructor property:
 
 /* Dog.prototype = {
     constructor: Dog, // this fix

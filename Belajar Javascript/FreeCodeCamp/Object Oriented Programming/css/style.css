@@ -41,7 +41,7 @@ nav {
     height: 100%;
     max-width: 300px;
     padding: 6rem 2rem 2rem 2rem;
-
+    overflow-y: auto;
     box-shadow: rgba(71, 71, 71, 0.2) 0px 0px 2.6px;
 }
 
@@ -49,6 +49,7 @@ header {
     text-align: center;
     margin-bottom: 2rem;
 }
+
 
 
 /* Main */

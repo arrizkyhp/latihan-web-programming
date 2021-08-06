@@ -18,6 +18,7 @@
             <h1>OOP</h1>
             <span class="header-child">Object Oriented Programming</span>
         </header>
+
         <ul>
             <li><a href="#basic-objects">Basic Objects</a></li>
             <li><a href="#dot-notation">Dot Notation</a></li>
@@ -27,6 +28,13 @@
             <li><a href="#use-constructor">Use Constructor</a></li>
             <li><a href="#constructor-arguments">Constructor Arguments</a></li>
             <li><a href="#verify-constructor">Verify Constructor</a></li>
+            <li><a href="#own-properties">Own Properties</a></li>
+            <li><a href="#prototype-duplicate">Prototype reduce duplicate</a></li>
+            <li><a href="#iterate-properties">Iterate Properties</a></li>
+            <li><a href="#constructor-property">Constructor Property</a></li>
+            <li><a href="#move-prototype">Move Prototype</a></li>
+            <li><a href="#where-prototype-from">Where Prototype from</a></li>
+            <li><a href="#prototype-chain">Prototype Chain</a></li>
         </ul>
 
     </nav>
@@ -211,9 +219,298 @@ dog.<span class="punctuation">sayLegs()</span>;</code></pre>
 
             </div>
 
+            <h2 id="own-properties">Understand Own Properties</h2>
+            <div class="section-card">
+                <p>In the last exmaple <b>Dog constructor defines 3 properties: name, color, and numLegs. </b>That 3
+                    properties are called <span class="code"><b>own properties</b></span>, because they are defined
+                    directly on the instance
+                    object.</p>
+                <p>Every instance of Dog will have its own copy of theses properties.</p>
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="function">function</span> <span class="punctuation">Bird(</span>name<span class="punctuation">) {</span>
+  <span class="function">this</span>.name <span class="return">=</span> name;
+  <span class="function">this</span>.numLegs <span class="return">=</span> <span class="number">2</span>;
+<span class="punctuation">}</span>
+
+<span class="punctuation">let</span> canary <span class="return">= new</span> <span class="punctuation">Bird(</span><span class="string">"Tweety"</span><span class="punctuation">)</span>;
+<span class="punctuation">let</span> ownProps <span class="return">=</span> <span class="punctuation">[]</span>;
+
+<b><span class="return">for</span> <span class="punctuation">(let</span> property <span class="return">in</span> canary<span class="punctuation">) {</span>
+  <span class="return">if</span> <span class="function">(</span>canary.<span class="punctuation">hasOwnProperty</span>(property)<span class="function">) {</span>
+    ownProps.<span class="punctuation">push</span>(property);
+  <span class="function">}</span>
+<span class="punctuation">}</span></b>
+
+console.<span class="punctuation">log(</span>ownProps<span class="punctuation">)</span>; <span class="muted">// [ 'name', 'numLegs' ]</span></code>
+</pre>
+                </div>
+
+            </div>
+
+            <h2 id="prototype-duplicate">Use Prototype properties to reduce duplicate code</h2>
+            <div class="section-card">
+                <p class="important">
+                    <b>Prototypes</b> are the mechanism by which JavaScript <b>objects inherit features from one
+                        another</b>.</p>
+                <p>since <b>numLegs</b> will probably have <b>the same value for all instance of Dog,</b> you
+                    essentially <b>
+                        have a
+                        duplicated variable numLegs inside each Dog instance.
+                    </b></p>
+                <p>A better way is to use the <span class="code"><b>prototype</b></span> of Dog.</p>
+                <p><b>Properties</b> in the <span class="code"><b>prototype</b></span> are<b> shared among ALL instances
+                        of Dog.</b>
+                </p>
+                <p class="important">Put <span class="code"><b>prototype</b></span> <b>outside Constructor</b>.</p><br>
+
+                <p> <b><span class="code">own properties</span> </b>are <b>defined</b> directly on the <b>object
+                        instance itself</b>.</p>
+                <p><b><span class="code">prototype</span> properties</b> are <b>defined</b> on the <b>prototype</b>.</p>
+
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="function">function</span> <span class="punctuation">Dog(</span>name<span class="punctuation">) {</span>
+  <span class="function">this</span>.name <span class="return">=</span> name; <span class="muted">// own property</span>
+<span class="punctuation">}</span>
+
+<b><span class="punctuation">Dog</span>.<span class="properties">prototype</span>.numLegs <span class="return">=</span> <span class="number">4</span>;</b> <span class="muted">// prototype property</span>
+
+<span class="punctuation">let</span> beagle <span class="return">= new</span> <span class="punctuation">Dog(</span><span class="string">"Snoopy"</span><span class="punctuation">)</span>;</code></pre>
+                </div>
+
+            </div>
+
+            <h2 id="iterate-properties">Iterate Over All Properties</h2>
+            <div class="section-card">
+                <p>here is how to seperate <b><span class="code">own properties</span> and <span
+                            class="code">prototype</span></b> to the
+                    <b>array</b> using <b>Iterate</b>.
+                </p>
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="function">function</span> <span class="punctuation">Dog(</span>name<span class="punctuation">) {</span>
+  <span class="function">this</span>.name <span class="return">=</span> name; <span class="muted">// own properties</span>
+<span class="punctuation">}</span>
+
+<span class="punctuation">Dog</span>.<span class="properties">prototype</span>.numLegs <span class="return">=</span> <span class="number">4</span>; <span class="muted">// prototype</span>
+
+<span class="punctuation">let</span> beagle <span class="return">= new</span> <span class="punctuation">Dog(</span><span class="string">"Snoopy"</span><span class="punctuation">)</span>;
+
+<span class="punctuation">let</span> ownProps <span class="return">=</span> <span class="punctuation">[]</span>;
+<span class="punctuation">let</span> prototypeProps <span class="return">=</span> <span class="punctuation">[]</span>;
+
+<b><span class="return">for</span> <span class="punctuation">(let</span> property <span class="return">in</span> beagle<span class="punctuation">) {</span>
+    <span class="muted">// if has ownprops</span>
+  <span class="return">if</span> <span class="function">(</span>beagle.<span class="punctuation">hasOwnProperty</span>(property)<span class="function">) {</span>
+    ownProps.<span class="punctuation">push</span>(property);
+  <span class="function">}</span>
+    <span class="muted">// if has prototype</span>
+  <span class="return">else</span> <span class="function">{</span>
+    prototypeProps.<span class="punctuation">push</span>(property);
+  <span class="function">}</span>
+<span class="punctuation">}</span></b>
+
+console.<span class="punctuation">log(</span>ownProps<span class="punctuation">)</span>; <span class="muted">// [ 'name' ]</span>
+console.<span class="punctuation">log(</span>prototypeProps<span class="punctuation">)</span>; <span class="muted">// [ 'numLegs' ]</span></code></pre>
+                </div>
+
+            </div>
+
+            <h2 id="constructor-property">Understand the Constructor Property</h2>
+            <div class="section-card">
+                <p class="important">The <b>constructor property</b> is a <b>reference</b> to the <b>
+                        constructor function that created
+                        the instance
+                    </b>.</p>
+
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="punctuation">let</span> duck <span class="return">= new</span> <span class="punctuation">Bird()</span>;
+<span class="punctuation">let</span> beagle <span class="return">= new</span> <span class="punctuation">Dog()</span>;
+
+<b>console.<span class="punctuation">log(</span>duck.<span class="ajax">constructor</span> <span class="return">===</span> Bird<span class="punctuation">)</span>;</b><span class="muted"> // true</span>
+<b>console.<span class="punctuation">log(</span>beagle.<span class="ajax">constructor</span> <span class="return">===</span> Dog<span class="punctuation">)</span>;</b> <span class="muted">// true</span></code></pre>
+                </div>
+                <p>The advantage of the <b>constructor property</b> is that it's possible<b> to check</b> for this
+                    property to find
+                    out <b>what kind of object it is.</b></p>
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="function">function</span> <span class="punctuation">Dog(</span>name<span class="punctuation">) {</span>
+  <span class="function">this</span>.name <span class="return">=</span> name;
+<span class="punctuation">}</span>
+
+<span class="function">function</span> <span class="punctuation">joinDogFraternity(</span>candidate<span class="punctuation">) {</span>
+  <span class="return">if</span> <span class="function">(</span><b>candidate.<span class="properties">constructor</span> <span class="return">===</span> <span class="punctuation">Dog</span></b><span class="function">) {</span>
+    <span class="return">return</span> <span class="number">true</span>;
+  <span class="function">}</span> <span class="return">else</span> <span class="function">{</span>
+    <span class="return">return</span> <span class="number">false</span>;
+  <span class="function">}</span>
+<span class="punctuation">}</span></code></pre>
+                </div>
+            </div>
+
+            <h2 id="move-prototype">Move the Prototype to a New Object</h2>
+            <div class="section-card">
+                <p><span class="code"><b>prototype</b></span> individually:</p>
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="punctuation">Dog</span>.<span class="properties">prototype</span>.numLegs <span class="return">=</span> 4;
+
+<span class="punctuation">Dog</span>.<span class="properties">prototype</span>.<span class="punctuation">eat</span> <span class="return">=</span> <span class="function">function</span> <span class="punctuation">() {</span>
+  console.<span class="punctuation">log</span><span class="function">(</span><span class="string">"nom nom nom"</span><span class="function">)</span>;
+<span class="punctuation">}</span>;
+
+<span class="punctuation">Dog</span>.<span class="properties">prototype</span>.<span class="punctuation">describe</span> <span class="return">=</span> <span class="function">function</span> <span class="punctuation">() {</span>
+  console.<span class="punctuation">log</span><span class="function">(</span><span class="string">"My name is "</span> <span class="return">+</span> <span class="function">this</span>.name<span class="function">)</span>;
+<span class="punctuation">}</span>;</code></pre>
+                </div>
+
+                <p>this will <b>becomes tedious</b> after <b>more than a few properties</b>.</p>
+                <p class="important">A more <b>efficient way</b> is to set the <b><span class="code">prototype</span> to
+                        a new object that already
+                        contains</b>
+                    <b>the properties.</b> This way, <b>the properties are added all at once</b>.</p>
+
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="punctuation">Dog</span>.<span class="ajax">prototype</span> <span class="return">=</span> <span class="punctuation">{</span>
+  <span class="properties">numLegs</span>: <span class="number">4</span>,
+  <span class="punctuation">eat</span>: <span class="function">function () {</span>
+    console.<span class="punctuation">log</span>(<span class="string">"nyom nyom nyom"</span>);
+  <span class="function">}</span>,
+  <span class="punctuation">describe</span>: <span class="function">function () {</span>
+    console.<span class="punctuation">log</span>(<span class="string">`My name is</span> <span class="punctuation">${</span><span class="function">this</span>.name<span class="punctuation">}</span><span class="string">`</span>);
+  <span class="function">}</span>,
+<span class="punctuation">}</span>;</code></pre>
+                </div>
+
+                <h2>Remember to Set the Constructor Property When Changing the Prototype</h2>
+                <p> There is one crucial<b> side effect of manually setting the prototype to a new project.</b></p>
+                <p class="important">It erases the constructor property!</p><br>
+                <p>This property can be <b>used to check which constructor function created the instance</b> but <b>
+                        since
+                        the
+                        property has been overwritten
+                    </b>, it now gives <b>false results</b></p>
+
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code>dog.<span class="properties">constructor</span> <span class="return">===</span> <span class="punctuation">Dog</span>; <span class="muted">// false</span>
+dog.<span class="properties">constructor</span> <span class="return">===</span> <span class="properties">Object</span>; <span class="muted">// true</span>
+dog <span class="return">instanceof</span> <span class="punctuation">Dog</span>; <span class="muted">// true</span></code></pre>
+                </div>
+
+                <p class="important">to <b>fix</b> this, whenever a prototype is manually set to a new object remember
+                    to
+                    <b>define the constructor property</b>:</p>
+
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="punctuation">Dog</span>.<span class="ajax">prototype</span> <span class="return">=</span> <span class="punctuation">{</span>
+    <b><span class="punctuation">constructor</span>: <span class="punctuation">Dog</span></b>, <span class="muted">// add this</span>
+    <span class="properties">numLegs</span>: <span class="number">4</span>,
+    <span class="punctuation">eat</span>: <span class="function">function () {</span>
+        console.<span class="punctuation">log</span>("nyom nyom nyom");
+    <span class="function">}</span>,
+    <span class="punctuation">describe</span>: <span class="function">function () {</span>
+        console.<span class="punctuation">log</span>(`My name is <span class="punctuation">${</span><span class="function">this</span>.name<span class="punctuation">}</span>`);
+    <span class="function">}</span>,
+<span class="punctuation">}</span>;
+</code></pre>
+                </div>
+            </div>
+
+            <h2 id="where-prototype-from">Understand Where an Object’s Prototype Comes From</h2>
+            <div class="section-card">
+                <p>An object <b>inherits</b> its <span class="code"><b>prototype</b></span> directly from the
+                    <b>
+                        constructor
+                        function that created it.
+                    </b></p>
+                <p>Show this relationship with the <span class="code"><b>isPrototypeOf</b></span> method.</p>
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="function">function</span> <span class="punctuation">Dog(</span>name<span class="punctuation">) {</span>
+  <span class="function">this</span>.name <span class="return">=</span> name;
+<span class="punctuation">}</span>
+
+<span class="punctuation">let</span> beagle <span class="return">= new</span> <span class="punctuation">Dog(</span><span class="string">"Snoopy"</span><span class="punctuation">)</span>;
+
+<b><span class="punctuation">Dog</span>.<span class="properties">prototype</span>.<span class="punctuation">isPrototypeOf(</span>beagle<span class="punctuation">)</span>; <span class="muted">// true</span></b></code></pre>
+                </div>
+
+                <p><b>beagle</b> inherits its <span class="code"><b>prototype</b></span> from the <b>Dog</b></p>
+            </div>
+
+            <h2 id="prototype-chain">Understand the Prototype Chain</h2>
+            <div class="section-card">
+                <p><b>All Objects in JavaScript (with a few exceptions) have a <span
+                            class="code"><b>prototype</b></span>.</b>
+                    Also, an object's
+                    <span class="code"><b>prototype</b></span>
+                    itself is an object.</p>
+                <p class="important">Because a <span class="code"><b>prototype</b></span> is an <b>object</b>, a <span
+                        class="code"><b>prototype</b></span> can
+                    have its own <span class="code"><b>prototype</b></span>.</p><br>
+
+                <p>in this case the <span class="code"><b>prototype</b></span> of <b>Dog</b>, <span
+                        class="code"><b>prototype</b></span> is <span class="code"><b>Object.prototype</b></span></p>
+
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="properties">Object</span>.<span class="ajax">prototype</span>.<span class="punctuation">isPrototypeOf(</span><span class="properties">Bird</span>.<span class="properties">prototype</span><span class="punctuation">)</span>;</code></pre>
+                </div>
+
+                <p>How is this useful? You
+                    may recall the <span class="code"><b>haswOwnProperty</b></span> method</p>
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code>let beagle = new Dog("Snoopy");
+beagle.hasOwnProperty("name");</code></pre>
+                </div>
+
+                <p>The <span class="code"><b>hasOwnProperty</b></span> method is defined in <b>Object.prototype</b>,
+                    which can
+                    be accessed by <b>Dog.prototype</b>,
+                    which can then be accessed by <b>beagle</b>.</p>
+                <p class="important"><b>Object.prototype</b>
+                    <= <b>Dog.protoype</b>
+                        <= <b>beagle.prototype</b>.
+                </p>
+
+                <ul>
+                    <li><b>Dog</b> is the <span class="code"><b>supertype</b></span> for <b>beagle</b>, while
+                        <b>beagle</b> is the <span class="code"><b>subtype</b></span></li>
+                    <li><b>Object</b> is a <span class="code"><b>supertype</b></span> for both <b>Dog</b> and
+                        <b>beagle</b>.</li>
+                    <li><b>Object</b> is a <span class="code"><b>supertype</b></span> for <b>all objects in
+                            JavaScript</b>.</li>
+                </ul>
+
+                <p><b>supertype = parent</b></p>
+                <p>therefore any object can use the hasOwnPropert method.</p>
+
+            </div>
+
         </section>
 
     </main>
+
+    <script src="raw.js"></script>
 </body>
 
 </html>

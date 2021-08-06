@@ -457,7 +457,7 @@ Dog.prototype.constructor = Dog; */
   console.log("Woof!");
 }; */
 
-// Noew instances of Dog will have both eat() and bark() methods:
+// Now instances of Dog will have both eat() and bark() methods:
 /* let beagle = new Dog();
 beagle.eat();
 beagle.bark(); */
@@ -479,13 +479,13 @@ Dog.prototype.bark = function () {
 };
 
 
-let beagle = new Dog();
- */
+let beagle = new Dog(); */
+
 
 
 // * Override Inherited Methods
 // ! In previous lessons, you learned that an object can inherit its behavior (methods) from another object by referencing its prototype object:
-/* ChildObject.prototype = Object.create(ParentObject.prototype); */
+// ChildObject.prototype = Object.create(ParentObject.prototype);
 
 // Then the ChildObject received its own methods by chaining them onto its prototype:
 // ChildObject.prototype.methodName = function() {...};
@@ -536,7 +536,7 @@ let penguin = new Penguin();
 console.log(penguin.fly()); */
 
 // * Use a Mixin to Add Common behavior Between Unrelated Objects
-// As you have seen, behavior is shared through inheritance. However, ther are cases when inheritance is not the best solutin.
+// As you have seen, behavior is shared through inheritance. However, there are cases when inheritance is not the best solutin.
 // Inheritance does not work well for unrelated objects like Bird and Airplane. They both fly, but a Bird is not a type of Airplane and Vice Versa.
 
 // ! For unrelated objects, it's better to use mixins. A mixin allow other objects to use a collection of function.
@@ -561,8 +561,8 @@ flyMixin(bird);
 flyMixin(plane); */
 
 // Here bird and plane are passed into flyMixin, which then assigns the fly function to each object. Now bird and plane can bot fly.
-/* bird.fly();
-plane.fly(); */
+/* bird.fly(); // Flying, wooosh!
+plane.fly(); // Flying, wooosh! */
 
 // Note how the mixin allows for the same fly method to be reused by unrelated objects bird and plane.
 
@@ -577,13 +577,15 @@ let boat = {
   type: "race-boat",
 };
 
-// Only change code below this line
 const glideMixin = function (obj) {
   obj.glide = () => console.log("Gliding, fssshhhh");
 };
 
 glideMixin(bird);
-glideMixin(boat); */
+glideMixin(boat);
+
+bird.glide();
+boat.glide(); */
 
 
 // =========================================================================================
@@ -592,7 +594,7 @@ glideMixin(boat); */
 /* bird.name = "Duffy"; */
 
 // The simplest way to make this public property private is by creating a variable within the constructor function.
-// This change the scopt of that variable to be within the constructor function versus available globally
+// This change the scope of that variable to be within the constructor function versus available globally
 // ! This way the variable can only be accessed and changed by methods also within the constructor function
 /* function Bird() {
   let hatchedEgg = 10;
@@ -627,7 +629,7 @@ console.log(pigeon.getWeight()); */
 
 // The function has no name and is not stord in a variable.
 // The two parentheses () at the end of the function expression cause it to be immediately executed or ivoked.
-// This patter is known as an immediately invoked function expression or IIFE.
+// This pattern is known as an immediately invoked function expression or IIFE.
 
 // * Use an IIFE to create a Module
 // ! An immediately invoked function expression (IIFE) is often used to group related functionality into a single object or module.

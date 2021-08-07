@@ -420,7 +420,147 @@ cities.splice(3, 1); */
 // ! Using the slice method instead of splice helps to avoid any array-mutating side effects.
 
 // Example  It should limit the provided cities array to a length of 3, and return a new array with only the first three items.
-let nonMutatingSplice = cities => cities.slice(0, 3);
+/* let nonMutatingSplice = cities => cities.slice(0, 3);
 
 var inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
-nonMutatingSplice(inputCities);
+nonMutatingSplice(inputCities); */
+
+// ============================================================================================================
+// * Combine Two Arrays Using the concat Method
+// ! Concatenation means to join items end to end.
+// JavaScript offers the concat method for both strings and arrays that work in the same way.
+
+// For arrays, the method is called on one, then another array is provided as the argument to concat, which is added to the end of the first array.
+// !  It returns a new array and does not mutate either of the original arrays.
+//  Here's an example:
+[1, 2, 3].concat([4, 5, 6]); // [1, 2, 3, 4, 5, 6]
+
+// full coding
+/* let nonMutatingConcat = (original, attach) => original.concat(attach);
+
+var first = [1, 2, 3];
+var second = [4, 5];
+nonMutatingConcat(first, second); // [ 1, 2, 3, 4, 5 ] */
+
+// ============================================================================================================
+// * Add Elements to the End of an Array Using concat Instead of push
+// ! Functional programming is all about creating and using non-mutating functions.
+// The last challenge introduced the concat method as a way to combine arrays into a new one without mutating the original arrays.
+
+// Compare concat to the push method.
+// push adds an item to the end of the same array it is called on, which mutates that array.
+// Here's an example:
+/* var arr = [1, 2, 3];
+arr.push([4, 5, 6]); */
+// arr would have a modified value of [1, 2, 3, [4, 5, 6]], which is not the functional programming way.
+// ! concat offers a way to add new items to the end of an array without any mutating side effects.
+
+// full coding
+let nonMutatingPush = (original, newItem) => original.concat(newItem);
+
+var first = [1, 2, 3];
+var second = [4, 5];
+
+nonMutatingPush(first, second); // [ 1, 2, 3, 4, 5 ]
+
+// ============================================================================================================
+// * Use the reduce Method to Analyze Data
+// Array.prototype.reduce(), or simply reduce(), is the most general of all array operations in JavaScript.
+// !  You can solve almost any array processing problem using the reduce method.
+
+// The reduce method allows for more general forms of array processing, and it's possible to show that both filter and map can be derived as special applications of reduce.
+// The reduce method iterates over each item in an array and returns a single value (i.e. string, number, object, array).
+// ! This is achieved via a callback function that is called on each iteration.
+
+/* The callback function accepts four arguments.
+1. The first argument is known as the accumulator, which gets assigned the return value of the callback function from the previous iteration,
+2. the second is the current element being processed,
+3. the third is the index of that element and the fourth is the array upon which reduce is called. */
+
+// In addition to the callback function, reduce has an additional parameter which takes an initial value for the accumulator
+// If this second parameter is not used, then the first iteration is skipped and the second iteration gets passed the first If this second parameter is not used, then the first iteration is skipped and the second iteration gets passed the first
+
+// See below for an example using reduce on the users array to return the sum of all the users' ages.
+// For simplicity, the example only uses the first and second arguments.
+/* const users = [
+  { name: "John", age: 34 },
+  { name: "Amy", age: 20 },
+  { name: "camperCat", age: 10 },
+];
+
+const sumOfAges = users.reduce((sum, user) => sum + user.age, 0);
+console.log(sumOfAges); // 64 */
+
+// In another example, see how an object can be returned containing the names of the users as properties with their ages as values.
+/* const users = [
+  { name: "John", age: 34 },
+  { name: "Amy", age: 20 },
+  { name: "camperCat", age: 10 },
+];
+
+const usersObj = users.reduce((obj, user) => {
+  obj[user.name] = user.age;
+  return obj;
+}, {});
+console.log(usersObj); // { John: 34, Amy: 20, camperCat: 10 }.*/
+
+// Full Coding
+
+// The global variable
+var watchList = [
+  {
+    "Title": "Inception",
+    "Year": "2010",
+    "Director": "Christopher Nolan",
+    "Writer": "Christopher Nolan",
+    "imdbRating": "8.8",
+    "imdbVotes": "1,446,708",
+    "imdbID": "tt1375666",
+    "Type": "movie",
+    "Response": "True"
+  },
+  {
+    "Title": "The Dark Knight",
+    "Year": "2008",
+    "Director": "Christopher Nolan",
+    "Writer": "Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)",
+    "imdbRating": "9.0",
+    "imdbVotes": "1,652,832",
+    "imdbID": "tt0468569",
+    "Type": "movie",
+    "Response": "True"
+  },
+  {
+    "Title": "Avatar",
+    "Year": "2009",
+    "Director": "James Cameron",
+    "Writer": "James Cameron",
+    "imdbRating": "7.9",
+    "imdbVotes": "876,575",
+    "imdbID": "tt0499549",
+    "Type": "movie",
+    "Response": "True"
+  }
+];
+
+function getRating(watchList){
+
+  var averageRating = watchList
+      // find Director by Nolan only
+      .filter(movie => movie.Director === "Christopher Nolan")
+      // catch only rating with Nolan Director Movie
+      .map(movie => parseFloat(movie.imdbRating))
+      // find Average sum all / movie total
+      .reduce((obj, movie) => obj + movie) /
+      watchList.filter(movie => movie.Director === "Christopher Nolan").length
+
+
+
+  return averageRating;
+}
+console.log(getRating(watchList)); // 8.675
+
+
+
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Object Oriented Programming | Documentation</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav>
+        <header>
+            <h1>FP</h1>
+            <span class="header-child">Functional Programming</span>
+        </header>
+
+        <ul>
+            <li><a href="#basic-objects">Basic Objects</a></li>
+            <li><a href="#dot-notation">Dot Notation</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- main -->
+    <main>
+        <h1 class="section-header">Functional Programming</h1>
+        <section>
+            <h2 id="basic-objects">Basic Objects</h2>
+            <div class="section-card">
+                <!-- JS Box -->
+                <div id="codebox">
+
+                    <pre><code><span class="punctuation">let</span> dog = <span class="punctuation">{</span>
+  <span class="properties">name</span>: <span class="string">"Spot"</span>,
+  <span class="properties">numLegs</span>: <span class="number">4</span>,
+<span class="punctuation">}</span>;</code></pre>
+                </div>
+            </div>
+
+            <h2 id="dot-notation">Dot (.) Notation to Access the Properties of an Object</h2>
+            <div class="section-card">
+                <p><b>Dot notation</b> is <b>used on the object name</b>, duck, <b>followed by the name of the
+                        property</b>, name, to
+                    access the value of Spot.</p>
+                <div id="codebox">
+
+                    <pre><code>console.<span class="punctuation">log(</span><b>dog.<span class="properties">name</span></b><span class="punctuation">)</span>; <span class="muted">// Spot</span></code></pre>
+                </div>
+            </div>
+
+        </section>
+
+
+    </main>
+
+    <script src="raw.js"></script>
+</body>
+
+</html>

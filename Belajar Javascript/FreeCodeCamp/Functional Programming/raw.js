@@ -433,7 +433,7 @@ nonMutatingSplice(inputCities); */
 // For arrays, the method is called on one, then another array is provided as the argument to concat, which is added to the end of the first array.
 // !  It returns a new array and does not mutate either of the original arrays.
 //  Here's an example:
-[1, 2, 3].concat([4, 5, 6]); // [1, 2, 3, 4, 5, 6]
+// [1, 2, 3].concat([4, 5, 6]); // [1, 2, 3, 4, 5, 6]
 
 // full coding
 /* let nonMutatingConcat = (original, attach) => original.concat(attach);
@@ -456,13 +456,13 @@ arr.push([4, 5, 6]); */
 // ! concat offers a way to add new items to the end of an array without any mutating side effects.
 
 // full coding
-let nonMutatingPush = (original, newItem) => original.concat(newItem);
+/* let nonMutatingPush = (original, newItem) => original.concat(newItem);
 
 var first = [1, 2, 3];
 var second = [4, 5];
 
 nonMutatingPush(first, second); // [ 1, 2, 3, 4, 5 ]
-
+ */
 // ============================================================================================================
 // * Use the reduce Method to Analyze Data
 // Array.prototype.reduce(), or simply reduce(), is the most general of all array operations in JavaScript.
@@ -507,7 +507,7 @@ console.log(usersObj); // { John: 34, Amy: 20, camperCat: 10 }.*/
 // Full Coding
 
 // The global variable
-var watchList = [
+/* var watchList = [
   {
     "Title": "Inception",
     "Year": "2010",
@@ -558,9 +558,148 @@ function getRating(watchList){
 
   return averageRating;
 }
-console.log(getRating(watchList)); // 8.675
+console.log(getRating(watchList)); // 8.675 */
+
+// ============================================================================================================
+// * Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem
+// The function should return a new array containing the squares of only the positive integers (decimal numbers are not integers) when an array of real numbers is passed to it.
+// A square number is the result when a number has been multiplied by itself example: 5 => 5*5 = 25
+/* const squareList = (arr) => {
+
+  return (arr = arr
+    .filter((num) => num >= 0 && Number.isInteger(num))
+    .map((num) => num * num));
+
+};
+
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]); //  [ 25, 9 ] */
+
+// ============================================================================================================
+// * Sort an Array Alphabetically using the sort Method
+// ! The sort method sorts the elements of an array according to the callback function.
+// The sort will convert element to string
+
+/* function ascendingOrder(arr) {
+  return arr.sort(function (a, b) {
+    return a - b;
+  });
+}
+ascendingOrder([1, 5, 2, 3, 4]); // [1, 2, 3, 4, 5] */
+
+// =========================================================
+
+/* function reverseAlpha(arr) {
+  return arr.sort(function (a, b) {
+    return a === b ? 0 : a < b ? 1 : -1;
+  });
+}
+reverseAlpha(["l", "h", "z", "b", "s"]); // ['z', 's', 'l', 'h', 'b'] */
+
+// Sort also work on array of object.
+
+/* const products = [
+  {
+    name: 'laptop',
+    price: 1000
+  },
+  {
+    name: 'desktop',
+    price: 1500
+  },
+  {
+    name: 'phone',
+    price: 500
+  }
+
+];
+
+products.sort((a,b) => {
+  return a.price - b.price;
+});
+
+console.log(products); */
+// {name: "phone", price: 500}
+// {name: "laptop", price: 1000}
+//  {name: "desktop", price: 1500}
 
 
+// JavaScript's default sorting method is by string Unicode point value, which may return unexpected results
+//  Therefore, it is encouraged to provide a callback function to specify how to sort the array items.
+
+// When such a callback function, normally called compareFunction, is supplied, the array elements are sorted according to the return value of the compareFunction:
+/* 1. If compareFunction(a,b) returns a < 0 for two elements a and b, then a will come before b. // a b
+2. If compareFunction(a,b) returns a > 0 for two elements a and b, then b will come before a. // b a
+3. If compareFunction(a,b) returns a === 0 for two elements a and b, then a and b will remain unchanged. // remin unchanged */
+
+//  sort the elements of arr in alphabetical order
+/* function alphabeticalOrder(arr) {
+
+  return arr.sort(function (a, b) {
+    return a === b ? 0 : a > b ? 1 : -1;
+  });
+
+}
+alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
+console.log(alphabeticalOrder(["a", "d", "c", "a", "z", "g"])); */
 
 
+// * Return a Sorted Array Without Changing the Original Array
+// ! A side effect of the sort method is that it changes the order of the elements in the original array.
+// In other words, it mutates the array in place.
+// One way to avoid this is to first concatenate an empty array to the one being sorted (remember that slice and concat return a new array), then run the sort method.
 
+// Full code
+/* var globalArray = [5, 6, 3, 2, 9];
+function nonMutatingSort(arr) {
+  let dupeArray = [...arr];
+  dupeArray.sort((a, b) => a - b);
+
+  // this also work
+  //  return [].concat(arr).sort(function(a, b) {
+  //   return a - b;
+  // });
+
+  return dupeArray;
+}
+console.log(nonMutatingSort(globalArray));  */
+
+// ============================================================================================================
+// * Split a String into an Array Using the split Method
+// ! The split method splits a string into an array of strings.
+//  It takes an argument for the delimiter, which can be a character to use to break up the string or a regular expression.
+// delmitier = pemisah | pembatas
+// For example, if the delimiter is a space, you get an array of words, and if the delimiter is an empty string, you get an array of each character in the string.
+
+// For example, if the delimiter is a space, you get an array of words, and if the delimiter is an empty string, you get an array of each character in the string.
+/* var str = "Hello World";
+var bySpace = str.split(" "); // ["Hello", "World"]
+
+var otherString = "How9are7you2today";
+var byDigits = otherString.split(/\d/); // ["How", "are", "you", "today"]. */
+
+
+// Note that below case the words are not always separated by spaces, and the array should not contain punctuation.
+
+let splitify = (str) => str.split(/\W/);
+
+console.log(splitify("Hello World,I-am code"));
+
+// ============================================================================================================
+// * Combine an Array into a String Using the join Method
+// ! The join method is used to join the elements of an array together to create a string.
+//   It takes an argument for the delimiter that is used to separate the array elements in the string.
+
+// Here's an example:
+/* var arr = ["Hello", "World"];
+var str = arr.join(" "); // Hello World */
+
+//  Use the join method (among others) inside the sentensify function to make a sentence from the words in the string str.
+
+/* function sentensify(str) {
+  // split String (delete "-") into array
+  const splitString = str.split(/\W/);
+  // join array
+  return splitString.join(" ");
+}
+
+console.log(sentensify("May-the-force-be-with-you")); */

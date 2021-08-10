@@ -679,10 +679,10 @@ var byDigits = otherString.split(/\d/); // ["How", "are", "you", "today"]. */
 
 
 // Note that below case the words are not always separated by spaces, and the array should not contain punctuation.
-
+/*
 let splitify = (str) => str.split(/\W/);
 
-console.log(splitify("Hello World,I-am code"));
+console.log(splitify("Hello World,I-am code")); */
 
 // ============================================================================================================
 // * Combine an Array into a String Using the join Method
@@ -703,3 +703,122 @@ var str = arr.join(" "); // Hello World */
 }
 
 console.log(sentensify("May-the-force-be-with-you")); */
+
+// ============================================================================================================
+// * Apply Functional Programming to Convert Strings to URL Slugs
+// Many content management sites (CMS) have the titles of a post added to part of the URL for simple bookmarking purposes.
+// For example, if you write a Medium post titled Stop Using Reduce, it's likely the URL would have some form of the title string in it (.../stop-using-reduce).
+
+/* let urlSlug = (title) => title.toLowerCase().trim().split(/\s+/).join("-");
+
+console.log(urlSlug("What The Fuck"));
+console.log(urlSlug(" Winter Is  Coming")); */
+
+// ============================================================================================================
+// * Use the EVERY Method to Check that Every Element in an Array Meets a Criteria
+// ! The every method works with arrays to check if every element passes a particular test.
+// every element in array
+//  It returns a Boolean value - true if all values meet the criteria, false if not.
+
+// For example, the following code would check if every element in the numbers array is less than 10:
+/* var numbers = [1, 5, 8, 0, 10, 11];
+numbers.every(function (currentValue) {
+  return currentValue < 10; // false
+}); */
+
+// Use the every method inside the checkPositive function to check if every element in arr is positive. The function should return a Boolean value.
+/* let checkPositive = (arr) => arr.every((e) => e >= 0);
+
+console.log(checkPositive([1, 2, 3, -4, 5])); // false
+console.log(checkPositive([1, 2, 3, 4, 5])); // true */
+
+// ============================================================================================================
+// * Use the SOME Method to Check that any Element in an Array Meets a Criteria
+// ! The some method works with arrays to check if any element passes a particular test.
+//  It returns a Boolean value - true if any of the values meet the criteria, false if not.
+// any element in array
+
+// For example, the following code would check if any element in the numbers array is less than 10:
+var numbers = [10, 50, 8, 220, 110, 11];
+numbers.some(function (currentValue) {
+  return currentValue < 10; // true
+});
+
+// Use the some method inside the checkPositive function to check if any element in arr is positive.
+let checkPositive = (arr) => arr.some((e) => e >= 0);
+
+console.log(checkPositive([1, 2, 3, -4, 5])); // true
+console.log(checkPositive([-1, -2, -3, -4, 5])); // true
+
+// ============================================================================================================
+// * Introduction to Currying and Partial Application
+// Currying is a transformation of functions that translates a function from callable as f(a, b, c) into callable as f(a)(b)(c).
+// Currying doesn’t call a function. It just transforms it.
+
+// The arity of a function is the number of arguments it requires.
+// Currying a function means to convert a function of N arity into N functions of arity 1.
+// In other words, it restructures a function so it takes one argument, then returns another function that takes the next argument, and so on.
+
+// Here's an example:
+
+/* // regular function
+function unCurried(x, y) {
+  return x + y;
+}
+
+// currying
+function curried(x) {
+  return function (y) {
+    return x + y;
+  };
+}
+
+// arrow currying
+const curried = (x) => (y) => x + y;
+
+curried(1)(2); // 3 */
+
+// This is useful in your program if you can't supply all the arguments to a function at one time.
+// You can save each function call into a variable, which will hold the returned function reference that takes the next argument when it's available.
+// Here's an example using the curried function in the example above:
+
+var funcForY = curried(1);
+console.log(funcForY(2)); // 3
+
+// ====================================
+// Similarly, partial application can be described as applying a few arguments to a function at a time and returning another function that is applied to more arguments
+// Here's an example:
+/* function impartial(x, y, z) {
+  return x + y + z;
+}
+var partialFn = impartial.bind(this, 1, 2);
+partialFn(10); // 13 */
+
+
+// Common Differences between Currying and Partial application
+
+// Currying: A function returning another function that might return another function, but every returned function must take only one parameter at a time.
+// Partial application: A function returning another function that might return another function, but each returned function can take several parameters.
+// Currying takes only one parameter, unlike partial application which can take more than one.
+// they are all about how many parameters they will take at a time and a more important thing to remember is that you can efficiently take advantage of lazy evaluation.
+
+/* // Currying function
+const add = x => y => z => x + y + z;
+// Partial Application function
+const add = x => (y, z) => x + y + z; */
+
+
+// Full code
+
+/* function add(x) {
+  // return function(y) {
+  //   return function (z) {
+  //     return x + y + z
+  //   }
+  // }
+
+  // arrow function
+  return (y) => (z) => x + y + z;
+}
+
+console.log(add(10)(20)(30)); */

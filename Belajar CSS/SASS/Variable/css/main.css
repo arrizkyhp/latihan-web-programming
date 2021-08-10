@@ -1,0 +1,20 @@
+/* $primary-color: salmon;
+$text-color: lightblue;
+
+body {
+    background-color: $primary-color;
+}
+
+h1 {
+    // Scope
+    $secondary-color: lightblue !global;
+    color: $secondary-color;
+}
+
+p {
+    color: $text-color;
+} */
+h1 {
+  color: green;
+}
+/*# sourceMappingURL=main.css.map */

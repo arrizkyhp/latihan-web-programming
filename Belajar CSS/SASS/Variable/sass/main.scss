@@ -1,0 +1,34 @@
+// SASS Variables
+/* $primary-color: salmon;
+$text-color: lightblue;
+
+body {
+    background-color: $primary-color;
+}
+
+h1 {
+    // Scope
+    $secondary-color: lightblue !global;
+    color: $secondary-color;
+}
+
+p {
+    color: $text-color;
+} */
+
+
+// Map
+// $alert-danger: red;
+// $alert-success: green;
+// $alert-warning: orange;
+// memakai tanda kurung
+
+$alert: (
+    'danger': red,
+    'success': green,
+    'warning': orange
+);
+
+h1 {
+    color: map-get($alert, 'success'); // panggil
+}

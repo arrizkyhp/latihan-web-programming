@@ -14,3 +14,29 @@
 // ===========================================================
 // 🎃 Nesting
 // membuat hirarki visual yang jelas untuk selector css kita.
+
+// ===========================================================
+// 🎃 Mixin
+// Kumpulan style yang dapat digunakan berulang-ulang / function
+// ada 2 keyword yang harus di hafal @mixin & @include
+// @mixin digunakan ketika kita ingin membuat mixinnya
+// @include digunakan ketika kita ingin memanggil mixinnya
+
+
+// ===========================================================
+// 🎃 Modules
+// Bagaimana cara membuat kode sass kita lebih modular / lebih mudah kita kelola.
+// ada 2 keyword yaitu @import dan @use.
+// @import
+// kekurangan menggunakan import
+
+// _ didepan _mixn.scss karena untuk menandakan bertipe parsialsm bukan file utama
+// tidak akan melalui proses kompilasi.
+
+
+// ===========================================================
+// 🎃 flow-control
+/* - @if, @else, @else if
+- @for
+- @while
+- @each */

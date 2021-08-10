@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>flow-control | SASS</title>
+</head>
+
+<body>
+
+    <input type="checkbox" name="darkmode" id="darkmode"><br><br>
+    <img src="img/image.jpg" class="circle-profile" alt="concept art">
+    <img src="img/image.jpg" class="square-profile" alt="concept art">
+
+    <div class="right"></div>
+
+    <ul class="gradient">
+        <li>Item-1</li>
+        <li>Item-2</li>
+        <li>Item-3</li>
+        <li>Item-4</li>
+        <li>Item-5</li>
+        <li>Item-6</li>
+        <li>Item-7</li>
+        <li>Item-8</li>
+        <li>Item-9</li>
+        <li>Item-10</li>
+    </ul>
+
+    <ul class="socials">
+        <li class="instagram">http://instagram.com/arrizkhyhp</li>
+        <li class="facebook">https://www.facebook.com/arrizkyhasya</li>
+        <li class="twitter">https://twitter.com/arrizkyhp</li>
+        <li class="github">https://github.com/arrizkyhp/</li>
+    </ul>
+    <script>
+        /*   const triangle = document.querySelector(".right");
+
+        triangle.addEventListener("click", function () {
+            triangle.classList.add("down");
+            triangle.classList.remove("right");
+        }) */
+
+        document.addEventListener("click", function (e) {
+            if (e.target.className === "right") {
+                e.target.className = "down";
+                document.querySelector(".gradient").style.visibility = "visible";
+            } else if (e.target.className === "down") {
+                e.target.className = "right";
+                document.querySelector(".gradient").style.visibility = "hidden";
+            }
+        })
+    </script>
+</body>
+
+</html>

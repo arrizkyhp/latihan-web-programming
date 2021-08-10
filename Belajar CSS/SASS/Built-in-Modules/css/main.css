@@ -1,0 +1,16 @@
+h1 {
+  color: salmon;
+  font-family: Arial, Helverica, sans-serif;
+  font-size: 3rem;
+  text-align: center;
+}
+
+/* adjust-color($color,
+    $red: null, $green: null, $blue: null,
+    $hue: null, $saturation: null, $lightness: null,
+    $whiteness: null, $blackness: null,
+    $alpha: null); */
+h1 {
+  color: #fcaca3;
+}
+/*# sourceMappingURL=main.css.map */

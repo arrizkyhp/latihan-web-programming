@@ -1,0 +1,40 @@
+$warna-dasar: salmon;
+
+h1 {
+    color: $warna-dasar;
+    font-family: Arial, Helverica, sans-serif;
+    font-size: 3rem;
+    text-align: center;
+}
+
+// Built-in Modules: color
+/* adjust-color($color,
+    $red: null, $green: null, $blue: null,
+    $hue: null, $saturation: null, $lightness: null,
+    $whiteness: null, $blackness: null,
+    $alpha: null); */
+
+h1 {
+    // color: adjust-color($color: $warna-dasar, $blue: 60,);
+}
+
+// adjust-hue($color, $degree);
+
+h1 {
+    // color: adjust-hue($warna-dasar, 30deg);
+}
+
+// complement($color)
+h1 {
+    // color: complement($warna-dasar);
+}
+
+// darken($color, $amount);
+h1 {
+    // color: darken($warna-dasar, 10%)
+}
+
+// lighten($color, $amount);
+h1 {
+    color: lighten($warna-dasar, 10%)
+}

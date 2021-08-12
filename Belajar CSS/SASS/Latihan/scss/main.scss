@@ -1,0 +1,121 @@
+@import 'font';
+@import 'variable';
+@import 'mixin';
+
+// Styles
+body {
+    font-family: 'Montserrat',
+    sans-serif;
+    &::before {
+        content: '';
+        background-image: url(../img/bg.png);
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: 62vmax;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+
+        @media screen and (max-width: 992px) {
+            opacity: .5;
+        }
+    }
+
+}
+
+// navbar
+.custom-nav {
+    .navbar-brand {
+        img {
+            width: 35px;
+            height: 38px;
+        }
+        span {
+            color: $primaryColor;
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin-left: .3em
+        }
+    }
+
+    .navbar-collapse {
+        .navbar-nav {
+            .nav-link {
+                color: $primaryColor;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-left: 2.5rem;
+                transition: .3s color ease;
+
+                &:hover {
+                    color: darken($color: $primaryColor, $amount: 10%);
+                }
+            }
+
+            .signup-button {
+                @include tombol;
+            }
+        }
+    }
+    @media screen and (max-width: 992px) {
+        margin: 1rem 1.5rem;
+    }
+}
+
+// custom section
+.custom-section {
+    margin-top: 8rem;
+    h2 {
+        font-weight: 700;
+        font-size: 4rem;
+        color: $primaryColor;
+        white-space: nowrap;
+        line-height: 1;
+    }
+
+    h3 {
+        color: $secondaryColor;
+        font-weight: 700;
+        font-size: 2.4rem;
+        line-height: 1;
+    }
+
+    p {
+        color: $textColor;
+        font-size: 1.1rem;
+        margin-top: 2rem;
+
+        @media screen and (max-width: 992px) {
+            margin-right: 1.5rem;
+        }
+    }
+
+    a {
+        @include tombol;
+        margin-top: 2rem;
+        border: 1px solid transparent;
+        transition: .2s all ease;
+
+        &:hover {
+            color: $primaryColor;
+            border: 1px solid $primaryColor;
+            background-color: transparent;
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        margin-top: 3rem;
+        text-align: center;
+        h2, h3, p {
+            text-shadow: 1px 1px 1px rgba($color: $textColor , $alpha: .4);
+        }
+
+        h3 {
+            color: lighten($textColor, $amount: 20%)
+        }
+    }
+
+}

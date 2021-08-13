@@ -1,0 +1,323 @@
+// font
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+// color
+$bgColor: lightblue;
+$darkenBgColor: darken(
+  $color: $bgColor,
+  $amount: 50%,
+);
+$white: #fff;
+$leftBgColor: #003147;
+$darkenLeftBgColor: darken(
+  $color: $leftBgColor,
+  $amount: 8%,
+);
+$softGrey: rgba(
+  $color: #000,
+  $alpha: 0.1,
+);
+
+// mixin
+@mixin side-position {
+  position: relative;
+  padding: 40px;
+}
+
+@mixin center-display {
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin percent($height, $color) {
+  position: relative;
+  width: 100%;
+  height: $height;
+  background-color: $color;
+}
+
+// style
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  @include center-display();
+  background-color: $bgColor;
+  display: flex;
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 1000px;
+  margin: 50px;
+  background-color: $white;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  box-shadow: 0 35px 55px rgba($color: #000000, $alpha: 0.1);
+
+  // Left Side
+
+  .left-side {
+    @include side-position();
+    background-color: $leftBgColor;
+
+    .profile-text {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba($color: $white, $alpha: 0.2);
+
+      .image-box {
+        position: relative;
+        width: 200px;
+        height: 200px;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+
+      h2 {
+        text-align: center;
+        color: $white;
+        font-size: 1.2rem;
+        margin-top: 20px;
+        text-transform: uppercase;
+        font-weight: 600;
+        line-height: 1.5rem;
+
+        span {
+          font-size: 0.9rem;
+          font-weight: 300;
+          color: rgba($color: $white, $alpha: 0.6);
+        }
+      }
+    }
+  }
+
+  .contact-info {
+    padding-top: 40px;
+
+    .title {
+      color: $white;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      position: relative;
+
+      li {
+        position: relative;
+        list-style: none;
+        margin: 10px 0;
+        cursor: pointer;
+
+        .icon {
+          display: inline-block;
+          width: 30px;
+          font-size: 18px;
+          color: $white;
+        }
+
+        .text {
+          font-size: 0.9rem;
+          color: $bgColor;
+        }
+      }
+    }
+  }
+
+  .education {
+    ul {
+      li {
+        margin-bottom: 15px;
+
+        h5 {
+          color: $white;
+          font-weight: 600;
+        }
+
+        h4:nth-child(2) {
+          color: $bgColor;
+          font-weight: 600;
+        }
+
+        h4 {
+          color: rgba($color: $bgColor, $alpha: 0.8);
+          font-weight: 300;
+        }
+      }
+    }
+  }
+
+  .language {
+    ul {
+      li {
+        .percent {
+          @include percent(6px, $darkenLeftBgColor);
+          display: block;
+          margin-top: 5px;
+
+          div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: $bgColor;
+          }
+        }
+      }
+    }
+  }
+
+  // Right Side
+
+  .right-side {
+    @include side-position();
+    background-color: $white;
+
+    .about {
+      margin-bottom: 50px;
+
+      .title2 {
+        color: $leftBgColor;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: #333;
+      }
+
+      .box {
+        display: flex;
+        flex-direction: row;
+        margin: 20px 0;
+
+        .year_company {
+          min-width: 150px;
+
+          h5 {
+            text-transform: uppercase;
+            color: rgba($color: #000, $alpha: 0.6);
+            font-weight: 600;
+          }
+        }
+      }
+
+      .text {
+        h4 {
+          color: $darkenBgColor;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .about:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills {
+      .box {
+        @include center-display();
+        position: relative;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 150px 1fr;
+
+        h4 {
+          color: $darkenBgColor;
+          font-weight: 600;
+        }
+
+        .percent {
+          @include percent(10px, $softGrey);
+
+          div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: $leftBgColor;
+          }
+        }
+      }
+    }
+
+    .interest {
+      ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        li {
+          list-style: none;
+          color: $leftBgColor;
+          margin: 10px 0;
+          font-weight: 600;
+
+          .fa {
+            color: $darkenBgColor;
+            width: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    margin: 10px;
+    grid-template-columns: repeat(1, 1fr);
+
+    .right-side {
+      .interest {
+        ul {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
+
+  @media screen and(max-width: 576px) {
+    .right-side {
+      .about {
+        .box {
+          flex-direction: column;
+          margin: 30px 0;
+
+          .year_company {
+            margin-bottom: 8px;
+          }
+        }
+      }
+      .skills {
+        .box {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+      .interest {
+        ul {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    }
+  }
+}

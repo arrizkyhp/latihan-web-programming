@@ -1,0 +1,592 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.container nav {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+
+.container nav ul {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+}
+
+.container nav ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+}
+
+.container nav ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  white-space: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #333;
+  font-weight: 500;
+  letter-spacing: 2px;
+  opacity: 0.5;
+}
+
+.container nav ul li a:hover {
+  opacity: 1;
+}
+
+.container nav.active {
+  width: 0;
+}
+
+.container main {
+  -webkit-transition: width 0.5s, left 0.5s;
+  transition: width 0.5s, left 0.5s;
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.container main.active {
+  width: calc(100% - 0px);
+  left: 0px;
+}
+
+.container main .top-bar {
+  -webkit-transition: width 0.5s, left 0.5s;
+  transition: width 0.5s, left 0.5s;
+  position: fixed;
+  top: 0;
+  background: #fff;
+  width: calc(100% - 300px);
+  left: 300px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  height: 60px;
+  padding: 0 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 10000;
+}
+
+.container main .top-bar.active {
+  width: calc(100% - 0px);
+  left: 0px;
+}
+
+.container main .top-bar .logo {
+  color: #333;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.container main .top-bar .toggle {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 25px;
+  color: #333;
+}
+
+.container main section {
+  position: relative;
+  min-height: 100vh;
+}
+
+.container main .banner {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 20px;
+}
+
+.container main .banner .content {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container main .banner .content .img-box {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.container main .banner .content .img-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container main .banner .content h3 {
+  position: relative;
+  font-size: 1.5rem;
+  color: #333;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.container main .banner .content p {
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 500;
+}
+
+.container main .banner .content .btn {
+  position: relative;
+  display: inline-block;
+  padding: 10px 30px;
+  background: #333;
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.container main .banner .content .social-media {
+  position: absolute;
+  bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container main .banner .content .social-media li {
+  list-style: none;
+}
+
+.container main .banner .content .social-media li a {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.container main .banner .content .social-media li a:hover {
+  background: #333;
+  color: #fff;
+}
+
+.container main .content-style {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 40px;
+  padding-top: 80px;
+  background: #fff;
+  color: #333;
+  display: inline-block;
+}
+
+.container main .content-style .title {
+  width: 100%;
+  text-align: center;
+}
+
+.container main .content-style .title h2 {
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.container main .content-style .title h2::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 1px;
+  bottom: -10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #333;
+}
+
+.container main .content-style.about .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 40px;
+}
+
+.container main .content-style.about .content .text-box {
+  width: 49%;
+  min-width: 49%;
+}
+
+.container main .content-style.about .content .image-box {
+  margin-left: 40px;
+}
+
+.container main .content-style.about .content .image-box img {
+  width: 100%;
+}
+
+.container main .content-style.services .content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.container main .content-style.services .content .service-box {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid black;
+  padding: 50px 20px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container main .content-style.services .content .service-box img {
+  max-width: 50px;
+}
+
+.container main .content-style.services .content .service-box h2 {
+  font-size: 1.1rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.container main .content-style.services .content .service-box p {
+  text-align: center;
+}
+
+.container main .content-style.project .content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.container main .content-style.project .content .work-box {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.container main .content-style.project .content .work-box:hover .image-box {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.container main .content-style.project .content .work-box:hover .text-box {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.container main .content-style.project .content .work-box .image-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.container main .content-style.project .content .work-box .image-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container main .content-style.project .content .work-box .text-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.container main .content-style.project .content .work-box .text-box h3 {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.container main .content-style.testimonials .content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.container main .content-style.testimonials .content .testimonials-box {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
+
+.container main .content-style.testimonials .content .testimonials-box .image-box {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.container main .content-style.testimonials .content .testimonials-box .image-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container main .content-style.testimonials .content .testimonials-box p {
+  font-style: italic;
+}
+
+.container main .content-style.testimonials .content .testimonials-box h4 {
+  text-align: right;
+  margin-top: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.2rem;
+  font-weight: 600;
+  border-right: 4px solid #333;
+  padding-right: 10px;
+}
+
+.container main .content-style.testimonials .content .testimonials-box h4 span {
+  text-transform: initial;
+  color: #aaa;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+
+.container main .content-style.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container main .content-style.contact .contact-form {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin-top: 20px;
+}
+
+.container main .content-style.contact .contact-form .row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.container main .content-style.contact .contact-form .row input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  color: #333;
+  background: #fff;
+  font-size: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.container main .content-style.contact .contact-form .row-2 {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+}
+
+.container main .content-style.contact .contact-form .row-2 textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  color: #333;
+  background: #fff;
+  font-size: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  resize: none;
+  height: 200px;
+}
+
+.container main .content-style.contact .contact-form .row-2 input[type="submit"] {
+  background: #333;
+  color: #fff;
+  padding: 10px 30px;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  max-width: 150px;
+  border: none;
+}
+
+.container main .copyright {
+  position: relative;
+  bottom: 0;
+  padding: 10px 40px;
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */

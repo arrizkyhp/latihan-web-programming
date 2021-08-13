@@ -1,0 +1,507 @@
+// font
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+// Variables
+$white: #fff;
+$dark: #333;
+// mixin
+@mixin centering() {
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin transition-width() {
+  transition: width 0.5s, left 0.5s;
+}
+
+@mixin grid($value) {
+  display: grid;
+  grid-template-columns: repeat($value, 1fr);
+  gap: 20px;
+  margin: 40px 0;
+}
+
+@mixin absolute-100() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin input() {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  color: $dark;
+  background: $white;
+  font-size: 16px;
+  border: 1px solid rgba($color: #000000, $alpha: 0.1);
+}
+
+// style
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  //   overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+
+  //   Nav Content
+
+  nav {
+    @include centering();
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    border-right: 1px solid rgba($color: #000000, $alpha: 0.05);
+    background: $white;
+    display: flex;
+    overflow: hidden;
+    transition: width 0.5s;
+
+    ul {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 40px;
+
+      li {
+        position: relative;
+        width: 100%;
+        list-style: none;
+
+        a {
+          position: relative;
+          display: block;
+          width: 100%;
+          margin: 10px 0;
+          white-space: normal;
+          text-transform: uppercase;
+          text-decoration: none;
+          display: flex;
+          color: $dark;
+          font-weight: 500;
+          letter-spacing: 2px;
+          opacity: 0.5;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &.active {
+      width: 0;
+    }
+  }
+
+  //   Main Content
+
+  main {
+    @include transition-width();
+    position: absolute;
+    // 100% - size of navbar
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: $white;
+
+    &.active {
+      width: calc(100% - 0px);
+      left: 0px;
+    }
+
+    .top-bar {
+      @include transition-width();
+      position: fixed;
+      top: 0;
+      background: $white;
+      width: calc(100% - 300px);
+      left: 300px;
+      border-bottom: 1px solid rgba($color: #000000, $alpha: 0.05);
+      height: 60px;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10000;
+
+      &.active {
+        width: calc(100% - 0px);
+        left: 0px;
+      }
+
+      .logo {
+        color: $dark;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .toggle {
+        @include centering();
+        position: relative;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        display: flex;
+        font-size: 25px;
+        color: $dark;
+      }
+    }
+
+    section {
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .banner {
+      @include centering();
+      display: flex;
+      padding: 0 20px;
+
+      .content {
+        @include centering();
+        display: flex;
+        flex-direction: column;
+
+        .img-box {
+          position: relative;
+          width: 300px;
+          height: 300px;
+          overflow: hidden;
+          border-radius: 50%;
+          margin-bottom: 20px;
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        h3 {
+          position: relative;
+          font-size: 1.5rem;
+          color: $dark;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+
+        p {
+          color: rgba($color: #000000, $alpha: 0.6);
+          font-weight: 500;
+        }
+
+        .btn {
+          position: relative;
+          display: inline-block;
+          padding: 10px 30px;
+          background: $dark;
+          color: $white;
+          font-weight: 400;
+          letter-spacing: 1px;
+          margin-top: 10px;
+          text-decoration: none;
+        }
+
+        .social-media {
+          position: absolute;
+          bottom: 20px;
+          display: flex;
+
+          li {
+            list-style: none;
+
+            a {
+              @include centering();
+              display: inline-block;
+              width: 40px;
+              height: 40px;
+              display: flex;
+              margin: 5px;
+              background-color: rgba($color: #000000, $alpha: 0.1);
+              text-decoration: none;
+              color: $dark;
+              font-size: 1.2rem;
+
+              &:hover {
+                background: $dark;
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .content-style {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      padding: 0 40px;
+      padding-top: 80px;
+      background: $white;
+      color: $dark;
+      display: inline-block;
+
+      .title {
+        width: 100%;
+        text-align: center;
+
+        h2 {
+          position: relative;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-size: 1.5rem;
+          margin-bottom: 30px;
+
+          &::before {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 1px;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $dark;
+          }
+        }
+      }
+
+      &.about {
+        .content {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 40px;
+
+          .text-box {
+            width: 49%;
+            min-width: 49%;
+          }
+
+          .image-box {
+            margin-left: 40px;
+
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      &.services {
+        .content {
+          @include grid(3);
+
+          .service-box {
+            @include centering();
+            border: 1px solid rgba($color: #000000, $alpha: 1);
+            padding: 50px 20px;
+            background: $white;
+            display: flex;
+            flex-direction: column;
+
+            img {
+              max-width: 50px;
+            }
+
+            h2 {
+              font-size: 1.1rem;
+              margin-top: 20px;
+              margin-bottom: 10px;
+              font-weight: 600;
+              color: $dark;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+            }
+
+            p {
+              text-align: center;
+            }
+          }
+        }
+      }
+
+      &.project {
+        .content {
+          @include grid(3);
+
+          .work-box {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+
+            &:hover {
+              .image-box {
+                transform: translateY(-100%);
+              }
+
+              .text-box {
+                transform: translateY(0);
+              }
+            }
+
+            .image-box {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              transform: translateY(0);
+              transition: 0.5s ease-in-out;
+
+              img {
+                @include absolute-100();
+                object-fit: cover;
+              }
+            }
+
+            .text-box {
+              @include absolute-100();
+              @include centering();
+              background: $dark;
+              display: flex;
+              transform: translateY(100%);
+              transition: 0.5s ease-in-out;
+
+              h3 {
+                color: $white;
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+
+      &.testimonials {
+        .content {
+          @include grid(2);
+
+          .testimonials-box {
+            background: $white;
+            border: 1px solid rgba($color: #000000, $alpha: 0.05);
+            box-shadow: 0 5px 15px rgba($color: #000000, $alpha: 0.05);
+            padding: 20px;
+
+            .image-box {
+              position: relative;
+              width: 80px;
+              height: 80px;
+              margin-bottom: 10px;
+
+              img {
+                @include absolute-100();
+                object-fit: cover;
+              }
+            }
+
+            p {
+              font-style: italic;
+            }
+
+            h4 {
+              text-align: right;
+              margin-top: 20px;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+              font-size: 1rem;
+              color: $dark;
+              line-height: 1.2rem;
+              font-weight: 600;
+              border-right: 4px solid $dark;
+              padding-right: 10px;
+
+              span {
+                text-transform: initial;
+                color: #aaa;
+                letter-spacing: 1px;
+                font-weight: 300;
+                font-size: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+
+      &.contact {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+
+        .contact-form {
+          position: relative;
+          width: 100%;
+          max-width: 700px;
+          margin-top: 20px;
+
+          .row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 100%;
+            margin-top: 20px;
+
+            input {
+              @include input();
+            }
+          }
+
+          .row-2 {
+            @include centering();
+            width: 100%;
+            display: flex;
+            margin-top: 20px;
+
+            textarea {
+              @include input();
+              resize: none;
+              height: 200px;
+            }
+
+            input[type="submit"] {
+              background: $dark;
+              color: $white;
+              padding: 10px 30px;
+              display: inline-block;
+              font-weight: 500;
+              letter-spacing: 2px;
+              cursor: pointer;
+              font-size: 16px;
+              text-transform: uppercase;
+              max-width: 150px;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+
+    .copyright {
+      position: relative;
+      bottom: 0;
+      padding: 10px 40px;
+      text-align: center;
+    }
+  }
+  // Responsiveness
+}

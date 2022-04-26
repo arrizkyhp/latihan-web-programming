@@ -1,0 +1,39 @@
+.main-page {
+    display:  flex;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    .left {
+        flex: 1;
+        height: 100%;
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+    .right {
+        width: 460px;
+        height: 100%;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2d2d2d;
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 50px ;
+        }
+        .back {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+    }
+}

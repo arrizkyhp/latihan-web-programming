@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import { Home, Login, Register } from '../../pages'
+import { Login, MainApp, Register } from '../../pages'
 
 const Switch = () => {
   return (
@@ -8,7 +8,7 @@ const Switch = () => {
         <Routes>
             <Route exact path='/login' element={<Login />} />
             <Route exact path='/register' element={<Register />} />
-            <Route exact path='/' element={<Home />} />
+            <Route exact path='*' element={<MainApp />} />
         </Routes>
     </Router>
   )

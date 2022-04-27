@@ -1,0 +1,24 @@
+.home-page-wrapper {
+    padding-top: 40px;
+    margin-bottom: 20px;
+
+    .create-wrapper {
+        width: 200px;
+        margin-right: 0;
+        margin-left: auto;
+    }
+    .content-home-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+    .pagination-wrapper {
+        width: 400px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+    }
+}

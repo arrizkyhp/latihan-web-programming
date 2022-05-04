@@ -1,26 +1,23 @@
 const express = require('express');
-const res = require('express/lib/response');
+const bodyParser = require('body-parser')
 
 const app = express();
-const router = express.Router();
+const productRoutes = require('./src/routes/products');
 
-router.use('/products', (req, res, next) => {
-    res.json({name: "Arrizky Hasya", email: "arrizkyhp@gmail.com"})
+// Body Parser
+app.use(bodyParser.json()) // type JSON
+
+// CORS
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS')
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     next();
 })
 
-router.use('/price', (req, res, next) => {
-    res.json({price: 3000})
-    next();
-})
-
-// GET Only
-router.get('/customers', (req, res, next) => {
-    res.json({firstName: "arrizky", lastName: "hasya"})
-    next();
-})
-
-
-app.use('/', router)
+app.use('/v1/customer', productRoutes)
+// app.use('/v2/customer', anotherProductRoutes)
 
 app.listen(4000);
+
+// Check https://codepen.io/arrizkyhp/pen/XWZbarN?editors=1010

@@ -16,9 +16,9 @@ const Register = () => {
           <Input label="Email" placeholder="Email"/>
           <Input label="Password" placeholder="Password"/>
         </div>
-        <Button title="register" />
+        <Button title="register" linkUrl to="/" />
         <div className="back">
-          <Link title="kembali ke Login" />
+          <Link to="/login" title="kembali ke Login" />
         </div>
       </div>
     </div>

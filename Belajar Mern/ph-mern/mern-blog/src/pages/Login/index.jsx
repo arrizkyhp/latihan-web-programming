@@ -14,9 +14,9 @@ const Login = () => {
           <Input label="Email" placeholder="Email"/>
           <Input label="Password" placeholder="Password"/>
         </div>
-        <Button title="Login" />
+        <Button title="Login" linkUrl to="/"  />
         <div className="back">
-          <Link title="Belum punya akun, silahkan daftar" />
+          <Link to='/register' title="Belum punya akun, silahkan daftar" />
         </div>
       </div>
     </div>

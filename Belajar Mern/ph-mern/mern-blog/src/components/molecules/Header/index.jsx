@@ -1,12 +1,12 @@
 import React from 'react'
+import { Link } from '../../atoms'
 import './header.scss'
 
 const Header = () => {
   return (
     <div className='header'>
-        <p className='logo-app'>Mern Blog</p>
-        <p className='menu-item'>Logout</p>
-    </div>
+        <Link className='logo-app' to='/' title="Mern Blog" />
+        <Link className='menu-item' to='/login' title="Logout" />    </div>
   )
 }
 

@@ -18,5 +18,6 @@ const BlogPost = new Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('BlogPost', BlogPost)
+// Nama Table
+module.exports = mongoose.model('blogPost', BlogPost)
 

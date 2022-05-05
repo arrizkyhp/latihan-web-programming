@@ -34,7 +34,7 @@ app.use((error, req, res ,next) => {
 // app.use('/v1/customer', productRoutes)
 // app.use('/v2/customer', anotherProductRoutes)
 
-mongoose.connect('mongodb+srv://arrizkyhp:QicqcpBOcOITllwQ@cluster0.5dwyv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://arrizkyhp:QicqcpBOcOITllwQ@cluster0.5dwyv.mongodb.net/mernBlog?retryWrites=true&w=majority')
 .then(() => {
     app.listen(4000, () => console.log('Connection Success'));
 })

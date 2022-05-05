@@ -1,5 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser')
+// mongoose connect mongodb ke node
+const mongoose = require('mongoose')
 
 const app = express();
 const authRoutes = require('./src/routes/auth')
@@ -32,6 +34,12 @@ app.use((error, req, res ,next) => {
 // app.use('/v1/customer', productRoutes)
 // app.use('/v2/customer', anotherProductRoutes)
 
-app.listen(4000);
+mongoose.connect('mongodb+srv://arrizkyhp:QicqcpBOcOITllwQ@cluster0.5dwyv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+.then(() => {
+    app.listen(4000, () => console.log('Connection Success'));
+})
+.catch(err => console.log(err))
+
+
 
 // Check https://codepen.io/arrizkyhp/pen/XWZbarN?editors=1010

@@ -56,18 +56,54 @@ exports.createBlogPost = (req, res, next) => {
 }
 
 // Get All Article Blog Post
+// exports.getAllBlogPost = (req, res, next) => {
+//     // Memanggil data dari database
+//     BlogPost.find()
+//     .then(result => {
+//         res.status(200).json({
+//             message: 'Data Blog Post Berhasil dipanggil',
+//             data: result
+//         })
+//     })
+//     .catch(err => {
+//         // mengirim error ke index.js
+//         next(err);
+//     })
+// }
+
+
+// Get All Article Blog Post Pagination
 exports.getAllBlogPost = (req, res, next) => {
-    // Memanggil data dari database
+    // Memanggil Query dari params (cek routes/blog.js)
+    // jika client tidak menggunakan query defaultnya 1
+    const currentPage = req.query.page || 1;
+    // jika client tidak menggunakan query defaultnya 5
+    const perPage = req.query.perPage || 5;
+
+    // Memanggil total data
+    let totalData;
     BlogPost.find()
+    .countDocuments()
+    .then(count => {
+        totalItems = count;
+        return BlogPost.find()
+        // jika (0) * 5 = 0 diskip 
+        // jika (1) * 5 = 5 diskip dst
+        .skip((currentPage -1) * perPage)
+        // maximal
+        .limit(perPage)
+    })
     .then(result => {
         res.status(200).json({
             message: 'Data Blog Post Berhasil dipanggil',
-            data: result
+            data: result, 
+            total_data: totalItems,
+            per_page: perPage,
+            current_page: currentPage
         })
     })
     .catch(err => {
-        // mengirim error ke index.js
-        next(err);
+        next(err)
     })
 }
 

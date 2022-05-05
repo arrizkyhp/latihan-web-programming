@@ -12,6 +12,10 @@ router.post('/post', [
     blogController.createBlogPost)
 
 // READ ALL ARTIKEL
+// router.get('/posts', blogController.getAllBlogPost);
+
+// READ ALL ARTIKEL PAGINATION
+// router.get('/posts?page=1&perPage=10', blogController.getAllBlogPost);
 router.get('/posts', blogController.getAllBlogPost);
 
 // READ ARTIKEL BY ID

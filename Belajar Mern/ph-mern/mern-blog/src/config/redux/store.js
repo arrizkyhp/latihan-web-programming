@@ -1,13 +1,6 @@
-const { createStore } = require("redux")
+import { createStore} from "redux"
+import reducer from "./reducer/reducer";
 
-const initialState = {
-    dataBlog: [],
-    name: 'arrizky'
-}
-const reducer = (state = initialState, action) => {
-
-    return state;
-}
 
 const store = createStore(reducer)
 

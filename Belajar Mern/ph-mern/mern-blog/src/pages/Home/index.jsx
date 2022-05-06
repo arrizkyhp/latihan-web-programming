@@ -4,9 +4,13 @@ import './home.scss'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import dateFormat from 'dateformat';
+import { useSelector } from 'react-redux';
 
 const Home = () => {
   const [dataBlog, setDataBlog] = useState([]);
+
+  const stateGlobal = useSelector(state => state)
+  console.log(`state global:`, stateGlobal )
   const navigate = useNavigate();
 
   useEffect (() => {

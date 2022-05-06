@@ -1,9 +1,12 @@
-import { Switch } from '../config';
+import { Provider } from 'react-redux';
+import { Switch, store } from '../config';
 import './App.css';
 
 function App() {
   return (
-    <Switch />
+    <Provider store={store}>
+      <Switch />
+    </Provider>
   );
 }
 

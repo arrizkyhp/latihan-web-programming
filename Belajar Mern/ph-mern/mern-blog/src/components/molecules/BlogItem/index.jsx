@@ -1,5 +1,4 @@
 import React from 'react'
-import { RegisterBg } from '../../../assets'
 import { Button } from '../../atoms'
 import './blogItem.scss'
 

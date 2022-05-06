@@ -2,9 +2,9 @@ import React, { useEffect} from 'react'
 import { BlogItem, Button } from '../../components'
 import './home.scss'
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import dateFormat from 'dateformat';
 import { useDispatch, useSelector } from 'react-redux';
+import { setDataBlog } from '../../config/redux/action';
 
 const Home = () => {
   // const [dataBlog, setDataBlog] = useState([]);
@@ -18,24 +18,8 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect (() => {
-    setTimeout(() => {
-      dispatch({type: 'UPDATE_NAME'})
-    }, 3000)
-
-    axios.get('http://localhost:4000/v1/blog/posts?page=1&perPage=4')
-    .then(result => {
-      const responseAPI = result.data
-      
-      // setDataBlog(responseAPI.data)
-
-      // Merubah State Global 
-      dispatch({type: 'UPDATE_DATA_BLOG', payload: responseAPI.data})
-      // console.log(responseAPI.data)
-    })
-    .catch(err => {
-      console.log(err)
-    })
-  }, [])
+    dispatch(setDataBlog())
+  }, [dispatch])
 
   return (
     <div className='home-page-wrapper'>

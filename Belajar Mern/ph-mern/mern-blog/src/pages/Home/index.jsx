@@ -21,8 +21,8 @@ const Home = () => {
   const navigate = useNavigate();
   useEffect (() => {
     // Kondisi Disable Page Next/Previous
-    page.currentPage == 1 ? setDisablePreviousBtn(true) : setDisablePreviousBtn(false)
-    page.currentPage == page.totalPage ?  setDisableNextBtn(true) : setDisableNextBtn(false)
+    parseInt(page.currentPage) === 1 ? setDisablePreviousBtn(true) : setDisablePreviousBtn(false)
+    parseInt(page.currentPage) === page.totalPage ?  setDisableNextBtn(true) : setDisableNextBtn(false)
 
 
     dispatch(setDataBlog(counter))
@@ -33,7 +33,6 @@ const Home = () => {
   }
   const handleNext = () => {
     setCounter(counter === page.totalPage ? page.totalPage : counter + 1)
-    console.log(counter)
   }
 
   return (

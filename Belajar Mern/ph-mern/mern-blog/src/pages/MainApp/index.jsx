@@ -15,7 +15,7 @@ const index = () => {
                 <Route exact path='/create-blog' element={<CreateBlog />} />
             </Routes>
             <Routes>
-                <Route exact path='/detail-blog' element={<DetailBlog />} />
+                <Route exact path='/detail-blog/:id' element={<DetailBlog />} />
             </Routes>
             <Routes>
                 <Route exact path='/' element={<Home />} />

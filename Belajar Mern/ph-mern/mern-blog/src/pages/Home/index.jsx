@@ -50,6 +50,7 @@ const Home = () => {
             name={blog.author.name}
             date={dateFormat(blog.createdAt, "dd, mmmm, yyyy")}
             body={blog.body}
+            _id={blog._id}
           /> 
           )
         })}

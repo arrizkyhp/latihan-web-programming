@@ -4,7 +4,7 @@ import './blogItem.scss'
 
 const BlogItem = (props) => {
   // destructuring
-  const {image, title, name, date, body} = props;
+  const {image, title, name, date, body, _id} = props;
   return (
     <div className='blog-item'>
         <img className='image-thumb' src={image} alt="post" />
@@ -12,7 +12,7 @@ const BlogItem = (props) => {
             <p className='title'>{title}</p>
             <p className='author'>{name} - {date}</p>
             <p className='body'>{body}</p>
-            <Button title="View Detail" linkUrl to="/detail-blog" />
+            <Button title="View Detail" linkUrl to={`/detail-blog/${_id}`} />
         </div>
     </div>
   )

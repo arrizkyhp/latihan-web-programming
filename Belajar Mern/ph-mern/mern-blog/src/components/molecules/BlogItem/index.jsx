@@ -4,7 +4,7 @@ import './blogItem.scss'
 
 const BlogItem = (props) => {
   // destructuring
-  const {image, title, name, date, body, _id} = props;
+  const {image, title, name, date, body, _id, onDelete} = props;
   return (
     <div className='blog-item'>
         <img className='image-thumb' src={image} alt="post" />
@@ -16,7 +16,7 @@ const BlogItem = (props) => {
               </div>
               <div className="right">
                 <Link className='edit' title="✏️Edit " to={`/create-blog/${_id}`}/>
-                <Link className='delete' title="❌Delete " to={`/create-blog/${_id}`}/>
+                <p className='delete' onClick={() => onDelete(_id)}>❌Delete </p>
               </div>
             </div>
             <p className='body'>{body}</p>

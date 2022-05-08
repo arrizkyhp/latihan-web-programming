@@ -6,6 +6,9 @@ import dateFormat from 'dateformat';
 import { useDispatch, useSelector } from 'react-redux';
 import { setDataBlog } from '../../config/redux/action';
 
+import axios from 'axios';
+
+
 const Home = () => {
   const [counter, setCounter] = useState(1)
   const [disablePreviousBtn, setDisablePreviousBtn] = useState(false)
@@ -34,6 +37,21 @@ const Home = () => {
   const handleNext = () => {
     setCounter(counter === page.totalPage ? page.totalPage : counter + 1)
   }
+  const confirmDelete = (id) => {
+    if (window.confirm("Apakah anda yakin ingin menghapus artikel ini?") === true) {
+      axios.delete(`http://localhost:4000/v1/blog/post/${id}`)
+      .then(res => {
+        console.log("Delete Artikel Berhasil", res)
+        dispatch(setDataBlog(counter))
+      })
+      .catch(err => {
+        console.log("err", err)
+      })
+      console.log(id)
+    } else {
+      console.log("Tidak")
+    }
+  }
 
   return (
     <div className='home-page-wrapper'>
@@ -51,6 +69,7 @@ const Home = () => {
             date={dateFormat(blog.createdAt, "dd, mmmm, yyyy")}
             body={blog.body}
             _id={blog._id}
+            onDelete={confirmDelete}
           /> 
           )
         })}

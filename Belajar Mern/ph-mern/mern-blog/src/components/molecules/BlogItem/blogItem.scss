@@ -11,18 +11,39 @@
     }
     .content-detail {
         padding: 16px;
-        .title {
-            margin: 0;
-            font-size: 20px;
-            font-weight: 700;
-            color: #313131;
+        .content-info {
+            display: flex;
+            justify-content: space-between;
+            .left {
+                .title {
+                    margin: 0;
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: #313131;
+                }
+                .author {
+                    margin: 0;
+                    margin-top: 4px;
+                    font-size: 12px;
+                    color: grey;
+                }
+            }
+            .right {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-weight: 700;
+                cursor: pointer;
+                .edit {
+                    color: rgb(16, 60, 236);
+                }
+                .delete {
+                    color: rgb(206, 17, 17);
+                }
+                
+            }
         }
-        .author {
-            margin: 0;
-            margin-top: 4px;
-            font-size: 12px;
-            color: grey;
-        }
+        
         .body {
             margin: 0;
             margin-top: 18px;

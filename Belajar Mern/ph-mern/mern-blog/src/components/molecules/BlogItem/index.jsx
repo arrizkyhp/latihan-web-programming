@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '../../atoms'
+import { Button, Link } from '../../atoms'
 import './blogItem.scss'
 
 const BlogItem = (props) => {
@@ -9,8 +9,16 @@ const BlogItem = (props) => {
     <div className='blog-item'>
         <img className='image-thumb' src={image} alt="post" />
         <div className="content-detail">
-            <p className='title'>{title}</p>
-            <p className='author'>{name} - {date}</p>
+            <div className="content-info">
+              <div className="left">
+                <p className='title'>{title}</p>
+                <p className='author'>{name} - {date}</p>
+              </div>
+              <div className="right">
+                <Link className='edit' title="✏️Edit " to={`/create-blog/${_id}`}/>
+                <Link className='delete' title="❌Delete " to={`/create-blog/${_id}`}/>
+              </div>
+            </div>
             <p className='body'>{body}</p>
             <Button title="View Detail" linkUrl to={`/detail-blog/${_id}`} />
         </div>

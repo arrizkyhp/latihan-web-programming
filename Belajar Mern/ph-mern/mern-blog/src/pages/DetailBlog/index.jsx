@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import dateFormat from 'dateformat';
 import { Link } from '../../components'
 import './detailBlog.scss'
-import { useLocation, useNavigate, useParams } from "react-router-dom";
 import axios from 'axios';
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 const DetailBlog = (props) => {
   const [data, setData] = useState({})
@@ -52,5 +52,6 @@ const withRouter = (Component) => {
 
   return ComponentWithRouterProp;
 }
+
 
 export default withRouter(DetailBlog)

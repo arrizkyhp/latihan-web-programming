@@ -1,0 +1,14 @@
+{
+    "kontak": [
+        {
+            "id": 1,
+            "nama": "Arrizky Hasya Pratama",
+            "nohp": "0812345678901"
+        },
+        {
+            "id": 2,
+            "nama": "Rossa",
+            "nohp": "089876543201"
+        }
+    ]
+}

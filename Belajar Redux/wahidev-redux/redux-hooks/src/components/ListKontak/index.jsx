@@ -9,7 +9,6 @@ const ListKontak = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log(" 1 Use effect component")
         // Call Action get List Kontak
         dispatch(getListKontak())
     }, [dispatch])

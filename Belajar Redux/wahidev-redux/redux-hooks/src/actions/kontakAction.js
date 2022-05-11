@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const GET_LIST_KONTAK = "GET_LIST_KONTAK";
 export const ADD_KONTAK = "ADD_KONTAK"
+export const DELETE_KONTAK = "DELETE_KONTAK"
 
 export const getListKontak = () => {
     return (dispatch) => {
@@ -84,5 +85,45 @@ export const addKontak = (data) => {
                 }
             })
         })
+    }
+}
+
+export const deleteKontak =  (id) => {
+    return (dispatch) => {
+        dispatch({
+            type: DELETE_KONTAK,
+            payload: {
+                loading: true,
+                data: false,
+                errorMessage: false
+            }
+        })
+
+        axios({
+            method: 'DELETE',
+            url: `http://localhost:5000/kontak/${id}`,
+            timeout: 120000
+        })
+        .then((response) => {
+            dispatch({
+                type: DELETE_KONTAK,
+                payload: {
+                    loading: false,
+                    data: response.data,
+                    errorMessage: false
+                }
+            })
+        })
+        .catch((error) => {
+            dispatch({
+                type: DELETE_KONTAK,
+                payload: {
+                    loading: false,
+                    data: false,
+                    errorMessage: error.message
+                }
+            })
+        } )
+
     }
 }

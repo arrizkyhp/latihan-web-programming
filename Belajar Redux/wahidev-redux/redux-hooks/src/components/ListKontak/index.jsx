@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { deleteKontak, getListKontak } from '../../actions/kontakAction';
+import { deleteKontak, detailKontak, getListKontak } from '../../actions/kontakAction';
 
 const ListKontak = () => {
   // consume redux
@@ -16,6 +16,8 @@ const ListKontak = () => {
         if(deleteKontakResult) {
           dispatch(getListKontak())
         }
+
+        
     }, [dispatch, deleteKontakResult])
     
   return (
@@ -25,11 +27,14 @@ const ListKontak = () => {
           getListKontakResult.length > 0 ? (
             getListKontakResult.map( (kontak) => {
               return (
-                <div key={kontak.id}>
+                <div key={kontak.id} className="list__kontak">
                   <p>
                   {kontak.nama} - {kontak.nohp}
                   </p>
-                  <button onClick={() => dispatch(deleteKontak(kontak.id))}>Hapus</button>
+                  <div className="list__kontak__button">
+                    <button onClick={() => dispatch(deleteKontak(kontak.id))}>Hapus</button>
+                    <button onClick={() => dispatch(detailKontak(kontak))} >Edit</button>
+                  </div>
                 </div>
               )
             })

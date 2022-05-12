@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.list__kontak {
+  display: flex; 
+  align-items: center;
+  gap: 20px;
+}
+
+.list__kontak__button {
+  display: flex;
+  gap: 5px;
+}

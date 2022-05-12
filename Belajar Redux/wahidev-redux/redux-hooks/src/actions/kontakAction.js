@@ -3,6 +3,9 @@ import axios from "axios";
 export const GET_LIST_KONTAK = "GET_LIST_KONTAK";
 export const ADD_KONTAK = "ADD_KONTAK"
 export const DELETE_KONTAK = "DELETE_KONTAK"
+export const DETAIL_KONTAK = 'DETAIL_KONTAK'
+export const UPDATE_KONTAK = 'UPDATE_KONTAK'
+export const CANCEL_SUBMIT_KONTAK = 'CANCEL_SUBMIT_KONTAK';
 
 export const getListKontak = () => {
     return (dispatch) => {
@@ -15,7 +18,6 @@ export const getListKontak = () => {
                 errorMessage: false
             }
         })
-
 
         // get API
         axios({
@@ -125,5 +127,57 @@ export const deleteKontak =  (id) => {
             })
         } )
 
+    }
+}
+
+export const detailKontak = (data) => {
+    return (dispatch) => {
+        // console.log(data)
+        dispatch({
+            type: DETAIL_KONTAK,
+            payload: {
+                data: data
+            }
+        })
+    }
+}
+
+export const updateKontak = (data) => {
+    return (dispatch) => {
+        dispatch({
+            type: UPDATE_KONTAK,
+            payload: {
+                loading: true,
+                data: false,
+                errorMessage: false
+            }
+        })
+
+        axios({
+            method: 'PUT',
+            url: `http://localhost:5000/kontak/${data.id}`,
+            timeout: 120000,
+            data: data
+        })
+        .then((response) => {
+            dispatch({
+                type: UPDATE_KONTAK,
+                payload: {
+                    loading: false,
+                    data: response.data,
+                    errorMessage: false
+                }
+            })
+        })
+        .catch((error) => {
+            dispatch({
+                type: UPDATE_KONTAK,
+                payload: {
+                    loading: false,
+                    data: false,
+                    errorMessage: error.message
+                }
+            })
+        })
     }
 }

@@ -16,7 +16,6 @@ const FeedbackItem = ({rating, text, id, handleDelete}) => {
 }
 
 FeedbackItem.propTypes = {
-    id: PropTypes.number.isRequired,
     rating: PropTypes.number.isRequired,
     text: PropTypes.string.isRequired
 }

@@ -1,23 +1,30 @@
+import { useContext } from "react"
+import FeedbackContext from "../context/FeedbackContext"
 import Card from "./shared/Card"
 import PropTypes from 'prop-types'
-import { FaTimes } from 'react-icons/fa'
+import { FaTimes, FaEdit } from 'react-icons/fa'
 
-const FeedbackItem = ({rating, text, id, handleDelete}) => {
-    
+const FeedbackItem = ({item}) => {
+  // Calling value from global context (Check FeedbackContext)
+  const { deleteFeedback, editFeedback } = useContext(FeedbackContext)
+
   return (
     <Card>
-        <div className="num-display">{rating}</div>
-        <button className="close" onClick={() => handleDelete(id)}>
+        <div className="num-display">{item.rating}</div>
+        <button className="close" onClick={() => deleteFeedback(item.id)}>
             <FaTimes color="purple" />
         </button>
-        <div className="text-display">{text}</div>
+        <button className="edit" onClick={() => editFeedback(item)}>
+          <FaEdit color="purple" />
+        </button>
+        <div className="text-display">{item.text}</div>
     </Card>
   )
 }
 
 FeedbackItem.propTypes = {
-    rating: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired
+    item: PropTypes.object.isRequired,
+   
 }
 
 export default FeedbackItem

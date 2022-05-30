@@ -23,17 +23,12 @@ export const FeedbackProvider = ({ children }) => {
           },
           {
             id: 4,
-            rating: 7.5,
+            rating: 7,
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.',
           }
     ])
 
-    // Edit Item
-    // Set Edit Item | If Click Edit icon edit turn to true
-    const [feedbackEdit, setFeedbackEdit] = useState({
-        item: {},
-        edit: false
-    })
+ 
 
     // Add Item
     const addFeedback = (newFeedback) => {
@@ -50,6 +45,13 @@ export const FeedbackProvider = ({ children }) => {
         }
     }
 
+       // Edit Item
+    // Set Edit Item | If Click Edit icon edit turn to true
+    const [feedbackEdit, setFeedbackEdit] = useState({
+      item: {},
+      edit: false
+  })
+
     // Set Item to be updated
     const editFeedback = (item) => {
         setFeedbackEdit({
@@ -59,13 +61,20 @@ export const FeedbackProvider = ({ children }) => {
         })
     }
 
+    // Update Item 
+    const updateFeedback = (id, updItem) => {
+      setFeedback(feedback.map( (item) => item.id === id ? {...item, ...updItem} : item))
+    }
+
 
 
     return <FeedbackContext.Provider value={{
         feedback: feedback,
+        feedbackEdit,
         deleteFeedback,
         addFeedback,
-        editFeedback
+        editFeedback,
+        updateFeedback
     }}>
         { children }
     </FeedbackContext.Provider>

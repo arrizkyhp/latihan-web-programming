@@ -4,6 +4,7 @@ import "./App.css";
 import Auth from "./components/Auth";
 import Layout from "./components/Layout";
 import Notification from "./components/Notification";
+import { sendCartData } from "./store/cart-slice";
 import { uiActions } from "./store/ui-slice";
 let isFirstRender = true;
 function App() {
@@ -16,36 +17,8 @@ function App() {
       isFirstRender = false;
       return;
     }
-    const sendRequest = async () => {
-      // Send state as Sending Request
-      dispatch(uiActions.showNotification({
-        open: true,
-        message: "Sending Request...",
-        type: 'warning'
-      }))
-      const response = await fetch('https://fcc-redux-default-rtdb.asia-southeast1.firebasedatabase.app/cartItems.json', {
-        method: "PUT",
-        body: JSON.stringify(cart)
-      })
-      const data = await response.json()
 
-      // Send state as Request is Successful
-      dispatch(uiActions.showNotification({
-        open: true,
-        message: "Sent Request to Database Successfully",
-        type: 'success'
-      }))
-    }
-    
-    sendRequest().catch(err => {
-      // Send state as error
- 
-      dispatch(uiActions.showNotification({
-        open: true,
-        message: "Sending Request Failed",
-        type: 'error'
-      }))
-    });
+    dispatch(sendCartData(cart))
 
   }, [cart, dispatch])
   

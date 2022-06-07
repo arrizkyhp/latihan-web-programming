@@ -7,10 +7,17 @@ const cartSlice = createSlice({
     initialState: {
         itemsList: [],
         totalQuantity: 0,
-        showCart: false
+        showCart: false,
+        changed: false,
+
     },
     reducers: {
+        replaceData(state, action) {
+            state.totalQuantity = action.payload.totalQuantity;
+            state.itemsList = action.payload.itemsList
+        },
         addToCart(state, action) {
+            state.changed = true;
             const newItem = action.payload;
             // to check if item is already available
             const existingItem = state.itemsList.find((item) => item.id === newItem.id)
@@ -30,6 +37,7 @@ const cartSlice = createSlice({
             }
         },
         removeFromCart(state, action) {
+            state.changed = true;
             const id = action.payload;
             const existingItem = state.itemsList.find(item => item.id === id);
 
@@ -49,42 +57,7 @@ const cartSlice = createSlice({
     }
 })
 
-export const sendCartData = (cart) => {
-    return async (dispatch) => {
-        dispatch(uiActions.showNotification({
-            open: true,
-            message: "Sending Request...",
-            type: 'warning'
-          }))
-          const sendRequest = async () => {
-            // Send state as Sending Request
-           
-            const response = await fetch('https://fcc-redux-default-rtdb.asia-southeast1.firebasedatabase.app/cartItems.json', {
-              method: "PUT",
-              body: JSON.stringify(cart)
-            })
-            const data = await response.json()
-      
-            // Send state as Request is Successful
-            dispatch(uiActions.showNotification({
-              open: true,
-              message: "Sent Request to Database Successfully",
-              type: 'success'
-            }))
-          }
-          try {
-              await sendRequest()
-          } catch (err) {
-            // Send state as error
-            dispatch(uiActions.showNotification({
-                open: true,
-                message: "Sending Request Failed",
-                type: 'error'
-            }))
-          }
-          
-    }
-}
+
 
 export const cartActions = cartSlice.actions;
 export default cartSlice;

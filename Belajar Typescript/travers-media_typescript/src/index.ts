@@ -162,3 +162,63 @@ const mike = new Person(2, "Michael Angelo")
 
 console.log(mike);
 console.log(leo.register()) // Leonardo Davinci is now registered
+
+// Interface on Class
+interface PersonInterface {
+    id: number
+    name: string
+    register(): string
+}
+
+class Person2 implements PersonInterface{
+    id: number
+    name: string
+
+    constructor(id: number, name: string) {
+        this.id = id
+        this.name = name
+    }
+
+    register() {
+        return `${this.name} is now registered`
+    }
+}
+
+// Subclasses
+class Employee extends Person2 {
+    position: string
+
+    constructor(id: number, name: string, position: string) {
+        super(id, name)
+        this.position = position
+    }
+}
+
+const emp = new Employee(3, "Gunlah", "Backend Web Programmer")
+console.log(emp.name) // Gunlah
+console.log(emp.register()) // Gunlah is now registered
+
+// Generics
+// =============================================
+const getArray = (items: any[]): any[] => {
+    return new Array().concat(items)
+}
+
+let numArray = getArray([1, 2, 3, 4, 5])
+let stringArray = getArray(["ariz", "hasya", "pratama"])
+
+numArray.push('mushi')
+
+console.log(numArray)
+
+// Generic Custom
+const getArray2 = <T>(items: T[]): T[] => {
+    return new Array().concat(items)
+}
+
+let numArray2 = getArray2<number>([1, 2, 3, 4, 5])
+let stringArray2 = getArray2<string>(["ariz", "hasya", "pratama"])
+
+stringArray2.push('mushibuah')
+
+console.log(stringArray2)

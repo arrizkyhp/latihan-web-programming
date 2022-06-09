@@ -111,3 +111,39 @@ const leo = new Person(1, "Leonardo Davinci");
 const mike = new Person(2, "Michael Angelo");
 console.log(mike);
 console.log(leo.register()); // Leonardo Davinci is now registered
+class Person2 {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    register() {
+        return `${this.name} is now registered`;
+    }
+}
+// Subclasses
+class Employee extends Person2 {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const emp = new Employee(3, "Gunlah", "Backend Web Programmer");
+console.log(emp.name); // Gunlah
+console.log(emp.register()); // Gunlah is now registered
+// Generics
+// =============================================
+const getArray = (items) => {
+    return new Array().concat(items);
+};
+let numArray = getArray([1, 2, 3, 4, 5]);
+let stringArray = getArray(["ariz", "hasya", "pratama"]);
+numArray.push('mushi');
+console.log(numArray);
+// Generic Custom
+const getArray2 = (items) => {
+    return new Array().concat(items);
+};
+let numArray2 = getArray2([1, 2, 3, 4, 5]);
+let stringArray2 = getArray2(["ariz", "hasya", "pratama"]);
+stringArray2.push('mushibuah');
+console.log(stringArray2);

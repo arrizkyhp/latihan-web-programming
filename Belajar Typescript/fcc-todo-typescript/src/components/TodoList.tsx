@@ -14,7 +14,7 @@ const TodoList: React.FC<Props> = ({ todos, setTodos }) => {
         {todos.map( (item, index) => (
                 <SingleTodo 
                     todo={item}
-                    key={`todoList-${item.id}${item.todo}`}
+                    key={`todoList-${item.id}${index}`}
                     todos={todos}
                     setTodos={setTodos}
                 />

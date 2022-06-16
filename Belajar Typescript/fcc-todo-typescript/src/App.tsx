@@ -7,6 +7,7 @@ import { Todo } from './model';
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>("")
   const [todos, setTodos] = useState<Todo[]>([])
+  console.log(todos)
 
   const handleAdd= (e: React.FormEvent) => {
     e.preventDefault()

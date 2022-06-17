@@ -19,6 +19,27 @@
   text-align: center;
 }
 
+.navigation {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.navigation .navigation__link {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+}
+
+.navigation .navigation__link:hover {
+  color: #32C3CD;
+  transition: .3s ease
+}
+
+.navigation .navigation__link.active {
+  background: #EB6750;
+}
+
 @media (max-width: 800px) {
   .heading {
     margin: 15px 0;

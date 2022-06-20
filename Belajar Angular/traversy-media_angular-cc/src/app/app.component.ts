@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'traversy-media_angular-cc';
+  title: string = 'Task Tracker';
 }

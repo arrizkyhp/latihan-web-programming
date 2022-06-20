@@ -5,3 +5,11 @@
 .counter-area button {
     cursor: pointer;
 }
+
+.counter--green {
+    color: green;
+}
+
+.counter--red {
+    color: red;
+}

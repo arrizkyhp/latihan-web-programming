@@ -9,16 +9,21 @@ export class AppComponent {
   title = 'laith-academy_angular-cc';
   newMemberName = "";
   members: string[] = [];
+  errorMessage: string = "";
 
   onInput(member: string) {
     this.newMemberName = member;
-    console.log(this.newMemberName);
     
   } 
 
   addMember() {
+    if(!this.newMemberName) {
+      this.errorMessage = "Name can't be empty" 
+      return
+    }
+
     this.members.push(this.newMemberName)
     this.newMemberName = ""
-    console.log(this.newMemberName)
+    this.errorMessage = ""
   }
 }
